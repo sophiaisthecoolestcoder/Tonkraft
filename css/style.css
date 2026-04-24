@@ -353,19 +353,9 @@ html.lang-en [lang="de"] {
   }
 }
 
-/* leaving state when advancing */
-.is-leaving .landing__stage,
-.is-leaving .landing__hint {
-  transition:
-    opacity 0.6s var(--ease-soft),
-    transform 0.9s var(--ease-soft);
-  opacity: 0;
-  transform: translateY(-8px);
-}
-.is-leaving .landing__wave {
-  opacity: 0;
-  transition: opacity 0.8s var(--ease-soft);
-}
+/* (The old .is-leaving rules that faded the canvas were removed —
+   the story overlay handles the foreground transition instead,
+   and the landing wave must always remain visible.) */
 
 /* ============================================================
    STORY — the interactive six-beat passage after the landing.

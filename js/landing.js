@@ -172,8 +172,12 @@
     }
 
     function bloomAt(t) {
-      const k = Math.min(1, Math.max(0, (t - start - 400) / 1600));
-      return 1 - Math.pow(1 - k, 3);
+      // Start at 70% visibility from frame 1, ramp to 100% in 600 ms.
+      // The previous version kept amplitude at 0 for the first ~400 ms,
+      // which made the wave appear to not exist on fast loads.
+      const elapsed = t - start;
+      if (elapsed <= 0) return 0.7;
+      return 0.7 + 0.3 * Math.min(1, elapsed / 600);
     }
 
     function drawWave(yBase, amp, freq, phase, jitter, alpha, thick) {
