@@ -379,9 +379,11 @@ html.lang-en [lang="de"] {
    ============================================================ */
 
 .story {
-  position: relative;
+  position: fixed;
+  inset: 0;
+  z-index: 40;
   width: 100%;
-  min-height: 100svh;
+  height: 100svh;
   display: grid;
   grid-template-rows: auto 1fr auto;
   justify-items: center;
@@ -390,6 +392,21 @@ html.lang-en [lang="de"] {
   overflow: hidden;
   isolation: isolate;
   background: var(--paper);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.9s var(--ease-soft),
+    visibility 0s linear 0.9s;
+}
+body.story-open .story {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.9s var(--ease-soft),
+    visibility 0s;
+}
+body.story-open {
+  overflow: hidden;
 }
 
 .story:focus-visible {
@@ -594,16 +611,83 @@ html.lang-en [lang="de"] {
   align-items: center;
 }
 
-/* thin wave divider used at the top of each chapter */
+/* thin wave divider at the top of each chapter */
 .chapter__ornament {
   width: clamp(6rem, 12vw, 9rem);
   height: 16px;
-  margin: 0 auto clamp(3rem, 6vh, 4.5rem);
+  margin: 0 auto clamp(2rem, 4vh, 3rem);
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 10' fill='none' stroke='%231c528a' stroke-width='0.7' stroke-linecap='round'><path d='M 0,5 Q 10,0 20,5 T 40,5 T 60,5 T 80,5 T 100,5 T 120,5'/></svg>");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  opacity: 0.55;
+  opacity: 0.45;
+}
+
+/* chapter-specific graphic — one per chapter, distinct visual voice */
+.chapter__viz {
+  display: block;
+  width: clamp(6rem, 14vw, 11rem);
+  height: auto;
+  margin: clamp(1.5rem, 3vh, 2.25rem) auto clamp(2.5rem, 4vh, 3.5rem);
+  color: var(--indigo);
+  opacity: 0.72;
+}
+.chapter__viz--rings {
+  width: clamp(5rem, 10vw, 7.5rem);
+}
+.chapter__viz--seal {
+  font-family: var(--deva);
+  font-weight: 500;
+  font-size: clamp(4rem, 10vw, 7rem);
+  color: var(--indigo);
+  text-align: center;
+  line-height: 1;
+  user-select: none;
+  animation: seal-breath 6.5s ease-in-out infinite;
+  opacity: 0.92;
+}
+
+/* draw the sine-wave vizzes with a gentle left-to-right reveal */
+@keyframes viz-draw {
+  from {
+    stroke-dashoffset: 400;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.chapter__viz path,
+.chapter__viz line {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: viz-draw 2.8s var(--ease-out) forwards;
+}
+.chapter__viz path:nth-of-type(2) {
+  animation-delay: 0.6s;
+}
+.chapter__viz circle {
+  transform-origin: center;
+  animation: viz-ring-in 1.4s var(--ease-out) forwards;
+  opacity: 0;
+}
+@keyframes viz-ring-in {
+  from {
+    scale: 0.5;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: var(--ring-opacity, 1);
+  }
+}
+.chapter__viz circle:nth-of-type(2) {
+  animation-delay: 0.15s;
+}
+.chapter__viz circle:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+.chapter__viz circle:nth-of-type(4) {
+  animation-delay: 0.45s;
 }
 
 .chapter__inner {

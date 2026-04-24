@@ -290,7 +290,8 @@
   }
 
   // -----------------------------------------------------------
-  //  Landing
+  //  Landing — click either opens the story overlay (first visit)
+  //  or scrolls directly to Institute (return visits).
   // -----------------------------------------------------------
   const landing = document.getElementById("landing");
   const landingCanvas = landing && landing.querySelector(".landing__wave");
@@ -306,23 +307,44 @@
     io.observe(landing);
   }
 
-  function advanceFromLanding() {
-    if (!landingInView) return;
-    body.classList.add("is-leaving");
-    const next = document.getElementById("next");
-    if (next) {
-      next.scrollIntoView({
+  const STORY_SEEN_KEY = "tonkraft:story-seen";
+  function storyHasBeenSeen() {
+    try {
+      return localStorage.getItem(STORY_SEEN_KEY) === "1";
+    } catch (e) {
+      return false;
+    }
+  }
+  function markStorySeen() {
+    try {
+      localStorage.setItem(STORY_SEEN_KEY, "1");
+    } catch (e) {
+      /* ignore */
+    }
+  }
+
+  let openStoryOverlay = null; // set by story controller below
+  function scrollToInstitute() {
+    const inst = document.getElementById("institute");
+    if (inst) {
+      inst.scrollIntoView({
         behavior: REDUCED ? "auto" : "smooth",
         block: "start",
       });
     }
-    window.setTimeout(() => body.classList.remove("is-leaving"), 1400);
+  }
+
+  function advanceFromLanding() {
+    if (!landingInView) return;
+    if (storyHasBeenSeen() || !openStoryOverlay) {
+      scrollToInstitute();
+    } else {
+      openStoryOverlay();
+    }
   }
 
   if (landing) {
     landing.addEventListener("click", (e) => {
-      // Leave a visible ripple at the click point, then advance
-      // slightly delayed so the user sees their own gesture.
       if (landingWave && typeof e.clientX === "number") {
         const { x, y } = landingWave.getCtxOffsetForEvent(e);
         landingWave.spawnRipple(x, y, { big: true });
@@ -332,6 +354,7 @@
   }
   window.addEventListener("keydown", (e) => {
     if (!landingInView) return;
+    if (document.body.classList.contains("story-open")) return;
     if (
       e.key === "Enter" ||
       e.key === " " ||
@@ -346,13 +369,13 @@
   let landingWave = null;
   if (!REDUCED && landingCanvas) {
     landingWave = createWaveRenderer(landing, landingCanvas, {
-      amp1: 1.35,
-      amp2: 1.3,
+      amp1: 1.6,
+      amp2: 1.5,
       freq1: 1,
       freq2: 1,
-      alpha1: 0.7,
-      alpha2: 0.18,
-      rippleInterval: 1400,
+      alpha1: 0.78,
+      alpha2: 0.22,
+      rippleInterval: 1100,
     });
     landingWave.start();
   }
@@ -414,23 +437,35 @@
 
     function advanceStory(e) {
       if (lock) return;
-      if (beatIndex >= TOTAL) return;
-      lock = true;
       if (storyWave && e && typeof e.clientX === "number") {
         const { x, y } = storyWave.getCtxOffsetForEvent(e);
         storyWave.spawnRipple(x, y);
       }
+      if (beatIndex >= TOTAL) {
+        finishStory();
+        return;
+      }
+      lock = true;
       setBeat(beatIndex + 1);
       window.setTimeout(() => {
         lock = false;
       }, 380);
     }
 
+    function finishStory() {
+      markStorySeen();
+      body.classList.remove("story-open");
+      window.setTimeout(scrollToInstitute, 250);
+    }
+
+    // exposed to advanceFromLanding above
+    openStoryOverlay = function () {
+      setBeat(1);
+      body.classList.add("story-open");
+    };
+
     story.addEventListener("click", advanceStory);
-    // Keyboard only while the story element itself is focused, so
-    // ArrowDown / PageDown still scroll the rest of the site naturally.
     story.addEventListener("keydown", (e) => {
-      if (beatIndex >= TOTAL) return;
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         advanceStory();
