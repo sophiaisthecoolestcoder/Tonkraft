@@ -44,7 +44,127 @@ img {
   display: block;
 }
 
-/* -------- Header -------- */
+/* -------- Intro view (storytelling first screen) -------- */
+.intro {
+  position: relative;
+  min-height: 100vh;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4rem 1.5rem;
+}
+
+.ripple-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  opacity: 0;
+  animation: intro-rise 2s ease-out 0.2s forwards;
+}
+
+.intro-logo {
+  display: inline-block;
+  font-size: clamp(4rem, 9vw, 6.8rem);
+  margin-bottom: 1.75rem;
+}
+
+.intro-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  letter-spacing: 0.24em;
+  color: var(--color-accent);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.intro-next {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  background: transparent;
+  border: 0;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color 0.4s ease;
+  opacity: 0;
+  animation: intro-fade 1.4s ease-out 1.4s forwards;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.intro-next:hover,
+.intro-next:focus-visible {
+  color: var(--color-accent);
+  outline: none;
+}
+
+.intro-next .arrow {
+  display: block;
+  margin: 0.55rem auto 0;
+  font-size: 1rem;
+  line-height: 1;
+  animation: intro-arrow 2.8s ease-in-out infinite;
+}
+
+@keyframes intro-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes intro-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes intro-arrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-content,
+  .intro-next,
+  .intro-next .arrow {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* -------- Header (used on sub-pages) -------- */
 .site-header {
   display: flex;
   flex-direction: column;
