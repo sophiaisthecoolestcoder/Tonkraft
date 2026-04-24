@@ -120,10 +120,38 @@
 
     const cursor = { x: 0, y: 0 };
     const cursorTarget = { x: 0, y: 0 };
+
+    // mouse-trail: small ripples spawn as the cursor travels,
+    // so moving the pointer feels like walking through water.
+    let lastTrailX = null,
+      lastTrailY = null,
+      lastTrailT = 0;
+    const TRAIL_DIST = 44;
+    const TRAIL_MIN_GAP = 110;
+
     section.addEventListener("pointermove", (e) => {
       const rect = section.getBoundingClientRect();
-      cursorTarget.x = (e.clientX - rect.left) / Math.max(w, 1) - 0.5;
-      cursorTarget.y = (e.clientY - rect.top) / Math.max(h, 1) - 0.5;
+      const px = e.clientX - rect.left;
+      const py = e.clientY - rect.top;
+      cursorTarget.x = px / Math.max(w, 1) - 0.5;
+      cursorTarget.y = py / Math.max(h, 1) - 0.5;
+
+      const now = performance.now();
+      if (now - lastTrailT < TRAIL_MIN_GAP) return;
+      if (lastTrailX === null) {
+        lastTrailX = px;
+        lastTrailY = py;
+        lastTrailT = now;
+        return;
+      }
+      const dx = px - lastTrailX,
+        dy = py - lastTrailY;
+      if (dx * dx + dy * dy > TRAIL_DIST * TRAIL_DIST) {
+        spawnRipple(px, py, { small: true });
+        lastTrailX = px;
+        lastTrailY = py;
+        lastTrailT = now;
+      }
     });
     section.addEventListener("pointerleave", () => {
       cursorTarget.x = 0;
@@ -177,18 +205,20 @@
       const maxR = Math.min(w, h) * 0.48;
       for (let i = ripples.length - 1; i >= 0; i--) {
         const rp = ripples[i];
-        const life = rp.big ? 8000 : 6400;
+        const life = rp.big ? 8000 : rp.small ? 2400 : 6400;
         const age = (t - rp.born) / life;
         if (age >= 1) {
           ripples.splice(i, 1);
           continue;
         }
-        const r = (1 - Math.pow(1 - age, 3)) * maxR * (rp.big ? 1.5 : 1);
-        const a = (rp.big ? 0.3 : 0.2) * Math.sin(age * Math.PI) * bloom;
+        const sizeMul = rp.big ? 1.5 : rp.small ? 0.22 : 1;
+        const r = (1 - Math.pow(1 - age, 3)) * maxR * sizeMul;
+        const alphaBase = rp.big ? 0.36 : rp.small ? 0.2 : 0.26;
+        const a = alphaBase * Math.sin(age * Math.PI) * bloom;
         ctx.beginPath();
         ctx.arc(rp.x, rp.y, r, 0, Math.PI * 2);
         ctx.strokeStyle = `rgba(${RGB}, ${a})`;
-        ctx.lineWidth = rp.big ? 1.4 : 1;
+        ctx.lineWidth = rp.big ? 1.6 : rp.small ? 0.9 : 1.2;
         ctx.stroke();
       }
     }
@@ -290,7 +320,15 @@
   }
 
   if (landing) {
-    landing.addEventListener("click", advanceFromLanding);
+    landing.addEventListener("click", (e) => {
+      // Leave a visible ripple at the click point, then advance
+      // slightly delayed so the user sees their own gesture.
+      if (landingWave && typeof e.clientX === "number") {
+        const { x, y } = landingWave.getCtxOffsetForEvent(e);
+        landingWave.spawnRipple(x, y, { big: true });
+      }
+      window.setTimeout(advanceFromLanding, 240);
+    });
   }
   window.addEventListener("keydown", (e) => {
     if (!landingInView) return;
@@ -308,13 +346,13 @@
   let landingWave = null;
   if (!REDUCED && landingCanvas) {
     landingWave = createWaveRenderer(landing, landingCanvas, {
-      amp1: 1,
-      amp2: 1,
+      amp1: 1.35,
+      amp2: 1.3,
       freq1: 1,
       freq2: 1,
-      alpha1: 0.55,
-      alpha2: 0.13,
-      rippleInterval: 2600,
+      alpha1: 0.7,
+      alpha2: 0.18,
+      rippleInterval: 1400,
     });
     landingWave.start();
   }
@@ -389,15 +427,11 @@
     }
 
     story.addEventListener("click", advanceStory);
-    window.addEventListener("keydown", (e) => {
-      if (landingInView) return;
+    // Keyboard only while the story element itself is focused, so
+    // ArrowDown / PageDown still scroll the rest of the site naturally.
+    story.addEventListener("keydown", (e) => {
       if (beatIndex >= TOTAL) return;
-      if (
-        e.key === "Enter" ||
-        e.key === " " ||
-        e.key === "ArrowDown" ||
-        e.key === "PageDown"
-      ) {
+      if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         advanceStory();
       }

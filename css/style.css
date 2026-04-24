@@ -153,13 +153,13 @@ html.lang-en [lang="de"] {
   text-shadow: 0 0 28px var(--indigo-glow);
 }
 
-/* — the wave — */
+/* — the wave — on top of grain so strokes stay crisp — */
 .landing__wave {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
   opacity: 0;
   transition: opacity 1.6s var(--ease-soft);
@@ -168,13 +168,13 @@ html.lang-en [lang="de"] {
   opacity: 1;
 }
 
-/* — paper grain — */
+/* — paper grain — behind the wave, so the wave reads cleanly — */
 .landing__grain {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
-  opacity: 0.35;
+  opacity: 0.22;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.11 0 0 0 0 0.20 0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   background-size: 260px 260px;
@@ -389,7 +389,7 @@ html.lang-en [lang="de"] {
   cursor: pointer;
   overflow: hidden;
   isolation: isolate;
-  background: var(--paper-2);
+  background: var(--paper);
 }
 
 .story:focus-visible {
@@ -401,7 +401,7 @@ html.lang-en [lang="de"] {
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
   opacity: 0.95;
 }
@@ -409,9 +409,9 @@ html.lang-en [lang="de"] {
 .story__grain {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
-  opacity: 0.3;
+  opacity: 0.2;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.11 0 0 0 0 0.20 0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   background-size: 260px 260px;
@@ -555,6 +555,191 @@ html.lang-en [lang="de"] {
 }
 
 /* ============================================================
+   Seal breath — a quiet life-sign on both seals.
+   Uses the independent `scale` property so it stacks cleanly
+   with the reveal's translate transform (and with beat 3's
+   transform on the story seal wrap).
+   ============================================================ */
+
+@keyframes seal-breath {
+  0%,
+  100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.025;
+  }
+}
+.is-ready .landing__seal {
+  animation: seal-breath 6.5s ease-in-out 2s infinite;
+}
+.story__seal {
+  animation: seal-breath 6.5s ease-in-out infinite;
+}
+
+/* ============================================================
+   CHAPTERS — Institute · Grundton · Offerings · Method ·
+   Sonologen · Kontakt. Editorial rhythm: thin wave ornament
+   at the top, eyebrow label, large serif heading, airy prose.
+   ============================================================ */
+
+.chapter {
+  position: relative;
+  width: 100%;
+  padding: clamp(5rem, 11vh, 8rem) clamp(1.25rem, 5vw, 3rem);
+  background: var(--paper);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* thin wave divider used at the top of each chapter */
+.chapter__ornament {
+  width: clamp(6rem, 12vw, 9rem);
+  height: 16px;
+  margin: 0 auto clamp(3rem, 6vh, 4.5rem);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 10' fill='none' stroke='%231c528a' stroke-width='0.7' stroke-linecap='round'><path d='M 0,5 Q 10,0 20,5 T 40,5 T 60,5 T 80,5 T 100,5 T 120,5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.55;
+}
+
+.chapter__inner {
+  max-width: 44rem;
+  width: 100%;
+  text-align: center;
+}
+
+.chapter__eyebrow {
+  margin: 0 0 1.4rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.chapter__title {
+  margin: 0 0 clamp(2rem, 4vh, 3rem);
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  font-weight: 320;
+  font-size: clamp(2.1rem, 5.4vw, 3.8rem);
+  line-height: 1.12;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+.chapter__title em {
+  font-style: italic;
+  font-weight: 350;
+}
+
+.chapter__prose {
+  margin: 0 auto;
+  max-width: 36rem;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--ink-soft);
+  text-align: left;
+}
+.chapter__prose p {
+  margin: 0 0 1.4rem;
+}
+.chapter__prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* italic closing line under prose — a question or invitation */
+.chapter__close {
+  margin: clamp(2.5rem, 5vh, 3.5rem) auto 0;
+  max-width: 32rem;
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 72, "SOFT" 80;
+  font-style: italic;
+  font-weight: 330;
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+  line-height: 1.4;
+  color: var(--ink);
+  text-align: center;
+}
+
+/* offerings list — centered, hairline dividers, italic serif */
+.chapter__list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 32rem;
+  text-align: center;
+}
+.chapter__list li {
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--line);
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 36, "SOFT" 60;
+  font-style: italic;
+  font-weight: 360;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  line-height: 1.4;
+  color: var(--ink);
+  letter-spacing: 0.008em;
+}
+.chapter__list li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+/* contact section tweaks — an email link styled as a quiet CTA */
+.chapter--contact .chapter__email {
+  display: inline-block;
+  margin-top: clamp(2rem, 4vh, 2.75rem);
+  padding: 0.85rem 0.2rem 0.85rem;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  text-decoration: none;
+  transition:
+    color 0.4s var(--ease-soft),
+    border-color 0.4s var(--ease-soft);
+}
+.chapter--contact .chapter__email:hover,
+.chapter--contact .chapter__email:focus-visible {
+  color: var(--indigo);
+  border-color: var(--indigo);
+  outline: none;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.site-footer {
+  padding: 3.5rem 1.5rem 4rem;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  background: var(--paper-2);
+  border-top: 1px solid var(--line);
+}
+.site-footer p {
+  margin: 0.35rem 0;
+}
+.site-footer .site-footer__mark {
+  color: var(--ink-soft);
+}
+
+/* ============================================================
    Reduced motion
    ============================================================ */
 
@@ -577,5 +762,9 @@ html.lang-en [lang="de"] {
   .landing__hint-pulse {
     animation: none !important;
     box-shadow: none !important;
+  }
+  .is-ready .landing__seal,
+  .story__seal {
+    animation: none !important;
   }
 }
