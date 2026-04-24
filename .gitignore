@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies (in case tooling is added later)
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# Environment
+.env
+.env.local
+.env.*.local
