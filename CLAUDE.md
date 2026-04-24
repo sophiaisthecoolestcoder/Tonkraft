@@ -47,9 +47,13 @@ Do not recreate them without the user's explicit direction.
 
 ## Hard rules
 
-- **Saffron (`--saffron`, `#b87a3e`) is reserved for the Aum seal
-  (ॐ/ओं) only.** Never use it on buttons, lines, underlines, dots,
-  icons, or anything else.
+- **The palette is monochrome Vishuddha-blue on paper — no other
+  accent colours.** No saffron, no brass, no gold. The wave, the
+  ripples, the pulse dot, the Aum seal all share the one `--indigo`;
+  they're differentiated by size, alpha, weight and motion, not hue.
+- **The Aum seal is the specific three-syllable Vedic form: औं
+  (AU + anusvāra, `&#x0914;&#x0902;`).** Not the pranava ॐ, not ओं.
+  If anyone changes it, change it back.
 - **Only two animated elements**: the sine wave and the radial ripples,
   both drawn on the single canvas in `landing.js`. If a third moving
   thing feels tempting, remove something first.

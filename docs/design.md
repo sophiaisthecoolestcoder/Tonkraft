@@ -17,9 +17,10 @@
 2. **Typography as the hero.** The wordmark, set in Fraunces at a large
    optical size with tight tracking and a very light weight, is the emotional
    anchor. Effects decorate; they do not replace typography.
-3. **Manuscript lineage.** The palette and composition reference classical
-   Indian manuscript folios: **deep ink on warm paper**, with a single
-   **saffron** mark reserved for sacred glyphs.
+3. **Vishuddha monochrome.** The palette is the throat-chakra: deep
+   indigo-ink text on warm paper, with a luminous Vishuddha dusk-blue
+   reserved for the living elements (wave, ripples, Aum seal). No
+   other accent colours — chromatic restraint is part of the voice.
 4. **Breath over bounce.** All motion has a 4–8 second natural cycle.
    Nothing springs, nothing punches, nothing slides in from the side.
 5. **Bilingual-friendly.** Primary language is German. The Aum seal carries
@@ -37,9 +38,9 @@
 | `--ink-soft`      | `#3b4668`  | Secondary text.                           |
 | `--ink-mute`      | `#7f8598`  | Tertiary text / labels.                   |
 | `--line`          | `#d8cfbf`  | Hairline dividers (rarely used).          |
-| `--indigo`        | `#1c528a`  | Wave, ripples, pulse, accents.            |
-| `--indigo-glow`   | `rgba(…)`  | Focus/glow state.                         |
-| `--saffron`       | `#b87a3e`  | **Reserved** for the Aum seal only.       |
+| `--indigo`        | `#1c528a`  | Wave, ripples, pulse, Aum seal.           |
+| `--indigo-soft`   | `#3b6ea8`  | Halo / glow layers behind the seal.       |
+| `--indigo-glow`   | `rgba(…)`  | Focus ring.                               |
 
 ### Why Vishuddha blue
 
@@ -47,15 +48,15 @@ Vishuddha — the throat chakra — is the energy centre governing **sound,
 voice and communication**. Its traditional colour is a luminous dusk /
 sky blue. Our `--indigo` (`#1c528a`) is a manuscript-legible version of
 that colour: deep enough to read cleanly on paper, luminous enough to
-suggest sky and resonance.
+suggest sky, ether (ākāśa), and resonance.
 
-### Why saffron stays scarce
+### No accent colours
 
-Saffron (`--saffron`) appears **only** on the Aum glyph (ॐ). This mirrors
-classical Indian folios, where saffron and gold were reserved for sacred
-initials while body text was copied in indigo or iron-gall ink. Saffron
-used anywhere else cheapens it. Do not add saffron accents to buttons,
-underlines, or icons.
+The palette is intentionally monochrome-on-paper. There is no warm
+accent (no saffron, no brass, no gold). Every living mark — the wave,
+the ripples, the pulse, the Aum seal — is drawn from the same Vishuddha
+blue, differentiated by size, weight, alpha and motion rather than hue.
+This is the voice: one chakra, one colour, one breath.
 
 ---
 
@@ -65,7 +66,7 @@ underlines, or icons.
 | ---------- | ---------------------------- | ----------------------------------------- |
 | Display    | **Fraunces** (variable)      | `opsz` ~144 at display sizes; light weight (~320); very slightly softened via `SOFT` axis. |
 | Body / UI  | **Inter Tight**              | Only for eyebrows, hints, small labels.   |
-| Sanskrit   | **Noto Serif Devanagari**    | The Aum seal.                             |
+| Sanskrit   | **Noto Serif Devanagari**    | The Aum seal (औं — AU + anusvāra).        |
 
 **Rules**
 

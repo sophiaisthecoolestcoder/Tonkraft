@@ -14,9 +14,9 @@
   --ink-soft: #3b4668;              /* secondary */
   --ink-mute: #7f8598;              /* tertiary */
   --line: #d8cfbf;                  /* hairlines on paper */
-  --indigo: #1c528a;                /* Vishuddha — throat-chakra dusk blue, used for the wave & ripples */
+  --indigo: #1c528a;                /* Vishuddha — throat-chakra dusk blue: wave, ripples, seal */
+  --indigo-soft: #3b6ea8;           /* softer Vishuddha for glow layers */
   --indigo-glow: rgba(28, 82, 138, 0.28);
-  --saffron: #b87a3e;               /* reserved — only for the Aum seal */
 
   /* type */
   --serif: "Fraunces", "Cormorant Garamond", "EB Garamond", Georgia, serif;
@@ -194,23 +194,43 @@ html.lang-en [lang="de"] {
   transform: translateY(-4vh);
 }
 
-/* — seal (Aum) — the single saffron note — */
+/* — seal (Aum / औं) — the first utterance, Vishuddha blue — */
 .landing__seal {
+  position: relative;
   font-family: var(--deva);
-  font-weight: 400;
-  font-size: clamp(2.4rem, 5vw, 3.4rem);
-  color: var(--saffron);
+  font-weight: 500;
+  font-size: clamp(2.8rem, 5.6vw, 4rem);
+  color: var(--indigo);
   line-height: 1;
+  letter-spacing: 0.01em;
   opacity: 0;
   transform: translateY(6px);
   transition:
-    opacity 1.6s var(--ease-out) 0.1s,
-    transform 1.8s var(--ease-out) 0.1s;
+    opacity 1.8s var(--ease-out) 0.1s,
+    transform 2s var(--ease-out) 0.1s;
   user-select: none;
+  /* soft throat-chakra luminosity around the glyph */
+  text-shadow:
+    0 0 18px rgba(28, 82, 138, 0.22),
+    0 0 44px rgba(28, 82, 138, 0.12);
 }
 .is-ready .landing__seal {
-  opacity: 0.9;
+  opacity: 0.95;
   transform: translateY(0);
+}
+/* a faint sky-blue halo sitting behind the glyph, sized to it */
+.landing__seal::before {
+  content: "";
+  position: absolute;
+  inset: -0.8em;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 52%,
+    rgba(59, 110, 168, 0.18) 0%,
+    rgba(59, 110, 168, 0) 65%
+  );
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* — eyebrow — */
