@@ -139,13 +139,68 @@
         </div>
       </section>
 
-      <!-- ──────────────  NEXT (placeholder)  ────────────── -->
-      <section class="next" id="next" aria-label="Fortsetzung / Continued">
-        <p class="next__kicker">— Tonkraft —</p>
-        <p class="next__body">
-          <span lang="de"><em>Fortsetzung folgt.</em></span>
-          <span lang="en"><em>To be continued.</em></span>
-        </p>
+      <!-- ──────────────  STORY  ────────────── -->
+      <section
+        class="story"
+        id="next"
+        role="button"
+        tabindex="0"
+        aria-label="Tonkraft — eine Einladung"
+      >
+        <canvas class="story__wave" aria-hidden="true"></canvas>
+        <div class="story__grain" aria-hidden="true"></div>
+
+        <div class="story__seal-wrap" aria-hidden="true">
+          <span class="story__seal" lang="sa">&#x0914;&#x0902;</span>
+        </div>
+
+        <div class="story__stage" aria-live="polite">
+          <article class="story__beat is-active" data-beat="1">
+            <p>
+              <span lang="de">Bevor es ein Wort gab, gab es einen Klang.</span>
+              <span lang="en">Before there was a word, there was a sound.</span>
+            </p>
+          </article>
+
+          <article class="story__beat" data-beat="2">
+            <p>
+              <span lang="de">Alles in Ihnen schwingt.</span>
+              <span lang="en">Everything in you vibrates.</span>
+            </p>
+          </article>
+
+          <article class="story__beat" data-beat="3" data-wordless="true">
+            <p class="story__beat-caption">
+              <span lang="de">Die Alten kannten ihn.</span>
+              <span lang="en">The ancients knew it.</span>
+            </p>
+          </article>
+
+          <article class="story__beat" data-beat="4">
+            <p>
+              <span lang="de">Ihr Grundton.</span>
+              <span lang="en">Your fundamental tone.</span>
+            </p>
+          </article>
+
+          <article class="story__beat" data-beat="5">
+            <p>
+              <span lang="de"><em>Hören Sie ihn?</em></span>
+              <span lang="en"><em>Do you hear it?</em></span>
+            </p>
+          </article>
+
+          <article class="story__beat" data-beat="6">
+            <p>
+              <span lang="de">Kommen Sie.<br /><em>Wir hören zusammen.</em></span>
+              <span lang="en">Come.<br /><em>Let us listen together.</em></span>
+            </p>
+          </article>
+        </div>
+
+        <div class="story__hint" aria-hidden="true">
+          <span class="story__hint-pulse"></span>
+        </div>
       </section>
     </main>
   </body>
