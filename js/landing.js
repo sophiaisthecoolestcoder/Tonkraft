@@ -327,6 +327,8 @@
   function scrollToInstitute() {
     const inst = document.getElementById("institute");
     if (inst) {
+      // pre-mark visible so it's already present when the story fades
+      inst.classList.add("is-visible");
       inst.scrollIntoView({
         behavior: REDUCED ? "auto" : "smooth",
         block: "start",
@@ -343,15 +345,66 @@
     }
   }
 
-  if (landing) {
-    landing.addEventListener("click", (e) => {
-      if (landingWave && typeof e.clientX === "number") {
-        const { x, y } = landingWave.getCtxOffsetForEvent(e);
-        landingWave.spawnRipple(x, y, { big: true });
-      }
-      window.setTimeout(advanceFromLanding, 240);
-    });
+  // Unified entry: click, scroll-down, or pressed key all perform
+  // the same advance. Scroll has priority so it can preventDefault
+  // before the browser begins its natural scroll.
+  let landingAdvanceLock = false;
+  function lockLandingAdvance() {
+    landingAdvanceLock = true;
+    window.setTimeout(() => {
+      landingAdvanceLock = false;
+    }, 1400);
   }
+  function triggerLandingAdvance(e) {
+    if (landingAdvanceLock) return;
+    lockLandingAdvance();
+    if (landingWave && e && typeof e.clientX === "number") {
+      const { x, y } = landingWave.getCtxOffsetForEvent(e);
+      landingWave.spawnRipple(x, y, { big: true });
+    }
+    window.setTimeout(advanceFromLanding, 180);
+  }
+
+  if (landing) {
+    landing.addEventListener("click", triggerLandingAdvance);
+
+    // wheel / scroll: intercept downward motion while on landing
+    landing.addEventListener(
+      "wheel",
+      (e) => {
+        if (!landingInView) return;
+        if (document.body.classList.contains("story-open")) return;
+        if (e.deltaY > 4) {
+          e.preventDefault();
+          triggerLandingAdvance();
+        }
+      },
+      { passive: false }
+    );
+
+    // touch: swipe up = advance (mobile)
+    let touchStartY = 0;
+    landing.addEventListener(
+      "touchstart",
+      (e) => {
+        if (e.touches.length) touchStartY = e.touches[0].clientY;
+      },
+      { passive: true }
+    );
+    landing.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!landingInView) return;
+        if (document.body.classList.contains("story-open")) return;
+        if (e.touches.length) {
+          const dy = touchStartY - e.touches[0].clientY;
+          if (dy > 40) triggerLandingAdvance();
+        }
+      },
+      { passive: true }
+    );
+  }
+
   window.addEventListener("keydown", (e) => {
     if (!landingInView) return;
     if (document.body.classList.contains("story-open")) return;
@@ -362,22 +415,31 @@
       e.key === "PageDown"
     ) {
       e.preventDefault();
-      advanceFromLanding();
+      triggerLandingAdvance();
     }
   });
 
+  // Always create the landing wave — reduced-motion users still
+  // deserve to see the visual; we just throttle the cursor-driven
+  // motion elsewhere if needed.
   let landingWave = null;
-  if (!REDUCED && landingCanvas) {
+  if (landingCanvas) {
     landingWave = createWaveRenderer(landing, landingCanvas, {
-      amp1: 1.6,
-      amp2: 1.5,
+      amp1: 1.8,
+      amp2: 1.6,
       freq1: 1,
       freq2: 1,
-      alpha1: 0.78,
-      alpha2: 0.22,
-      rippleInterval: 1100,
+      alpha1: 0.82,
+      alpha2: 0.26,
+      rippleInterval: 950,
     });
     landingWave.start();
+    // Recompute size once layout has definitely settled — guards
+    // against first-paint measurements on some browsers returning 0.
+    window.addEventListener("load", () => {
+      const evt = new Event("resize");
+      window.dispatchEvent(evt);
+    });
   }
 
   // -----------------------------------------------------------
@@ -454,8 +516,10 @@
 
     function finishStory() {
       markStorySeen();
+      // Start the scroll immediately so it arrives at Institute
+      // around the same moment the fade completes.
+      scrollToInstitute();
       body.classList.remove("story-open");
-      window.setTimeout(scrollToInstitute, 250);
     }
 
     // exposed to advanceFromLanding above
@@ -471,5 +535,76 @@
         advanceStory();
       }
     });
+  }
+
+  // -----------------------------------------------------------
+  //  Atmosphere — site-wide background wave, very faint.
+  //  Sits behind everything, drifting independently of scroll.
+  // -----------------------------------------------------------
+  const atmosphere = document.querySelector(".atmosphere");
+  const atmosphereCanvas =
+    atmosphere && atmosphere.querySelector(".atmosphere__wave");
+  if (atmosphere && atmosphereCanvas) {
+    const atmWave = createWaveRenderer(atmosphere, atmosphereCanvas, {
+      amp1: 0.9,
+      amp2: 0.95,
+      freq1: 0.65,
+      freq2: 0.55,
+      alpha1: 0.13,
+      alpha2: 0.06,
+      rippleInterval: 4500,
+    });
+    atmWave.start();
+  }
+
+  // -----------------------------------------------------------
+  //  Scroll-triggered reveal for chapters
+  // -----------------------------------------------------------
+  if ("IntersectionObserver" in window) {
+    const chapterIO = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("is-visible");
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+    document
+      .querySelectorAll(".chapter")
+      .forEach((c) => chapterIO.observe(c));
+  } else {
+    // fallback: show immediately
+    document
+      .querySelectorAll(".chapter")
+      .forEach((c) => c.classList.add("is-visible"));
+  }
+
+  // -----------------------------------------------------------
+  //  Parallax — subtle depth for elements marked [data-parallax].
+  //  Positive factor lags behind scroll; negative factor leads.
+  // -----------------------------------------------------------
+  const parallaxEls = document.querySelectorAll("[data-parallax]");
+  if (parallaxEls.length && !REDUCED) {
+    let rafPending = false;
+    function updateParallax() {
+      rafPending = false;
+      const vh = window.innerHeight;
+      parallaxEls.forEach((el) => {
+        const factor = parseFloat(el.dataset.parallax) || 0;
+        const rect = el.getBoundingClientRect();
+        // distance of element's center from viewport center
+        const center = rect.top + rect.height / 2 - vh / 2;
+        const translate = -center * factor;
+        el.style.setProperty("--parallax-y", translate.toFixed(1) + "px");
+      });
+    }
+    function onScroll() {
+      if (rafPending) return;
+      rafPending = true;
+      requestAnimationFrame(updateParallax);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    updateParallax();
   }
 })();
