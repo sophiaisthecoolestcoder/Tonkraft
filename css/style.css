@@ -1,0 +1,220 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text: #3a3a3a;
+  --color-text-soft: #7a7a7a;
+  --color-text-muted: #9a9a9a;
+  --color-line: #ececec;
+  --color-accent: #1f1f1f;
+  --font-display: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  --font-body: "Lora", Georgia, serif;
+  --sidebar-width: 260px;
+  --header-height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 17px;
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* -------- Header -------- */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem 2rem;
+  border-bottom: 1px solid var(--color-line);
+  text-align: center;
+}
+
+.logo {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  letter-spacing: 0.22em;
+  color: var(--color-accent);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.site-title a {
+  color: inherit;
+}
+
+/* -------- Layout -------- */
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  min-height: calc(100vh - 200px);
+}
+
+/* -------- Sidebar -------- */
+.sidebar {
+  border-right: 1px solid var(--color-line);
+  padding: 3.5rem 2rem;
+}
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.nav a {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-soft);
+  text-transform: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.nav a:hover {
+  color: var(--color-accent);
+}
+
+.nav a.active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+/* -------- Main -------- */
+.main {
+  padding: 5rem 3rem 6rem;
+}
+
+/* -------- Home -------- */
+.home {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-text-soft);
+}
+
+.home h1 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  letter-spacing: 0.05em;
+  color: var(--color-text-soft);
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+}
+
+.home .lead {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--color-text-soft);
+  font-weight: 400;
+  margin: 0 auto;
+}
+
+.home .divider {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background-color: var(--color-line);
+  margin: 2.5rem auto;
+  border: 0;
+}
+
+/* -------- Content pages -------- */
+.content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.content h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  margin: 0 0 2rem;
+}
+
+.content h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0.03em;
+  color: var(--color-accent);
+  margin: 2.5rem 0 1rem;
+}
+
+.content p {
+  margin: 0 0 1.25rem;
+  color: var(--color-text);
+}
+
+/* -------- Footer -------- */
+.site-footer {
+  border-top: 1px solid var(--color-line);
+  padding: 1.75rem 2rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 780px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--color-line);
+    padding: 1.5rem 2rem;
+  }
+
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 1.75rem;
+  }
+
+  .main {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .site-header {
+    padding: 2.25rem 1.5rem 1.5rem;
+  }
+}
