@@ -3,191 +3,150 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tonkraft</title>
-    <meta name="description" content="Tonkraft — Institut" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f2ede4" />
+    <title>Tonkraft — Klang, Resonanz, Grundton</title>
+    <meta
+      name="description"
+      content="Tonkraft — Institut für Sonologie. Klang, Resonanz und der Persönliche Grundton."
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Lora:wght@400;500&family=Noto+Serif+Devanagari:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..500,0..100&family=Inter+Tight:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;600&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="css/style.css" />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"
-    ></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples-min.js"
-    ></script>
-    <script defer src="js/intro.js"></script>
+
+    <!-- Set language class before first paint to avoid flicker. -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("tonkraft:lang");
+          var browser = (navigator.language || "de")
+            .toLowerCase()
+            .startsWith("en")
+            ? "en"
+            : "de";
+          var lang = saved === "en" || saved === "de" ? saved : browser;
+          document.documentElement.lang = lang;
+          document.documentElement.classList.add("lang-" + lang);
+        } catch (e) {
+          document.documentElement.classList.add("lang-de");
+        }
+      })();
+    </script>
+
+    <script defer src="js/landing.js"></script>
   </head>
-  <body>
-    <!-- First view: water-ripple animation -->
-    <section class="intro" aria-label="Willkommen">
-      <div class="intro-content">
-        <span class="logo intro-logo" role="img" aria-label="Tonkraft — Aum"
-          >औं</span
-        >
-        <h1 class="intro-title">Tonkraft</h1>
-      </div>
-      <button
-        type="button"
-        class="intro-next"
-        data-scroll-to="#after-intro"
-        aria-label="Weiter zum Inhalt"
-      >
-        Weiter
-        <span class="arrow" aria-hidden="true">↓</span>
+
+  <body class="is-loading">
+    <div class="lang-switch" aria-label="Sprache / Language">
+      <button class="lang-btn" type="button" data-lang="de" aria-pressed="true">
+        DE
       </button>
-    </section>
+      <span class="lang-switch__sep" aria-hidden="true">·</span>
+      <button
+        class="lang-btn"
+        type="button"
+        data-lang="en"
+        aria-pressed="false"
+      >
+        EN
+      </button>
+    </div>
 
-    <nav class="site-nav" id="after-intro" aria-label="Hauptnavigation">
-      <ul class="nav">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="grundton.html">Über den Persönlichen Grundton</a></li>
-        <li><a href="ueber-uns.html">Über uns</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </nav>
+    <main>
+      <!-- ──────────────  LANDING  ────────────── -->
+      <section
+        class="landing"
+        id="landing"
+        role="button"
+        tabindex="0"
+        aria-label="Tonkraft"
+      >
+        <canvas class="landing__wave" aria-hidden="true"></canvas>
 
-    <main class="main">
-      <!-- Hero -->
-      <section class="hero">
-        <h1>Willkommen bei Tonkraft</h1>
-        <p class="motto">Klang · Resonanz · Grundton</p>
-        <p class="lead">
-          Ein Ort der Begegnung mit dem eigenen Klang. Platzhaltertext für die
-          Einleitung, der später durch die endgültige Beschreibung des Instituts
-          ersetzt wird.
+        <div class="landing__grain" aria-hidden="true"></div>
+
+        <div class="landing__stage">
+          <span
+            class="landing__seal"
+            lang="sa"
+            aria-label="Aum"
+            >&#x0950;</span
+          >
+
+          <p class="landing__eyebrow" aria-hidden="true">
+            <span lang="de">
+              <span>Sonologie</span>
+              <span class="landing__dot"></span>
+              <span>Institut</span>
+            </span>
+            <span lang="en">
+              <span>Sonology</span>
+              <span class="landing__dot"></span>
+              <span>Institute</span>
+            </span>
+          </p>
+
+          <h1 class="landing__wordmark" aria-label="Tonkraft">
+            <span class="letter" style="--i: 0">t</span><span
+              class="letter"
+              style="--i: 1"
+              >o</span
+            ><span class="letter" style="--i: 2">n</span><span
+              class="letter letter--gap"
+              style="--i: 3"
+              >k</span
+            ><span class="letter" style="--i: 4">r</span><span
+              class="letter"
+              style="--i: 5"
+              >a</span
+            ><span class="letter" style="--i: 6">f</span><span
+              class="letter"
+              style="--i: 7"
+              >t</span
+            >
+          </h1>
+
+          <p class="landing__tagline">
+            <span lang="de">
+              <em>Klang</em>
+              <span class="landing__sep" aria-hidden="true">·</span>
+              <em>Resonanz</em>
+              <span class="landing__sep" aria-hidden="true">·</span>
+              <em>Grundton</em>
+            </span>
+            <span lang="en">
+              <em>Sound</em>
+              <span class="landing__sep" aria-hidden="true">·</span>
+              <em>Resonance</em>
+              <span class="landing__sep" aria-hidden="true">·</span>
+              <em>Fundamental</em>
+            </span>
+          </p>
+        </div>
+
+        <div class="landing__hint" aria-hidden="true">
+          <span class="landing__hint-pulse"></span>
+          <span class="landing__hint-text">
+            <span lang="de">Berühren, um fortzufahren</span>
+            <span lang="en">Touch to continue</span>
+          </span>
+        </div>
+      </section>
+
+      <!-- ──────────────  NEXT (placeholder)  ────────────── -->
+      <section class="next" id="next" aria-label="Fortsetzung / Continued">
+        <p class="next__kicker">— Tonkraft —</p>
+        <p class="next__body">
+          <span lang="de"><em>Fortsetzung folgt.</em></span>
+          <span lang="en"><em>To be continued.</em></span>
         </p>
-        <div class="hero-actions">
-          <a class="btn" href="grundton.html">Mehr erfahren</a>
-          <a class="btn btn-ghost" href="kontakt.html">Kontakt aufnehmen</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="num">—</span>
-            <span class="label">Jahre Erfahrung</span>
-          </div>
-          <div class="stat">
-            <span class="num">—</span>
-            <span class="label">Sitzungen</span>
-          </div>
-          <div class="stat">
-            <span class="num">—</span>
-            <span class="label">Orte</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- About / Intro -->
-      <section class="section">
-        <div class="container">
-          <div class="section-header">
-            <p class="eyebrow">Das Institut</p>
-            <h2>Klang, Stille und der Persönliche Grundton</h2>
-            <p>
-              Platzhalter für eine kurze Einführung in die Arbeit von Tonkraft
-              — Mission, Haltung und Schwerpunkte.
-            </p>
-          </div>
-          <div class="grid">
-            <div class="card">
-              <h3>Einzelarbeit</h3>
-              <p>Platzhaltertext. Kurze Beschreibung folgt.</p>
-            </div>
-            <div class="card">
-              <h3>Seminare</h3>
-              <p>Platzhaltertext. Kurze Beschreibung folgt.</p>
-            </div>
-            <div class="card">
-              <h3>Ausbildung</h3>
-              <p>Platzhaltertext. Kurze Beschreibung folgt.</p>
-            </div>
-            <div class="card">
-              <h3>Forschung</h3>
-              <p>Platzhaltertext. Kurze Beschreibung folgt.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Discovering the Grundton -->
-      <section class="section section-soft">
-        <div class="container">
-          <div class="section-header">
-            <p class="eyebrow">Einblick</p>
-            <h2>Über den Persönlichen Grundton</h2>
-            <p>
-              Einführender Platzhaltertext über das Konzept des Persönlichen
-              Grundtons.
-            </p>
-          </div>
-          <div class="prose">
-            <p>
-              Platzhalterabsatz. Hier entsteht eine längere Beschreibung des
-              Persönlichen Grundtons — was er ist, wie er gefunden wird und
-              welche Bedeutung er im Leben entfalten kann.
-            </p>
-            <h3>Herkunft</h3>
-            <p>Platzhaltertext.</p>
-            <h3>Wirkung</h3>
-            <p>Platzhaltertext.</p>
-            <h3>Anwendung</h3>
-            <p>Platzhaltertext.</p>
-          </div>
-          <div class="section-cta">
-            <a class="btn btn-ghost" href="grundton.html">Weiterlesen</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Events -->
-      <section class="section">
-        <div class="container">
-          <div class="section-header">
-            <p class="eyebrow">Termine</p>
-            <h2>Kommende Veranstaltungen</h2>
-            <p>
-              Aktuelle Seminare, Einzeltermine und Veranstaltungen werden hier
-              gelistet.
-            </p>
-          </div>
-          <div class="events-placeholder">Termine folgen in Kürze.</div>
-        </div>
-      </section>
-
-      <!-- Benefits -->
-      <section class="section section-soft">
-        <div class="container">
-          <div class="section-header">
-            <p class="eyebrow">Warum Tonkraft</p>
-            <h2>Was Sie bei uns finden</h2>
-            <p>Platzhalter für die vier Leitgedanken des Instituts.</p>
-          </div>
-          <div class="grid">
-            <div class="card">
-              <h3>Achtsamkeit</h3>
-              <p>Platzhaltertext.</p>
-            </div>
-            <div class="card">
-              <h3>Klang</h3>
-              <p>Platzhaltertext.</p>
-            </div>
-            <div class="card">
-              <h3>Resonanz</h3>
-              <p>Platzhaltertext.</p>
-            </div>
-            <div class="card">
-              <h3>Gemeinschaft</h3>
-              <p>Platzhaltertext.</p>
-            </div>
-          </div>
-        </div>
       </section>
     </main>
-
-    <footer class="site-footer">&copy; 2026 Tonkraft</footer>
   </body>
 </html>
