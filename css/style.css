@@ -6,8 +6,10 @@
   --color-text-muted: #9a9a9a;
   --color-line: #ececec;
   --color-accent: #1f1f1f;
+  --color-logo: #1c4fa0;
   --font-display: "Cormorant Garamond", "EB Garamond", Georgia, serif;
   --font-body: "Lora", Georgia, serif;
+  --font-devanagari: "Noto Serif Devanagari", "Sanskrit Text", serif;
   --max-width: 1120px;
 }
 
@@ -52,9 +54,15 @@ img {
 }
 
 .logo {
-  width: 72px;
-  height: 72px;
+  font-family: var(--font-devanagari);
+  font-weight: 700;
+  font-size: 4.2rem;
+  line-height: 1;
+  color: var(--color-logo);
   margin-bottom: 1.25rem;
+  display: inline-block;
+  user-select: none;
+  letter-spacing: 0;
 }
 
 .site-title {
