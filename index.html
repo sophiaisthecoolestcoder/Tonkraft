@@ -74,6 +74,55 @@
         tabindex="0"
         aria-label="Tonkraft"
       >
+        <!-- SVG waves + concentric rings, always visible. Drawn with
+             pure CSS + SMIL so rendering does not depend on JS. -->
+        <svg
+          class="landing__svg"
+          viewBox="0 0 1600 900"
+          preserveAspectRatio="xMidYMid slice"
+          aria-hidden="true"
+        >
+          <g class="landing__svg-waves">
+            <path
+              d="M -400 450 Q -250 380 -100 450 T 200 450 T 500 450 T 800 450 T 1100 450 T 1400 450 T 1700 450 T 2000 450"
+              stroke="rgba(28,82,138,0.62)"
+              stroke-width="2.5"
+              fill="none"
+              stroke-linecap="round"
+            />
+            <path
+              d="M -400 480 Q -220 540 -40 480 T 320 480 T 680 480 T 1040 480 T 1400 480 T 1760 480 T 2100 480"
+              stroke="rgba(28,82,138,0.28)"
+              stroke-width="1.8"
+              fill="none"
+              stroke-linecap="round"
+            />
+            <path
+              d="M -400 508 Q -250 478 -100 508 T 200 508 T 500 508 T 800 508 T 1100 508 T 1400 508 T 1700 508"
+              stroke="rgba(28,82,138,0.18)"
+              stroke-width="1.4"
+              fill="none"
+              stroke-linecap="round"
+            />
+          </g>
+          <g class="landing__svg-rings" transform="translate(800 450)">
+            <circle r="10" stroke="rgba(28,82,138,0.5)" stroke-width="1.5" fill="none">
+              <animate attributeName="r" from="10" to="520" dur="4.5s" begin="0s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0;0.55;0" dur="4.5s" begin="0s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="10" stroke="rgba(28,82,138,0.45)" stroke-width="1.3" fill="none">
+              <animate attributeName="r" from="10" to="520" dur="4.5s" begin="1.5s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0;0.5;0" dur="4.5s" begin="1.5s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="10" stroke="rgba(28,82,138,0.4)" stroke-width="1.1" fill="none">
+              <animate attributeName="r" from="10" to="520" dur="4.5s" begin="3s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0;0.45;0" dur="4.5s" begin="3s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+        </svg>
+
+        <!-- Canvas overlay: if JS runs, adds cursor-trail ripples
+             and a click-spawn ring on top of the SVG. -->
         <canvas class="landing__wave" aria-hidden="true"></canvas>
 
         <div class="landing__grain" aria-hidden="true"></div>

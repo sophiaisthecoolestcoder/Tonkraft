@@ -153,13 +153,36 @@ html.lang-en [lang="de"] {
   text-shadow: 0 0 28px var(--indigo-glow);
 }
 
-/* — the wave — always visible, on top of grain so strokes stay crisp — */
-.landing__wave {
+/* — SVG waves (primary, always visible) — */
+.landing__svg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+.landing__svg-waves {
+  animation: landing-wave-drift 10s linear infinite;
+  transform-origin: center;
+}
+@keyframes landing-wave-drift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-300px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing__svg-waves { animation: none; }
+  .landing__svg-rings circle animate { display: none; }
+}
+
+/* — Canvas overlay (for cursor trail + click ripples) — */
+.landing__wave {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
   pointer-events: none;
   opacity: 1;
 }
