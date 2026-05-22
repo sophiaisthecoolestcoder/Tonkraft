@@ -121,11 +121,11 @@ sup { font-size: 0.6em; vertical-align: super; line-height: 0; }
 /* ----------------------------------------------------------------------------
    3. Bilingual visibility convention
    ---------------------------------------------------------------------------- */
-[lang="en"] { display: none; }
-html.lang-en [lang="de"] { display: none; }
-html.lang-en [lang="en"] { display: revert; }
-/* keep inline spans inline when shown */
-span[lang], a[lang] { }
+/* Scoped to body descendants so the rules never match the <html lang="…">
+   element itself (which would hide the whole document). */
+body [lang="en"] { display: none; }
+html.lang-en body [lang="de"] { display: none; }
+html.lang-en body [lang="en"] { display: revert; }
 
 /* ----------------------------------------------------------------------------
    4. Layout helpers
