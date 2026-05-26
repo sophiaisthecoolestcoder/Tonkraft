@@ -20,15 +20,15 @@
   --ink-soft:     #4c5b64;
   --ink-faint:    #7e8890;
 
-  /* The single accent hue — Vishuddha blue, in tonal steps only */
-  --blue-ink:     #0d3a49;   /* deepest — headings accents */
-  --blue-deep:    #14586c;   /* links / interactive text (AA on paper) */
-  --blue:         #1d6f86;   /* primary */
-  --blue-mid:     #3f93a9;
-  --blue-soft:    #7cb6c7;
-  --blue-mist:    #cbe2e8;   /* tints */
-  --blue-wash:    #e3eff1;
-  --blue-glass:   rgba(29, 111, 134, 0.10);
+  /* Monochrome scale rebuilt around the brand blue #1c528a (~212°, 66%, 33%) */
+  --blue-ink:     #0c2a4a;   /* deepest — accents, headings accents */
+  --blue-deep:    #173f70;   /* links / interactive text (AA on paper) */
+  --blue:         #1c528a;   /* primary — Aum seal + brand accents */
+  --blue-mid:     #3a73a8;
+  --blue-soft:    #7ba2c8;
+  --blue-mist:    #c5d6e8;   /* tints */
+  --blue-wash:    #dde8f1;
+  --blue-glass:   rgba(28, 82, 138, 0.10);
 
   /* Typography */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -54,9 +54,9 @@
   --radius-sm: 6px;
   --radius: 14px;
   --radius-lg: 24px;
-  --shadow-sm: 0 1px 2px rgba(13, 58, 73, 0.05);
-  --shadow: 0 18px 48px -28px rgba(13, 58, 73, 0.40);
-  --shadow-lg: 0 40px 90px -45px rgba(13, 58, 73, 0.55);
+  --shadow-sm: 0 1px 2px rgba(12, 42, 74, 0.05);
+  --shadow: 0 18px 48px -28px rgba(12, 42, 74, 0.40);
+  --shadow-lg: 0 40px 90px -45px rgba(12, 42, 74, 0.55);
 
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --dur: 0.5s;
@@ -293,7 +293,7 @@ html.lang-en body [lang="en"] { display: revert; }
 .hero__seal {
   font-family: var(--font-deva); font-size: clamp(3.5rem, 12vw, 7rem);
   color: var(--blue); line-height: 1; margin-bottom: 0.5rem;
-  filter: drop-shadow(0 10px 30px rgba(29,111,134,0.25));
+  filter: drop-shadow(0 10px 30px rgba(28, 82, 138, 0.25));
 }
 .hero__word {
   font-size: var(--fs-3xl); font-weight: 200; letter-spacing: -0.015em;
@@ -483,6 +483,11 @@ html.lang-en body [lang="en"] { display: revert; }
 .bio__thumb { border-radius: var(--radius-sm); border: 1px solid var(--line); aspect-ratio: 1; object-fit: cover; cursor: pointer; transition: transform 0.25s var(--ease), border-color 0.25s var(--ease); }
 .bio__thumb:hover, .bio__thumb.is-active { border-color: var(--blue); transform: translateY(-2px); }
 .bio__name { font-size: var(--fs-xl); }
+
+/* Editorial in-section figure (used in Hintergrund → Nadabrahma section) */
+.section-image { margin: 1.5rem 0 2.5rem; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--line); background: var(--paper-raised); }
+.section-image img { width: 100%; height: auto; display: block; }
+.section-image figcaption { padding: 0.85rem 1.25rem; font-size: var(--fs-sm); color: var(--ink-soft); text-align: center; border-top: 1px solid var(--line-soft); font-style: italic; }
 .bio__role { color: var(--blue-deep); font-weight: 600; font-size: var(--fs-sm); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.3rem; }
 .bio__dates { color: var(--ink-faint); font-variant-numeric: tabular-nums; margin: 0.75rem 0 1.5rem; font-size: var(--fs-md); }
 
@@ -529,7 +534,7 @@ html.lang-en body [lang="en"] { display: revert; }
   align-items: center; justify-content: center; gap: 0.9rem; text-align: center;
   padding: 1.5rem; color: #eaf3f5;
   background:
-    radial-gradient(120% 120% at 50% 0%, rgba(63,147,169,0.35), transparent 60%),
+    radial-gradient(120% 120% at 50% 0%, rgba(58, 115, 168, 0.35), transparent 60%),
     var(--blue-ink);
 }
 .video__play {
