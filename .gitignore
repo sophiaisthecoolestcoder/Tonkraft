@@ -1,2 +1,8 @@
 # Claude Code agent folder — may contain credentials, auth tokens, or private artifacts
 .claude/
+
+# Source / working files that shouldn't ship with the site
+*.mov
+Tonkraft Website Umsetzung.pdf
+Vemu_1.jpg
+vemusama2.jpg

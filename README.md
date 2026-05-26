@@ -38,10 +38,10 @@ favicon.svg
 
 ## Design & behaviour
 
-- **Aesthetic:** modern minimal — monochrome Vishuddha-blue on warm paper, Aum seal औं site-wide. Self-contained system font stack (no third-party font requests).
+- **Aesthetic:** modern minimal — monochrome Vishuddha-blue on warm paper, Aum seal औं site-wide. Headings set in **Manrope** (loaded from Google Fonts); body and Devanagari fall back to system fonts.
 - **Bilingual:** every translatable string is present as paired `lang="de"` / `lang="en"`. A `<html>` class (`lang-de` / `lang-en`) controls visibility; the choice persists in `localStorage["tonkraft:lang"]`. A pre-paint inline script avoids any flash. German is the default and shows even with JavaScript disabled.
 - **Progressive enhancement:** all content is readable with JS off; accordions use native `<details>`; `prefers-reduced-motion` is honoured.
-- **Privacy:** no third-party requests. The Publikationen video component uses a DSGVO two-click pattern (`youtube-nocookie.com`, loaded only on consent).
+- **Privacy:** only Google Fonts is loaded (for Manrope headings). The Publikationen video component uses a DSGVO two-click pattern (`youtube-nocookie.com`, loaded only on consent).
 
 ## Content
 

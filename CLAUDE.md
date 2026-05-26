@@ -6,7 +6,7 @@ Spec: `specs/001-tonkraft-website-redesign/spec.md` · Research: `research.md` �
 
 **What**: Original, modern, fully responsive **static multi-page** website (HTML5 + CSS3 + vanilla ES2020 JS, no framework, no build step) for Tonkraft — Institut für Sonologie.
 
-**Tech**: Hand-authored HTML at repo root; one `css/styles.css` design system (CSS custom properties); one `js/main.js`. `localStorage` for state. Self-hosted fonts (incl. Devanagari for the Aum glyph औं).
+**Tech**: Hand-authored HTML at repo root; one `css/styles.css` design system (CSS custom properties); one `js/main.js`. `localStorage` for state. Headings use **Manrope** via Google Fonts; body + Devanagari (Aum glyph औं) fall back to system fonts.
 
 **Hard rules**:
 - Preserve ALL content verbatim (DE + EN) from `CONTENT_HANDOFF.md` + extracted `~/Tonkraft` source data (9 practitioners, training notice, legal text).
