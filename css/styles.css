@@ -33,7 +33,7 @@
   /* Typography */
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif;
-  --font-display: "DM Serif Display", "EB Garamond", Georgia, "Times New Roman", serif;
+  --font-display: "Fraunces", "EB Garamond", Georgia, "Times New Roman", serif;
   --font-deva: "Noto Sans Devanagari", "Noto Serif Devanagari",
     "Kohinoor Devanagari", "Devanagari Sangam MN", "Nirmala UI", serif;
 
@@ -96,17 +96,19 @@ a:hover { color: var(--blue-ink); }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
+  font-optical-sizing: auto;
   line-height: 1.05;
-  font-weight: 400;
+  font-weight: 200;
   letter-spacing: -0.01em;
   color: var(--ink);
   text-wrap: balance;
 }
 
-/* Brand wordmarks use the same display face for cohesion */
-.brandmark, .pagefoot__brand { font-family: var(--font-display); font-weight: 400; }
-.brandmark__word { font-weight: 400; letter-spacing: 0; }
-.pagefoot__brand { font-weight: 400; }
+/* Brand wordmarks use the same display face; bumped a touch heavier
+   so they stay legible at small sizes where the headings would be wispy. */
+.brandmark, .pagefoot__brand { font-family: var(--font-display); font-weight: 300; font-optical-sizing: auto; }
+.brandmark__word { font-weight: 300; letter-spacing: 0; }
+.pagefoot__brand { font-weight: 300; }
 
 p { text-wrap: pretty; }
 
@@ -293,7 +295,7 @@ html.lang-en body [lang="en"] { display: revert; }
   filter: drop-shadow(0 10px 30px rgba(29,111,134,0.25));
 }
 .hero__word {
-  font-size: var(--fs-3xl); font-weight: 400; letter-spacing: -0.02em;
+  font-size: var(--fs-3xl); font-weight: 200; letter-spacing: -0.015em;
   color: var(--ink); line-height: 0.92;
 }
 .hero__tagline {
