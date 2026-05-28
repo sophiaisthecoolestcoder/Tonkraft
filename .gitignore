@@ -3,6 +3,7 @@
 
 # Source / working files that shouldn't ship with the site
 *.mov
+*.odt
 Tonkraft Website Umsetzung.pdf
 Vemu_1.jpg
 vemusama2.jpg
