@@ -60,6 +60,19 @@
     });
   }
 
+  /* ---- 2b. Single-open accordions ---------------------------------------- */
+  document.querySelectorAll(".accordion").forEach(function (acc) {
+    var panels = Array.prototype.slice.call(acc.querySelectorAll(".panel"));
+    panels.forEach(function (panel) {
+      panel.addEventListener("toggle", function () {
+        if (!panel.open) return;
+        panels.forEach(function (other) {
+          if (other !== panel && other.open) other.open = false;
+        });
+      });
+    });
+  });
+
   /* ---- 3. Masthead scrolled state ---------------------------------------- */
   var masthead = document.querySelector(".masthead");
   if (masthead) {
@@ -152,6 +165,24 @@
       });
     });
   }
+
+  /* ---- 6b. Self-hosted film covers — click to play ----------------------- */
+  document.querySelectorAll(".film__cover").forEach(function (cover) {
+    cover.addEventListener("click", function () {
+      var src = cover.getAttribute("data-film-src");
+      if (!src) return;
+      var video = document.createElement("video");
+      video.src = src;
+      video.controls = true;
+      video.autoplay = true;
+      video.setAttribute("playsinline", "");
+      video.preload = "auto";
+      var frame = cover.parentNode;
+      frame.innerHTML = "";
+      frame.appendChild(video);
+      if (video.play) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+    });
+  });
 
   /* ---- 7. Two-click video (DSGVO) ---------------------------------------- */
   document.querySelectorAll("[data-video]").forEach(function (box) {
