@@ -237,6 +237,7 @@ html.lang-en body [lang="en"] { display: revert; }
 .masthead.is-scrolled { border-bottom-color: var(--line); }
 
 .masthead__inner {
+  position: relative;
   width: min(100% - 2.5rem, var(--container));
   margin-inline: auto;
   display: flex; align-items: center; gap: 1.5rem;
@@ -255,7 +256,8 @@ html.lang-en body [lang="en"] { display: revert; }
 }
 /* word weight/spacing finalized in the brand override block below */
 
-.topnav { margin-left: auto; }
+/* Desktop: nav centered in the header (mobile overrides below) */
+.topnav { position: absolute; left: 50%; transform: translateX(-50%); }
 .topnav__list {
   list-style: none; padding: 0; display: flex; align-items: center; gap: 0.15rem;
 }
