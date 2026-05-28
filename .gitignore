@@ -6,3 +6,8 @@
 Tonkraft Website Umsetzung.pdf
 Vemu_1.jpg
 vemusama2.jpg
+
+# Transcoded films — kept local for now (479 MB; hosting TBD).
+# Two files exceed GitHub's 100 MB/file limit. Force-add or use Git LFS
+# when ready to ship them.
+assets/videos/
