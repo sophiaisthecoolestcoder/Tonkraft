@@ -294,13 +294,14 @@ html.lang-en body [lang="en"] { display: revert; }
   opacity: 1; visibility: visible; transform: translateY(0);
 }
 .has-sub__panel a {
-  display: block; padding: 0.6rem 0.8rem;
-  font-family: var(--font-display); font-optical-sizing: auto;
-  font-weight: 400; font-size: 1.08rem; letter-spacing: -0.005em;
+  display: block; padding: 0.55rem 0.8rem;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs); font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.15em;
   color: var(--ink-soft);
   transition: color 0.2s var(--ease), background 0.2s var(--ease);
 }
-.has-sub__panel a:hover { background: var(--blue-glass); color: var(--blue-ink); }
+.has-sub__panel a:hover { background: var(--blue-glass); color: var(--blue-deep); }
 .has-sub__toggle::after { content: " ›"; color: var(--blue-soft); }
 
 /* language switch */
