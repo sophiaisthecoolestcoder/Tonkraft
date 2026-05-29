@@ -611,22 +611,11 @@ html.lang-en body [lang="en"] { display: revert; }
 .subfeature__block h3 { font-size: clamp(1.3rem, 1.1rem + 0.6vw, 1.7rem); font-weight: 300; }
 .subfeature__block .section-lead { margin: 0.75rem 0 1.25rem; }
 
-/* "Mehr erfahren" disclosure inside preview sections */
-.feature__more { margin-top: 1.5rem; border-top: 1px solid var(--line); max-width: 62ch; }
-.feature__more > summary {
-  list-style: none; cursor: pointer; padding: 0.9rem 0;
-  display: flex; align-items: center; gap: 0.6rem;
-  font-family: var(--font-sans); font-size: var(--fs-xs);
-  letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600;
-  color: var(--blue-deep); transition: color 0.2s var(--ease);
+/* Short essence shown directly under the subheading in preview sections */
+.feature__essence {
+  margin-top: 0.85rem; max-width: 52ch;
+  font-size: var(--fs-sm); line-height: 1.6; color: var(--ink-soft);
 }
-.feature__more > summary::-webkit-details-marker { display: none; }
-.feature__more > summary::after { content: "+"; margin-left: auto; font-size: 1.15rem; line-height: 1; color: var(--blue); }
-.feature__more[open] > summary::after { content: "\2013"; }
-.feature__more > summary:hover { color: var(--blue-ink); }
-.feature__more .prose { padding-bottom: 1.1rem; }
-.feature__more .prose p { font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem); line-height: 1.6; color: var(--ink-soft); }
-.feature__more[open] .prose { animation: panel-in 0.35s var(--ease); }
 
 /* Single concept hook — first section after the hero */
 .intro { text-align: center; padding-block: clamp(3.5rem, 7vw, 7rem); }
