@@ -12,3 +12,7 @@ vemusama2.jpg
 # Two files exceed GitHub's 100 MB/file limit. Force-add or use Git LFS
 # when ready to ship them.
 assets/videos/
+
+# Source material handoffs (PDFs, TIFFs, audio masters) — only their
+# web-ready derivatives in assets/ are shipped.
+files/

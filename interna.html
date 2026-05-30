@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="de" class="no-js lang-de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f4efe5" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Interner Bereich — Tonkraft</title>
+    <meta name="description" content="Geschützter Bereich für Praktizierende der SaMa Sonologie®." />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem("tonkraft:lang");
+          var b = (navigator.language || "de").toLowerCase().indexOf("en") === 0 ? "en" : "de";
+          var l = s === "en" || s === "de" ? s : b;
+          var r = document.documentElement;
+          r.classList.remove("lang-de", "lang-en");
+          r.classList.add("lang-" + l);
+          r.lang = l;
+        } catch (e) {}
+      })();
+    </script>
+    <script defer src="js/main.js"></script>
+  </head>
+
+  <body class="subpage interna-page">
+    <a class="skip-link" href="#main"><span lang="de">Zum Inhalt springen</span><span lang="en">Skip to content</span></a>
+
+    <header class="masthead">
+      <div class="masthead__inner">
+        <a href="index.html" class="brandmark" aria-label="Tonkraft — Startseite">
+          <span class="brandmark__seal" aria-hidden="true">&#x0914;&#x0902;</span>
+          <span class="brandmark__word">tonkraft</span>
+        </a>
+        <button class="navtoggle" type="button" aria-label="Menü" aria-expanded="false" aria-controls="primary-nav">
+          <span class="navtoggle__bars" aria-hidden="true"></span>
+        </button>
+        <nav class="topnav" id="primary-nav" aria-label="Hauptnavigation">
+          <ul class="topnav__list">
+            <li><a class="topnav__link" href="index.html"><span lang="de">Home</span><span lang="en">Home</span></a></li>
+            <li><a class="topnav__link" href="angebot.html"><span lang="de">Angebot</span><span lang="en">Our Offer</span></a></li>
+            <li><a class="topnav__link" href="hintergrund.html"><span lang="de">Hintergrund</span><span lang="en">Background</span></a></li>
+            <li class="has-sub">
+              <a class="topnav__link has-sub__toggle" href="ueber-uns/arbeitsweise.html"><span lang="de">Über uns</span><span lang="en">About Us</span></a>
+              <ul class="has-sub__panel">
+                <li><a href="ueber-uns/arbeitsweise.html"><span lang="de">Unsere Arbeitsweise</span><span lang="en">Our Approach</span></a></li>
+                <li><a href="ueber-uns/praktizierende.html"><span lang="de">Praktizierende</span><span lang="en">Practitioners</span></a></li>
+              </ul>
+            </li>
+            <li><a class="topnav__link" href="ausbildung.html"><span lang="de">Ausbildung</span><span lang="en">Training</span></a></li>
+            <li><a class="topnav__link" href="publikationen.html"><span lang="de">Publikationen</span><span lang="en">Publications</span></a></li>
+          </ul>
+        </nav>
+        <div class="langswitch" role="group" aria-label="Sprache / Language">
+          <button class="langswitch__btn" type="button" data-lang="de" aria-pressed="true">DE</button>
+          <span class="langswitch__sep" aria-hidden="true">·</span>
+          <button class="langswitch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Gate (shown until authenticated) -->
+      <section class="interna-gate wrap wrap--narrow" id="interna-gate" aria-labelledby="gate-title">
+        <div class="gate-card">
+          <span class="kicker"><span lang="de">Interner Bereich</span><span lang="en">Inner Area</span></span>
+          <h1 class="gate-card__title" id="gate-title">
+            <span lang="de">Für Praktizierende</span>
+            <span lang="en">For Practitioners</span>
+          </h1>
+          <p class="gate-card__lead">
+            <span lang="de">Dieser Bereich ist Praktizierenden der SaMa Sonologie® vorbehalten. Bitte geben Sie das Zugangswort ein.</span>
+            <span lang="en">This area is reserved for practitioners of SaMa Sonology®. Please enter the access word.</span>
+          </p>
+          <form class="gate-form" id="interna-form" autocomplete="off">
+            <label class="gate-form__label" for="gate-input">
+              <span lang="de">Zugangswort</span><span lang="en">Access word</span>
+            </label>
+            <input class="gate-form__input" id="gate-input" type="password" name="passphrase" required autocomplete="off" inputmode="text" />
+            <button class="btn btn--primary gate-form__btn" type="submit">
+              <span lang="de">Eintreten</span><span lang="en">Enter</span>
+              <span class="btn__arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="gate-form__error" id="gate-error" hidden>
+              <span lang="de">Das Zugangswort stimmt nicht. Bitte versuchen Sie es erneut.</span>
+              <span lang="en">The access word is incorrect. Please try again.</span>
+            </p>
+          </form>
+          <p class="gate-card__hint">
+            <span lang="de">Sie haben noch kein Zugangswort? Wenden Sie sich an <a href="mailto:kontakt@tonkraft.de">kontakt@tonkraft.de</a>.</span>
+            <span lang="en">Do not have access yet? Please contact <a href="mailto:kontakt@tonkraft.de">kontakt@tonkraft.de</a>.</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- Visualization (shown after auth) -->
+      <section class="interna-app wrap" id="interna-app" hidden aria-labelledby="app-title">
+        <header class="pagehead interna-app__head">
+          <span class="kicker"><span lang="de">Innenwelt</span><span lang="en">Inner Structure</span></span>
+          <h1 class="pagehead__title" id="app-title">
+            <span lang="de">Die zwölf Töne im Körper</span>
+            <span lang="en">The Twelve Tones in the Body</span>
+          </h1>
+          <p class="pagehead__lead">
+            <span lang="de">Eine interaktive Darstellung der tonalen Innenstruktur. Wählen Sie Ihren Persönlichen Grundton und entdecken Sie die jeweilige Anordnung der Töne.</span>
+            <span lang="en">An interactive map of the inner tonal structure. Choose your Personal Fundamental Tone and explore the corresponding arrangement of tones.</span>
+          </p>
+          <button class="interna-logout" type="button" id="interna-logout">
+            <span lang="de">Abmelden</span><span lang="en">Sign out</span>
+          </button>
+        </header>
+
+        <!-- Tone picker -->
+        <div class="tone-picker" role="radiogroup" aria-labelledby="picker-label">
+          <span class="tone-picker__label" id="picker-label">
+            <span lang="de">Persönlicher Grundton</span><span lang="en">Personal Fundamental Tone</span>
+          </span>
+          <div class="tone-picker__row">
+            <button class="tone-pill tone-pill--general is-active" type="button" role="radio" aria-checked="true" data-root="">
+              <span lang="de">Allgemein</span><span lang="en">General</span>
+            </button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="C">C</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Cis">Cis</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="D">D</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Dis">Dis</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="E">E</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="F">F</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Fis">Fis</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="G">G</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Gis">Gis</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="A">A</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="B">B</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="H">H</button>
+          </div>
+        </div>
+
+        <!-- Visualization grid -->
+        <div class="interna-grid">
+          <!-- Body silhouette + dots -->
+          <div class="interna-body">
+            <svg class="body-svg" viewBox="0 0 320 640" role="img" aria-labelledby="body-title body-desc">
+              <title id="body-title">Sonologisches Körperschema</title>
+              <desc id="body-desc">Frontalansicht eines Körpers mit dreizehn Tonpositionen vom Beckenraum (Sa) bis zum Scheitel (Sa').</desc>
+
+              <!-- Silhouette (subtle, frontal full-body) -->
+              <g class="body-svg__silhouette" aria-hidden="true">
+                <!-- Head -->
+                <ellipse cx="160" cy="68" rx="42" ry="52" />
+                <!-- Neck -->
+                <path d="M 146 112 L 146 138 L 174 138 L 174 112 Z" />
+                <!-- Shoulders + torso -->
+                <path d="M 92 162 Q 100 142, 130 138 L 190 138 Q 220 142, 228 162 L 232 360 Q 222 392, 188 392 L 132 392 Q 98 392, 88 360 Z" />
+                <!-- Left arm -->
+                <path d="M 92 162 Q 66 174, 60 208 L 60 380 Q 60 396, 76 396 Q 92 396, 92 380 L 100 220 Q 106 184, 122 170 Z" />
+                <!-- Right arm -->
+                <path d="M 228 162 Q 254 174, 260 208 L 260 380 Q 260 396, 244 396 Q 228 396, 228 380 L 220 220 Q 214 184, 198 170 Z" />
+                <!-- Hips -->
+                <path d="M 88 388 L 232 388 L 234 422 L 86 422 Z" />
+                <!-- Left leg -->
+                <path d="M 88 420 L 76 620 Q 76 634, 96 634 L 138 634 Q 154 634, 154 620 L 156 420 Z" />
+                <!-- Right leg -->
+                <path d="M 232 420 L 244 620 Q 244 634, 224 634 L 182 634 Q 166 634, 166 620 L 164 420 Z" />
+              </g>
+
+              <!-- Interval connecting arcs from Sa upward (drawn left of body) -->
+              <g class="body-svg__intervals" aria-hidden="true" data-intervals></g>
+
+              <!-- Dots + labels (rendered by JS to keep markup compact) -->
+              <g class="body-svg__points" data-points></g>
+            </svg>
+          </div>
+
+          <!-- Side info panel -->
+          <aside class="interna-info" aria-live="polite">
+            <div class="interna-info__card">
+              <p class="interna-info__eyebrow" data-info-eyebrow>
+                <span lang="de">Allgemeine Struktur</span><span lang="en">General Structure</span>
+              </p>
+              <h2 class="interna-info__title" data-info-title>
+                <span lang="de">Die zwölf Positionen</span>
+                <span lang="en">The Twelve Positions</span>
+              </h2>
+              <p class="interna-info__lead" data-info-lead>
+                <span lang="de">Die Karnatischen Bezeichnungen Sa, Ri₁, Ri₂ … Sa' markieren die feste Position eines jeden Tons im Körper. Wählen Sie oben einen Persönlichen Grundton, um die jeweiligen Tonzuordnungen zu sehen. Wählen Sie eine Position für Details.</span>
+                <span lang="en">The Karnatic names Sa, Ri₁, Ri₂ … Sa' mark the fixed position of each tone in the body. Choose a Personal Fundamental Tone above to see the corresponding tone mapping. Select a position for details.</span>
+              </p>
+
+              <div class="interna-info__detail" data-info-detail hidden>
+                <dl class="interna-info__list">
+                  <div class="interna-info__row">
+                    <dt><span lang="de">Position</span><span lang="en">Position</span></dt>
+                    <dd data-detail-position>—</dd>
+                  </div>
+                  <div class="interna-info__row" data-detail-tone-row hidden>
+                    <dt><span lang="de">Ton</span><span lang="en">Tone</span></dt>
+                    <dd data-detail-tone>—</dd>
+                  </div>
+                  <div class="interna-info__row">
+                    <dt><span lang="de">Intervall</span><span lang="en">Interval</span></dt>
+                    <dd data-detail-interval>—</dd>
+                  </div>
+                </dl>
+                <button class="btn btn--ghost interna-info__play" type="button" data-info-play hidden>
+                  <span class="interna-info__play-icon" aria-hidden="true">▶</span>
+                  <span class="interna-info__play-label">
+                    <span lang="de">Ton hören</span><span lang="en">Play tone</span>
+                  </span>
+                </button>
+              </div>
+
+              <div class="interna-info__toggle">
+                <label>
+                  <input type="checkbox" id="toggle-intervals" />
+                  <span lang="de">Intervalle anzeigen</span><span lang="en">Show intervals</span>
+                </label>
+              </div>
+
+              <p class="interna-info__source">
+                <span lang="de">Nach den Grundtonschaubildern der SaMa Sonologie® (Tonkraft Institut).</span>
+                <span lang="en">After the fundamental-tone diagrams of SaMa Sonology® (Tonkraft Institute).</span>
+              </p>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Audio element (single, swapped src on play) -->
+        <audio id="interna-audio" preload="none" aria-hidden="true"></audio>
+      </section>
+    </main>
+
+    <footer class="pagefoot">
+      <div class="pagefoot__inner">
+        <div class="pagefoot__col">
+          <p class="pagefoot__brand"><span class="pagefoot__seal" aria-hidden="true">&#x0914;&#x0902;</span><span>tonkraft</span></p>
+          <p class="pagefoot__tag">
+            <span lang="de">Institut für SaMa Sonologie®</span>
+            <span lang="en">Institute of SAMA Sonology®</span>
+          </p>
+        </div>
+        <div class="pagefoot__col">
+          <h2><span lang="de">Seiten</span><span lang="en">Pages</span></h2>
+          <ul>
+            <li><a href="angebot.html"><span lang="de">Angebot</span><span lang="en">Our Offer</span></a></li>
+            <li><a href="hintergrund.html"><span lang="de">Hintergrund</span><span lang="en">Background</span></a></li>
+            <li><a href="ueber-uns/arbeitsweise.html"><span lang="de">Unsere Arbeitsweise</span><span lang="en">Our Approach</span></a></li>
+            <li><a href="ueber-uns/praktizierende.html"><span lang="de">Praktizierende</span><span lang="en">Practitioners</span></a></li>
+            <li><a href="ausbildung.html"><span lang="de">Ausbildung</span><span lang="en">Training</span></a></li>
+            <li><a href="publikationen.html"><span lang="de">Publikationen</span><span lang="en">Publications</span></a></li>
+          </ul>
+        </div>
+        <div class="pagefoot__col">
+          <h2><span lang="de">Rechtliches</span><span lang="en">Legal</span></h2>
+          <ul>
+            <li><a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Imprint</span></a></li>
+            <li><a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a></li>
+            <li><a href="hinweis.html"><span lang="de">Ausdrücklicher Hinweis</span><span lang="en">Disclaimer</span></a></li>
+            <li><a href="mailto:kontakt@tonkraft.de">kontakt@tonkraft.de</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="pagefoot__base">
+          <span>© 2026 Tonkraft — Institut für Sonologie</span>
+          <a class="pagefoot__interna" href="interna.html"><span lang="de">Interner Bereich</span><span lang="en">Inner Area</span></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        "use strict";
+
+        // ---- Access gate (obscurity-grade; client-side only) ------------------
+        // To change the access word: set GATE to btoa("your-new-word")
+        var GATE = "dG9ua3JhZnQyMDI2"; // tonkraft2026
+        var GATE_KEY = "tonkraft:gate";
+        var gateSection = document.getElementById("interna-gate");
+        var appSection  = document.getElementById("interna-app");
+        var gateForm    = document.getElementById("interna-form");
+        var gateInput   = document.getElementById("gate-input");
+        var gateError   = document.getElementById("gate-error");
+        var logoutBtn   = document.getElementById("interna-logout");
+
+        function showApp() {
+          gateSection.hidden = true;
+          appSection.hidden = false;
+          renderApp();
+        }
+        function showGate() {
+          appSection.hidden = true;
+          gateSection.hidden = false;
+          gateInput.value = "";
+          setTimeout(function(){ gateInput.focus(); }, 30);
+        }
+        try {
+          if (sessionStorage.getItem(GATE_KEY) === "ok") {
+            showApp();
+          } else {
+            gateInput.focus();
+          }
+        } catch (e) {
+          gateInput.focus();
+        }
+
+        gateForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var attempt;
+          try { attempt = btoa(unescape(encodeURIComponent(gateInput.value.trim()))); }
+          catch (err) { attempt = ""; }
+          if (attempt === GATE) {
+            try { sessionStorage.setItem(GATE_KEY, "ok"); } catch (err) {}
+            gateError.hidden = true;
+            showApp();
+          } else {
+            gateError.hidden = false;
+            gateInput.value = "";
+            gateInput.focus();
+          }
+        });
+
+        logoutBtn.addEventListener("click", function () {
+          try { sessionStorage.removeItem(GATE_KEY); } catch (e) {}
+          showGate();
+        });
+
+        // ---- Visualization ---------------------------------------------------
+        var CHROMATIC = ["C","Cis","D","Dis","E","F","Fis","G","Gis","A","B","H"];
+
+        // 13 positions ascending the body. y in viewBox coordinates (0..640).
+        // semi = semitones above the root Sa.
+        var POSITIONS = [
+          { semi: 12, y: 24,  kar: "Sa",   karSub: "′" },  // Sa' (octave) at crown
+          { semi: 11, y: 60,  kar: "Ni",   karSub: "₂" },
+          { semi: 10, y: 124, kar: "Ni",   karSub: "₁" },
+          { semi:  9, y: 178, kar: "Dha",  karSub: "₂" },
+          { semi:  8, y: 208, kar: "Dha",  karSub: "₁" },
+          { semi:  7, y: 238, kar: "Pa",   karSub: ""  },
+          { semi:  6, y: 264, kar: "Ma",   karSub: "₂" },
+          { semi:  5, y: 286, kar: "Ma",   karSub: "₁" },
+          { semi:  4, y: 308, kar: "Ga",   karSub: "₂" },
+          { semi:  3, y: 326, kar: "Ga",   karSub: "₁" },
+          { semi:  2, y: 343, kar: "Ri",   karSub: "₂" },
+          { semi:  1, y: 360, kar: "Ri",   karSub: "₁" },
+          { semi:  0, y: 378, kar: "Sa",   karSub: ""  }   // Sa (root) at lower abdomen
+        ];
+
+        var INTERVAL_NAMES_DE = [
+          "Grundton","Kleine Sekunde","Große Sekunde","Kleine Terz","Große Terz",
+          "Quarte","Tritonus","Quinte","Kleine Sexte","Große Sexte",
+          "Kleine Septime","Große Septime","Oktave"
+        ];
+        var INTERVAL_NAMES_EN = [
+          "Root","Minor 2nd","Major 2nd","Minor 3rd","Major 3rd",
+          "Perfect 4th","Tritone","Perfect 5th","Minor 6th","Major 6th",
+          "Minor 7th","Major 7th","Octave"
+        ];
+
+        var NS = "http://www.w3.org/2000/svg";
+        var pointsLayer    = null;
+        var intervalsLayer = null;
+        var audioEl        = null;
+        var currentRoot    = ""; // "" = general
+        var selectedSemi   = null;
+        var showAllIntervals = false;
+
+        function tonesForRoot(rootKey) {
+          if (!rootKey) return null;
+          var rootIdx = CHROMATIC.indexOf(rootKey);
+          if (rootIdx < 0) return null;
+          var arr = [];
+          for (var i = 0; i < 12; i++) arr[i] = CHROMATIC[(rootIdx + i) % 12];
+          return arr; // arr[semi] = chromatic tone name
+        }
+
+        function audioSrcForTone(toneName) {
+          return "assets/audio/monochord-" + toneName.toLowerCase() + ".mp3";
+        }
+
+        function svgEl(tag, attrs) {
+          var el = document.createElementNS(NS, tag);
+          if (attrs) for (var k in attrs) el.setAttribute(k, attrs[k]);
+          return el;
+        }
+
+        function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+
+        function buildIntervals() {
+          clear(intervalsLayer);
+          var saY = POSITIONS[POSITIONS.length - 1].y; // 378
+          var saX = 160;
+          POSITIONS.forEach(function (p) {
+            if (p.semi === 0) return;
+            var depth = 26 + p.semi * 10; // wider arc for larger interval
+            var ctrlX = saX - depth;
+            var ctrlY = (saY + p.y) / 2;
+            var path = svgEl("path", {
+              "d": "M " + saX + " " + saY + " Q " + ctrlX + " " + ctrlY + " " + saX + " " + p.y,
+              "class": "interval-line",
+              "data-semi": p.semi,
+              "fill": "none"
+            });
+            intervalsLayer.appendChild(path);
+          });
+        }
+
+        function renderPoints() {
+          clear(pointsLayer);
+          var tones = tonesForRoot(currentRoot); // null when general
+          POSITIONS.forEach(function (p, idx) {
+            var cx = 160, cy = p.y;
+            var g = svgEl("g", {
+              "class": "body-svg__point" + (p.semi === 0 ? " is-root" : "") + (p.semi === 12 ? " is-octave" : ""),
+              "data-semi": p.semi,
+              "tabindex": "0",
+              "role": "button",
+              "aria-label": (p.kar + p.karSub).replace(/[₀-₉]/g, function (m) {
+                return ["0","1","2","3","4","5","6","7","8","9"]["₀₁₂₃₄₅₆₇₈₉".indexOf(m)];
+              })
+            });
+            // Halo (animated on active)
+            g.appendChild(svgEl("circle", { "class":"point-halo", "cx":cx, "cy":cy, "r":12 }));
+            // Dot
+            g.appendChild(svgEl("circle", { "class":"point-dot",  "cx":cx, "cy":cy, "r":4 }));
+
+            // Right label: position name (Sa, Ri₁, …)
+            var posLabel = svgEl("text", {
+              "class":"point-label point-label--position",
+              "x": cx + 18, "y": cy + 4, "text-anchor":"start"
+            });
+            posLabel.appendChild(document.createTextNode(p.kar));
+            if (p.karSub) {
+              var sub = svgEl("tspan", { "class":"point-sub", "dy":"2", "dx":"1" });
+              sub.appendChild(document.createTextNode(p.karSub));
+              posLabel.appendChild(sub);
+            }
+            g.appendChild(posLabel);
+
+            // Left label: tone (only when a root is selected)
+            if (tones) {
+              var toneName = tones[p.semi % 12];
+              var toneLabel = svgEl("text", {
+                "class":"point-label point-label--tone",
+                "x": cx - 18, "y": cy + 4, "text-anchor":"end"
+              });
+              toneLabel.appendChild(document.createTextNode(toneName));
+              g.appendChild(toneLabel);
+            }
+
+            pointsLayer.appendChild(g);
+
+            // Interaction
+            g.addEventListener("mouseenter", function () { selectPoint(p, true); });
+            g.addEventListener("mouseleave", function () { /* keep selection sticky on click */ });
+            g.addEventListener("focus", function () { selectPoint(p, false); });
+            g.addEventListener("click", function () { selectPoint(p, false); playTone(p); });
+            g.addEventListener("keydown", function (e) {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault(); selectPoint(p, false); playTone(p);
+              } else if (e.key === "ArrowUp" || e.key === "ArrowRight") {
+                e.preventDefault(); focusNeighbor(idx, -1);
+              } else if (e.key === "ArrowDown" || e.key === "ArrowLeft") {
+                e.preventDefault(); focusNeighbor(idx, +1);
+              }
+            });
+          });
+        }
+
+        function focusNeighbor(idx, delta) {
+          var next = idx + delta;
+          if (next < 0 || next >= POSITIONS.length) return;
+          var nodes = pointsLayer.querySelectorAll(".body-svg__point");
+          if (nodes[next]) nodes[next].focus();
+        }
+
+        function selectPoint(p, isHover) {
+          selectedSemi = p.semi;
+          // Highlight current dot
+          Array.prototype.forEach.call(
+            pointsLayer.querySelectorAll(".body-svg__point"),
+            function (g) { g.classList.toggle("is-active", parseInt(g.getAttribute("data-semi"), 10) === p.semi); }
+          );
+          // Highlight interval line for this semi
+          Array.prototype.forEach.call(
+            intervalsLayer.querySelectorAll(".interval-line"),
+            function (l) { l.classList.toggle("is-active", parseInt(l.getAttribute("data-semi"), 10) === p.semi); }
+          );
+          updateInfo(p);
+        }
+
+        function updateInfo(p) {
+          var detail = document.querySelector("[data-info-detail]");
+          var detailPos = document.querySelector("[data-detail-position]");
+          var detailToneRow = document.querySelector("[data-detail-tone-row]");
+          var detailTone = document.querySelector("[data-detail-tone]");
+          var detailInterval = document.querySelector("[data-detail-interval]");
+          var playBtn = document.querySelector("[data-info-play]");
+
+          detail.hidden = false;
+          var posName = p.kar + (p.karSub || "");
+          if (p.semi === 12) posName = "Sa′"; // octave Sa with prime
+          detailPos.textContent = posName;
+
+          var lang = document.documentElement.lang === "en" ? "en" : "de";
+          var ivIdx = p.semi; // 0..12
+          detailInterval.textContent = (lang === "en" ? INTERVAL_NAMES_EN : INTERVAL_NAMES_DE)[ivIdx];
+
+          if (currentRoot) {
+            var tones = tonesForRoot(currentRoot);
+            var toneName = tones[p.semi % 12];
+            detailTone.textContent = toneName;
+            detailToneRow.hidden = false;
+            playBtn.hidden = false;
+            playBtn.setAttribute("data-tone", toneName);
+          } else {
+            detailToneRow.hidden = true;
+            playBtn.hidden = true;
+          }
+        }
+
+        function playTone(p) {
+          if (!currentRoot) return; // no tone mapping in general view
+          var tones = tonesForRoot(currentRoot);
+          var toneName = tones[p.semi % 12];
+          if (!audioEl) return;
+          audioEl.src = audioSrcForTone(toneName);
+          var pr = audioEl.play();
+          if (pr && pr.catch) pr.catch(function () {});
+        }
+
+        function setRoot(rootKey) {
+          currentRoot = rootKey || "";
+          // Update pill states
+          Array.prototype.forEach.call(
+            document.querySelectorAll(".tone-pill"),
+            function (b) {
+              var isActive = (b.getAttribute("data-root") || "") === currentRoot;
+              b.classList.toggle("is-active", isActive);
+              b.setAttribute("aria-checked", isActive ? "true" : "false");
+            }
+          );
+          // Update eyebrow + title
+          var eyebrow = document.querySelector("[data-info-eyebrow]");
+          var title = document.querySelector("[data-info-title]");
+          var lead = document.querySelector("[data-info-lead]");
+          if (currentRoot) {
+            eyebrow.innerHTML =
+              '<span lang="de">Persönlicher Grundton</span><span lang="en">Personal Fundamental Tone</span>';
+            title.innerHTML =
+              '<span lang="de">Grundton ' + currentRoot + '</span>' +
+              '<span lang="en">Fundamental Tone ' + currentRoot + '</span>';
+            lead.innerHTML =
+              '<span lang="de">Die zwölf Töne sind jetzt nach Ihrem Grundton ' + currentRoot +
+              ' angeordnet. Klicken Sie auf eine Position, um den jeweiligen Ton zu hören.</span>' +
+              '<span lang="en">The twelve tones are now arranged around your fundamental tone ' + currentRoot +
+              '. Click a position to hear the corresponding tone.</span>';
+          } else {
+            eyebrow.innerHTML =
+              '<span lang="de">Allgemeine Struktur</span><span lang="en">General Structure</span>';
+            title.innerHTML =
+              '<span lang="de">Die zwölf Positionen</span><span lang="en">The Twelve Positions</span>';
+            lead.innerHTML =
+              '<span lang="de">Die Karnatischen Bezeichnungen Sa, Ri₁, Ri₂ … Sa′ markieren die feste Position eines jeden Tons im Körper. Wählen Sie oben einen Persönlichen Grundton, um die jeweiligen Tonzuordnungen zu sehen.</span>' +
+              '<span lang="en">The Karnatic names Sa, Ri₁, Ri₂ … Sa′ mark the fixed position of each tone in the body. Choose a Personal Fundamental Tone above to see the corresponding tone mapping.</span>';
+          }
+          // Reset selection detail (keep the highlighted dot if any)
+          renderPoints();
+          if (selectedSemi !== null) {
+            var p = POSITIONS.filter(function (pp) { return pp.semi === selectedSemi; })[0];
+            if (p) selectPoint(p, false);
+          } else {
+            var detail = document.querySelector("[data-info-detail]");
+            if (detail) detail.hidden = true;
+          }
+        }
+
+        function renderApp() {
+          pointsLayer = document.querySelector("[data-points]");
+          intervalsLayer = document.querySelector("[data-intervals]");
+          audioEl = document.getElementById("interna-audio");
+
+          buildIntervals();
+          renderPoints();
+
+          Array.prototype.forEach.call(
+            document.querySelectorAll(".tone-pill"),
+            function (b) {
+              b.addEventListener("click", function () { setRoot(b.getAttribute("data-root") || ""); });
+            }
+          );
+
+          var toggle = document.getElementById("toggle-intervals");
+          toggle.addEventListener("change", function () {
+            showAllIntervals = toggle.checked;
+            intervalsLayer.classList.toggle("show-all", showAllIntervals);
+          });
+
+          var playBtn = document.querySelector("[data-info-play]");
+          playBtn.addEventListener("click", function () {
+            var tone = playBtn.getAttribute("data-tone");
+            if (!tone || !audioEl) return;
+            audioEl.src = audioSrcForTone(tone);
+            var pr = audioEl.play();
+            if (pr && pr.catch) pr.catch(function () {});
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
