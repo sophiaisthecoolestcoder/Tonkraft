@@ -31,10 +31,9 @@
   --blue-glass:   rgba(28, 82, 138, 0.10);
 
   /* Typography */
-  --font-sans: "Fraunces", "EB Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif;
   --font-display: "Fraunces", "EB Garamond", Georgia, "Times New Roman", serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono",
-    Menlo, Consolas, "Liberation Mono", monospace;
   --font-deva: "Noto Sans Devanagari", "Noto Serif Devanagari",
     "Kohinoor Devanagari", "Devanagari Sangam MN", "Nirmala UI", serif;
 
@@ -82,7 +81,7 @@ body {
   font-family: var(--font-sans);
   font-optical-sizing: auto;
   font-size: var(--fs-base);
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--ink);
   background: var(--paper);
   -webkit-font-smoothing: antialiased;
@@ -161,8 +160,8 @@ html.lang-en body [lang="en"] { display: revert; }
 
 .kicker {
   display: inline-flex; align-items: center; gap: 0.7rem;
-  font-family: var(--font-mono); font-weight: 400;
-  font-size: var(--fs-xs); letter-spacing: 0.16em; text-transform: uppercase;
+  font-family: var(--font-sans); font-weight: 600;
+  font-size: var(--fs-xs); letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--blue-deep);
 }
 .kicker::before {
@@ -269,8 +268,7 @@ html.lang-en body [lang="en"] { display: revert; }
 .topnav__link {
   display: inline-block; padding: 0.5rem 0.75rem;
   color: var(--ink-soft);
-  font-family: var(--font-mono);
-  font-size: 0.72rem; font-weight: 400;
+  font-size: 0.72rem; font-weight: 500;
   text-transform: uppercase; letter-spacing: 0.07em; white-space: nowrap;
   position: relative; transition: color 0.25s var(--ease);
 }
@@ -297,9 +295,9 @@ html.lang-en body [lang="en"] { display: revert; }
 }
 .has-sub__panel a {
   display: block; padding: 0.55rem 0.8rem;
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs); font-weight: 400;
-  text-transform: uppercase; letter-spacing: 0.13em;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs); font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.15em;
   color: var(--ink-soft);
   transition: color 0.2s var(--ease), background 0.2s var(--ease);
 }
@@ -309,8 +307,7 @@ html.lang-en body [lang="en"] { display: revert; }
 /* language switch */
 .langswitch { display: inline-flex; align-items: center; gap: 0.15rem; margin-left: auto; }
 .langswitch__btn {
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs); font-weight: 400; letter-spacing: 0.05em;
+  font-size: var(--fs-xs); font-weight: 600; letter-spacing: 0.05em;
   padding: 0.3rem 0.45rem; border-radius: var(--radius-sm); color: var(--ink-faint);
   transition: color 0.2s var(--ease);
 }
@@ -523,8 +520,7 @@ html.lang-en body [lang="en"] { display: revert; }
 .btn {
   display: inline-flex; align-items: center; gap: 0.6rem;
   padding: 0.85rem 1.5rem; border-radius: 0; font-size: var(--fs-xs);
-  font-family: var(--font-mono); font-weight: 500;
-  letter-spacing: 0.08em; text-transform: uppercase;
+  font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
   transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
 .btn--primary { background: var(--blue-ink); color: #fff; }
@@ -922,7 +918,7 @@ html.lang-en body [lang="en"] { display: revert; }
 .pagefoot__brand { display: flex; align-items: baseline; gap: 0.6rem; font-size: 1.35rem; }
 .pagefoot__seal { font-family: var(--font-deva); color: var(--blue); font-size: 1.5rem; }
 .pagefoot__tag { color: var(--ink-soft); font-size: var(--fs-sm); margin-top: 0.85rem; max-width: 36ch; line-height: 1.6; }
-.pagefoot__col h2 { font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; font-weight: 400; }
+.pagefoot__col h2 { font-family: var(--font-sans); font-size: var(--fs-xs); letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; font-weight: 500; }
 .pagefoot__col ul { list-style: none; padding: 0; display: grid; gap: 0.55rem; }
 .pagefoot__col a { color: var(--ink-soft); font-size: var(--fs-sm); }
 .pagefoot__col a:hover { color: var(--blue-deep); }
