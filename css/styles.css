@@ -606,6 +606,13 @@ html.lang-en body [lang="en"] { display: revert; }
 .feature__center .section-lead { margin: 0.9rem auto 0; }
 .feature__head .bio__dates { margin: 0.45rem 0 0; }
 .subfeature__block .avatar-row { margin: 0.9rem 0 0; }
+.feature__body {
+  margin: 1.1rem 0 0;
+  font-size: clamp(0.92rem, 0.88rem + 0.18vw, 1.02rem);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 56ch;
+}
 .feature__cta,
 .feature__head .btn,
 .feature__center .btn,
