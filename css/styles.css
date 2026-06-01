@@ -690,24 +690,26 @@ html.lang-en body [lang="en"] { display: revert; }
 }
 
 /* Two-tier block: visible Kurzfassung + "mehr erfahren" Aufklappen */
-.blocks { display: grid; gap: clamp(2rem, 4vw, 3.5rem); max-width: 80ch; }
-.block { border-top: 1px solid var(--line); padding-top: clamp(1.5rem, 3vw, 2.25rem); }
+.blocks { display: grid; gap: clamp(1.25rem, 2.5vw, 2rem); max-width: 80ch; }
+.block { border-top: 1px solid var(--line); padding-top: clamp(1.1rem, 2.2vw, 1.6rem); }
 .block:first-child { border-top: none; padding-top: 0; }
 .block__title {
   font-family: var(--font-display); font-optical-sizing: auto;
   font-variation-settings: "opsz" 144;
-  font-size: clamp(1.4rem, 1.1rem + 0.9vw, 1.95rem);
-  font-weight: 400; line-height: 1.18; letter-spacing: -0.012em;
-  color: var(--ink); margin-bottom: clamp(0.9rem, 2vw, 1.25rem);
+  font-size: clamp(1.35rem, 1.05rem + 0.85vw, 1.85rem);
+  font-weight: 400; line-height: 1.2; letter-spacing: -0.012em;
+  color: var(--ink); margin-bottom: clamp(0.7rem, 1.5vw, 1rem);
 }
 .block__short.prose { max-width: 72ch; }
 .block__short.prose p,
 .block__short.prose li { font-size: clamp(0.92rem, 0.88rem + 0.18vw, 1.02rem); line-height: 1.65; }
-.block__more { margin-top: 1.5rem; border-top: 1px dashed var(--line-soft); }
+.block__short.prose p + p,
+.block__short.prose ol { margin-top: 0.7em; }
+.block__more { margin-top: 1rem; border-top: 1px dashed var(--line-soft); }
 .block__more-summary {
   list-style: none; cursor: pointer;
   display: inline-flex; align-items: center; gap: 0.55rem;
-  padding: 0.85rem 0;
+  padding: 0.65rem 0;
   font-family: var(--font-sans);
   font-size: var(--fs-xs); font-weight: 600;
   letter-spacing: 0.16em; text-transform: uppercase;
@@ -727,6 +729,66 @@ html.lang-en body [lang="en"] { display: revert; }
 .block__long.prose p,
 .block__long.prose li { font-size: clamp(0.92rem, 0.88rem + 0.18vw, 1.02rem); line-height: 1.65; }
 .block__more[open] .block__long { animation: panel-in 0.4s var(--ease); }
+
+/* Grundsätze variant: numbered statements rather than display headings.
+   Lighter type, tighter rhythm, calmer kicker. */
+.blocks--principles {
+  gap: clamp(0.9rem, 1.6vw, 1.4rem);
+  max-width: 78ch;
+}
+.blocks--principles .block {
+  border-top: 1px solid var(--line-soft);
+  padding-top: clamp(0.9rem, 1.8vw, 1.35rem);
+}
+.blocks--principles .block:first-child { border-top: none; padding-top: 0; }
+.blocks--principles .block .kicker {
+  font-size: var(--fs-xs); letter-spacing: 0.22em;
+  color: var(--ink-faint); margin-bottom: 0.35rem;
+}
+.blocks--principles .block__title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.02rem, 0.95rem + 0.35vw, 1.18rem);
+  font-weight: 500; line-height: 1.55;
+  letter-spacing: 0;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  text-wrap: pretty;
+}
+.blocks--principles .block__more { margin-top: 0.5rem; border-top: none; }
+.blocks--principles .block__more-summary {
+  padding: 0.4rem 0;
+  font-size: 0.72rem; letter-spacing: 0.18em;
+}
+.blocks--principles .block__more-summary::after {
+  width: 1.1rem; height: 1.1rem; font-size: 0.85rem;
+}
+.blocks--principles .block__long.prose p {
+  color: var(--ink-soft);
+  font-size: clamp(0.9rem, 0.85rem + 0.15vw, 0.98rem);
+}
+
+/* Grundsätze intro + outro paragraphs */
+.grundsaetze-intro {
+  padding-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+.grundsaetze-intro .prose p {
+  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.grundsaetze-outro {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  padding: clamp(1.1rem, 2.4vw, 1.6rem) 0;
+  border-top: 1px solid var(--line);
+  max-width: 78ch;
+}
+.grundsaetze-outro p {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 0.9rem + 0.18vw, 1.04rem);
+  line-height: 1.7;
+  color: var(--ink);
+  font-weight: 400;
+}
 
 /* Small status badge (e.g. "in Konzeption" on Ausbildung) */
 .pagehead__status { margin-top: 1.25rem; }
@@ -1392,15 +1454,17 @@ html.lang-en body [lang="en"] { display: revert; }
   vertical-align: top;
   line-height: 1.45;
 }
-.interna-table__pos    { font-weight: 700; color: var(--ink);      white-space: nowrap; }
-.interna-table__tone   { font-weight: 700; color: var(--ink);      white-space: nowrap; }
-.interna-table__iv     { color: var(--ink); }
-.interna-table__skt    { color: var(--blue-deep); font-style: italic; white-space: nowrap; }
-.interna-table__mean   { color: var(--ink-soft); }
-.interna-table__org    { color: var(--ink-soft); font-size: var(--fs-xs); }
-.interna-table__org-oct{ color: var(--ink-faint); font-size: var(--fs-xs); }
-.interna-table__fn     { color: var(--ink-soft); font-size: var(--fs-xs); font-style: italic; }
-.interna-table__pair   { color: var(--blue-ink); white-space: nowrap; font-weight: 500; }
+/* Consistent typography across every cell: one font family, one size,
+   one weight scale (600 for emphasis / 400 for everything else),
+   one colour ramp (ink → ink-soft for secondary detail). */
+.interna-table__pos    { font-weight: 600; color: var(--ink);      white-space: nowrap; }
+.interna-table__tone   { font-weight: 600; color: var(--ink);      white-space: nowrap; }
+.interna-table__iv     { font-weight: 400; color: var(--ink);      white-space: nowrap; }
+.interna-table__skt    { font-weight: 400; color: var(--ink);      white-space: nowrap; font-style: italic; }
+.interna-table__mean   { font-weight: 400; color: var(--ink-soft); }
+.interna-table__org    { font-weight: 400; color: var(--ink-soft); }
+.interna-table__org-oct{ font-weight: 400; color: var(--ink-soft); }
+.interna-table__pair   { font-weight: 400; color: var(--ink);      white-space: nowrap; }
 .interna-table__swatch {
   display: inline-block; width: 12px; height: 12px; border-radius: 50%;
   margin-right: 0.5rem; vertical-align: -2px;

@@ -578,18 +578,23 @@
             organOct_de: "Punkt in Fußmitte", organOct_en: "Point in the centre of the foot" }
         ];
 
-        // Tone Pairs from "12 Grundtöne paarig" — only 4 pairs (octave-
-        // complementary intervals). Pa, Ma₂, Ma₁, and both Sa positions are
-        // unpaired: Pa is "Der ungepaarte Ton", Ma₂ is the self-complementing
-        // tritone, Ma₁'s octave-complement would be Pa (already unpaired).
-        // bend = x-offset from CX (350) for the vertical of each bracket;
-        // brackets nest concentrically to the right of the body image
-        // (which ends at x=530, so xStart=540 in buildPairs).
+        // Five Tonpaare from "12 Grundtöne paarig" — octave-complementary
+        // pairings of the chromatic interval set. Sa (Grundton + Oktave)
+        // and Ma₂ (tritone, self-complementing) are the only unpaired
+        // positions.
+        //   1. Tp: Ni₂ ↔ Ri₁   (major 7th ↔ minor 2nd)
+        //   2. Tp: Ni₁ ↔ Ri₂   (minor 7th ↔ major 2nd)
+        //   3. Tp: Dha₂ ↔ Ga₁  (major 6th ↔ minor 3rd)
+        //   4. Tp: Dha₁ ↔ Ga₂  (minor 6th ↔ major 3rd)
+        //   5. Tp: Pa   ↔ Ma₁  (perfect 5th ↔ perfect 4th)
+        // bend = x-offset from CX (350) for each bracket's vertical limb.
+        // Nested concentrically to the right of the body silhouette.
         var TONE_PAIRS = [
-          { num: 1, top: 11, bot:  1, bend: 300 },  // Ni₂ ↔ Ri₁ outermost (x_bend = 650)
-          { num: 2, top: 10, bot:  2, bend: 270 },
-          { num: 3, top:  9, bot:  3, bend: 240 },
-          { num: 4, top:  8, bot:  4, bend: 210 }   // Dha₁ ↔ Ga₂ innermost (x_bend = 560)
+          { num: 1, top: 11, bot:  1, bend: 290 },  // Ni₂ ↔ Ri₁  outermost (x_bend = 640)
+          { num: 2, top: 10, bot:  2, bend: 260 },
+          { num: 3, top:  9, bot:  3, bend: 230 },
+          { num: 4, top:  8, bot:  4, bend: 200 },
+          { num: 5, top:  7, bot:  5, bend: 170 }   // Pa   ↔ Ma₁ innermost (x_bend = 520)
         ];
 
         var INTERVAL_NAMES_DE = [
@@ -649,13 +654,17 @@
 
         function buildPairs() {
           clear(pairsLayer);
+          // Brackets begin flush with each paired dot (at the body's
+          // centreline) and elbow out to the right, so every bracket
+          // visually anchors to the two dots it pairs. The horizontal
+          // segments pass through the silhouette wash — fine, since the
+          // silhouette is subtle and the brackets are only drawn when a
+          // point is selected or "Tonpaare anzeigen" is toggled on.
           TONE_PAIRS.forEach(function (tp) {
             var top = posBySemi(tp.top);
             var bot = posBySemi(tp.bot);
             if (!top || !bot) return;
-            // Bracket geometry: starts outside the body image's right edge
-            // (x=530), elbows further right to xBend, then back. Angular.
-            var xStart = 540;
+            var xStart = CX;                 // anchor at the dot centre
             var xBend  = CX + tp.bend;
             var midY   = (top.y + bot.y) / 2;
             var line = svgEl("polyline", {
@@ -814,10 +823,8 @@
 
         function pairLabel(semi, lang) {
           var tp = pairForSemi(semi);
-          if (tp) return tp.num + ". " + (lang === "en" ? "Tp" : "Tp");
-          if (semi === 7) return lang === "en" ? "Unpaired (Pa)"        : "Ungepaart (Pa)";
-          if (semi === 6) return lang === "en" ? "Unpaired (Tritone)"   : "Ungepaart (Tritonus)";
-          if (semi === 5) return lang === "en" ? "Unpaired"             : "Ungepaart";
+          if (tp) return tp.num + ". Tp";
+          if (semi === 6) return lang === "en" ? "Unpaired (Tritone)" : "Ungepaart (Tritonus)";
           return lang === "en" ? "Tonic / Octave" : "Grundton / Oktave";
         }
 
@@ -880,7 +887,6 @@
                 { de: "Bedeutung",       en: "Meaning" },
                 { de: "Organ",           en: "Organ" },
                 { de: "Organ 1. Oktave", en: "Organ 1st octave" },
-                { de: "Grundfunktion",   en: "Function" },
                 { de: "Tonpaar",         en: "Tone pair" }
               ]
             : [
@@ -935,10 +941,6 @@
                 '<td class="interna-table__org-oct">' +
                   '<span lang="de">' + (p.organOct_de || "—") + '</span>' +
                   '<span lang="en">' + (p.organOct_en || "—") + '</span>' +
-                '</td>' +
-                '<td class="interna-table__fn">' +
-                  '<span lang="de">' + (p.function_de || "—") + '</span>' +
-                  '<span lang="en">' + (p.function_en || "—") + '</span>' +
                 '</td>' +
                 pairCell;
             } else {
