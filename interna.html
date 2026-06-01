@@ -435,9 +435,12 @@
           gateInput.value = "";
           setTimeout(function(){ gateInput.focus(); }, 30);
         }
+        // Defer the auto-show by a tick so the rest of the IIFE (POSITIONS,
+        // TONE_PAIRS, helper functions) is fully initialized first — otherwise
+        // a returning visit hits undefined vars during renderApp().
         try {
           if (sessionStorage.getItem(GATE_KEY) === "ok") {
-            showApp();
+            setTimeout(showApp, 0);
           } else {
             gateInput.focus();
           }
