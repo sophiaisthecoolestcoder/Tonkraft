@@ -705,11 +705,15 @@ html.lang-en body [lang="en"] { display: revert; }
 .block__short.prose li { font-size: clamp(0.92rem, 0.88rem + 0.18vw, 1.02rem); line-height: 1.65; }
 .block__short.prose p + p,
 .block__short.prose ol { margin-top: 0.7em; }
-.block__more { margin-top: 1rem; border-top: 1px dashed var(--line-soft); }
+/* "mehr erfahren" toggle — equal whitespace above and below the label,
+   no rule line, a clean rotating chevron in the same sans-serif tone
+   as the rest of the body. Same design across every page that uses
+   the Blocks pattern. */
+.block__more { margin: 0; border: 0; }
 .block__more-summary {
   list-style: none; cursor: pointer;
-  display: inline-flex; align-items: center; gap: 0.55rem;
-  padding: 0.65rem 0;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 1.1rem 0;
   font-family: var(--font-sans);
   font-size: var(--fs-xs); font-weight: 600;
   letter-spacing: 0.16em; text-transform: uppercase;
@@ -718,14 +722,19 @@ html.lang-en body [lang="en"] { display: revert; }
 }
 .block__more-summary::-webkit-details-marker { display: none; }
 .block__more-summary::after {
-  content: "+"; display: inline-flex; align-items: center; justify-content: center;
-  width: 1.4rem; height: 1.4rem; border: 1px solid currentColor;
-  border-radius: 50%; font-weight: 400; line-height: 1;
+  content: "";
+  display: inline-block;
+  width: 0.55em; height: 0.55em;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translate(-15%, -15%);
   transition: transform 0.3s var(--ease);
 }
-.block__more[open] .block__more-summary::after { content: "−"; }
+.block__more[open] .block__more-summary::after {
+  transform: rotate(-135deg) translate(-15%, -15%);
+}
 .block__more-summary:hover { color: var(--blue-ink); }
-.block__long.prose { padding-top: 0.5rem; max-width: 72ch; }
+.block__long.prose { padding-top: 0; max-width: 72ch; }
 .block__long.prose p,
 .block__long.prose li { font-size: clamp(0.92rem, 0.88rem + 0.18vw, 1.02rem); line-height: 1.65; }
 .block__more[open] .block__long { animation: panel-in 0.4s var(--ease); }
@@ -754,14 +763,9 @@ html.lang-en body [lang="en"] { display: revert; }
   margin-bottom: 0.5rem;
   text-wrap: pretty;
 }
-.blocks--principles .block__more { margin-top: 0.5rem; border-top: none; }
-.blocks--principles .block__more-summary {
-  padding: 0.4rem 0;
-  font-size: 0.72rem; letter-spacing: 0.18em;
-}
-.blocks--principles .block__more-summary::after {
-  width: 1.1rem; height: 1.1rem; font-size: 0.85rem;
-}
+/* Grundsätze share the exact same "mehr lesen" treatment as the
+   default Blocks pattern — same font, same chevron, same symmetric
+   padding — only the long-form prose is a touch quieter. */
 .blocks--principles .block__long.prose p {
   color: var(--ink-soft);
   font-size: clamp(0.9rem, 0.85rem + 0.15vw, 0.98rem);
