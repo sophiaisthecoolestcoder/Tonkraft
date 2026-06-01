@@ -144,142 +144,19 @@
         <div class="interna-grid">
           <!-- Body silhouette + dots -->
           <div class="interna-body">
-            <svg class="body-svg" viewBox="0 0 420 660" role="img" aria-labelledby="body-title body-desc" preserveAspectRatio="xMidYMid meet">
+            <svg class="body-svg" viewBox="0 0 700 800" role="img" aria-labelledby="body-title body-desc" preserveAspectRatio="xMidYMid meet">
               <title id="body-title">Sonologisches Körperschema</title>
-              <desc id="body-desc">Frontalansicht eines Körpers mit dreizehn Tonpositionen vom Beckenraum (Sa) bis zum Scheitel (Sa').</desc>
+              <desc id="body-desc">Frontalansicht eines Körpers mit dreizehn Tonpositionen vom Bauchnabel (Sa) bis zur Stirnkuhle (Sa').</desc>
 
-              <defs>
-                <!-- Subtle 3D gradient for body fill -->
-                <linearGradient id="bodyFill" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%"   stop-color="#1c528a" stop-opacity="0.05" />
-                  <stop offset="35%"  stop-color="#1c528a" stop-opacity="0.13" />
-                  <stop offset="100%" stop-color="#1c528a" stop-opacity="0.04" />
-                </linearGradient>
-                <!-- Specular highlight (slight shimmer on left side of body) -->
-                <radialGradient id="bodyHilite" cx="35%" cy="32%" r="55%">
-                  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.42" />
-                  <stop offset="60%"  stop-color="#ffffff" stop-opacity="0.08" />
-                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-                </radialGradient>
-                <!-- Soft drop-shadow for depth -->
-                <filter id="bodyShadow" x="-10%" y="-10%" width="120%" height="120%">
-                  <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
-                  <feOffset dx="0" dy="3" />
-                  <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
-                  <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <!-- Dot glow filter -->
-                <filter id="dotGlow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" />
-                </filter>
-              </defs>
+              <!-- Anatomical body illustration as background -->
+              <image class="body-img" href="assets/illustrations/anatomy-body.jpg"
+                     x="170" y="20" width="360" height="491"
+                     preserveAspectRatio="xMidYMid meet" />
 
-              <!-- Anatomical silhouette: one continuous body path -->
-              <g class="body-svg__silhouette" aria-hidden="true" filter="url(#bodyShadow)">
-                <!-- Head (separate ellipse, no overlap with body path) -->
-                <ellipse class="body-fill"   cx="180" cy="70" rx="40" ry="50" fill="url(#bodyFill)" />
-                <ellipse class="body-hilite" cx="180" cy="70" rx="40" ry="50" fill="url(#bodyHilite)" />
-                <ellipse class="body-outline" cx="180" cy="70" rx="40" ry="50" fill="none" stroke="#1c528a" stroke-width="1" stroke-opacity="0.35" />
-                <!-- Body outline (single closed path: neck → shoulders → torso → hips → legs → feet → mirror back to neck) -->
-                <path class="body-fill" fill="url(#bodyFill)" d="
-                  M 168 118
-                  L 168 140
-                  C 172 148, 184 152, 196 154
-                  C 220 158, 248 170, 268 188
-                  C 278 198, 282 212, 282 228
-                  C 282 254, 278 282, 272 312
-                  C 268 330, 266 348, 268 370
-                  C 270 392, 278 412, 286 434
-                  L 282 624
-                  C 282 632, 274 634, 268 634
-                  L 224 634
-                  C 218 634, 214 630, 214 624
-                  L 212 434
-                  L 196 414
-                  L 180 408
-                  L 164 414
-                  L 148 434
-                  L 146 624
-                  C 146 630, 142 634, 136 634
-                  L 92 634
-                  C 86 634, 78 632, 78 624
-                  L 74 434
-                  C 82 412, 90 392, 92 370
-                  C 94 348, 92 330, 88 312
-                  C 82 282, 78 254, 78 228
-                  C 78 212, 82 198, 92 188
-                  C 112 170, 140 158, 164 154
-                  C 176 152, 188 148, 192 140
-                  L 192 118
-                  L 168 118
-                  Z
-                " />
-                <path class="body-hilite" fill="url(#bodyHilite)" d="
-                  M 168 118
-                  L 168 140
-                  C 172 148, 184 152, 196 154
-                  C 220 158, 248 170, 268 188
-                  C 278 198, 282 212, 282 228
-                  C 282 254, 278 282, 272 312
-                  C 268 330, 266 348, 268 370
-                  C 270 392, 278 412, 286 434
-                  L 282 624
-                  C 282 632, 274 634, 268 634
-                  L 224 634
-                  C 218 634, 214 630, 214 624
-                  L 212 434
-                  L 196 414
-                  L 180 408
-                  L 164 414
-                  L 148 434
-                  L 146 624
-                  C 146 630, 142 634, 136 634
-                  L 92 634
-                  C 86 634, 78 632, 78 624
-                  L 74 434
-                  C 82 412, 90 392, 92 370
-                  C 94 348, 92 330, 88 312
-                  C 82 282, 78 254, 78 228
-                  C 78 212, 82 198, 92 188
-                  C 112 170, 140 158, 164 154
-                  C 176 152, 188 148, 192 140
-                  L 192 118
-                  Z
-                " />
-                <path class="body-outline" fill="none" stroke="#1c528a" stroke-width="1" stroke-opacity="0.35" stroke-linejoin="round" d="
-                  M 168 118
-                  L 168 140
-                  C 172 148, 184 152, 196 154
-                  C 220 158, 248 170, 268 188
-                  C 278 198, 282 212, 282 228
-                  C 282 254, 278 282, 272 312
-                  C 268 330, 266 348, 268 370
-                  C 270 392, 278 412, 286 434
-                  L 282 624
-                  C 282 632, 274 634, 268 634
-                  L 224 634
-                  C 218 634, 214 630, 214 624
-                  L 212 434
-                  L 196 414
-                  L 180 408
-                  L 164 414
-                  L 148 434
-                  L 146 624
-                  C 146 630, 142 634, 136 634
-                  L 92 634
-                  C 86 634, 78 632, 78 624
-                  L 74 434
-                  C 82 412, 90 392, 92 370
-                  C 94 348, 92 330, 88 312
-                  C 82 282, 78 254, 78 228
-                  C 78 212, 82 198, 92 188
-                  C 112 170, 140 158, 164 154
-                  C 176 152, 188 148, 192 140
-                  L 192 118
-                " />
-              </g>
+              <!-- Intervals layer (left of body): lines from Sa to each position -->
+              <g class="body-svg__intervals" data-intervals></g>
 
-              <!-- Tone-pair angular brackets on the right side of the body -->
+              <!-- Tone-pair angular brackets (right of body) -->
               <g class="body-svg__pairs" data-pairs></g>
 
               <!-- Dots + labels (rendered by JS) -->
@@ -313,6 +190,8 @@
                       <th scope="col"><span lang="de">Position</span><span lang="en">Position</span></th>
                       <th scope="col"><span lang="de">Ton</span><span lang="en">Tone</span></th>
                       <th scope="col"><span lang="de">Intervall</span><span lang="en">Interval</span></th>
+                      <th scope="col"><span lang="de">Sanskrit</span><span lang="en">Sanskrit</span></th>
+                      <th scope="col"><span lang="de">Organ</span><span lang="en">Organ</span></th>
                     </tr>
                   </thead>
                   <tbody data-summary-rows></tbody>
@@ -337,7 +216,27 @@
                     <dt><span lang="de">Intervall</span><span lang="en">Interval</span></dt>
                     <dd data-detail-interval>—</dd>
                   </div>
-                  <div class="interna-info__row" data-detail-pair-row hidden>
+                  <div class="interna-info__row">
+                    <dt><span lang="de">Sanskrit</span><span lang="en">Sanskrit</span></dt>
+                    <dd data-detail-sanskrit>—</dd>
+                  </div>
+                  <div class="interna-info__row">
+                    <dt><span lang="de">Bedeutung</span><span lang="en">Meaning</span></dt>
+                    <dd data-detail-meaning>—</dd>
+                  </div>
+                  <div class="interna-info__row">
+                    <dt><span lang="de">Organ</span><span lang="en">Organ</span></dt>
+                    <dd data-detail-organ>—</dd>
+                  </div>
+                  <div class="interna-info__row" data-detail-organ-octave-row>
+                    <dt><span lang="de">Organ 1. Oktave</span><span lang="en">Organ 1st octave</span></dt>
+                    <dd data-detail-organ-octave>—</dd>
+                  </div>
+                  <div class="interna-info__row" data-detail-function-row hidden>
+                    <dt><span lang="de">Grundfunktion</span><span lang="en">Function</span></dt>
+                    <dd data-detail-function>—</dd>
+                  </div>
+                  <div class="interna-info__row">
                     <dt><span lang="de">Tonpaar</span><span lang="en">Tone pair</span></dt>
                     <dd data-detail-pair>—</dd>
                   </div>
@@ -351,16 +250,22 @@
                 </button>
               </div>
 
-              <div class="interna-info__toggle">
-                <label>
+              <div class="interna-info__toggles">
+                <label class="interna-info__toggle">
+                  <input type="checkbox" id="toggle-intervals" />
+                  <span class="interna-info__toggle-swatch interna-info__toggle-swatch--intervals" aria-hidden="true"></span>
+                  <span lang="de">Intervalle anzeigen</span><span lang="en">Show intervals</span>
+                </label>
+                <label class="interna-info__toggle">
                   <input type="checkbox" id="toggle-pairs" />
+                  <span class="interna-info__toggle-swatch interna-info__toggle-swatch--pairs" aria-hidden="true"></span>
                   <span lang="de">Tonpaare anzeigen</span><span lang="en">Show tone pairs</span>
                 </label>
               </div>
 
               <p class="interna-info__source">
-                <span lang="de">Nach den Grundtonschaubildern und der „12 Grundtöne paarig"-Übersicht der SaMa Sonologie® (Tonkraft Institut).</span>
-                <span lang="en">After the fundamental-tone diagrams and the „12 Grundtöne paarig" overview of SaMa Sonology® (Tonkraft Institute).</span>
+                <span lang="de">Nach den Grundtonschaubildern, der „12 Grundtöne paarig"- und der „Intervalle"-Übersicht der SaMa Sonologie® (Tonkraft Institut).</span>
+                <span lang="en">After the fundamental-tone diagrams, the „12 Grundtöne paarig" and „Intervalle" tables of SaMa Sonology® (Tonkraft Institute).</span>
               </p>
             </div>
           </aside>
@@ -489,41 +394,91 @@
           H:   "#a4c842"    // lime / yellow-green
         };
 
-        // 13 positions ascending the body. y in viewBox coordinates (0..660).
-        // semi = semitones above the root Sa.
+        // Body centerline x in viewBox (700×800). The anatomy image is placed
+        // at x=170,y=20,w=360,h=491; centerline is x=170 + 360/2 = 350.
+        var CX = 350;
+
+        // 13 positions ascending the body. y coordinates correspond to exact
+        // anatomical landmarks on the embedded anatomy image (kept internal
+        // per the Intervalle II descriptions — Stirnkuhle, Nasenwurzel, …,
+        // Nabel+0.5cm, Bauchnabel). semi = semitones above the root Sa.
+        // Sanskrit names and Übersetzung from the "Intervalle" reference table.
         var POSITIONS = [
-          { semi: 12, y: 24,  kar: "Sa",   karSub: "′" },  // Sa' (octave) at crown
-          { semi: 11, y: 60,  kar: "Ni",   karSub: "₂" },
-          { semi: 10, y: 124, kar: "Ni",   karSub: "₁" },
-          { semi:  9, y: 178, kar: "Dha",  karSub: "₂" },
-          { semi:  8, y: 208, kar: "Dha",  karSub: "₁" },
-          { semi:  7, y: 238, kar: "Pa",   karSub: ""  },
-          { semi:  6, y: 264, kar: "Ma",   karSub: "₂" },
-          { semi:  5, y: 286, kar: "Ma",   karSub: "₁" },
-          { semi:  4, y: 308, kar: "Ga",   karSub: "₂" },
-          { semi:  3, y: 326, kar: "Ga",   karSub: "₁" },
-          { semi:  2, y: 343, kar: "Ri",   karSub: "₂" },
-          { semi:  1, y: 360, kar: "Ri",   karSub: "₁" },
-          { semi:  0, y: 378, kar: "Sa",   karSub: ""  }   // Sa (root) at lower abdomen
+          { semi: 12, y:  82, kar: "Sa",   karSub: "′",
+            sanskrit: "Śadjá",   meaning_de: "Basis (Oktave)", meaning_en: "Base (octave)",
+            organ_de: "Hypophyse", organ_en: "Pituitary gland",
+            organOct_de: "Bauchnabel", organOct_en: "Navel" },
+          { semi: 11, y: 105, kar: "Ni",   karSub: "₂",
+            sanskrit: "Niśata",  meaning_de: "Sitzend",      meaning_en: "Seated",
+            organ_de: "Sinnesorgane (Augen, …)", organ_en: "Sense organs (eyes, …)",
+            organOct_de: "Dünndarm (u.a. 12-Finger-Darm)", organOct_en: "Small intestine (incl. duodenum)" },
+          { semi: 10, y: 165, kar: "Ni",   karSub: "₁",
+            sanskrit: "Niśata",  meaning_de: "Sitzend",      meaning_en: "Seated",
+            organ_de: "Schilddrüse / Stimmapparat / Mandeln", organ_en: "Thyroid / vocal apparatus / tonsils",
+            organOct_de: "Blinddarm („Darmmantel\")", organOct_en: "Caecum (\"intestinal mantle\")",
+            function_de: "„Neuralgischer Punkt\"", function_en: "\"Neuralgic point\"" },
+          { semi:  9, y: 205, kar: "Dha",  karSub: "₂",
+            sanskrit: "Dhaivata", meaning_de: "Subtil, ausgewogen", meaning_en: "Subtle, balanced",
+            organ_de: "Lungen, Thymus", organ_en: "Lungs, thymus",
+            organOct_de: "Dickdarm", organOct_en: "Large intestine",
+            function_de: "Immunsystem", function_en: "Immune system" },
+          { semi:  8, y: 233, kar: "Dha",  karSub: "₁",
+            sanskrit: "Dhaivata", meaning_de: "Subtil, ausgewogen", meaning_en: "Subtle, balanced",
+            organ_de: "Lungen", organ_en: "Lungs",
+            organOct_de: "Blase", organOct_en: "Bladder" },
+          { semi:  7, y: 244, kar: "Pa",   karSub: "",
+            sanskrit: "Pañcama", meaning_de: "Die Fünfte",   meaning_en: "The fifth",
+            organ_de: "Physisches Herz", organ_en: "Physical heart",
+            organOct_de: "Innere Geschlechtsorgane", organOct_en: "Inner reproductive organs" },
+          { semi:  6, y: 255, kar: "Ma",   karSub: "₂",
+            sanskrit: "Madhyama", meaning_de: "Mitte",       meaning_en: "Middle",
+            organ_de: "Kein Organ", organ_en: "No organ",
+            organOct_de: "Primäre Geschlechtsorgane", organOct_en: "Primary reproductive organs" },
+          { semi:  5, y: 266, kar: "Ma",   karSub: "₁",
+            sanskrit: "Madhyama", meaning_de: "Mitte",       meaning_en: "Middle",
+            organ_de: "Milz / Zwerchfell / Gallenblase", organ_en: "Spleen / diaphragm / gallbladder",
+            organOct_de: "Beckenboden (Ende des Rumpfes) / Anus", organOct_en: "Pelvic floor (end of torso) / anus" },
+          { semi:  4, y: 283, kar: "Ga",   karSub: "₂",
+            sanskrit: "Gandhara", meaning_de: "Duftend, parfümiert", meaning_en: "Fragrant, perfumed",
+            organ_de: "Leber", organ_en: "Liver",
+            organOct_de: "Kniegelenk, Knie", organOct_en: "Knee joint, knee",
+            function_de: "Entgiftungsorgan", function_en: "Detoxification organ" },
+          { semi:  3, y: 299, kar: "Ga",   karSub: "₁",
+            sanskrit: "Gandhara", meaning_de: "Duftend, parfümiert", meaning_en: "Fragrant, perfumed",
+            organ_de: "Magen", organ_en: "Stomach",
+            organOct_de: "Knöchel, Sprunggelenk", organOct_en: "Ankle, ankle joint" },
+          { semi:  2, y: 316, kar: "Ri",   karSub: "₂",
+            sanskrit: "Riśabha", meaning_de: "Starkes Tier", meaning_en: "Strong animal",
+            organ_de: "Pancreas (Bauchspeicheldrüse)", organ_en: "Pancreas",
+            organOct_de: "Ferse", organOct_en: "Heel",
+            function_de: "Insulinproduktion, Fett- und Zuckerstoffwechsel", function_en: "Insulin production, fat & sugar metabolism" },
+          { semi:  1, y: 327, kar: "Ri",   karSub: "₁",
+            sanskrit: "Riśabha", meaning_de: "Starkes Tier", meaning_en: "Strong animal",
+            organ_de: "Nieren", organ_en: "Kidneys",
+            organOct_de: "Zehen, Ballen", organOct_en: "Toes, balls of the feet" },
+          { semi:  0, y: 338, kar: "Sa",   karSub: "",
+            sanskrit: "Śadjá",   meaning_de: "Basis (Grundton)", meaning_en: "Base (root)",
+            organ_de: "Bauchnabel", organ_en: "Navel",
+            organOct_de: "Punkt in Fußmitte", organOct_en: "Point in the centre of the foot" }
         ];
 
-        // Body centerline x (viewBox 400×660)
-        var CX = 180;
-
-        // 5 Tone Pairs from "12 Grundtöne paarig" — pairs that mirror around Pa,
-        // excluding Sa (Grundton), Sa' (Oktave), and Pa (the unpaired tone).
-        // bend = x-offset from CX (180) for the vertical bend; nested concentric.
+        // Tone Pairs from "12 Grundtöne paarig" — only 4 pairs (octave-
+        // complementary intervals). Pa, Ma₂, Ma₁, and both Sa positions are
+        // unpaired: Pa is "Der ungepaarte Ton", Ma₂ is the self-complementing
+        // tritone, Ma₁'s octave-complement would be Pa (already unpaired).
+        // bend = x-offset from CX (350) for the vertical of each bracket;
+        // brackets nest concentrically to the right of the body image
+        // (which ends at x=530, so xStart=540 in buildPairs).
         var TONE_PAIRS = [
-          { num: 1, top: 11, bot:  1, bend: 190 },  // Ni₂ ↔ Ri₁  outermost (x_bend = 370)
-          { num: 2, top: 10, bot:  2, bend: 175 },
-          { num: 3, top:  9, bot:  3, bend: 160 },
-          { num: 4, top:  8, bot:  4, bend: 145 },
-          { num: 5, top:  6, bot:  5, bend: 130 }   // Ma₂ ↔ Ma₁  innermost (x_bend = 310)
+          { num: 1, top: 11, bot:  1, bend: 265 },  // Ni₂ ↔ Ri₁  outermost (x_bend = 615)
+          { num: 2, top: 10, bot:  2, bend: 245 },
+          { num: 3, top:  9, bot:  3, bend: 225 },
+          { num: 4, top:  8, bot:  4, bend: 205 }   // Dha₁ ↔ Ga₂ innermost (x_bend = 555)
         ];
 
         var INTERVAL_NAMES_DE = [
           "Grundton","Kleine Sekunde","Große Sekunde","Kleine Terz","Große Terz",
-          "Quarte","Tritonus","Quinte","Kleine Sexte","Große Sexte",
+          "Reine Quarte","Tritonus","Quinte","Kleine Sexte","Große Sexte",
           "Kleine Septime","Große Septime","Oktave"
         ];
         var INTERVAL_NAMES_EN = [
@@ -531,16 +486,22 @@
           "Perfect 4th","Tritone","Perfect 5th","Minor 6th","Major 6th",
           "Minor 7th","Major 7th","Octave"
         ];
+        // Short labels for the intervals overlay (left of body)
+        var INTERVAL_SHORT = [
+          "1","♭2","2","♭3","3","4","♭5","5","♭6","6","♭7","7","8"
+        ];
 
         var NS = "http://www.w3.org/2000/svg";
-        var pointsLayer  = null;
-        var pairsLayer   = null;
-        var audioEl      = null;
-        var currentRoot  = "";   // "" = general
-        var selectedSemi = null;
-        var isPlaying    = false;
-        var playingSemi  = null; // which position is currently sounding
-        var pairsAlwaysShown = false;
+        var pointsLayer    = null;
+        var pairsLayer     = null;
+        var intervalsLayer = null;
+        var audioEl        = null;
+        var currentRoot    = "";   // "" = general
+        var selectedSemi   = null;
+        var isPlaying      = false;
+        var playingSemi    = null;
+        var showPairs      = false;
+        var showIntervals  = false;
 
         function tonesForRoot(rootKey) {
           if (!rootKey) return null;
@@ -576,12 +537,11 @@
             var top = posBySemi(tp.top);
             var bot = posBySemi(tp.bot);
             if (!top || !bot) return;
-            // Bracket geometry: starts outside the body's widest point (CX+110 = 290)
-            // then elbows further right to CX+bend, then back. All angular.
-            var xStart = CX + 110;
+            // Bracket geometry: starts outside the body image's right edge
+            // (x=530), elbows further right to xBend, then back. Angular.
+            var xStart = 540;
             var xBend  = CX + tp.bend;
             var midY   = (top.y + bot.y) / 2;
-            // Angular bracket (polyline with sharp corners)
             var line = svgEl("polyline", {
               "class": "tp-bracket",
               "data-pair": tp.num,
@@ -594,16 +554,41 @@
               "fill": "none"
             });
             pairsLayer.appendChild(line);
-            // TP label (rotated 90° at the bend)
             var label = svgEl("text", {
               "class": "tp-label",
               "data-pair": tp.num,
-              "x": xBend + 12, "y": midY,
+              "x": xBend + 14, "y": midY,
               "text-anchor": "middle",
-              "transform": "rotate(-90, " + (xBend + 12) + ", " + midY + ")"
+              "transform": "rotate(-90, " + (xBend + 14) + ", " + midY + ")"
             });
             label.appendChild(document.createTextNode(tp.num + ". Tp"));
             pairsLayer.appendChild(label);
+          });
+        }
+
+        function buildIntervals() {
+          // Left-side overlay: short interval label (1, ♭2, 2, ♭3, 3, 4, ♭5,
+          // 5, ♭6, 6, ♭7, 7, 8) next to each position, with a connector line.
+          clear(intervalsLayer);
+          POSITIONS.forEach(function (p) {
+            var xLabel = 140;
+            var xConnectorStart = xLabel + 22;
+            var xConnectorEnd   = CX - 24;
+            var connector = svgEl("line", {
+              "class": "interval-connector",
+              "data-semi": p.semi,
+              "x1": xConnectorStart, "y1": p.y,
+              "x2": xConnectorEnd,   "y2": p.y
+            });
+            intervalsLayer.appendChild(connector);
+            var label = svgEl("text", {
+              "class": "interval-label",
+              "data-semi": p.semi,
+              "x": xLabel, "y": p.y + 4,
+              "text-anchor": "middle"
+            });
+            label.appendChild(document.createTextNode(INTERVAL_SHORT[p.semi]));
+            intervalsLayer.appendChild(label);
           });
         }
 
@@ -612,14 +597,14 @@
           var tones = tonesForRoot(currentRoot);
           POSITIONS.forEach(function (p, idx) {
             var cy = p.y;
-            var toneName = tones ? tones[p.semi % 12] : null;
+            var toneName  = tones ? tones[p.semi % 12] : null;
             var toneColor = toneName ? TONE_COLORS[toneName] : null;
 
             var g = svgEl("g", {
               "class": "body-svg__point" +
-                (p.semi === 0  ? " is-root" : "") +
+                (p.semi === 0  ? " is-root"   : "") +
                 (p.semi === 12 ? " is-octave" : "") +
-                (p.semi === 7  ? " is-pa" : ""),
+                (p.semi === 7  ? " is-pa"     : ""),
               "data-semi": p.semi,
               "tabindex": "0",
               "role": "button",
@@ -629,17 +614,19 @@
             });
             if (toneColor) g.style.setProperty("--dot-color", toneColor);
 
-            // Pulse ring
+            // Hit area — generous invisible disc that catches clicks
+            g.appendChild(svgEl("circle", { "class":"point-hit",   "cx":CX, "cy":cy, "r":16 }));
+            // Pulse ring (active only)
             g.appendChild(svgEl("circle", { "class":"point-pulse", "cx":CX, "cy":cy, "r":11 }));
             // Halo
             g.appendChild(svgEl("circle", { "class":"point-halo",  "cx":CX, "cy":cy, "r":13 }));
             // Dot
-            g.appendChild(svgEl("circle", { "class":"point-dot",   "cx":CX, "cy":cy, "r":4 }));
+            g.appendChild(svgEl("circle", { "class":"point-dot",   "cx":CX, "cy":cy, "r":5 }));
 
-            // Left label: Karnatic position name
+            // Karnatic label LEFT of dot, with white halo for legibility over body image
             var karLabel = svgEl("text", {
               "class":"point-label point-label--position",
-              "x": CX - 16, "y": cy + 4, "text-anchor":"end"
+              "x": CX - 14, "y": cy + 4, "text-anchor":"end"
             });
             karLabel.appendChild(document.createTextNode(p.kar));
             if (p.karSub) {
@@ -649,11 +636,11 @@
             }
             g.appendChild(karLabel);
 
-            // Right label: tone name (only when a root is selected)
+            // Tone label RIGHT of dot (only when a root is selected)
             if (toneName) {
               var toneLabel = svgEl("text", {
                 "class":"point-label point-label--tone",
-                "x": CX + 16, "y": cy + 4, "text-anchor":"start"
+                "x": CX + 14, "y": cy + 4, "text-anchor":"start"
               });
               if (toneColor) toneLabel.setAttribute("fill", toneColor);
               toneLabel.appendChild(document.createTextNode(toneName));
@@ -663,8 +650,8 @@
             pointsLayer.appendChild(g);
 
             g.addEventListener("mouseenter", function () { selectPoint(p); });
-            g.addEventListener("focus", function () { selectPoint(p); });
-            g.addEventListener("click", function () { selectPoint(p); togglePlay(p); });
+            g.addEventListener("focus",      function () { selectPoint(p); });
+            g.addEventListener("click",      function () { selectPoint(p); togglePlay(p); });
             g.addEventListener("keydown", function (e) {
               if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault(); selectPoint(p); togglePlay(p);
@@ -696,21 +683,35 @@
             pairsLayer.querySelectorAll(".tp-bracket, .tp-label"),
             function (el) {
               var n = parseInt(el.getAttribute("data-pair"), 10);
-              el.classList.toggle("is-active", matched && n === matched.num);
+              el.classList.toggle("is-active", !!(matched && n === matched.num));
+            }
+          );
+          // Highlight matching interval label on the left
+          Array.prototype.forEach.call(
+            intervalsLayer.querySelectorAll(".interval-label, .interval-connector"),
+            function (el) {
+              var s = parseInt(el.getAttribute("data-semi"), 10);
+              el.classList.toggle("is-active", s === p.semi);
             }
           );
           updateInfo(p);
         }
 
         function updateInfo(p) {
-          var detail        = document.querySelector("[data-info-detail]");
-          var detailPos     = document.querySelector("[data-detail-position]");
-          var detailToneRow = document.querySelector("[data-detail-tone-row]");
-          var detailTone    = document.querySelector("[data-detail-tone]");
-          var detailIv      = document.querySelector("[data-detail-interval]");
-          var detailPairRow = document.querySelector("[data-detail-pair-row]");
-          var detailPair    = document.querySelector("[data-detail-pair]");
-          var playBtn       = document.querySelector("[data-info-play]");
+          var detail            = document.querySelector("[data-info-detail]");
+          var detailPos         = document.querySelector("[data-detail-position]");
+          var detailToneRow     = document.querySelector("[data-detail-tone-row]");
+          var detailTone        = document.querySelector("[data-detail-tone]");
+          var detailIv          = document.querySelector("[data-detail-interval]");
+          var detailSanskrit    = document.querySelector("[data-detail-sanskrit]");
+          var detailMeaning     = document.querySelector("[data-detail-meaning]");
+          var detailOrgan       = document.querySelector("[data-detail-organ]");
+          var detailOrganOct    = document.querySelector("[data-detail-organ-octave]");
+          var detailOrganOctRow = document.querySelector("[data-detail-organ-octave-row]");
+          var detailFn          = document.querySelector("[data-detail-function]");
+          var detailFnRow       = document.querySelector("[data-detail-function-row]");
+          var detailPair        = document.querySelector("[data-detail-pair]");
+          var playBtn           = document.querySelector("[data-info-play]");
 
           detail.hidden = false;
           var posName = p.kar + (p.karSub || "");
@@ -718,20 +719,35 @@
           detailPos.textContent = posName;
 
           var lang = document.documentElement.lang === "en" ? "en" : "de";
-          detailIv.textContent = (lang === "en" ? INTERVAL_NAMES_EN : INTERVAL_NAMES_DE)[p.semi];
+          detailIv.textContent       = (lang === "en" ? INTERVAL_NAMES_EN : INTERVAL_NAMES_DE)[p.semi];
+          detailSanskrit.textContent = p.sanskrit || "—";
+          detailMeaning.textContent  = lang === "en" ? (p.meaning_en || "—") : (p.meaning_de || "—");
+          detailOrgan.textContent    = lang === "en" ? (p.organ_en   || "—") : (p.organ_de   || "—");
+          if (p.organOct_de || p.organOct_en) {
+            detailOrganOct.textContent = lang === "en" ? (p.organOct_en || "—") : (p.organOct_de || "—");
+            detailOrganOctRow.hidden = false;
+          } else {
+            detailOrganOctRow.hidden = true;
+          }
+          if (p.function_de || p.function_en) {
+            detailFn.textContent = lang === "en" ? (p.function_en || "—") : (p.function_de || "—");
+            detailFnRow.hidden = false;
+          } else {
+            detailFnRow.hidden = true;
+          }
 
-          // Tone pair label
+          // Tone-pair status
           var tp = pairForSemi(p.semi);
           if (tp) {
             detailPair.textContent = tp.num + ". " + (lang === "en" ? "tone pair" : "Tonpaar");
-            detailPairRow.hidden = false;
+          } else if (p.semi === 7) {
+            detailPair.textContent = lang === "en" ? "Unpaired (Pa)"  : "Ungepaart (Pa)";
+          } else if (p.semi === 6) {
+            detailPair.textContent = lang === "en" ? "Unpaired (Tritonus)" : "Ungepaart (Tritonus)";
+          } else if (p.semi === 5) {
+            detailPair.textContent = lang === "en" ? "Unpaired" : "Ungepaart";
           } else {
-            // Sa, Sa', or Pa — unpaired
-            var unpaired = p.semi === 7
-              ? (lang === "en" ? "Unpaired tone (Pa)" : "Ungepaarter Ton (Pa)")
-              : (lang === "en" ? "Tonic / Octave" : "Grundton / Oktave");
-            detailPair.textContent = unpaired;
-            detailPairRow.hidden = false;
+            detailPair.textContent = lang === "en" ? "Tonic / Octave" : "Grundton / Oktave";
           }
 
           if (currentRoot) {
@@ -749,26 +765,32 @@
         }
 
         function buildSummary() {
-          var wrap = document.querySelector("[data-summary]");
+          var wrap  = document.querySelector("[data-summary]");
           var tbody = document.querySelector("[data-summary-rows]");
           if (!currentRoot) { wrap.hidden = true; return; }
           wrap.hidden = false;
           clear(tbody);
           var tones = tonesForRoot(currentRoot);
-          var lang = document.documentElement.lang === "en" ? "en" : "de";
-          // Render from Sa' (top) downward to Sa (root) so it matches the body layout
+          // Top of the body (Sa', semi 12) down to root Sa (semi 0)
           POSITIONS.forEach(function (p) {
             var tr = document.createElement("tr");
             var pos = p.kar + (p.karSub || "");
             if (p.semi === 12) pos = "Sa′";
-            var tone = tones[p.semi % 12];
+            var tone  = tones[p.semi % 12];
             var color = TONE_COLORS[tone];
             tr.innerHTML =
               '<th scope="row" class="interna-table__pos">' + pos + '</th>' +
-              '<td class="interna-table__tone"><span class="interna-table__swatch" style="background:' + color + '"></span>' + tone + '</td>' +
+              '<td class="interna-table__tone">' +
+                '<span class="interna-table__swatch" style="background:' + color + '"></span>' + tone +
+              '</td>' +
               '<td class="interna-table__iv">' +
                 '<span lang="de">' + INTERVAL_NAMES_DE[p.semi] + '</span>' +
                 '<span lang="en">' + INTERVAL_NAMES_EN[p.semi] + '</span>' +
+              '</td>' +
+              '<td class="interna-table__skt"><em>' + (p.sanskrit || "—") + '</em></td>' +
+              '<td class="interna-table__org">' +
+                '<span lang="de">' + (p.organ_de || "—") + '</span>' +
+                '<span lang="en">' + (p.organ_en || "—") + '</span>' +
               '</td>';
             tr.setAttribute("data-summary-semi", p.semi);
             tr.addEventListener("click", function () { selectPoint(p); });
@@ -864,11 +886,13 @@
         }
 
         function renderApp() {
-          pointsLayer = document.querySelector("[data-points]");
-          pairsLayer  = document.querySelector("[data-pairs]");
-          audioEl     = document.getElementById("interna-audio");
+          pointsLayer    = document.querySelector("[data-points]");
+          pairsLayer     = document.querySelector("[data-pairs]");
+          intervalsLayer = document.querySelector("[data-intervals]");
+          audioEl        = document.getElementById("interna-audio");
 
           buildPairs();
+          buildIntervals();
           renderPoints();
 
           Array.prototype.forEach.call(
@@ -878,10 +902,16 @@
             }
           );
 
-          var toggle = document.getElementById("toggle-pairs");
-          toggle.addEventListener("change", function () {
-            pairsAlwaysShown = toggle.checked;
-            pairsLayer.classList.toggle("show-all", pairsAlwaysShown);
+          var pairsToggle = document.getElementById("toggle-pairs");
+          pairsToggle.addEventListener("change", function () {
+            showPairs = pairsToggle.checked;
+            pairsLayer.classList.toggle("show-all", showPairs);
+          });
+
+          var ivToggle = document.getElementById("toggle-intervals");
+          ivToggle.addEventListener("change", function () {
+            showIntervals = ivToggle.checked;
+            intervalsLayer.classList.toggle("show-all", showIntervals);
           });
 
           var playBtn = document.querySelector("[data-info-play]");
@@ -892,7 +922,6 @@
             else if (tone) playTone(tone, semi);
           });
 
-          // When audio ends naturally, return to ▶ state
           audioEl.addEventListener("ended", function () { setPlayingState(false); });
           audioEl.addEventListener("pause", function () {
             if (audioEl.currentTime === 0) setPlayingState(false);
