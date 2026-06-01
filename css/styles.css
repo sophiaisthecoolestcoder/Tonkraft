@@ -674,6 +674,76 @@ html.lang-en body [lang="en"] { display: revert; }
   color: var(--ink); text-wrap: balance;
 }
 
+/* Welcome / Begrüßung — first content section after the hero */
+.welcome { text-align: center; padding-block: clamp(2.5rem, 5vw, 5rem); }
+.welcome__heading {
+  font-family: var(--font-display); font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 3.2rem);
+  font-weight: 300; letter-spacing: -0.015em; line-height: 1.05;
+  color: var(--ink); margin-bottom: 1.5rem;
+}
+.welcome__lead {
+  font-size: clamp(1rem, 0.95rem + 0.32vw, 1.18rem);
+  line-height: 1.65; color: var(--ink-soft);
+  max-width: 60ch; margin-inline: auto; text-wrap: pretty;
+}
+
+/* Two-tier block: visible Kurzfassung + "mehr erfahren" Aufklappen */
+.blocks { display: grid; gap: clamp(2rem, 4vw, 3.5rem); max-width: 80ch; }
+.block { border-top: 1px solid var(--line); padding-top: clamp(1.5rem, 3vw, 2.25rem); }
+.block:first-child { border-top: none; padding-top: 0; }
+.block__title {
+  font-family: var(--font-display); font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144;
+  font-size: clamp(1.4rem, 1.1rem + 0.9vw, 1.95rem);
+  font-weight: 400; line-height: 1.18; letter-spacing: -0.012em;
+  color: var(--ink); margin-bottom: clamp(0.9rem, 2vw, 1.25rem);
+}
+.block__short.prose { max-width: 72ch; }
+.block__short.prose p,
+.block__short.prose li { font-size: clamp(0.92rem, 0.88rem + 0.18vw, 1.02rem); line-height: 1.65; }
+.block__more { margin-top: 1.5rem; border-top: 1px dashed var(--line-soft); }
+.block__more-summary {
+  list-style: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  padding: 0.85rem 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs); font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--blue-deep);
+  transition: color 0.2s var(--ease);
+}
+.block__more-summary::-webkit-details-marker { display: none; }
+.block__more-summary::after {
+  content: "+"; display: inline-flex; align-items: center; justify-content: center;
+  width: 1.4rem; height: 1.4rem; border: 1px solid currentColor;
+  border-radius: 50%; font-weight: 400; line-height: 1;
+  transition: transform 0.3s var(--ease);
+}
+.block__more[open] .block__more-summary::after { content: "−"; }
+.block__more-summary:hover { color: var(--blue-ink); }
+.block__long.prose { padding-top: 0.5rem; max-width: 72ch; }
+.block__long.prose p,
+.block__long.prose li { font-size: clamp(0.92rem, 0.88rem + 0.18vw, 1.02rem); line-height: 1.65; }
+.block__more[open] .block__long { animation: panel-in 0.4s var(--ease); }
+
+/* Callout (notice / disclaimer kasten) */
+.callout {
+  border: 1px solid var(--blue-mist); background: var(--blue-wash);
+  padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 0;
+  max-width: 80ch;
+}
+.callout--notice { border-left: 4px solid var(--blue); }
+.callout__title {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs); letter-spacing: 0.2em; text-transform: uppercase;
+  font-weight: 600; color: var(--blue-deep); margin-bottom: 0.9rem;
+}
+.callout__body.prose { max-width: none; }
+.callout__body.prose p { color: var(--ink); font-size: var(--fs-sm); line-height: 1.65; }
+
 /* ----------------------------------------------------------------------------
    10. Page header (interior pages)
    ---------------------------------------------------------------------------- */
