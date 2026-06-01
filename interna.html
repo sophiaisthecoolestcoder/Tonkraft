@@ -125,18 +125,18 @@
             <button class="tone-pill tone-pill--general is-active" type="button" role="radio" aria-checked="true" data-root="">
               <span lang="de">Allgemein</span><span lang="en">General</span>
             </button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="C">C</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Cis">Cis</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="D">D</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Dis">Dis</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="E">E</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="F">F</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Fis">Fis</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="G">G</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Gis">Gis</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="A">A</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="B">B</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="H">H</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="C"   style="--tone-color: var(--tone-c);"><span class="tone-pill__swatch" aria-hidden="true"></span>C</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Cis" style="--tone-color: var(--tone-cis);"><span class="tone-pill__swatch" aria-hidden="true"></span>Cis</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="D"   style="--tone-color: var(--tone-d);"><span class="tone-pill__swatch" aria-hidden="true"></span>D</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Dis" style="--tone-color: var(--tone-dis);"><span class="tone-pill__swatch" aria-hidden="true"></span>Dis</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="E"   style="--tone-color: var(--tone-e);"><span class="tone-pill__swatch" aria-hidden="true"></span>E</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="F"   style="--tone-color: var(--tone-f);"><span class="tone-pill__swatch" aria-hidden="true"></span>F</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Fis" style="--tone-color: var(--tone-fis);"><span class="tone-pill__swatch" aria-hidden="true"></span>Fis</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="G"   style="--tone-color: var(--tone-g);"><span class="tone-pill__swatch" aria-hidden="true"></span>G</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Gis" style="--tone-color: var(--tone-gis);"><span class="tone-pill__swatch" aria-hidden="true"></span>Gis</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="A"   style="--tone-color: var(--tone-a);"><span class="tone-pill__swatch" aria-hidden="true"></span>A</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="B"   style="--tone-color: var(--tone-b);"><span class="tone-pill__swatch" aria-hidden="true"></span>B</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="H"   style="--tone-color: var(--tone-h);"><span class="tone-pill__swatch" aria-hidden="true"></span>H</button>
           </div>
         </div>
 
@@ -144,34 +144,145 @@
         <div class="interna-grid">
           <!-- Body silhouette + dots -->
           <div class="interna-body">
-            <svg class="body-svg" viewBox="0 0 320 640" role="img" aria-labelledby="body-title body-desc">
+            <svg class="body-svg" viewBox="0 0 420 660" role="img" aria-labelledby="body-title body-desc" preserveAspectRatio="xMidYMid meet">
               <title id="body-title">Sonologisches Körperschema</title>
               <desc id="body-desc">Frontalansicht eines Körpers mit dreizehn Tonpositionen vom Beckenraum (Sa) bis zum Scheitel (Sa').</desc>
 
-              <!-- Silhouette (subtle, frontal full-body) -->
-              <g class="body-svg__silhouette" aria-hidden="true">
-                <!-- Head -->
-                <ellipse cx="160" cy="68" rx="42" ry="52" />
-                <!-- Neck -->
-                <path d="M 146 112 L 146 138 L 174 138 L 174 112 Z" />
-                <!-- Shoulders + torso -->
-                <path d="M 92 162 Q 100 142, 130 138 L 190 138 Q 220 142, 228 162 L 232 360 Q 222 392, 188 392 L 132 392 Q 98 392, 88 360 Z" />
-                <!-- Left arm -->
-                <path d="M 92 162 Q 66 174, 60 208 L 60 380 Q 60 396, 76 396 Q 92 396, 92 380 L 100 220 Q 106 184, 122 170 Z" />
-                <!-- Right arm -->
-                <path d="M 228 162 Q 254 174, 260 208 L 260 380 Q 260 396, 244 396 Q 228 396, 228 380 L 220 220 Q 214 184, 198 170 Z" />
-                <!-- Hips -->
-                <path d="M 88 388 L 232 388 L 234 422 L 86 422 Z" />
-                <!-- Left leg -->
-                <path d="M 88 420 L 76 620 Q 76 634, 96 634 L 138 634 Q 154 634, 154 620 L 156 420 Z" />
-                <!-- Right leg -->
-                <path d="M 232 420 L 244 620 Q 244 634, 224 634 L 182 634 Q 166 634, 166 620 L 164 420 Z" />
+              <defs>
+                <!-- Subtle 3D gradient for body fill -->
+                <linearGradient id="bodyFill" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%"   stop-color="#1c528a" stop-opacity="0.05" />
+                  <stop offset="35%"  stop-color="#1c528a" stop-opacity="0.13" />
+                  <stop offset="100%" stop-color="#1c528a" stop-opacity="0.04" />
+                </linearGradient>
+                <!-- Specular highlight (slight shimmer on left side of body) -->
+                <radialGradient id="bodyHilite" cx="35%" cy="32%" r="55%">
+                  <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.42" />
+                  <stop offset="60%"  stop-color="#ffffff" stop-opacity="0.08" />
+                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                </radialGradient>
+                <!-- Soft drop-shadow for depth -->
+                <filter id="bodyShadow" x="-10%" y="-10%" width="120%" height="120%">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+                  <feOffset dx="0" dy="3" />
+                  <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+                  <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <!-- Dot glow filter -->
+                <filter id="dotGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" />
+                </filter>
+              </defs>
+
+              <!-- Anatomical silhouette: one continuous body path -->
+              <g class="body-svg__silhouette" aria-hidden="true" filter="url(#bodyShadow)">
+                <!-- Head (separate ellipse, no overlap with body path) -->
+                <ellipse class="body-fill"   cx="180" cy="70" rx="40" ry="50" fill="url(#bodyFill)" />
+                <ellipse class="body-hilite" cx="180" cy="70" rx="40" ry="50" fill="url(#bodyHilite)" />
+                <ellipse class="body-outline" cx="180" cy="70" rx="40" ry="50" fill="none" stroke="#1c528a" stroke-width="1" stroke-opacity="0.35" />
+                <!-- Body outline (single closed path: neck → shoulders → torso → hips → legs → feet → mirror back to neck) -->
+                <path class="body-fill" fill="url(#bodyFill)" d="
+                  M 168 118
+                  L 168 140
+                  C 172 148, 184 152, 196 154
+                  C 220 158, 248 170, 268 188
+                  C 278 198, 282 212, 282 228
+                  C 282 254, 278 282, 272 312
+                  C 268 330, 266 348, 268 370
+                  C 270 392, 278 412, 286 434
+                  L 282 624
+                  C 282 632, 274 634, 268 634
+                  L 224 634
+                  C 218 634, 214 630, 214 624
+                  L 212 434
+                  L 196 414
+                  L 180 408
+                  L 164 414
+                  L 148 434
+                  L 146 624
+                  C 146 630, 142 634, 136 634
+                  L 92 634
+                  C 86 634, 78 632, 78 624
+                  L 74 434
+                  C 82 412, 90 392, 92 370
+                  C 94 348, 92 330, 88 312
+                  C 82 282, 78 254, 78 228
+                  C 78 212, 82 198, 92 188
+                  C 112 170, 140 158, 164 154
+                  C 176 152, 188 148, 192 140
+                  L 192 118
+                  L 168 118
+                  Z
+                " />
+                <path class="body-hilite" fill="url(#bodyHilite)" d="
+                  M 168 118
+                  L 168 140
+                  C 172 148, 184 152, 196 154
+                  C 220 158, 248 170, 268 188
+                  C 278 198, 282 212, 282 228
+                  C 282 254, 278 282, 272 312
+                  C 268 330, 266 348, 268 370
+                  C 270 392, 278 412, 286 434
+                  L 282 624
+                  C 282 632, 274 634, 268 634
+                  L 224 634
+                  C 218 634, 214 630, 214 624
+                  L 212 434
+                  L 196 414
+                  L 180 408
+                  L 164 414
+                  L 148 434
+                  L 146 624
+                  C 146 630, 142 634, 136 634
+                  L 92 634
+                  C 86 634, 78 632, 78 624
+                  L 74 434
+                  C 82 412, 90 392, 92 370
+                  C 94 348, 92 330, 88 312
+                  C 82 282, 78 254, 78 228
+                  C 78 212, 82 198, 92 188
+                  C 112 170, 140 158, 164 154
+                  C 176 152, 188 148, 192 140
+                  L 192 118
+                  Z
+                " />
+                <path class="body-outline" fill="none" stroke="#1c528a" stroke-width="1" stroke-opacity="0.35" stroke-linejoin="round" d="
+                  M 168 118
+                  L 168 140
+                  C 172 148, 184 152, 196 154
+                  C 220 158, 248 170, 268 188
+                  C 278 198, 282 212, 282 228
+                  C 282 254, 278 282, 272 312
+                  C 268 330, 266 348, 268 370
+                  C 270 392, 278 412, 286 434
+                  L 282 624
+                  C 282 632, 274 634, 268 634
+                  L 224 634
+                  C 218 634, 214 630, 214 624
+                  L 212 434
+                  L 196 414
+                  L 180 408
+                  L 164 414
+                  L 148 434
+                  L 146 624
+                  C 146 630, 142 634, 136 634
+                  L 92 634
+                  C 86 634, 78 632, 78 624
+                  L 74 434
+                  C 82 412, 90 392, 92 370
+                  C 94 348, 92 330, 88 312
+                  C 82 282, 78 254, 78 228
+                  C 78 212, 82 198, 92 188
+                  C 112 170, 140 158, 164 154
+                  C 176 152, 188 148, 192 140
+                  L 192 118
+                " />
               </g>
 
-              <!-- Interval connecting arcs from Sa upward (drawn left of body) -->
-              <g class="body-svg__intervals" aria-hidden="true" data-intervals></g>
+              <!-- Tone-pair angular brackets on the right side of the body -->
+              <g class="body-svg__pairs" data-pairs></g>
 
-              <!-- Dots + labels (rendered by JS to keep markup compact) -->
+              <!-- Dots + labels (rendered by JS) -->
               <g class="body-svg__points" data-points></g>
             </svg>
           </div>
@@ -191,7 +302,28 @@
                 <span lang="en">The Karnatic names Sa, Ri₁, Ri₂ … Sa' mark the fixed position of each tone in the body. Choose a Personal Fundamental Tone above to see the corresponding tone mapping. Select a position for details.</span>
               </p>
 
+              <!-- Summary table: appears when a root is selected -->
+              <div class="interna-info__table-wrap" data-summary hidden>
+                <table class="interna-table">
+                  <caption class="interna-table__caption">
+                    <span lang="de">Übersicht aller Töne</span><span lang="en">Tone summary</span>
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col"><span lang="de">Position</span><span lang="en">Position</span></th>
+                      <th scope="col"><span lang="de">Ton</span><span lang="en">Tone</span></th>
+                      <th scope="col"><span lang="de">Intervall</span><span lang="en">Interval</span></th>
+                    </tr>
+                  </thead>
+                  <tbody data-summary-rows></tbody>
+                </table>
+              </div>
+
+              <!-- Selected-position detail -->
               <div class="interna-info__detail" data-info-detail hidden>
+                <p class="interna-info__detail-label">
+                  <span lang="de">Ausgewählte Position</span><span lang="en">Selected position</span>
+                </p>
                 <dl class="interna-info__list">
                   <div class="interna-info__row">
                     <dt><span lang="de">Position</span><span lang="en">Position</span></dt>
@@ -205,25 +337,30 @@
                     <dt><span lang="de">Intervall</span><span lang="en">Interval</span></dt>
                     <dd data-detail-interval>—</dd>
                   </div>
+                  <div class="interna-info__row" data-detail-pair-row hidden>
+                    <dt><span lang="de">Tonpaar</span><span lang="en">Tone pair</span></dt>
+                    <dd data-detail-pair>—</dd>
+                  </div>
                 </dl>
-                <button class="btn btn--ghost interna-info__play" type="button" data-info-play hidden>
-                  <span class="interna-info__play-icon" aria-hidden="true">▶</span>
+                <button class="btn btn--primary interna-info__play" type="button" data-info-play hidden aria-pressed="false">
+                  <span class="interna-info__play-icon" aria-hidden="true" data-play-icon>▶</span>
                   <span class="interna-info__play-label">
-                    <span lang="de">Ton hören</span><span lang="en">Play tone</span>
+                    <span data-play-label-de lang="de">Ton hören</span>
+                    <span data-play-label-en lang="en">Play tone</span>
                   </span>
                 </button>
               </div>
 
               <div class="interna-info__toggle">
                 <label>
-                  <input type="checkbox" id="toggle-intervals" />
-                  <span lang="de">Intervalle anzeigen</span><span lang="en">Show intervals</span>
+                  <input type="checkbox" id="toggle-pairs" />
+                  <span lang="de">Tonpaare anzeigen</span><span lang="en">Show tone pairs</span>
                 </label>
               </div>
 
               <p class="interna-info__source">
-                <span lang="de">Nach den Grundtonschaubildern der SaMa Sonologie® (Tonkraft Institut).</span>
-                <span lang="en">After the fundamental-tone diagrams of SaMa Sonology® (Tonkraft Institute).</span>
+                <span lang="de">Nach den Grundtonschaubildern und der „12 Grundtöne paarig"-Übersicht der SaMa Sonologie® (Tonkraft Institut).</span>
+                <span lang="en">After the fundamental-tone diagrams and the „12 Grundtöne paarig" overview of SaMa Sonology® (Tonkraft Institute).</span>
               </p>
             </div>
           </aside>
@@ -332,7 +469,24 @@
         // ---- Visualization ---------------------------------------------------
         var CHROMATIC = ["C","Cis","D","Dis","E","F","Fis","G","Gis","A","B","H"];
 
-        // 13 positions ascending the body. y in viewBox coordinates (0..640).
+        // Chromatic tone colors (matching the colored ripple seals in
+        // "12 Schaubilder Grundtöne" — a perceptual rainbow through the octave)
+        var TONE_COLORS = {
+          C:   "#3da34a",   // green
+          Cis: "#3eb8c8",   // cyan
+          D:   "#2c6fb8",   // blue
+          Dis: "#283a8c",   // dark blue / indigo
+          E:   "#6a2d8e",   // purple
+          F:   "#b22a72",   // magenta
+          Fis: "#d83555",   // pink-red
+          G:   "#e85b3c",   // coral / red-orange
+          Gis: "#ec8b3a",   // orange
+          A:   "#ecb83a",   // amber
+          B:   "#ebd935",   // yellow
+          H:   "#a4c842"    // lime / yellow-green
+        };
+
+        // 13 positions ascending the body. y in viewBox coordinates (0..660).
         // semi = semitones above the root Sa.
         var POSITIONS = [
           { semi: 12, y: 24,  kar: "Sa",   karSub: "′" },  // Sa' (octave) at crown
@@ -350,6 +504,20 @@
           { semi:  0, y: 378, kar: "Sa",   karSub: ""  }   // Sa (root) at lower abdomen
         ];
 
+        // Body centerline x (viewBox 400×660)
+        var CX = 180;
+
+        // 5 Tone Pairs from "12 Grundtöne paarig" — pairs that mirror around Pa,
+        // excluding Sa (Grundton), Sa' (Oktave), and Pa (the unpaired tone).
+        // bend = x-offset from CX (180) for the vertical bend; nested concentric.
+        var TONE_PAIRS = [
+          { num: 1, top: 11, bot:  1, bend: 190 },  // Ni₂ ↔ Ri₁  outermost (x_bend = 370)
+          { num: 2, top: 10, bot:  2, bend: 175 },
+          { num: 3, top:  9, bot:  3, bend: 160 },
+          { num: 4, top:  8, bot:  4, bend: 145 },
+          { num: 5, top:  6, bot:  5, bend: 130 }   // Ma₂ ↔ Ma₁  innermost (x_bend = 310)
+        ];
+
         var INTERVAL_NAMES_DE = [
           "Grundton","Kleine Sekunde","Große Sekunde","Kleine Terz","Große Terz",
           "Quarte","Tritonus","Quinte","Kleine Sexte","Große Sexte",
@@ -362,12 +530,14 @@
         ];
 
         var NS = "http://www.w3.org/2000/svg";
-        var pointsLayer    = null;
-        var intervalsLayer = null;
-        var audioEl        = null;
-        var currentRoot    = ""; // "" = general
-        var selectedSemi   = null;
-        var showAllIntervals = false;
+        var pointsLayer  = null;
+        var pairsLayer   = null;
+        var audioEl      = null;
+        var currentRoot  = "";   // "" = general
+        var selectedSemi = null;
+        var isPlaying    = false;
+        var playingSemi  = null; // which position is currently sounding
+        var pairsAlwaysShown = false;
 
         function tonesForRoot(rootKey) {
           if (!rootKey) return null;
@@ -375,47 +545,78 @@
           if (rootIdx < 0) return null;
           var arr = [];
           for (var i = 0; i < 12; i++) arr[i] = CHROMATIC[(rootIdx + i) % 12];
-          return arr; // arr[semi] = chromatic tone name
+          return arr;
         }
-
         function audioSrcForTone(toneName) {
           return "assets/audio/monochord-" + toneName.toLowerCase() + ".mp3";
         }
-
         function svgEl(tag, attrs) {
           var el = document.createElementNS(NS, tag);
           if (attrs) for (var k in attrs) el.setAttribute(k, attrs[k]);
           return el;
         }
-
         function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+        function posBySemi(semi) {
+          for (var i = 0; i < POSITIONS.length; i++) if (POSITIONS[i].semi === semi) return POSITIONS[i];
+          return null;
+        }
+        function pairForSemi(semi) {
+          for (var i = 0; i < TONE_PAIRS.length; i++) {
+            if (TONE_PAIRS[i].top === semi || TONE_PAIRS[i].bot === semi) return TONE_PAIRS[i];
+          }
+          return null;
+        }
 
-        function buildIntervals() {
-          clear(intervalsLayer);
-          var saY = POSITIONS[POSITIONS.length - 1].y; // 378
-          var saX = 160;
-          POSITIONS.forEach(function (p) {
-            if (p.semi === 0) return;
-            var depth = 26 + p.semi * 10; // wider arc for larger interval
-            var ctrlX = saX - depth;
-            var ctrlY = (saY + p.y) / 2;
-            var path = svgEl("path", {
-              "d": "M " + saX + " " + saY + " Q " + ctrlX + " " + ctrlY + " " + saX + " " + p.y,
-              "class": "interval-line",
-              "data-semi": p.semi,
+        function buildPairs() {
+          clear(pairsLayer);
+          TONE_PAIRS.forEach(function (tp) {
+            var top = posBySemi(tp.top);
+            var bot = posBySemi(tp.bot);
+            if (!top || !bot) return;
+            // Bracket geometry: starts outside the body's widest point (CX+110 = 290)
+            // then elbows further right to CX+bend, then back. All angular.
+            var xStart = CX + 110;
+            var xBend  = CX + tp.bend;
+            var midY   = (top.y + bot.y) / 2;
+            // Angular bracket (polyline with sharp corners)
+            var line = svgEl("polyline", {
+              "class": "tp-bracket",
+              "data-pair": tp.num,
+              "points": [
+                xStart + "," + top.y,
+                xBend  + "," + top.y,
+                xBend  + "," + bot.y,
+                xStart + "," + bot.y
+              ].join(" "),
               "fill": "none"
             });
-            intervalsLayer.appendChild(path);
+            pairsLayer.appendChild(line);
+            // TP label (rotated 90° at the bend)
+            var label = svgEl("text", {
+              "class": "tp-label",
+              "data-pair": tp.num,
+              "x": xBend + 12, "y": midY,
+              "text-anchor": "middle",
+              "transform": "rotate(-90, " + (xBend + 12) + ", " + midY + ")"
+            });
+            label.appendChild(document.createTextNode(tp.num + ". Tp"));
+            pairsLayer.appendChild(label);
           });
         }
 
         function renderPoints() {
           clear(pointsLayer);
-          var tones = tonesForRoot(currentRoot); // null when general
+          var tones = tonesForRoot(currentRoot);
           POSITIONS.forEach(function (p, idx) {
-            var cx = 160, cy = p.y;
+            var cy = p.y;
+            var toneName = tones ? tones[p.semi % 12] : null;
+            var toneColor = toneName ? TONE_COLORS[toneName] : null;
+
             var g = svgEl("g", {
-              "class": "body-svg__point" + (p.semi === 0 ? " is-root" : "") + (p.semi === 12 ? " is-octave" : ""),
+              "class": "body-svg__point" +
+                (p.semi === 0  ? " is-root" : "") +
+                (p.semi === 12 ? " is-octave" : "") +
+                (p.semi === 7  ? " is-pa" : ""),
               "data-semi": p.semi,
               "tabindex": "0",
               "role": "button",
@@ -423,45 +624,47 @@
                 return ["0","1","2","3","4","5","6","7","8","9"]["₀₁₂₃₄₅₆₇₈₉".indexOf(m)];
               })
             });
-            // Halo (animated on active)
-            g.appendChild(svgEl("circle", { "class":"point-halo", "cx":cx, "cy":cy, "r":12 }));
+            if (toneColor) g.style.setProperty("--dot-color", toneColor);
+
+            // Pulse ring
+            g.appendChild(svgEl("circle", { "class":"point-pulse", "cx":CX, "cy":cy, "r":11 }));
+            // Halo
+            g.appendChild(svgEl("circle", { "class":"point-halo",  "cx":CX, "cy":cy, "r":13 }));
             // Dot
-            g.appendChild(svgEl("circle", { "class":"point-dot",  "cx":cx, "cy":cy, "r":4 }));
+            g.appendChild(svgEl("circle", { "class":"point-dot",   "cx":CX, "cy":cy, "r":4 }));
 
-            // Right label: position name (Sa, Ri₁, …)
-            var posLabel = svgEl("text", {
+            // Left label: Karnatic position name
+            var karLabel = svgEl("text", {
               "class":"point-label point-label--position",
-              "x": cx + 18, "y": cy + 4, "text-anchor":"start"
+              "x": CX - 16, "y": cy + 4, "text-anchor":"end"
             });
-            posLabel.appendChild(document.createTextNode(p.kar));
+            karLabel.appendChild(document.createTextNode(p.kar));
             if (p.karSub) {
-              var sub = svgEl("tspan", { "class":"point-sub", "dy":"2", "dx":"1" });
+              var sub = svgEl("tspan", { "class":"point-sub", "dy":"2", "dx":"0.5" });
               sub.appendChild(document.createTextNode(p.karSub));
-              posLabel.appendChild(sub);
+              karLabel.appendChild(sub);
             }
-            g.appendChild(posLabel);
+            g.appendChild(karLabel);
 
-            // Left label: tone (only when a root is selected)
-            if (tones) {
-              var toneName = tones[p.semi % 12];
+            // Right label: tone name (only when a root is selected)
+            if (toneName) {
               var toneLabel = svgEl("text", {
                 "class":"point-label point-label--tone",
-                "x": cx - 18, "y": cy + 4, "text-anchor":"end"
+                "x": CX + 16, "y": cy + 4, "text-anchor":"start"
               });
+              if (toneColor) toneLabel.setAttribute("fill", toneColor);
               toneLabel.appendChild(document.createTextNode(toneName));
               g.appendChild(toneLabel);
             }
 
             pointsLayer.appendChild(g);
 
-            // Interaction
-            g.addEventListener("mouseenter", function () { selectPoint(p, true); });
-            g.addEventListener("mouseleave", function () { /* keep selection sticky on click */ });
-            g.addEventListener("focus", function () { selectPoint(p, false); });
-            g.addEventListener("click", function () { selectPoint(p, false); playTone(p); });
+            g.addEventListener("mouseenter", function () { selectPoint(p); });
+            g.addEventListener("focus", function () { selectPoint(p); });
+            g.addEventListener("click", function () { selectPoint(p); togglePlay(p); });
             g.addEventListener("keydown", function (e) {
               if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault(); selectPoint(p, false); playTone(p);
+                e.preventDefault(); selectPoint(p); togglePlay(p);
               } else if (e.key === "ArrowUp" || e.key === "ArrowRight") {
                 e.preventDefault(); focusNeighbor(idx, -1);
               } else if (e.key === "ArrowDown" || e.key === "ArrowLeft") {
@@ -478,37 +681,55 @@
           if (nodes[next]) nodes[next].focus();
         }
 
-        function selectPoint(p, isHover) {
+        function selectPoint(p) {
           selectedSemi = p.semi;
-          // Highlight current dot
           Array.prototype.forEach.call(
             pointsLayer.querySelectorAll(".body-svg__point"),
             function (g) { g.classList.toggle("is-active", parseInt(g.getAttribute("data-semi"), 10) === p.semi); }
           );
-          // Highlight interval line for this semi
+          // Highlight the matching tone-pair bracket (if any)
+          var matched = pairForSemi(p.semi);
           Array.prototype.forEach.call(
-            intervalsLayer.querySelectorAll(".interval-line"),
-            function (l) { l.classList.toggle("is-active", parseInt(l.getAttribute("data-semi"), 10) === p.semi); }
+            pairsLayer.querySelectorAll(".tp-bracket, .tp-label"),
+            function (el) {
+              var n = parseInt(el.getAttribute("data-pair"), 10);
+              el.classList.toggle("is-active", matched && n === matched.num);
+            }
           );
           updateInfo(p);
         }
 
         function updateInfo(p) {
-          var detail = document.querySelector("[data-info-detail]");
-          var detailPos = document.querySelector("[data-detail-position]");
+          var detail        = document.querySelector("[data-info-detail]");
+          var detailPos     = document.querySelector("[data-detail-position]");
           var detailToneRow = document.querySelector("[data-detail-tone-row]");
-          var detailTone = document.querySelector("[data-detail-tone]");
-          var detailInterval = document.querySelector("[data-detail-interval]");
-          var playBtn = document.querySelector("[data-info-play]");
+          var detailTone    = document.querySelector("[data-detail-tone]");
+          var detailIv      = document.querySelector("[data-detail-interval]");
+          var detailPairRow = document.querySelector("[data-detail-pair-row]");
+          var detailPair    = document.querySelector("[data-detail-pair]");
+          var playBtn       = document.querySelector("[data-info-play]");
 
           detail.hidden = false;
           var posName = p.kar + (p.karSub || "");
-          if (p.semi === 12) posName = "Sa′"; // octave Sa with prime
+          if (p.semi === 12) posName = "Sa′";
           detailPos.textContent = posName;
 
           var lang = document.documentElement.lang === "en" ? "en" : "de";
-          var ivIdx = p.semi; // 0..12
-          detailInterval.textContent = (lang === "en" ? INTERVAL_NAMES_EN : INTERVAL_NAMES_DE)[ivIdx];
+          detailIv.textContent = (lang === "en" ? INTERVAL_NAMES_EN : INTERVAL_NAMES_DE)[p.semi];
+
+          // Tone pair label
+          var tp = pairForSemi(p.semi);
+          if (tp) {
+            detailPair.textContent = tp.num + ". " + (lang === "en" ? "tone pair" : "Tonpaar");
+            detailPairRow.hidden = false;
+          } else {
+            // Sa, Sa', or Pa — unpaired
+            var unpaired = p.semi === 7
+              ? (lang === "en" ? "Unpaired tone (Pa)" : "Ungepaarter Ton (Pa)")
+              : (lang === "en" ? "Tonic / Octave" : "Grundton / Oktave");
+            detailPair.textContent = unpaired;
+            detailPairRow.hidden = false;
+          }
 
           if (currentRoot) {
             var tones = tonesForRoot(currentRoot);
@@ -520,22 +741,80 @@
           } else {
             detailToneRow.hidden = true;
             playBtn.hidden = true;
+            stopAudio();
           }
         }
 
-        function playTone(p) {
-          if (!currentRoot) return; // no tone mapping in general view
+        function buildSummary() {
+          var wrap = document.querySelector("[data-summary]");
+          var tbody = document.querySelector("[data-summary-rows]");
+          if (!currentRoot) { wrap.hidden = true; return; }
+          wrap.hidden = false;
+          clear(tbody);
           var tones = tonesForRoot(currentRoot);
-          var toneName = tones[p.semi % 12];
-          if (!audioEl) return;
+          var lang = document.documentElement.lang === "en" ? "en" : "de";
+          // Render from Sa' (top) downward to Sa (root) so it matches the body layout
+          POSITIONS.forEach(function (p) {
+            var tr = document.createElement("tr");
+            var pos = p.kar + (p.karSub || "");
+            if (p.semi === 12) pos = "Sa′";
+            var tone = tones[p.semi % 12];
+            var color = TONE_COLORS[tone];
+            tr.innerHTML =
+              '<th scope="row" class="interna-table__pos">' + pos + '</th>' +
+              '<td class="interna-table__tone"><span class="interna-table__swatch" style="background:' + color + '"></span>' + tone + '</td>' +
+              '<td class="interna-table__iv">' +
+                '<span lang="de">' + INTERVAL_NAMES_DE[p.semi] + '</span>' +
+                '<span lang="en">' + INTERVAL_NAMES_EN[p.semi] + '</span>' +
+              '</td>';
+            tr.setAttribute("data-summary-semi", p.semi);
+            tr.addEventListener("click", function () { selectPoint(p); });
+            tbody.appendChild(tr);
+          });
+        }
+
+        // ---- Audio play / stop toggle ----------------------------------------
+        function setPlayingState(playing) {
+          isPlaying = playing;
+          var playBtn  = document.querySelector("[data-info-play]");
+          var icon     = document.querySelector("[data-play-icon]");
+          var labelDe  = document.querySelector("[data-play-label-de]");
+          var labelEn  = document.querySelector("[data-play-label-en]");
+          if (!playBtn) return;
+          playBtn.setAttribute("aria-pressed", playing ? "true" : "false");
+          playBtn.classList.toggle("is-playing", playing);
+          if (icon)    icon.textContent    = playing ? "■" : "▶";
+          if (labelDe) labelDe.textContent = playing ? "Stoppen" : "Ton hören";
+          if (labelEn) labelEn.textContent = playing ? "Stop"    : "Play tone";
+        }
+        function playTone(toneName, semi) {
+          if (!audioEl || !toneName) return;
           audioEl.src = audioSrcForTone(toneName);
           var pr = audioEl.play();
           if (pr && pr.catch) pr.catch(function () {});
+          playingSemi = (typeof semi === "number") ? semi : null;
+          setPlayingState(true);
+        }
+        function stopAudio() {
+          if (!audioEl) return;
+          try { audioEl.pause(); audioEl.currentTime = 0; } catch (e) {}
+          playingSemi = null;
+          setPlayingState(false);
+        }
+        function togglePlay(p) {
+          if (!currentRoot) return;
+          var tones = tonesForRoot(currentRoot);
+          var toneName = tones[p.semi % 12];
+          // Same position playing → stop. Different position → switch tones.
+          if (isPlaying && playingSemi === p.semi) stopAudio();
+          else playTone(toneName, p.semi);
         }
 
         function setRoot(rootKey) {
+          var previousRoot = currentRoot;
           currentRoot = rootKey || "";
-          // Update pill states
+          stopAudio();
+
           Array.prototype.forEach.call(
             document.querySelectorAll(".tone-pill"),
             function (b) {
@@ -544,10 +823,10 @@
               b.setAttribute("aria-checked", isActive ? "true" : "false");
             }
           );
-          // Update eyebrow + title
+
           var eyebrow = document.querySelector("[data-info-eyebrow]");
-          var title = document.querySelector("[data-info-title]");
-          var lead = document.querySelector("[data-info-lead]");
+          var title   = document.querySelector("[data-info-title]");
+          var lead    = document.querySelector("[data-info-lead]");
           if (currentRoot) {
             eyebrow.innerHTML =
               '<span lang="de">Persönlicher Grundton</span><span lang="en">Personal Fundamental Tone</span>';
@@ -555,10 +834,10 @@
               '<span lang="de">Grundton ' + currentRoot + '</span>' +
               '<span lang="en">Fundamental Tone ' + currentRoot + '</span>';
             lead.innerHTML =
-              '<span lang="de">Die zwölf Töne sind jetzt nach Ihrem Grundton ' + currentRoot +
-              ' angeordnet. Klicken Sie auf eine Position, um den jeweiligen Ton zu hören.</span>' +
-              '<span lang="en">The twelve tones are now arranged around your fundamental tone ' + currentRoot +
-              '. Click a position to hear the corresponding tone.</span>';
+              '<span lang="de">Die zwölf Töne sind nach Ihrem Grundton ' + currentRoot +
+              ' angeordnet. Klicken Sie auf eine Position im Körper oder in der Tabelle, um den jeweiligen Ton zu hören.</span>' +
+              '<span lang="en">The twelve tones are arranged around your fundamental tone ' + currentRoot +
+              '. Click a position on the body or in the table to hear the corresponding tone.</span>';
           } else {
             eyebrow.innerHTML =
               '<span lang="de">Allgemeine Struktur</span><span lang="en">General Structure</span>';
@@ -568,11 +847,13 @@
               '<span lang="de">Die Karnatischen Bezeichnungen Sa, Ri₁, Ri₂ … Sa′ markieren die feste Position eines jeden Tons im Körper. Wählen Sie oben einen Persönlichen Grundton, um die jeweiligen Tonzuordnungen zu sehen.</span>' +
               '<span lang="en">The Karnatic names Sa, Ri₁, Ri₂ … Sa′ mark the fixed position of each tone in the body. Choose a Personal Fundamental Tone above to see the corresponding tone mapping.</span>';
           }
-          // Reset selection detail (keep the highlighted dot if any)
+
           renderPoints();
+          buildSummary();
+
           if (selectedSemi !== null) {
-            var p = POSITIONS.filter(function (pp) { return pp.semi === selectedSemi; })[0];
-            if (p) selectPoint(p, false);
+            var p = posBySemi(selectedSemi);
+            if (p) selectPoint(p);
           } else {
             var detail = document.querySelector("[data-info-detail]");
             if (detail) detail.hidden = true;
@@ -581,10 +862,10 @@
 
         function renderApp() {
           pointsLayer = document.querySelector("[data-points]");
-          intervalsLayer = document.querySelector("[data-intervals]");
-          audioEl = document.getElementById("interna-audio");
+          pairsLayer  = document.querySelector("[data-pairs]");
+          audioEl     = document.getElementById("interna-audio");
 
-          buildIntervals();
+          buildPairs();
           renderPoints();
 
           Array.prototype.forEach.call(
@@ -594,19 +875,24 @@
             }
           );
 
-          var toggle = document.getElementById("toggle-intervals");
+          var toggle = document.getElementById("toggle-pairs");
           toggle.addEventListener("change", function () {
-            showAllIntervals = toggle.checked;
-            intervalsLayer.classList.toggle("show-all", showAllIntervals);
+            pairsAlwaysShown = toggle.checked;
+            pairsLayer.classList.toggle("show-all", pairsAlwaysShown);
           });
 
           var playBtn = document.querySelector("[data-info-play]");
           playBtn.addEventListener("click", function () {
             var tone = playBtn.getAttribute("data-tone");
-            if (!tone || !audioEl) return;
-            audioEl.src = audioSrcForTone(tone);
-            var pr = audioEl.play();
-            if (pr && pr.catch) pr.catch(function () {});
+            var semi = selectedSemi;
+            if (isPlaying && playingSemi === semi) stopAudio();
+            else if (tone) playTone(tone, semi);
+          });
+
+          // When audio ends naturally, return to ▶ state
+          audioEl.addEventListener("ended", function () { setPlayingState(false); });
+          audioEl.addEventListener("pause", function () {
+            if (audioEl.currentTime === 0) setPlayingState(false);
           });
         }
       })();
