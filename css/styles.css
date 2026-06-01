@@ -113,21 +113,19 @@ a:hover { color: var(--blue-ink); }
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-optical-sizing: auto;
-  font-variation-settings: "opsz" 144;
-  line-height: 1.05;
-  font-weight: 300;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  line-height: 1.02;
+  font-weight: 200;
   letter-spacing: -0.018em;
   color: var(--ink);
   text-wrap: balance;
   overflow-wrap: break-word;
   hyphens: auto;
 }
-/* h3/h4 used as smaller serif headings — slightly heavier and tighter so
-   they sit as defined subheadings rather than wispy display text */
+/* h3/h4 used as smaller serif headings — heavier + tighter so they read as
+   defined subheadings rather than wispy display text */
 h3, h4 { font-weight: 400; letter-spacing: -0.012em; line-height: 1.18; }
-/* .story__title and .pagehead__title now inherit the same opsz axis as
-   every other heading — no SOFT override, so the same Fraunces letter
-   shapes carry through from h1 down to the block subheadings. */
+.story__title, .pagehead__title { font-variation-settings: "opsz" 144, "SOFT" 100; }
 
 /* Brand wordmark — elegant Fraunces, lowercase, gently tracked for a
    crafted, sophisticated lockup with the seal. */
@@ -670,7 +668,7 @@ html.lang-en body [lang="en"] { display: revert; }
 .intro__statement {
   max-width: 24ch; margin-inline: auto;
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-variation-settings: "opsz" 144;
+  font-variation-settings: "opsz" 144, "SOFT" 60;
   font-weight: 300; line-height: 1.16; letter-spacing: -0.018em;
   font-size: clamp(1.9rem, 1.2rem + 3vw, 3.8rem);
   color: var(--ink); text-wrap: balance;
@@ -680,7 +678,7 @@ html.lang-en body [lang="en"] { display: revert; }
 .welcome { text-align: center; padding-block: clamp(2.5rem, 5vw, 5rem); }
 .welcome__heading {
   font-family: var(--font-display); font-optical-sizing: auto;
-  font-variation-settings: "opsz" 144;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
   font-size: clamp(2rem, 1.4rem + 2.4vw, 3.2rem);
   font-weight: 300; letter-spacing: -0.015em; line-height: 1.05;
   color: var(--ink); margin-bottom: 1.5rem;
