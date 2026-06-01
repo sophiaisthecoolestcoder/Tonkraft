@@ -375,25 +375,13 @@
         </div>
 
         <!-- Unified table (full width below the body + side panel) -->
-        <section class="interna-tablewrap" data-summary hidden aria-labelledby="table-caption">
+        <section class="interna-tablewrap" data-summary aria-labelledby="table-caption">
           <h2 class="interna-tablewrap__caption" id="table-caption">
-            <span lang="de">Übersicht aller Töne</span><span lang="en">Tone summary</span>
+            <span lang="de" data-table-caption-de>Übersicht aller Töne</span><span lang="en" data-table-caption-en>Tone summary</span>
           </h2>
           <div class="interna-tablewrap__scroll">
-            <table class="interna-table">
-              <thead>
-                <tr>
-                  <th scope="col"><span lang="de">Position</span><span lang="en">Position</span></th>
-                  <th scope="col"><span lang="de">Ton</span><span lang="en">Tone</span></th>
-                  <th scope="col"><span lang="de">Intervall</span><span lang="en">Interval</span></th>
-                  <th scope="col"><span lang="de">Sanskrit</span><span lang="en">Sanskrit</span></th>
-                  <th scope="col"><span lang="de">Bedeutung</span><span lang="en">Meaning</span></th>
-                  <th scope="col"><span lang="de">Organ</span><span lang="en">Organ</span></th>
-                  <th scope="col"><span lang="de">Organ 1. Oktave</span><span lang="en">Organ 1st octave</span></th>
-                  <th scope="col"><span lang="de">Grundfunktion</span><span lang="en">Function</span></th>
-                  <th scope="col"><span lang="de">Tonpaar</span><span lang="en">Tone pair</span></th>
-                </tr>
-              </thead>
+            <table class="interna-table" data-summary-table>
+              <thead data-summary-head></thead>
               <tbody data-summary-rows></tbody>
             </table>
           </div>
@@ -695,28 +683,27 @@
         }
 
         function buildIntervals() {
-          // Left-side overlay: short interval label (1, ♭2, 2, ♭3, 3, 4, ♭5,
-          // 5, ♭6, 6, ♭7, 7, 8) next to each position, with a connector line.
+          // Smooth curved paths from Sa (semi 0) up to every other position.
+          // Each curve bows out to the LEFT of the body (opposite the angular
+          // Tonpaar brackets on the right). Curve depth grows with the
+          // interval distance so a small minor 2nd is a tight arc and the
+          // octave fans far out. No text labels.
           clear(intervalsLayer);
+          var sa = posBySemi(0);
+          if (!sa) return;
           POSITIONS.forEach(function (p) {
-            var xLabel = 140;
-            var xConnectorStart = xLabel + 22;
-            var xConnectorEnd   = CX - 24;
-            var connector = svgEl("line", {
-              "class": "interval-connector",
+            if (p.semi === 0) return; // skip the root itself
+            var depth = 30 + p.semi * 16;     // outer reach of the arc
+            var ctrlX = CX - depth;
+            var ctrlY = (sa.y + p.y) / 2;
+            var d = "M " + CX + " " + sa.y +
+                    " Q " + ctrlX + " " + ctrlY + " " + CX + " " + p.y;
+            var path = svgEl("path", {
+              "class": "interval-line",
               "data-semi": p.semi,
-              "x1": xConnectorStart, "y1": p.y,
-              "x2": xConnectorEnd,   "y2": p.y
+              "d": d, "fill": "none"
             });
-            intervalsLayer.appendChild(connector);
-            var label = svgEl("text", {
-              "class": "interval-label",
-              "data-semi": p.semi,
-              "x": xLabel, "y": p.y + 4,
-              "text-anchor": "middle"
-            });
-            label.appendChild(document.createTextNode(INTERVAL_SHORT[p.semi]));
-            intervalsLayer.appendChild(label);
+            intervalsLayer.appendChild(path);
           });
         }
 
@@ -814,9 +801,9 @@
               el.classList.toggle("is-active", !!(matched && n === matched.num));
             }
           );
-          // Highlight matching interval label on the left
+          // Highlight matching interval curve on the left
           Array.prototype.forEach.call(
-            intervalsLayer.querySelectorAll(".interval-label, .interval-connector"),
+            intervalsLayer.querySelectorAll(".interval-line"),
             function (el) {
               var s = parseInt(el.getAttribute("data-semi"), 10);
               el.classList.toggle("is-active", s === p.semi);
@@ -860,50 +847,111 @@
         }
 
         function buildSummary() {
-          var wrap  = document.querySelector("[data-summary]");
-          var tbody = document.querySelector("[data-summary-rows]");
-          if (!currentRoot) { wrap.hidden = true; return; }
+          var wrap    = document.querySelector("[data-summary]");
+          var thead   = document.querySelector("[data-summary-head]");
+          var tbody   = document.querySelector("[data-summary-rows]");
+          var capDe   = document.querySelector("[data-table-caption-de]");
+          var capEn   = document.querySelector("[data-table-caption-en]");
+          var tableEl = document.querySelector("[data-summary-table]");
+          if (!wrap || !thead || !tbody) return;
           wrap.hidden = false;
+
+          var general = !currentRoot;
+          tableEl.classList.toggle("interna-table--general", general);
+          tableEl.classList.toggle("interna-table--specific", !general);
+
+          // Caption
+          if (general) {
+            capDe.textContent = "Allgemeine Übersicht — alle Positionen";
+            capEn.textContent = "General overview — all positions";
+          } else {
+            capDe.textContent = "Grundton " + currentRoot + " — Übersicht";
+            capEn.textContent = "Fundamental Tone " + currentRoot + " — overview";
+          }
+
+          // Header
+          clear(thead);
+          var headerTr = document.createElement("tr");
+          var headerCols = general
+            ? [
+                { de: "Position",        en: "Position" },
+                { de: "Intervall",       en: "Interval" },
+                { de: "Sanskrit",        en: "Sanskrit" },
+                { de: "Bedeutung",       en: "Meaning" },
+                { de: "Organ",           en: "Organ" },
+                { de: "Organ 1. Oktave", en: "Organ 1st octave" },
+                { de: "Grundfunktion",   en: "Function" },
+                { de: "Tonpaar",         en: "Tone pair" }
+              ]
+            : [
+                { de: "Position",  en: "Position" },
+                { de: "Ton",       en: "Tone" },
+                { de: "Intervall", en: "Interval" },
+                { de: "Tonpaar",   en: "Tone pair" }
+              ];
+          headerCols.forEach(function (c) {
+            var th = document.createElement("th");
+            th.setAttribute("scope", "col");
+            th.innerHTML =
+              '<span lang="de">' + c.de + '</span>' +
+              '<span lang="en">' + c.en + '</span>';
+            headerTr.appendChild(th);
+          });
+          thead.appendChild(headerTr);
+
+          // Body rows
           clear(tbody);
-          var tones = tonesForRoot(currentRoot);
+          var tones = currentRoot ? tonesForRoot(currentRoot) : null;
           POSITIONS.forEach(function (p) {
             var tr = document.createElement("tr");
             var pos = p.kar + (p.karSub || "");
             if (p.semi === 12) pos = "Sa′";
-            var tone   = tones[p.semi % 12];
-            var color  = TONE_COLORS[tone];
             var pairDe = pairLabel(p.semi, "de");
             var pairEn = pairLabel(p.semi, "en");
-            tr.innerHTML =
-              '<th scope="row" class="interna-table__pos">' + pos + '</th>' +
-              '<td class="interna-table__tone">' +
-                '<span class="interna-table__swatch" style="background:' + color + '"></span>' + tone +
-              '</td>' +
+            var intervalCell =
               '<td class="interna-table__iv">' +
                 '<span lang="de">' + INTERVAL_NAMES_DE[p.semi] + '</span>' +
                 '<span lang="en">' + INTERVAL_NAMES_EN[p.semi] + '</span>' +
-              '</td>' +
-              '<td class="interna-table__skt">' + (p.sanskrit || "—") + '</td>' +
-              '<td class="interna-table__mean">' +
-                '<span lang="de">' + (p.meaning_de || "—") + '</span>' +
-                '<span lang="en">' + (p.meaning_en || "—") + '</span>' +
-              '</td>' +
-              '<td class="interna-table__org">' +
-                '<span lang="de">' + (p.organ_de || "—") + '</span>' +
-                '<span lang="en">' + (p.organ_en || "—") + '</span>' +
-              '</td>' +
-              '<td class="interna-table__org-oct">' +
-                '<span lang="de">' + (p.organOct_de || "—") + '</span>' +
-                '<span lang="en">' + (p.organOct_en || "—") + '</span>' +
-              '</td>' +
-              '<td class="interna-table__fn">' +
-                '<span lang="de">' + (p.function_de || "—") + '</span>' +
-                '<span lang="en">' + (p.function_en || "—") + '</span>' +
-              '</td>' +
+              '</td>';
+            var pairCell =
               '<td class="interna-table__pair">' +
                 '<span lang="de">' + pairDe + '</span>' +
                 '<span lang="en">' + pairEn + '</span>' +
               '</td>';
+
+            if (general) {
+              tr.innerHTML =
+                '<th scope="row" class="interna-table__pos">' + pos + '</th>' +
+                intervalCell +
+                '<td class="interna-table__skt">' + (p.sanskrit || "—") + '</td>' +
+                '<td class="interna-table__mean">' +
+                  '<span lang="de">' + (p.meaning_de || "—") + '</span>' +
+                  '<span lang="en">' + (p.meaning_en || "—") + '</span>' +
+                '</td>' +
+                '<td class="interna-table__org">' +
+                  '<span lang="de">' + (p.organ_de || "—") + '</span>' +
+                  '<span lang="en">' + (p.organ_en || "—") + '</span>' +
+                '</td>' +
+                '<td class="interna-table__org-oct">' +
+                  '<span lang="de">' + (p.organOct_de || "—") + '</span>' +
+                  '<span lang="en">' + (p.organOct_en || "—") + '</span>' +
+                '</td>' +
+                '<td class="interna-table__fn">' +
+                  '<span lang="de">' + (p.function_de || "—") + '</span>' +
+                  '<span lang="en">' + (p.function_en || "—") + '</span>' +
+                '</td>' +
+                pairCell;
+            } else {
+              var tone  = tones[p.semi % 12];
+              var color = TONE_COLORS[tone];
+              tr.innerHTML =
+                '<th scope="row" class="interna-table__pos">' + pos + '</th>' +
+                '<td class="interna-table__tone">' +
+                  '<span class="interna-table__swatch" style="background:' + color + '"></span>' + tone +
+                '</td>' +
+                intervalCell +
+                pairCell;
+            }
             tr.setAttribute("data-summary-semi", p.semi);
             tr.addEventListener("click", function () {
               selectPoint(p);
@@ -1009,6 +1057,7 @@
           buildPairs();
           buildIntervals();
           renderPoints();
+          buildSummary();
 
           Array.prototype.forEach.call(
             document.querySelectorAll(".tone-pill"),

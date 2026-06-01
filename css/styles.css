@@ -728,6 +728,32 @@ html.lang-en body [lang="en"] { display: revert; }
 .block__long.prose li { font-size: clamp(0.92rem, 0.88rem + 0.18vw, 1.02rem); line-height: 1.65; }
 .block__more[open] .block__long { animation: panel-in 0.4s var(--ease); }
 
+/* Small status badge (e.g. "in Konzeption" on Ausbildung) */
+.pagehead__status { margin-top: 1.25rem; }
+.status-badge {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  background: var(--blue-glass); color: var(--blue-deep);
+  border: 1px solid var(--blue-mist);
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs); font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+}
+.status-badge::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--blue) 60%, transparent);
+  animation: statusPulse 2.4s ease-in-out infinite;
+}
+@keyframes statusPulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--blue) 50%, transparent); }
+  50%      { box-shadow: 0 0 0 7px color-mix(in srgb, var(--blue) 0%, transparent); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .status-badge::before { animation: none; }
+}
+
 /* Callout (notice / disclaimer kasten) */
 .callout {
   border: 1px solid var(--blue-mist); background: var(--blue-wash);
@@ -1217,24 +1243,16 @@ html.lang-en body [lang="en"] { display: revert; }
   .body-svg__silhouette .body-outline { animation: none; }
 }
 
-/* Intervals overlay (left of body) */
-.interval-label {
-  font-family: var(--font-sans); font-size: 13px; font-weight: 600;
-  letter-spacing: 0.01em; fill: var(--blue-deep);
+/* Intervals overlay (left of body): smooth curves from Sa to each tone.
+   Distinct from Tonpaar brackets, which are angular on the right side. */
+.interval-line {
+  stroke: var(--blue-soft); stroke-width: 1.2; fill: none;
+  stroke-linecap: round;
   opacity: 0;
-  paint-order: stroke fill; stroke: var(--paper-raised); stroke-width: 3px;
-  transition: opacity 0.3s var(--ease), fill 0.3s var(--ease);
-  user-select: none; pointer-events: none;
+  transition: opacity 0.3s var(--ease), stroke 0.3s var(--ease), stroke-width 0.3s var(--ease);
 }
-.interval-connector {
-  stroke: var(--blue-soft); stroke-width: 0.8; stroke-dasharray: 2 3;
-  opacity: 0;
-  transition: opacity 0.3s var(--ease), stroke 0.3s var(--ease);
-}
-.body-svg__intervals.show-all .interval-label,
-.body-svg__intervals.show-all .interval-connector { opacity: 0.7; }
-.interval-label.is-active     { opacity: 1; fill: var(--blue-ink); }
-.interval-connector.is-active { opacity: 1; stroke: var(--blue-ink); stroke-dasharray: 0; }
+.body-svg__intervals.show-all .interval-line { opacity: 0.6; }
+.interval-line.is-active { opacity: 1; stroke: var(--blue-ink); stroke-width: 1.8; }
 
 /* Tone-pair angular brackets (right of body) */
 .tp-bracket {
