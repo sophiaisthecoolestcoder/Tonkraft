@@ -1115,19 +1115,29 @@ html.lang-en body [lang="en"] { display: revert; }
   position: relative;
   display: flex; justify-content: center;
   background:
-    radial-gradient(80% 65% at 50% 32%, var(--blue-wash) 0%, transparent 60%),
+    radial-gradient(75% 60% at 50% 30%, var(--blue-wash) 0%, transparent 65%),
     var(--paper-raised);
   border: 1px solid var(--line);
-  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
   overflow: hidden;
 }
 .body-svg {
   width: 100%; max-width: 640px; height: auto; display: block;
   position: relative; z-index: 1;
 }
-/* Anatomical reference (kept clearly visible — realistic, precise look) */
-.body-img {
-  opacity: 0.78;
+
+/* Silhouette: subtle gradient body + soft highlight + breathing outline */
+.body-svg__silhouette .body-shine  { pointer-events: none; }
+.body-svg__silhouette .body-outline {
+  stroke-linejoin: round;
+  animation: silhouetteBreath 7s var(--ease) infinite;
+}
+@keyframes silhouetteBreath {
+  0%, 100% { stroke-opacity: 0.50; }
+  50%      { stroke-opacity: 0.62; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .body-svg__silhouette .body-outline { animation: none; }
 }
 
 /* Intervals overlay (left of body) */
@@ -1238,71 +1248,70 @@ html.lang-en body [lang="en"] { display: revert; }
   color: var(--ink-soft); font-size: var(--fs-sm); line-height: 1.6;
 }
 
-/* Summary table */
-.interna-info__table-wrap { margin-top: 1.5rem; }
+/* Full-width unified table (below the body + side panel) */
+.interna-tablewrap {
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+.interna-tablewrap__caption {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: var(--fs-xs); letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink-faint); margin: 0 0 0.85rem;
+}
+.interna-tablewrap__scroll {
+  width: 100%; overflow-x: auto;
+  border: 1px solid var(--line); background: var(--paper-raised);
+  -webkit-overflow-scrolling: touch;
+}
 .interna-table {
-  width: 100%; border-collapse: collapse;
-  font-size: var(--fs-sm);
+  width: 100%; min-width: 880px;
+  border-collapse: collapse;
+  font-family: var(--font-sans); font-size: var(--fs-sm);
+  color: var(--ink);
 }
-.interna-table__caption {
-  text-align: left; font-size: var(--fs-xs); letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--ink-faint); font-weight: 500;
-  margin-bottom: 0.6rem;
-}
+.interna-table caption { display: none; }
 .interna-table thead th {
+  position: sticky; top: 0;
+  background: var(--paper-raised);
   text-align: left; font-weight: 500;
-  font-size: var(--fs-xs); letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--ink-faint); padding: 0.5rem 0.5rem 0.5rem 0;
-  border-bottom: 1px solid var(--line);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-faint);
+  padding: 0.8rem 0.9rem; border-bottom: 1px solid var(--line);
+  white-space: nowrap;
 }
 .interna-table tbody tr {
   cursor: pointer;
   transition: background 0.2s var(--ease);
+  border-bottom: 1px solid var(--line-soft);
 }
-.interna-table tbody tr:hover { background: var(--blue-wash); }
+.interna-table tbody tr:hover     { background: var(--blue-wash); }
+.interna-table tbody tr.is-active {
+  background: color-mix(in srgb, var(--blue) 14%, var(--paper-raised));
+  outline: 2px solid var(--blue-deep); outline-offset: -2px;
+}
 .interna-table tbody td,
 .interna-table tbody th {
-  padding: 0.4rem 0.5rem 0.4rem 0; border-bottom: 1px solid var(--line-soft);
+  padding: 0.7rem 0.9rem;
   text-align: left; font-weight: 400;
+  font-family: var(--font-sans);
+  vertical-align: top;
+  line-height: 1.45;
 }
-.interna-table__pos  { font-weight: 600; color: var(--ink); white-space: nowrap; }
-.interna-table__tone { color: var(--ink); font-weight: 600; white-space: nowrap; }
+.interna-table__pos    { font-weight: 700; color: var(--ink);      white-space: nowrap; }
+.interna-table__tone   { font-weight: 700; color: var(--ink);      white-space: nowrap; }
+.interna-table__iv     { color: var(--ink); }
+.interna-table__skt    { color: var(--blue-deep); font-style: italic; white-space: nowrap; }
+.interna-table__mean   { color: var(--ink-soft); }
+.interna-table__org    { color: var(--ink-soft); font-size: var(--fs-xs); }
+.interna-table__org-oct{ color: var(--ink-faint); font-size: var(--fs-xs); }
+.interna-table__fn     { color: var(--ink-soft); font-size: var(--fs-xs); font-style: italic; }
+.interna-table__pair   { color: var(--blue-ink); white-space: nowrap; font-weight: 500; }
 .interna-table__swatch {
-  display: inline-block; width: 11px; height: 11px; border-radius: 50%;
-  margin-right: 0.45rem; vertical-align: middle;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
-}
-.interna-table__iv  { color: var(--ink-soft); }
-.interna-table__skt { color: var(--ink-soft); font-family: var(--font-display); }
-.interna-table__org { color: var(--ink-soft); font-size: var(--fs-xs); line-height: 1.4; }
-.interna-table thead th,
-.interna-table tbody td,
-.interna-table tbody th {
-  padding-right: 0.6rem;
-}
-.interna-table {
-  table-layout: auto;
+  display: inline-block; width: 12px; height: 12px; border-radius: 50%;
+  margin-right: 0.5rem; vertical-align: -2px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
 }
 
-/* Selected-position detail */
-.interna-info__detail { margin-top: 1.5rem; border-top: 1px solid var(--line); padding-top: 1.25rem; }
-.interna-info__detail-label {
-  font-size: var(--fs-xs); letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--ink-faint); font-weight: 500; margin: 0 0 0.85rem;
-}
-.interna-info__list { display: grid; gap: 0.7rem; margin: 0; }
-.interna-info__row {
-  display: grid; grid-template-columns: minmax(6.5rem, 30%) 1fr;
-  align-items: baseline; gap: 0.75rem;
-  font-size: var(--fs-sm);
-}
-.interna-info__row dt {
-  color: var(--ink-faint); letter-spacing: 0.14em;
-  font-size: var(--fs-xs); text-transform: uppercase; font-weight: 500;
-}
-.interna-info__row dd {
-  margin: 0; color: var(--ink); font-size: var(--fs-base); font-weight: 500;
-}
 .interna-info__play {
   margin-top: 1.25rem; gap: 0.5rem;
   transition: background 0.25s var(--ease);

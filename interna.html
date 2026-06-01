@@ -144,16 +144,182 @@
         <div class="interna-grid">
           <!-- Body silhouette + dots -->
           <div class="interna-body">
-            <svg class="body-svg" viewBox="0 0 700 800" role="img" aria-labelledby="body-title body-desc" preserveAspectRatio="xMidYMid meet">
+            <svg class="body-svg" viewBox="0 0 700 820" role="img" aria-labelledby="body-title body-desc" preserveAspectRatio="xMidYMid meet">
               <title id="body-title">Sonologisches Körperschema</title>
-              <desc id="body-desc">Frontalansicht eines Körpers mit dreizehn Tonpositionen vom Bauchnabel (Sa) bis zur Stirnkuhle (Sa').</desc>
+              <desc id="body-desc">Frontalansicht einer Figur mit dreizehn Tonpositionen vom Bauchnabel (Sa) bis zur Stirnkuhle (Sa').</desc>
 
-              <!-- Anatomical body illustration as background -->
-              <image class="body-img" href="assets/illustrations/anatomy-body.jpg"
-                     x="170" y="20" width="360" height="491"
-                     preserveAspectRatio="xMidYMid meet" />
+              <defs>
+                <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%"   stop-color="#1c528a" stop-opacity="0.06" />
+                  <stop offset="50%"  stop-color="#1c528a" stop-opacity="0.14" />
+                  <stop offset="100%" stop-color="#1c528a" stop-opacity="0.05" />
+                </linearGradient>
+                <radialGradient id="bodyShine" cx="34%" cy="22%" r="65%">
+                  <stop offset="0%"  stop-color="#ffffff" stop-opacity="0.35" />
+                  <stop offset="55%" stop-color="#ffffff" stop-opacity="0.05" />
+                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                </radialGradient>
+              </defs>
 
-              <!-- Intervals layer (left of body): lines from Sa to each position -->
+              <!-- Anatomically-proportioned silhouette: single closed path so
+                   there are no overlapping fills creating darker seams. -->
+              <g class="body-svg__silhouette" aria-hidden="true">
+                <path class="body-fill" fill="url(#bodyGrad)" d="
+                  M 350 38
+                  C 393 38 414 72 414 106
+                  C 414 132 404 156 388 162
+                  L 382 180
+                  C 388 190 402 194 420 198
+                  C 454 202 488 216 510 240
+                  C 520 254 522 270 518 290
+                  L 510 384
+                  C 508 404 502 422 492 432
+                  C 482 438 470 432 466 420
+                  L 470 384
+                  L 478 290
+                  C 480 270 476 254 464 244
+                  L 452 250
+                  C 448 296 442 344 438 392
+                  L 430 432
+                  C 442 458 456 484 466 510
+                  L 462 738
+                  L 456 778
+                  C 456 786 448 790 440 790
+                  L 386 790
+                  C 378 790 374 786 374 778
+                  L 378 738
+                  L 372 480
+                  L 350 460
+                  L 328 480
+                  L 322 738
+                  L 326 778
+                  C 326 786 322 790 314 790
+                  L 260 790
+                  C 252 790 244 786 244 778
+                  L 238 738
+                  L 234 510
+                  C 244 484 258 458 270 432
+                  L 262 392
+                  C 258 344 252 296 248 250
+                  L 236 244
+                  C 224 254 220 270 222 290
+                  L 230 384
+                  L 234 420
+                  C 230 432 218 438 208 432
+                  C 198 422 192 404 190 384
+                  L 182 290
+                  C 178 270 180 254 190 240
+                  C 212 216 246 202 280 198
+                  C 298 194 312 190 318 180
+                  L 312 162
+                  C 296 156 286 132 286 106
+                  C 286 72 307 38 350 38 Z
+                " />
+                <path class="body-shine" fill="url(#bodyShine)" d="
+                  M 350 38
+                  C 393 38 414 72 414 106
+                  C 414 132 404 156 388 162
+                  L 382 180
+                  C 388 190 402 194 420 198
+                  C 454 202 488 216 510 240
+                  C 520 254 522 270 518 290
+                  L 510 384
+                  C 508 404 502 422 492 432
+                  C 482 438 470 432 466 420
+                  L 470 384
+                  L 478 290
+                  C 480 270 476 254 464 244
+                  L 452 250
+                  C 448 296 442 344 438 392
+                  L 430 432
+                  C 442 458 456 484 466 510
+                  L 462 738
+                  L 456 778
+                  C 456 786 448 790 440 790
+                  L 386 790
+                  C 378 790 374 786 374 778
+                  L 378 738
+                  L 372 480
+                  L 350 460
+                  L 328 480
+                  L 322 738
+                  L 326 778
+                  C 326 786 322 790 314 790
+                  L 260 790
+                  C 252 790 244 786 244 778
+                  L 238 738
+                  L 234 510
+                  C 244 484 258 458 270 432
+                  L 262 392
+                  C 258 344 252 296 248 250
+                  L 236 244
+                  C 224 254 220 270 222 290
+                  L 230 384
+                  L 234 420
+                  C 230 432 218 438 208 432
+                  C 198 422 192 404 190 384
+                  L 182 290
+                  C 178 270 180 254 190 240
+                  C 212 216 246 202 280 198
+                  C 298 194 312 190 318 180
+                  L 312 162
+                  C 296 156 286 132 286 106
+                  C 286 72 307 38 350 38 Z
+                " />
+                <path class="body-outline" fill="none" stroke="#1c528a" stroke-width="1.4" stroke-opacity="0.55" stroke-linejoin="round" d="
+                  M 350 38
+                  C 393 38 414 72 414 106
+                  C 414 132 404 156 388 162
+                  L 382 180
+                  C 388 190 402 194 420 198
+                  C 454 202 488 216 510 240
+                  C 520 254 522 270 518 290
+                  L 510 384
+                  C 508 404 502 422 492 432
+                  C 482 438 470 432 466 420
+                  L 470 384
+                  L 478 290
+                  C 480 270 476 254 464 244
+                  L 452 250
+                  C 448 296 442 344 438 392
+                  L 430 432
+                  C 442 458 456 484 466 510
+                  L 462 738
+                  L 456 778
+                  C 456 786 448 790 440 790
+                  L 386 790
+                  C 378 790 374 786 374 778
+                  L 378 738
+                  L 372 480
+                  L 350 460
+                  L 328 480
+                  L 322 738
+                  L 326 778
+                  C 326 786 322 790 314 790
+                  L 260 790
+                  C 252 790 244 786 244 778
+                  L 238 738
+                  L 234 510
+                  C 244 484 258 458 270 432
+                  L 262 392
+                  C 258 344 252 296 248 250
+                  L 236 244
+                  C 224 254 220 270 222 290
+                  L 230 384
+                  L 234 420
+                  C 230 432 218 438 208 432
+                  C 198 422 192 404 190 384
+                  L 182 290
+                  C 178 270 180 254 190 240
+                  C 212 216 246 202 280 198
+                  C 298 194 312 190 318 180
+                  L 312 162
+                  C 296 156 286 132 286 106
+                  C 286 72 307 38 350 38
+                " />
+              </g>
+
+              <!-- Intervals overlay (left of body) -->
               <g class="body-svg__intervals" data-intervals></g>
 
               <!-- Tone-pair angular brackets (right of body) -->
@@ -175,80 +341,17 @@
                 <span lang="en">The Twelve Positions</span>
               </h2>
               <p class="interna-info__lead" data-info-lead>
-                <span lang="de">Die Karnatischen Bezeichnungen Sa, Ri₁, Ri₂ … Sa' markieren die feste Position eines jeden Tons im Körper. Wählen Sie oben einen Persönlichen Grundton, um die jeweiligen Tonzuordnungen zu sehen. Wählen Sie eine Position für Details.</span>
-                <span lang="en">The Karnatic names Sa, Ri₁, Ri₂ … Sa' mark the fixed position of each tone in the body. Choose a Personal Fundamental Tone above to see the corresponding tone mapping. Select a position for details.</span>
+                <span lang="de">Die Karnatischen Bezeichnungen Sa, Ri₁, Ri₂ … Sa' markieren die feste Position eines jeden Tons im Körper. Wählen Sie oben einen Persönlichen Grundton, um die jeweiligen Tonzuordnungen zu sehen.</span>
+                <span lang="en">The Karnatic names Sa, Ri₁, Ri₂ … Sa' mark the fixed position of each tone in the body. Choose a Personal Fundamental Tone above to see the corresponding tone mapping.</span>
               </p>
 
-              <!-- Summary table: appears when a root is selected -->
-              <div class="interna-info__table-wrap" data-summary hidden>
-                <table class="interna-table">
-                  <caption class="interna-table__caption">
-                    <span lang="de">Übersicht aller Töne</span><span lang="en">Tone summary</span>
-                  </caption>
-                  <thead>
-                    <tr>
-                      <th scope="col"><span lang="de">Position</span><span lang="en">Position</span></th>
-                      <th scope="col"><span lang="de">Ton</span><span lang="en">Tone</span></th>
-                      <th scope="col"><span lang="de">Intervall</span><span lang="en">Interval</span></th>
-                      <th scope="col"><span lang="de">Sanskrit</span><span lang="en">Sanskrit</span></th>
-                      <th scope="col"><span lang="de">Organ</span><span lang="en">Organ</span></th>
-                    </tr>
-                  </thead>
-                  <tbody data-summary-rows></tbody>
-                </table>
-              </div>
-
-              <!-- Selected-position detail -->
-              <div class="interna-info__detail" data-info-detail hidden>
-                <p class="interna-info__detail-label">
-                  <span lang="de">Ausgewählte Position</span><span lang="en">Selected position</span>
-                </p>
-                <dl class="interna-info__list">
-                  <div class="interna-info__row">
-                    <dt><span lang="de">Position</span><span lang="en">Position</span></dt>
-                    <dd data-detail-position>—</dd>
-                  </div>
-                  <div class="interna-info__row" data-detail-tone-row hidden>
-                    <dt><span lang="de">Ton</span><span lang="en">Tone</span></dt>
-                    <dd data-detail-tone>—</dd>
-                  </div>
-                  <div class="interna-info__row">
-                    <dt><span lang="de">Intervall</span><span lang="en">Interval</span></dt>
-                    <dd data-detail-interval>—</dd>
-                  </div>
-                  <div class="interna-info__row">
-                    <dt><span lang="de">Sanskrit</span><span lang="en">Sanskrit</span></dt>
-                    <dd data-detail-sanskrit>—</dd>
-                  </div>
-                  <div class="interna-info__row">
-                    <dt><span lang="de">Bedeutung</span><span lang="en">Meaning</span></dt>
-                    <dd data-detail-meaning>—</dd>
-                  </div>
-                  <div class="interna-info__row">
-                    <dt><span lang="de">Organ</span><span lang="en">Organ</span></dt>
-                    <dd data-detail-organ>—</dd>
-                  </div>
-                  <div class="interna-info__row" data-detail-organ-octave-row>
-                    <dt><span lang="de">Organ 1. Oktave</span><span lang="en">Organ 1st octave</span></dt>
-                    <dd data-detail-organ-octave>—</dd>
-                  </div>
-                  <div class="interna-info__row" data-detail-function-row hidden>
-                    <dt><span lang="de">Grundfunktion</span><span lang="en">Function</span></dt>
-                    <dd data-detail-function>—</dd>
-                  </div>
-                  <div class="interna-info__row">
-                    <dt><span lang="de">Tonpaar</span><span lang="en">Tone pair</span></dt>
-                    <dd data-detail-pair>—</dd>
-                  </div>
-                </dl>
-                <button class="btn btn--primary interna-info__play" type="button" data-info-play hidden aria-pressed="false">
-                  <span class="interna-info__play-icon" aria-hidden="true" data-play-icon>▶</span>
-                  <span class="interna-info__play-label">
-                    <span data-play-label-de lang="de">Ton hören</span>
-                    <span data-play-label-en lang="en">Play tone</span>
-                  </span>
-                </button>
-              </div>
+              <button class="btn btn--primary interna-info__play" type="button" data-info-play hidden aria-pressed="false">
+                <span class="interna-info__play-icon" aria-hidden="true" data-play-icon>▶</span>
+                <span class="interna-info__play-label">
+                  <span data-play-label-de lang="de">Ton hören</span>
+                  <span data-play-label-en lang="en">Play tone</span>
+                </span>
+              </button>
 
               <div class="interna-info__toggles">
                 <label class="interna-info__toggle">
@@ -270,6 +373,31 @@
             </div>
           </aside>
         </div>
+
+        <!-- Unified table (full width below the body + side panel) -->
+        <section class="interna-tablewrap" data-summary hidden aria-labelledby="table-caption">
+          <h2 class="interna-tablewrap__caption" id="table-caption">
+            <span lang="de">Übersicht aller Töne</span><span lang="en">Tone summary</span>
+          </h2>
+          <div class="interna-tablewrap__scroll">
+            <table class="interna-table">
+              <thead>
+                <tr>
+                  <th scope="col"><span lang="de">Position</span><span lang="en">Position</span></th>
+                  <th scope="col"><span lang="de">Ton</span><span lang="en">Tone</span></th>
+                  <th scope="col"><span lang="de">Intervall</span><span lang="en">Interval</span></th>
+                  <th scope="col"><span lang="de">Sanskrit</span><span lang="en">Sanskrit</span></th>
+                  <th scope="col"><span lang="de">Bedeutung</span><span lang="en">Meaning</span></th>
+                  <th scope="col"><span lang="de">Organ</span><span lang="en">Organ</span></th>
+                  <th scope="col"><span lang="de">Organ 1. Oktave</span><span lang="en">Organ 1st octave</span></th>
+                  <th scope="col"><span lang="de">Grundfunktion</span><span lang="en">Function</span></th>
+                  <th scope="col"><span lang="de">Tonpaar</span><span lang="en">Tone pair</span></th>
+                </tr>
+              </thead>
+              <tbody data-summary-rows></tbody>
+            </table>
+          </div>
+        </section>
 
         <!-- Audio element (single, swapped src on play) -->
         <audio id="interna-audio" preload="none" aria-hidden="true"></audio>
@@ -394,69 +522,70 @@
           H:   "#a4c842"    // lime / yellow-green
         };
 
-        // Body centerline x in viewBox (700×800). The anatomy image is placed
-        // at x=170,y=20,w=360,h=491; centerline is x=170 + 360/2 = 350.
+        // Body centerline x in viewBox (700×820). Silhouette is symmetric
+        // around x=350.
         var CX = 350;
 
-        // 13 positions ascending the body. y coordinates correspond to exact
-        // anatomical landmarks on the embedded anatomy image (kept internal
-        // per the Intervalle II descriptions — Stirnkuhle, Nasenwurzel, …,
-        // Nabel+0.5cm, Bauchnabel). semi = semitones above the root Sa.
-        // Sanskrit names and Übersetzung from the "Intervalle" reference table.
+        // 13 positions ascending the body. y coordinates land on anatomical
+        // landmarks inside the silhouette: Stirnkuhle (Sa'), Nasenwurzel (Ni₂),
+        // Hals (Ni₁), KingKongPunkt (Dha₂), Herzpunkt±2cm (Dha₁/Pa/Ma₂),
+        // Unter Brustraum (Ma₁), 4./5. Finger nach Nabel (Ga₁/Ga₂), Nabel
+        // ±0.5/+2cm (Ri₁/Ri₂), Bauchnabel (Sa). These geometric anchors come
+        // from Intervalle II and are kept internal per the user's request.
         var POSITIONS = [
-          { semi: 12, y:  82, kar: "Sa",   karSub: "′",
+          { semi: 12, y:  88, kar: "Sa",   karSub: "′",
             sanskrit: "Śadjá",   meaning_de: "Basis (Oktave)", meaning_en: "Base (octave)",
             organ_de: "Hypophyse", organ_en: "Pituitary gland",
             organOct_de: "Bauchnabel", organOct_en: "Navel" },
-          { semi: 11, y: 105, kar: "Ni",   karSub: "₂",
+          { semi: 11, y: 115, kar: "Ni",   karSub: "₂",
             sanskrit: "Niśata",  meaning_de: "Sitzend",      meaning_en: "Seated",
             organ_de: "Sinnesorgane (Augen, …)", organ_en: "Sense organs (eyes, …)",
             organOct_de: "Dünndarm (u.a. 12-Finger-Darm)", organOct_en: "Small intestine (incl. duodenum)" },
-          { semi: 10, y: 165, kar: "Ni",   karSub: "₁",
+          { semi: 10, y: 178, kar: "Ni",   karSub: "₁",
             sanskrit: "Niśata",  meaning_de: "Sitzend",      meaning_en: "Seated",
             organ_de: "Schilddrüse / Stimmapparat / Mandeln", organ_en: "Thyroid / vocal apparatus / tonsils",
             organOct_de: "Blinddarm („Darmmantel\")", organOct_en: "Caecum (\"intestinal mantle\")",
             function_de: "„Neuralgischer Punkt\"", function_en: "\"Neuralgic point\"" },
-          { semi:  9, y: 205, kar: "Dha",  karSub: "₂",
+          { semi:  9, y: 238, kar: "Dha",  karSub: "₂",
             sanskrit: "Dhaivata", meaning_de: "Subtil, ausgewogen", meaning_en: "Subtle, balanced",
             organ_de: "Lungen, Thymus", organ_en: "Lungs, thymus",
             organOct_de: "Dickdarm", organOct_en: "Large intestine",
             function_de: "Immunsystem", function_en: "Immune system" },
-          { semi:  8, y: 233, kar: "Dha",  karSub: "₁",
+          { semi:  8, y: 278, kar: "Dha",  karSub: "₁",
             sanskrit: "Dhaivata", meaning_de: "Subtil, ausgewogen", meaning_en: "Subtle, balanced",
             organ_de: "Lungen", organ_en: "Lungs",
             organOct_de: "Blase", organOct_en: "Bladder" },
-          { semi:  7, y: 244, kar: "Pa",   karSub: "",
+          { semi:  7, y: 298, kar: "Pa",   karSub: "",
             sanskrit: "Pañcama", meaning_de: "Die Fünfte",   meaning_en: "The fifth",
             organ_de: "Physisches Herz", organ_en: "Physical heart",
             organOct_de: "Innere Geschlechtsorgane", organOct_en: "Inner reproductive organs" },
-          { semi:  6, y: 255, kar: "Ma",   karSub: "₂",
+          { semi:  6, y: 318, kar: "Ma",   karSub: "₂",
             sanskrit: "Madhyama", meaning_de: "Mitte",       meaning_en: "Middle",
             organ_de: "Kein Organ", organ_en: "No organ",
             organOct_de: "Primäre Geschlechtsorgane", organOct_en: "Primary reproductive organs" },
-          { semi:  5, y: 266, kar: "Ma",   karSub: "₁",
+          { semi:  5, y: 338, kar: "Ma",   karSub: "₁",
             sanskrit: "Madhyama", meaning_de: "Mitte",       meaning_en: "Middle",
             organ_de: "Milz / Zwerchfell / Gallenblase", organ_en: "Spleen / diaphragm / gallbladder",
             organOct_de: "Beckenboden (Ende des Rumpfes) / Anus", organOct_en: "Pelvic floor (end of torso) / anus" },
-          { semi:  4, y: 283, kar: "Ga",   karSub: "₂",
+          { semi:  4, y: 368, kar: "Ga",   karSub: "₂",
             sanskrit: "Gandhara", meaning_de: "Duftend, parfümiert", meaning_en: "Fragrant, perfumed",
             organ_de: "Leber", organ_en: "Liver",
             organOct_de: "Kniegelenk, Knie", organOct_en: "Knee joint, knee",
             function_de: "Entgiftungsorgan", function_en: "Detoxification organ" },
-          { semi:  3, y: 299, kar: "Ga",   karSub: "₁",
+          { semi:  3, y: 388, kar: "Ga",   karSub: "₁",
             sanskrit: "Gandhara", meaning_de: "Duftend, parfümiert", meaning_en: "Fragrant, perfumed",
             organ_de: "Magen", organ_en: "Stomach",
             organOct_de: "Knöchel, Sprunggelenk", organOct_en: "Ankle, ankle joint" },
-          { semi:  2, y: 316, kar: "Ri",   karSub: "₂",
+          { semi:  2, y: 412, kar: "Ri",   karSub: "₂",
             sanskrit: "Riśabha", meaning_de: "Starkes Tier", meaning_en: "Strong animal",
             organ_de: "Pancreas (Bauchspeicheldrüse)", organ_en: "Pancreas",
             organOct_de: "Ferse", organOct_en: "Heel",
             function_de: "Insulinproduktion, Fett- und Zuckerstoffwechsel", function_en: "Insulin production, fat & sugar metabolism" },
-          { semi:  1, y: 327, kar: "Ri",   karSub: "₁",
+          { semi:  1, y: 428, kar: "Ri",   karSub: "₁",
             sanskrit: "Riśabha", meaning_de: "Starkes Tier", meaning_en: "Strong animal",
             organ_de: "Nieren", organ_en: "Kidneys",
             organOct_de: "Zehen, Ballen", organOct_en: "Toes, balls of the feet" },
-          { semi:  0, y: 338, kar: "Sa",   karSub: "",
+          { semi:  0, y: 444, kar: "Sa",   karSub: "",
             sanskrit: "Śadjá",   meaning_de: "Basis (Grundton)", meaning_en: "Base (root)",
             organ_de: "Bauchnabel", organ_en: "Navel",
             organOct_de: "Punkt in Fußmitte", organOct_en: "Point in the centre of the foot" }
@@ -470,10 +599,10 @@
         // brackets nest concentrically to the right of the body image
         // (which ends at x=530, so xStart=540 in buildPairs).
         var TONE_PAIRS = [
-          { num: 1, top: 11, bot:  1, bend: 265 },  // Ni₂ ↔ Ri₁  outermost (x_bend = 615)
-          { num: 2, top: 10, bot:  2, bend: 245 },
-          { num: 3, top:  9, bot:  3, bend: 225 },
-          { num: 4, top:  8, bot:  4, bend: 205 }   // Dha₁ ↔ Ga₂ innermost (x_bend = 555)
+          { num: 1, top: 11, bot:  1, bend: 300 },  // Ni₂ ↔ Ri₁ outermost (x_bend = 650)
+          { num: 2, top: 10, bot:  2, bend: 270 },
+          { num: 3, top:  9, bot:  3, bend: 240 },
+          { num: 4, top:  8, bot:  4, bend: 210 }   // Dha₁ ↔ Ga₂ innermost (x_bend = 560)
         ];
 
         var INTERVAL_NAMES_DE = [
@@ -697,68 +826,35 @@
           updateInfo(p);
         }
 
+        function pairLabel(semi, lang) {
+          var tp = pairForSemi(semi);
+          if (tp) return tp.num + ". " + (lang === "en" ? "Tp" : "Tp");
+          if (semi === 7) return lang === "en" ? "Unpaired (Pa)"        : "Ungepaart (Pa)";
+          if (semi === 6) return lang === "en" ? "Unpaired (Tritone)"   : "Ungepaart (Tritonus)";
+          if (semi === 5) return lang === "en" ? "Unpaired"             : "Ungepaart";
+          return lang === "en" ? "Tonic / Octave" : "Grundton / Oktave";
+        }
+
         function updateInfo(p) {
-          var detail            = document.querySelector("[data-info-detail]");
-          var detailPos         = document.querySelector("[data-detail-position]");
-          var detailToneRow     = document.querySelector("[data-detail-tone-row]");
-          var detailTone        = document.querySelector("[data-detail-tone]");
-          var detailIv          = document.querySelector("[data-detail-interval]");
-          var detailSanskrit    = document.querySelector("[data-detail-sanskrit]");
-          var detailMeaning     = document.querySelector("[data-detail-meaning]");
-          var detailOrgan       = document.querySelector("[data-detail-organ]");
-          var detailOrganOct    = document.querySelector("[data-detail-organ-octave]");
-          var detailOrganOctRow = document.querySelector("[data-detail-organ-octave-row]");
-          var detailFn          = document.querySelector("[data-detail-function]");
-          var detailFnRow       = document.querySelector("[data-detail-function-row]");
-          var detailPair        = document.querySelector("[data-detail-pair]");
-          var playBtn           = document.querySelector("[data-info-play]");
+          var playBtn = document.querySelector("[data-info-play]");
 
-          detail.hidden = false;
-          var posName = p.kar + (p.karSub || "");
-          if (p.semi === 12) posName = "Sa′";
-          detailPos.textContent = posName;
-
-          var lang = document.documentElement.lang === "en" ? "en" : "de";
-          detailIv.textContent       = (lang === "en" ? INTERVAL_NAMES_EN : INTERVAL_NAMES_DE)[p.semi];
-          detailSanskrit.textContent = p.sanskrit || "—";
-          detailMeaning.textContent  = lang === "en" ? (p.meaning_en || "—") : (p.meaning_de || "—");
-          detailOrgan.textContent    = lang === "en" ? (p.organ_en   || "—") : (p.organ_de   || "—");
-          if (p.organOct_de || p.organOct_en) {
-            detailOrganOct.textContent = lang === "en" ? (p.organOct_en || "—") : (p.organOct_de || "—");
-            detailOrganOctRow.hidden = false;
-          } else {
-            detailOrganOctRow.hidden = true;
-          }
-          if (p.function_de || p.function_en) {
-            detailFn.textContent = lang === "en" ? (p.function_en || "—") : (p.function_de || "—");
-            detailFnRow.hidden = false;
-          } else {
-            detailFnRow.hidden = true;
-          }
-
-          // Tone-pair status
-          var tp = pairForSemi(p.semi);
-          if (tp) {
-            detailPair.textContent = tp.num + ". " + (lang === "en" ? "tone pair" : "Tonpaar");
-          } else if (p.semi === 7) {
-            detailPair.textContent = lang === "en" ? "Unpaired (Pa)"  : "Ungepaart (Pa)";
-          } else if (p.semi === 6) {
-            detailPair.textContent = lang === "en" ? "Unpaired (Tritonus)" : "Ungepaart (Tritonus)";
-          } else if (p.semi === 5) {
-            detailPair.textContent = lang === "en" ? "Unpaired" : "Ungepaart";
-          } else {
-            detailPair.textContent = lang === "en" ? "Tonic / Octave" : "Grundton / Oktave";
-          }
+          // Highlight + scroll the matching row in the unified table
+          var rows = document.querySelectorAll("[data-summary-rows] tr");
+          Array.prototype.forEach.call(rows, function (tr) {
+            var s = parseInt(tr.getAttribute("data-summary-semi"), 10);
+            var match = (s === p.semi);
+            tr.classList.toggle("is-active", match);
+            if (match) {
+              try { tr.scrollIntoView({ block: "nearest", behavior: "smooth" }); } catch (e) {}
+            }
+          });
 
           if (currentRoot) {
             var tones = tonesForRoot(currentRoot);
             var toneName = tones[p.semi % 12];
-            detailTone.textContent = toneName;
-            detailToneRow.hidden = false;
             playBtn.hidden = false;
             playBtn.setAttribute("data-tone", toneName);
           } else {
-            detailToneRow.hidden = true;
             playBtn.hidden = true;
             stopAudio();
           }
@@ -771,13 +867,14 @@
           wrap.hidden = false;
           clear(tbody);
           var tones = tonesForRoot(currentRoot);
-          // Top of the body (Sa', semi 12) down to root Sa (semi 0)
           POSITIONS.forEach(function (p) {
             var tr = document.createElement("tr");
             var pos = p.kar + (p.karSub || "");
             if (p.semi === 12) pos = "Sa′";
-            var tone  = tones[p.semi % 12];
-            var color = TONE_COLORS[tone];
+            var tone   = tones[p.semi % 12];
+            var color  = TONE_COLORS[tone];
+            var pairDe = pairLabel(p.semi, "de");
+            var pairEn = pairLabel(p.semi, "en");
             tr.innerHTML =
               '<th scope="row" class="interna-table__pos">' + pos + '</th>' +
               '<td class="interna-table__tone">' +
@@ -787,13 +884,32 @@
                 '<span lang="de">' + INTERVAL_NAMES_DE[p.semi] + '</span>' +
                 '<span lang="en">' + INTERVAL_NAMES_EN[p.semi] + '</span>' +
               '</td>' +
-              '<td class="interna-table__skt"><em>' + (p.sanskrit || "—") + '</em></td>' +
+              '<td class="interna-table__skt">' + (p.sanskrit || "—") + '</td>' +
+              '<td class="interna-table__mean">' +
+                '<span lang="de">' + (p.meaning_de || "—") + '</span>' +
+                '<span lang="en">' + (p.meaning_en || "—") + '</span>' +
+              '</td>' +
               '<td class="interna-table__org">' +
                 '<span lang="de">' + (p.organ_de || "—") + '</span>' +
                 '<span lang="en">' + (p.organ_en || "—") + '</span>' +
+              '</td>' +
+              '<td class="interna-table__org-oct">' +
+                '<span lang="de">' + (p.organOct_de || "—") + '</span>' +
+                '<span lang="en">' + (p.organOct_en || "—") + '</span>' +
+              '</td>' +
+              '<td class="interna-table__fn">' +
+                '<span lang="de">' + (p.function_de || "—") + '</span>' +
+                '<span lang="en">' + (p.function_en || "—") + '</span>' +
+              '</td>' +
+              '<td class="interna-table__pair">' +
+                '<span lang="de">' + pairDe + '</span>' +
+                '<span lang="en">' + pairEn + '</span>' +
               '</td>';
             tr.setAttribute("data-summary-semi", p.semi);
-            tr.addEventListener("click", function () { selectPoint(p); });
+            tr.addEventListener("click", function () {
+              selectPoint(p);
+              if (currentRoot) togglePlay(p);
+            });
             tbody.appendChild(tr);
           });
         }
