@@ -282,13 +282,13 @@ html.lang-en body [lang="en"] { display: revert; }
   list-style: none; padding: 0; display: flex; align-items: center; gap: 0.15rem;
 }
 .topnav__link {
-  display: inline-block; padding: 0.5rem 0.65rem;
+  display: inline-block; padding: 0.5rem 0.7rem;
   color: var(--ink-soft);
-  font-size: 0.72rem; font-weight: 500;
-  text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap;
+  font-size: 0.72rem; font-weight: 400;
+  text-transform: uppercase; letter-spacing: 0.12em; white-space: nowrap;
   position: relative; transition: color 0.25s var(--ease);
 }
-.topnav__link:hover { color: var(--blue-ink); }
+.topnav__link:hover { color: var(--blue-deep); }
 .topnav__link[aria-current="page"] { color: var(--blue-deep); }
 .topnav__link[aria-current="page"]::after {
   content: ""; position: absolute; left: 0.9rem; right: 0.9rem; bottom: 0.15rem;
@@ -311,10 +311,10 @@ html.lang-en body [lang="en"] { display: revert; }
   opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
 }
 .has-sub__panel a {
-  display: block; padding: 0.55rem 0.8rem;
+  display: block; padding: 0.55rem 0.85rem;
   font-family: var(--font-sans);
-  font-size: var(--fs-xs); font-weight: 500;
-  text-transform: uppercase; letter-spacing: 0.15em;
+  font-size: var(--fs-xs); font-weight: 400;
+  text-transform: uppercase; letter-spacing: 0.12em;
   color: var(--ink-soft);
   transition: color 0.2s var(--ease), background 0.2s var(--ease);
 }
@@ -739,8 +739,10 @@ html.lang-en body [lang="en"] { display: revert; }
 .block__long.prose li { font-size: clamp(0.92rem, 0.88rem + 0.18vw, 1.02rem); line-height: 1.65; }
 .block__more[open] .block__long { animation: panel-in 0.4s var(--ease); }
 
-/* Grundsätze variant: numbered statements rather than display headings.
-   Lighter type, tighter rhythm, calmer kicker. */
+/* Grundsätze variant: 11 numbered statements. Keep the type system
+   consistent with the rest of the site — same display serif for the
+   Essenz line, same sans body for the long-form prose — only the
+   weight, size and rhythm are tuned for sentence-length headings. */
 .blocks--principles {
   gap: clamp(0.9rem, 1.6vw, 1.4rem);
   max-width: 78ch;
@@ -750,48 +752,33 @@ html.lang-en body [lang="en"] { display: revert; }
   padding-top: clamp(0.9rem, 1.8vw, 1.35rem);
 }
 .blocks--principles .block:first-child { border-top: none; padding-top: 0; }
-.blocks--principles .block .kicker {
-  font-size: var(--fs-xs); letter-spacing: 0.22em;
-  color: var(--ink-faint); margin-bottom: 0.35rem;
-}
 .blocks--principles .block__title {
-  font-family: var(--font-sans);
-  font-size: clamp(1.02rem, 0.95rem + 0.35vw, 1.18rem);
-  font-weight: 500; line-height: 1.55;
-  letter-spacing: 0;
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144;
+  font-size: clamp(1.1rem, 1rem + 0.45vw, 1.4rem);
+  font-weight: 300; line-height: 1.35;
+  letter-spacing: -0.008em;
   color: var(--ink);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;          /* let the summary's symmetric padding own the spacing */
   text-wrap: pretty;
 }
-/* Grundsätze share the exact same "mehr lesen" treatment as the
-   default Blocks pattern — same font, same chevron, same symmetric
-   padding — only the long-form prose is a touch quieter. */
 .blocks--principles .block__long.prose p {
   color: var(--ink-soft);
   font-size: clamp(0.9rem, 0.85rem + 0.15vw, 0.98rem);
 }
 
-/* Grundsätze intro + outro paragraphs */
+/* Grundsätze intro + outro use the same prose typography as every
+   other body paragraph on the site — same sans family, same colour,
+   same line-height. Only the wrapping section spacing differs. */
 .grundsaetze-intro {
-  padding-bottom: clamp(1rem, 2vw, 1.5rem);
-}
-.grundsaetze-intro .prose p {
-  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
-  line-height: 1.7;
-  color: var(--ink-soft);
+  padding-bottom: clamp(0.5rem, 1.5vw, 1rem);
 }
 .grundsaetze-outro {
   margin-top: clamp(1.5rem, 3vw, 2.25rem);
-  padding: clamp(1.1rem, 2.4vw, 1.6rem) 0;
+  padding-top: clamp(1.1rem, 2.4vw, 1.6rem);
   border-top: 1px solid var(--line);
   max-width: 78ch;
-}
-.grundsaetze-outro p {
-  font-family: var(--font-sans);
-  font-size: clamp(0.95rem, 0.9rem + 0.18vw, 1.04rem);
-  line-height: 1.7;
-  color: var(--ink);
-  font-weight: 400;
 }
 
 /* Small status badge (e.g. "in Konzeption" on Ausbildung) */
