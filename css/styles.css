@@ -305,10 +305,14 @@ html.lang-en body [lang="en"] { display: revert; }
 /* dropdown (Über uns) */
 .has-sub { position: relative; }
 .has-sub__panel {
-  position: absolute; top: calc(100% + 6px); left: 0; min-width: 240px;
+  position: absolute; top: 100%; left: 0; min-width: 240px;
+  /* No gap between the toggle and the panel — otherwise moving the
+     cursor across the 6px gap drops :hover on .has-sub and the panel
+     starts to fade out before the user can click an item. Visual
+     breathing room comes from padding-top inside the panel instead. */
   background: var(--paper-raised); border: 1px solid var(--line);
   box-shadow: var(--shadow);
-  padding: 0.5rem; list-style: none; margin: 0;
+  padding: 0.85rem 0.5rem 0.5rem; list-style: none; margin: 0;
   opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(6px);
   transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
   z-index: 110;
@@ -814,6 +818,97 @@ html.lang-en body [lang="en"] { display: revert; }
   .status-badge::before { animation: none; }
 }
 
+/* ----------------------------------------------------------------------------
+   Essay reading page (essays/*.html) — template for every essay.
+   The body switches to a plain white surface for a calm reading view;
+   the header / footer keep their normal site styling.
+   ---------------------------------------------------------------------------- */
+.essay-page { background: #ffffff; }
+.essay-page .masthead {
+  background: #ffffff;
+  background: color-mix(in srgb, #ffffff 85%, transparent);
+}
+.essay { padding-block: clamp(2rem, 4vw, 4rem) clamp(3rem, 6vw, 5rem); }
+.essay-body { color: var(--ink); }
+.essay-body__breadcrumb {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs); letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-faint); margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.essay-body__breadcrumb a {
+  color: inherit; display: inline-flex; align-items: center; gap: 0.45rem;
+  transition: color 0.2s var(--ease);
+}
+.essay-body__breadcrumb a:hover { color: var(--blue-deep); }
+.essay-body__index {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.6rem);
+  color: var(--blue); margin: 0; line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.essay-body__title {
+  font-family: var(--font-display); font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144;
+  font-size: clamp(2.2rem, 1.6rem + 2.4vw, 3.8rem);
+  font-weight: 300; line-height: 1.05; letter-spacing: -0.018em;
+  color: var(--ink);
+  margin: 0.6rem 0 0.9rem;
+  text-wrap: balance;
+}
+.essay-body__kicker {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs); letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink-faint); font-weight: 500;
+  margin: 0 0 clamp(2rem, 4vw, 3rem);
+  display: inline-flex; align-items: center; gap: 0.6rem;
+}
+.essay-body__kicker::before {
+  content: ""; width: 1.5rem; height: 1px;
+  background: currentColor; opacity: 0.5;
+}
+.essay-body__prose p {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 0.95rem + 0.22vw, 1.12rem);
+  line-height: 1.78; color: var(--ink);
+  margin: 0;
+  text-wrap: pretty;
+}
+.essay-body__prose p + p { margin-top: 1.4em; }
+.essay-body__prose a {
+  color: var(--blue-deep);
+  text-decoration-line: underline;
+  text-decoration-color: var(--blue-mist);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+.essay-body__prose a:hover {
+  color: var(--blue-ink);
+  text-decoration-color: var(--blue-deep);
+}
+.essay-body__signoff {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
+  border-top: 1px solid var(--line);
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: var(--fs-md); color: var(--ink-soft);
+  text-align: right;
+}
+.essay-body__return {
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs); letter-spacing: 0.18em; text-transform: uppercase;
+}
+.essay-body__return a {
+  color: var(--ink-faint);
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  transition: color 0.2s var(--ease);
+}
+.essay-body__return a:hover { color: var(--blue-deep); }
+.essay-page .pagefoot {
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+}
+
 /* Editorial notice — no box, no tint. Sits as a plain section with a
    hairline top rule, a small uppercase kicker for the title, and a
    slightly quieter italic body so it reads as supplementary text. */
@@ -975,6 +1070,18 @@ html.lang-en body [lang="en"] { display: revert; }
    ---------------------------------------------------------------------------- */
 .roster__region { font-size: var(--fs-lg); margin: clamp(2rem, 4vw, 3rem) 0 1.5rem; display: flex; align-items: center; gap: 1rem; }
 .roster__region::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.roster__band {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs); letter-spacing: 0.2em; text-transform: uppercase;
+  font-weight: 500; color: var(--ink-faint);
+  margin: clamp(1.5rem, 3vw, 2.25rem) 0 1rem;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+}
+.roster__band::before {
+  content: ""; width: 1.5rem; height: 1px;
+  background: currentColor; opacity: 0.5;
+}
+.roster + .roster__band { margin-top: clamp(2rem, 4vw, 2.75rem); }
 .roster {
   display: grid; gap: clamp(1rem, 2vw, 1.5rem);
   grid-template-columns: 1fr;
