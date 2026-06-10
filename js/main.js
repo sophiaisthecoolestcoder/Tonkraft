@@ -166,9 +166,25 @@
     });
   }
 
-  /* ---- 6b. Self-hosted film covers — click to play ----------------------- */
+  /* ---- 6b. Film covers — click to load (YouTube or self-hosted) ---------- */
+  /* YouTube uses youtube-nocookie and loads only on click — no third-party
+     request before the user consents (DSGVO). The cover stays put until then. */
   document.querySelectorAll(".film__cover").forEach(function (cover) {
     cover.addEventListener("click", function () {
+      var frame = cover.parentNode;
+      var yt = cover.getAttribute("data-youtube");
+      if (yt) {
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(yt) +
+          "?autoplay=1&rel=0";
+        iframe.title = cover.getAttribute("aria-label") || "Video";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+        iframe.loading = "lazy";
+        frame.innerHTML = "";
+        frame.appendChild(iframe);
+        return;
+      }
       var src = cover.getAttribute("data-film-src");
       if (!src) return;
       var video = document.createElement("video");
@@ -177,7 +193,6 @@
       video.autoplay = true;
       video.setAttribute("playsinline", "");
       video.preload = "auto";
-      var frame = cover.parentNode;
       frame.innerHTML = "";
       frame.appendChild(video);
       if (video.play) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
