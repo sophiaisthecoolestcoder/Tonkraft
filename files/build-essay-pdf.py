@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Regenerate assets/essays/die-tonkraft.pdf — the "Die Tonkraft" essay.
 
-White page background, Georgia serif, brand-blue masthead band, justified prose.
-Mirrors the German prose in essays/die-tonkraft.html (the bilingual reading view).
+Clean single-column essay on a white page: serif title, italic byline, a
+hairline rule, justified prose, and a quiet footer. No coloured banner.
+Mirrors the German prose in the bilingual reading view of the essay.
 
 Requires: reportlab (pip) + system Georgia fonts (ships with macOS).
 Run from repo root:  python3 files/build-essay-pdf.py
@@ -14,8 +15,9 @@ from reportlab.lib.colors import HexColor
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (
-    BaseDocTemplate, PageTemplate, Frame, Paragraph, Spacer, NextPageTemplate,
+    BaseDocTemplate, PageTemplate, Frame, Paragraph, Spacer,
 )
+from reportlab.platypus.flowables import HRFlowable
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.enums import TA_JUSTIFY
 
@@ -26,6 +28,7 @@ OUT = os.path.join(ROOT, "assets", "essays", "die-tonkraft.pdf")
 BLUE = HexColor("#1c528a")       # primary
 BLUE_DEEP = HexColor("#173f70")  # links
 INK = HexColor("#15242c")        # body text
+SOFT = HexColor("#4c5b64")       # byline
 FAINT = HexColor("#7e8890")      # footer
 MIST = HexColor("#c5d6e8")       # hairline
 
@@ -37,12 +40,13 @@ pdfmetrics.registerFont(TTFont("Georgia-Bold", GEO_B))
 pdfmetrics.registerFont(TTFont("Georgia-Italic", GEO_I))
 
 PW, PH = A4
-LM = RM = 24 * mm
-BAND_H = 19 * mm
-FOOT_Y = 16 * mm
+LM = RM = 30 * mm        # generous symmetric margins
+TOP = 30 * mm            # top margin (no banner)
+FOOT_BASE = 17 * mm      # footer text baseline from page bottom
+FOOT_RULE = FOOT_BASE + 22  # hairline sits well above the footer line
+FRAME_BOTTOM = FOOT_RULE + 30  # whitespace between body and footer
 
-KICKER = "TONKRAFT  ·  INSTITUT FÜR SONOLOGIE"
-FOOTER = "Tonkraft — Institut für Sonologie"
+FOOTER = "Tonkraft — Institut für SaMa Sonologie®"
 
 PARAS = [
     "In seinem Nadabrahma System erklärte Vemu Mukunda, dass nicht alle Menschen "
@@ -95,11 +99,15 @@ PARAS = [
 
 body = ParagraphStyle(
     "body", fontName="Georgia", fontSize=11, leading=17.5,
-    alignment=TA_JUSTIFY, textColor=INK, spaceAfter=11,
+    alignment=TA_JUSTIFY, textColor=INK, spaceAfter=11, firstLineIndent=0,
 )
 title = ParagraphStyle(
-    "title", fontName="Georgia", fontSize=30, leading=34,
-    textColor=BLUE, spaceBefore=0, spaceAfter=20,
+    "title", fontName="Georgia", fontSize=29, leading=33,
+    textColor=BLUE, spaceBefore=0, spaceAfter=5,
+)
+byline = ParagraphStyle(
+    "byline", fontName="Georgia-Italic", fontSize=11, leading=15,
+    textColor=SOFT, spaceAfter=15,
 )
 
 
@@ -107,53 +115,30 @@ def footer(canvas, doc):
     canvas.saveState()
     canvas.setStrokeColor(MIST)
     canvas.setLineWidth(0.6)
-    canvas.line(LM, FOOT_Y + 9, PW - RM, FOOT_Y + 9)
+    canvas.line(LM, FOOT_RULE, PW - RM, FOOT_RULE)
     canvas.setFont("Georgia", 8.5)
     canvas.setFillColor(FAINT)
-    canvas.drawString(LM, FOOT_Y, FOOTER)
-    canvas.drawRightString(PW - RM, FOOT_Y, str(doc.page))
+    canvas.drawString(LM, FOOT_BASE, FOOTER)
+    canvas.drawRightString(PW - RM, FOOT_BASE, str(doc.page))
     canvas.restoreState()
-
-
-def first_page(canvas, doc):
-    canvas.saveState()
-    # full-bleed brand band
-    canvas.setFillColor(BLUE)
-    canvas.rect(0, PH - BAND_H, PW, BAND_H, stroke=0, fill=1)
-    to = canvas.beginText(LM, PH - BAND_H + (BAND_H - 9) / 2 + 1)
-    to.setFont("Georgia", 9)
-    to.setCharSpace(1.6)
-    to.setFillColor(HexColor("#ffffff"))
-    to.textOut(KICKER)
-    canvas.drawText(to)
-    canvas.restoreState()
-    footer(canvas, doc)
-
-
-def later_page(canvas, doc):
-    footer(canvas, doc)
 
 
 doc = BaseDocTemplate(
     OUT, pagesize=A4, title="Die Tonkraft", author="Tonkraft Institut",
     subject="Essay", leftMargin=LM, rightMargin=RM,
 )
-frame_first = Frame(
-    LM, FOOT_Y + 18, PW - LM - RM,
-    PH - BAND_H - 14 * mm - (FOOT_Y + 18), id="first",
-)
-frame_later = Frame(
-    LM, FOOT_Y + 18, PW - LM - RM,
-    PH - 24 * mm - (FOOT_Y + 18), id="later",
+frame = Frame(
+    LM, FRAME_BOTTOM, PW - LM - RM, PH - TOP - FRAME_BOTTOM, id="page",
 )
 doc.addPageTemplates([
-    PageTemplate(id="first", frames=[frame_first], onPage=first_page),
-    PageTemplate(id="later", frames=[frame_later], onPage=later_page),
+    PageTemplate(id="page", frames=[frame], onPage=footer),
 ])
 
 story = [
-    NextPageTemplate("later"),
     Paragraph("Die Tonkraft", title),
+    Paragraph("Ein Essay des Tonkraft Instituts", byline),
+    HRFlowable(width="100%", thickness=0.6, color=MIST,
+               spaceBefore=0, spaceAfter=20),
 ]
 for p in PARAS:
     story.append(Paragraph(p, body))
