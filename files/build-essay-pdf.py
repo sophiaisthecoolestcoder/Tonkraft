@@ -40,13 +40,13 @@ pdfmetrics.registerFont(TTFont("Georgia-Bold", GEO_B))
 pdfmetrics.registerFont(TTFont("Georgia-Italic", GEO_I))
 
 PW, PH = A4
-LM = RM = 30 * mm        # generous symmetric margins
-TOP = 30 * mm            # top margin (no banner)
+LM = RM = 22 * mm        # comfortable symmetric margins
+TOP = 24 * mm            # top margin (no banner)
 FOOT_BASE = 17 * mm      # footer text baseline from page bottom
 FOOT_RULE = FOOT_BASE + 22  # hairline sits well above the footer line
 FRAME_BOTTOM = FOOT_RULE + 30  # whitespace between body and footer
 
-FOOTER = "Tonkraft — Institut für SaMa Sonologie®"
+FOOTER = "Tonkraft — Institut für SaMa Sonologie"  # ® drawn raised, below
 
 PARAS = [
     "In seinem Nadabrahma System erklärte Vemu Mukunda, dass nicht alle Menschen "
@@ -103,11 +103,7 @@ body = ParagraphStyle(
 )
 title = ParagraphStyle(
     "title", fontName="Georgia", fontSize=29, leading=33,
-    textColor=BLUE, spaceBefore=0, spaceAfter=5,
-)
-byline = ParagraphStyle(
-    "byline", fontName="Georgia-Italic", fontSize=11, leading=15,
-    textColor=SOFT, spaceAfter=15,
+    textColor=BLUE, spaceBefore=0, spaceAfter=13,
 )
 
 
@@ -116,9 +112,16 @@ def footer(canvas, doc):
     canvas.setStrokeColor(MIST)
     canvas.setLineWidth(0.6)
     canvas.line(LM, FOOT_RULE, PW - RM, FOOT_RULE)
-    canvas.setFont("Georgia", 8.5)
     canvas.setFillColor(FAINT)
-    canvas.drawString(LM, FOOT_BASE, FOOTER)
+    # institute line with a raised ® (superscript), as a trademark mark is set
+    to = canvas.beginText(LM, FOOT_BASE)
+    to.setFont("Georgia", 8.5)
+    to.textOut(FOOTER)
+    to.setFont("Georgia", 5.8)
+    to.setRise(2.8)
+    to.textOut("®")
+    canvas.drawText(to)
+    canvas.setFont("Georgia", 8.5)
     canvas.drawRightString(PW - RM, FOOT_BASE, str(doc.page))
     canvas.restoreState()
 
@@ -136,7 +139,6 @@ doc.addPageTemplates([
 
 story = [
     Paragraph("Die Tonkraft", title),
-    Paragraph("Ein Essay des Tonkraft Instituts", byline),
     HRFlowable(width="100%", thickness=0.6, color=MIST,
                spaceBefore=0, spaceAfter=20),
 ]
