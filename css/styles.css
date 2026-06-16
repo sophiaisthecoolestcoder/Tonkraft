@@ -417,6 +417,7 @@ html.lang-en body [lang="en"] { display: revert; }
   font-size: var(--fs-3xl); font-weight: 200; letter-spacing: -0.015em;
   color: var(--ink); line-height: 0.92;
 }
+.hero__word .brand-reg { font-size: 0.16em; vertical-align: super; }
 .hero__tagline {
   margin-top: 1.25rem;
   font-family: var(--font-display);
