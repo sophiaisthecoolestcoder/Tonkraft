@@ -99,7 +99,8 @@ body {
   color: var(--ink);
   background: var(--paper);
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeSpeed;
+  font-kerning: normal;
   overflow-x: hidden;
 }
 
@@ -113,6 +114,7 @@ a:hover { color: var(--blue-ink); }
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
   font-variation-settings: "opsz" 144, "SOFT" 50;
   line-height: 1.02;
   font-weight: 200;
