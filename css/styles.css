@@ -15,10 +15,10 @@
   --line:         #ddd2bf;   /* hairlines */
   --line-soft:    #e7dccb;
 
-  /* Ink (warm dark slate-blue, never pure black) */
-  --ink:          #15242c;
-  --ink-soft:     #4c5b64;
-  --ink-faint:    #7e8890;
+  /* Ink (dark Vishuddha-blue, never pure black) */
+  --ink:          #103257;
+  --ink-soft:     #3f5172;
+  --ink-faint:    #6f7a95;
 
   /* Monochrome scale rebuilt around the brand blue #1c528a (~212°, 66%, 33%) */
   --blue-ink:     #0c2a4a;   /* deepest — accents, headings accents */
