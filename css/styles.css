@@ -1018,6 +1018,9 @@ html.lang-en body [lang="en"] { display: revert; }
 .person__loc { font-size: var(--fs-sm); color: var(--ink-faint); }
 .person__link { font-size: var(--fs-sm); word-break: break-word; }
 
+/* Registered mark on the tonkraft wordmark logos */
+.brand-reg { font-size: 0.4em; vertical-align: super; line-height: 0; font-weight: 400; letter-spacing: 0; }
+
 /* Legal sub-labels (a) … in Datenschutz) */
 .prose .legal-sub { font-weight: 600; font-size: var(--fs-md); margin-top: 1.4rem; color: var(--ink); }
 
