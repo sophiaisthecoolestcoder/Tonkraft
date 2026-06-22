@@ -16,3 +16,10 @@ assets/videos/
 # Source material handoffs (PDFs, TIFFs, audio masters) — only their
 # web-ready derivatives in assets/ are shipped.
 files/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
