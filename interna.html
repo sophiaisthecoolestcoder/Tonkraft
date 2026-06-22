@@ -100,21 +100,47 @@
       </section>
 
       <!-- Visualization (shown after auth) -->
-      <section class="interna-app wrap" id="interna-app" hidden aria-labelledby="app-title">
-        <header class="pagehead interna-app__head">
-          <span class="kicker"><span lang="de">Innenwelt</span><span lang="en">Inner Structure</span></span>
-          <h1 class="pagehead__title" id="app-title">
-            <span lang="de">Die zwölf Töne im Körper</span>
-            <span lang="en">The Twelve Tones in the Body</span>
-          </h1>
-          <p class="pagehead__lead">
-            <span lang="de">Eine interaktive Darstellung der tonalen Innenstruktur. Wählen Sie Ihren Persönlichen Grundton und entdecken Sie die jeweilige Anordnung der Töne</span>
-            <span lang="en">An interactive map of the inner tonal structure. Choose your Personal Fundamental Tone and explore the corresponding arrangement of tones</span>
-          </p>
-          <button class="interna-logout" type="button" id="interna-logout">
-            <span lang="de">Abmelden</span><span lang="en">Sign out</span>
-          </button>
-        </header>
+      <section class="interna-app wrap" id="interna-app" hidden aria-label="Interner Bereich">
+        <div class="wr-shell">
+          <nav class="wr-nav" id="wr-nav" aria-label="Wissensraum">
+            <div class="wr-nav__top">
+              <p class="wr-nav__brand"><span lang="de">Wissensraum</span><span lang="en">Knowledge Space</span></p>
+              <button class="interna-logout" type="button" id="interna-logout">
+                <span lang="de">Abmelden</span><span lang="en">Sign out</span>
+              </button>
+            </div>
+            <button class="wr-nav__toggle" type="button" id="wr-nav-toggle" aria-expanded="false" aria-controls="wr-nav-list">
+              <span lang="de">Inhalt</span><span lang="en">Contents</span>
+            </button>
+            <ul class="wr-nav__list" id="wr-nav-list">
+              <li><a class="wr-nav__link" href="#tonale-innenwelt"><span lang="de">Tonale Innenwelt</span><span lang="en">Tonal Inner World</span></a></li>
+              <li><a class="wr-nav__link" href="#grundtoene"><span lang="de">Die Grundtöne</span><span lang="en">The Fundamental Tones</span></a></li>
+              <li><a class="wr-nav__link" href="#tonpaare"><span lang="de">Tonpaare</span><span lang="en">Tone Pairs</span></a></li>
+              <li><a class="wr-nav__link" href="#tonskalen"><span lang="de">Tonskalen</span><span lang="en">Scales</span></a></li>
+              <li><a class="wr-nav__link" href="#mentale-uebungen"><span lang="de">Mentale Übungen</span><span lang="en">Mental Exercises</span></a></li>
+              <li class="wr-nav__group">
+                <span class="wr-nav__grouphead"><span lang="de">Philosophie</span><span lang="en">Philosophy</span></span>
+                <ul>
+                  <li><a class="wr-nav__link" href="#philosophie-samkhya"><span lang="de">Sāṁkhya — Grundzüge</span><span lang="en">Sāṁkhya — Foundations</span></a></li>
+                  <li><a class="wr-nav__link" href="#philosophie-koshas"><span lang="de">Die Koshas</span><span lang="en">The Koshas</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="wr-content" id="wr-content">
+            <article class="wr-section" data-route="tonale-innenwelt">
+              <header class="wr-section__head">
+                <span class="kicker"><span lang="de">Innenwelt</span><span lang="en">Inner Structure</span></span>
+                <h1 class="wr-section__title" id="app-title">
+                  <span lang="de">Die zwölf Töne im Körper</span>
+                  <span lang="en">The Twelve Tones in the Body</span>
+                </h1>
+                <p class="wr-section__lead">
+                  <span lang="de">Eine interaktive Darstellung der tonalen Innenstruktur. Wählen Sie Ihren Persönlichen Grundton und entdecken Sie die jeweilige Anordnung der Töne</span>
+                  <span lang="en">An interactive map of the inner tonal structure. Choose your Personal Fundamental Tone and explore the corresponding arrangement of tones</span>
+                </p>
+              </header>
 
         <!-- Tone picker -->
         <div class="tone-picker" role="radiogroup" aria-labelledby="picker-label">
@@ -385,7 +411,118 @@
               <tbody data-summary-rows></tbody>
             </table>
           </div>
-        </section>
+            </section>
+            </article><!-- /tonale-innenwelt -->
+
+            <article class="wr-section" data-route="grundtoene" hidden>
+              <header class="wr-section__head">
+                <span class="kicker"><span lang="de">Die Grundtöne</span><span lang="en">Fundamental Tones</span></span>
+                <h1 class="wr-section__title"><span lang="de">Die zwölf Grundtöne</span><span lang="en">The Twelve Fundamental Tones</span></h1>
+              </header>
+              <p class="wr-placeholder"><span lang="de">Inhalt folgt — eine Übersicht der zwölf Grundtöne mit eigener Seite je Ton.</span><span lang="en">Content to follow — an overview of the twelve fundamental tones with a page per tone.</span></p>
+            </article>
+
+            <article class="wr-section" data-route="tonpaare" hidden>
+              <header class="wr-section__head">
+                <span class="kicker"><span lang="de">Tonpaare</span><span lang="en">Tone Pairs</span></span>
+                <h1 class="wr-section__title"><span lang="de">Die Tonpaare</span><span lang="en">The Tone Pairs</span></h1>
+              </header>
+              <p class="wr-placeholder"><span lang="de">Inhalt folgt — die fünf Tonpaare und Ma₂, aus dem Material „Tonpaare“.</span><span lang="en">Content to follow — the five tone pairs and Ma₂, from the “Tonpaare” material.</span></p>
+            </article>
+
+            <article class="wr-section" data-route="tonskalen" hidden>
+              <header class="wr-section__head">
+                <span class="kicker"><span lang="de">Tonskalen</span><span lang="en">Scales</span></span>
+                <h1 class="wr-section__title"><span lang="de">Tonskalen</span><span lang="en">Scales</span></h1>
+              </header>
+              <p class="wr-placeholder"><span lang="de">Inhalt folgt — eine Übersicht aller Skalen; jede Skala mit eigener Seite (z.&nbsp;B. Nr.&nbsp;8).</span><span lang="en">Content to follow — an overview of all scales; each scale on its own page (e.g. No. 8).</span></p>
+            </article>
+
+            <article class="wr-section" data-route="mentale-uebungen" hidden>
+              <header class="wr-section__head">
+                <span class="kicker"><span lang="de">Praxis</span><span lang="en">Practice</span></span>
+                <h1 class="wr-section__title"><span lang="de">Mentale Übungen</span><span lang="en">Mental Exercises</span></h1>
+              </header>
+              <p class="wr-placeholder"><span lang="de">Inhalt folgt.</span><span lang="en">Content to follow.</span></p>
+            </article>
+
+            <article class="wr-section" data-route="philosophie-samkhya" hidden>
+              <header class="wr-section__head">
+                <span class="kicker"><span lang="de">Philosophie</span><span lang="en">Philosophy</span></span>
+                <h1 class="wr-section__title">Das kośa-Modell der sāṁkhya Philosophie</h1>
+              </header>
+              <div class="prose wr-prose">
+                <p>Der philosophische Anteil der Ausbildung. Wenn wir anhand von Tönen die umfassende Gesundheit des Menschen positiv fördern wollen, brauchen wir ein klares Bild darüber, was ein Mensch überhaupt ist, woraus er besteht, wie seine Anteile interagieren, wie sie sich bedingen. Dafür braucht es ein klares Menschenbild, das alle seine Aspekte berücksichtigt und integriert.</p>
+                <p>Dafür bestens geeignet ist das Menschenbild der sāṁkhya Philosophie, die ihren Ursprung im veda und im vedānta hat. Hier wird der Mensch als unteilbare Einheit beschrieben, die aber um der Klarheit willen in verschiedene Aspekte und Funktionen unterteilt werden kann. Grundlage dafür bilden die fünf Elemente Erde, Wasser, Feuer, Luft und Äther. Jedes der Elemente bildet die Grundsubstanz für eine Körperhülle. So wird deutlich, dass der Mensch aus fünf unterschiedlichen Umhüllungen besteht, die das eigentliche Selbst verdecken. Sie bestehen aber nicht nebeneinander, sondern durchdringen sich gegenseitig. Sie befinden sich zur selben Zeit am selben Ort. Jede Hülle hat eine eigene materielle Dichte und erfüllt eine eigene Funktion im Gesamtgebilde Mensch.</p>
+
+                <h2>Grundstruktur des kośa-Modells</h2>
+                <div class="wr-table-scroll">
+                  <table class="wr-table">
+                    <thead><tr><th>Element</th><th>Sanskrit</th><th>Keimsilbe</th><th>kośa</th><th>Bedeutung</th></tr></thead>
+                    <tbody>
+                      <tr><td>Das Unmanifestierte</td><td>brahman</td><td>aum</td><td>mahākāranadeha</td><td>Ohne Eigenschaften · Stille</td></tr>
+                      <tr><td>Äther</td><td>ākāśa</td><td>ham</td><td>ānandāmāyākośa</td><td>Glückseligkeit · Leere</td></tr>
+                      <tr><td>Luft</td><td>vāyu</td><td>yam</td><td>vijñānamāyākośa</td><td>Werte · Bewusstsein</td></tr>
+                      <tr><td>Feuer</td><td>agni</td><td>ram</td><td>manomāyākośa</td><td>Gedanken · Information</td></tr>
+                      <tr><td>Wasser</td><td>jaḷa</td><td>vam</td><td>prāṇāmāyākośa</td><td>Lebensenergie · Energie</td></tr>
+                      <tr><td>Erde</td><td>pṛthivī</td><td>lam</td><td>annamāyākośa</td><td>Nahrung · Materie</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h2>Die fünf Hüllen im Überblick</h2>
+                <p><strong>annamāyākośa:</strong> Grobstoffliche Materie, der organische Körper in seiner materiellen Ausformung, unbelebt, vergänglich, ohne Funktionalität.</p>
+                <p><strong>prāṇāmāyākośa:</strong> Lebensenergie, alle energetischen Fließsysteme, die den physischen Körper beleben und in Funktionalität bringen.</p>
+                <p><strong>manomāyākośa:</strong> Geist, Gedanken, Intellekt oder Gemüt. Engl. mind. Zentrum der Individualität, die sich durch Raum und Zeit trägt.</p>
+                <p><strong>vijñānamāyākośa:</strong> Unterscheidungsvermögen, Verstand, höhere Intelligenz, manchmal fälschlicherweise Intellekt genannt. Inneres Wertesystem, Ethik, Gewissen.</p>
+                <p><strong>ānandāmāyākośa:</strong> vorübergehende Erfahrung vom Selbst als Glückseligkeit. Losgelöst, nur bezeugend.</p>
+
+                <p>Jede Hülle unterteilt sich noch einmal in die Kombination der fünf Elemente. So entstehen 75 tattva (Felder), die einen Menschen vollständig beschreiben. Wir nutzen dieses Modell für die sonologische Begleitung von Gesundungsprozessen bei unseren Klienten. Unsere Unterscheidungskraft schenkt uns innere Klarheit über den Zustand des Gegenüber und hilft uns beim Identifizieren und Lokalisieren von unregulierten Tönen.</p>
+                <p>Das kośa-Modell der sāṁkhya Philosophie passt perfekt zum Nada Brahma System von Vemu Mukunda. Es war auch sein philosophischer Hintergrund, er hat es im Rahmen seiner Allgemeinbildung erlernt. Die sāṁkhya Philosophie bildet auch die Matrix für den Hinduismus und das advaita vedānta. Es ist zeitlos, überkulturell, universell.</p>
+                <p>Das kośa-Modell ist ein System über das scheinbare Selbst. In der letzten Erkenntnis wird klar, dass wir alles das nicht sind. Indem wir nach und nach alle Felder entdecken und erfahren, begreifen wir, dass diese alle nur illusionär sind und unser eigentliches Sein etwas komplett anderes ist. Dieser Moment wird als mokṣa (moha kṣaya) bezeichnet, der Wegfall der Täuschung, wenn alle das Wahre verhüllenden Schleier beseitigt sind.</p>
+
+                <blockquote class="wr-quote"><p>„The proper study of mankind is man!“ — Das angemessene Studienobjekt für die Menschheit ist der Mensch selbst.</p><cite>Alexander Pope</cite></blockquote>
+                <blockquote class="wr-quote"><p>“We come from sound, we are sound and we go back to sound.”</p><cite>Vemu Mukunda</cite></blockquote>
+              </div>
+            </article>
+
+            <article class="wr-section" data-route="philosophie-koshas" hidden>
+              <header class="wr-section__head">
+                <span class="kicker"><span lang="de">Philosophie</span><span lang="en">Philosophy</span></span>
+                <h1 class="wr-section__title">Die Koshas — die fünf Hüllen</h1>
+              </header>
+              <div class="prose wr-prose">
+                <p>Der Mensch besteht aus fünf einander durchdringenden Hüllen (kośa), die das eigentliche Selbst verdecken — von der grobstofflichen Materie bis zur Glückseligkeit. Hinzu kommt das antaḥkarana, das innere Gedankenorgan. Die folgenden Abschnitte beschreiben jede Hülle einzeln.</p>
+                <p class="wr-note"><span lang="de">Hinweis: Hier stehen zunächst die Wesensbeschreibungen jeder Hülle. Die detaillierten tattva-Zusammensetzungen (z.&nbsp;B. 555 Knochen … 511 Ohr), Funktionen und Zitate folgen in einem nächsten Schritt.</span><span lang="en">Note: the essential descriptions of each sheath are shown first. The detailed tattva compositions, functions and quotations will follow.</span></p>
+
+                <h2>annamāyākośa — die materielle Hülle</h2>
+                <p>Die materielle Hülle, der grobstoffliche Anteil des Gesamtspektrums Mensch. Sie besteht aus allem, was über die fünf Sinnesorgane direkt wahrnehmbar ist und sofort erfahren werden kann. Diese Hülle bildet die Trägersubstanz für alle feineren Hüllen. In ihr ist alles Feinere direkt enthalten. Nicht außerhalb, sondern innerhalb der annamāyākośa befinden sich alle weiteren kośa.</p>
+                <p>anna (Sanskrit) = Nahrung. Die annamāyākośa erhält ihre Kraft und Beständigkeit über die materielle Nahrung, die wir zu uns nehmen. Auf der annamāyākośa bilden sich alle Erkrankungen oder Dysfunktionen in den anderen kośa ab.</p>
+
+                <h2>prāṇamāyākośa — die Hülle der Lebensenergie</h2>
+                <p>Die Hülle der Lebensenergie, der energetische Anteil des Gesamtspektrums Mensch. Sie besteht aus allen Kraftströmen und verhilft der materiellen Grundlage annamāyākośa zu ihrer Funktion. Sie ist nicht direkt über die Sinne wahrnehmbar, aber mit etwas Training lässt sie sich über Tasten, Sehen oder Spüren entdecken. Hauptträger der prāṇamāyākośa ist das Element Wasser.</p>
+                <p>Sie stellt nie Defizite aus sich selbst heraus her, sondern ist immer um Ausgleich bemüht und reagiert einzig auf die Störungen der beiden benachbarten kośa. Damit wird sie zum Indikator: ein Energieloch verweist immer auf eine Dysfunktion in der annamāyākośa oder in der manomāyākośa. Der Hauptaktivator ist der Atem.</p>
+
+                <h2>manomāyākośa — die Hülle der Gedanken</h2>
+                <p>Diese Hülle ist der zentrale Bereich der Individualität. So wie die annamāyākośa die individuelle materielle Grundlage bildet, ausgehend von der Vererbung, liegt in der manomāyākośa die Ursache für die empfundene geistige Individualität. Diese wird nicht vererbt, sondern ist das Produkt der eigenen Vergangenheit. Im Gedanklich-Emotionalen ist jeder Mensch nur er selbst.</p>
+                <p>Ihre drei Grundkräfte sind citta (der Erinnerungsspeicher, im Nabel), ahaṁkāra (der Ich-Macher, im Herzen) und manas (die Gedankenprozesse, im Oberkopf). Werden den alten Erlebnissen die Emotionalitäten entzogen, verlieren sie ihre Bedeutung und verflüchtigen sich aus dem citta.</p>
+
+                <h2>vijñānamāyākośa — die Hülle der Werte</h2>
+                <p>Ihre Grundfunktion ist buddhi: das Geistige in den Vorgängen der Nachforschung und Unterscheidung — höhere Intelligenz, Unterscheidungsvermögen, Gewissen, innere Stimme. buddhi ist dem atman sehr nahe und empfängt 90 % von dessen Leuchtkraft und Energie. Ihre wichtigsten Kräfte sind viveka (Unterscheidungskraft) und vairagya (Loslösung von Leidenschaften).</p>
+                <p>buddhi ist die Korrektur für die manomāyākośa: die individuellen Erinnerungen und die mit ihnen verbundenen Gedanken werden überprüft und als Schatten entlarvt. Hier liegen die fünf menschlichen Werte (dharma, satya, śanti, prema, ahiṁsā) und die fünf geistigen Prinzipien.</p>
+
+                <h2>ānandamāyākośa — die Hülle der Glückseligkeit</h2>
+                <p>Der Bewusstseinszustand bzw. die Betrachtungsebene, wenn das antaḥkarana gereinigt und neutralisiert ist. Das Denken und alle Emotionen bestehen noch als Schatten oder Widerspiegelung, haben aber keinerlei Einfluss mehr auf die Eigenwahrnehmung. In allem wird nur noch das Wahre Selbst (atman) wahrgenommen, alles andere wird wie ein Bild betrachtet, ohne Identifikation, ohne Anteilnahme. Wenn ausnahmslos alles Reines Sein ist, muss nicht mehr unterschieden werden.</p>
+
+                <h2>antaḥkarana — das Gedankenorgan</h2>
+                <p>Das antaḥkarana ist in der sāṁkhya-Philosophie eine feste Größe von zentraler Bedeutung. Wenn es um das Auflösen des Ich-Empfindens geht, muss das antaḥkarana genau verstanden werden. Wer die mechanischen Abläufe im Funktionsgefüge durchblickt, erwirbt die Fähigkeit, die eigenen Gedanken anzuschauen, sie als Rückschlag der Erinnerung zu begreifen und ihnen dann zu widersprechen. „Ich bin nicht meine Gedanken!“ wird zur festen Überzeugung.</p>
+                <p>Es besteht aus den drei Grundfunktionen der manomāyākośa — citta, manas und ahaṁkāra — sowie aus buddhi, der Grundfunktion der vijñānamāyākośa. Diese vier Faktoren wirken zusammen und lassen unsere Gedanken entstehen.</p>
+                <blockquote class="wr-quote"><p>„Das antaḥkarana ist Gottes größtes Geschenk. Es allein entscheidet über Bindung oder Befreiung des Menschen.“</p><cite>Sathya Sai Baba</cite></blockquote>
+              </div>
+            </article>
+
+          </div><!-- /wr-content -->
+        </div><!-- /wr-shell -->
 
         <!-- Audio element (single, swapped src on play) -->
         <audio id="interna-audio" preload="none" aria-hidden="true"></audio>
@@ -1075,6 +1212,48 @@
           audioEl.addEventListener("ended", function () { setPlayingState(false); });
           audioEl.addEventListener("pause", function () {
             if (audioEl.currentTime === 0) setPlayingState(false);
+          });
+        }
+      })();
+    </script>
+
+    <!-- Wissensraum router: hash-based section switching -->
+    <script>
+      (function () {
+        var sections = document.querySelectorAll(".wr-section");
+        if (!sections.length) return;
+        var links = document.querySelectorAll(".wr-nav__link");
+        var navList = document.getElementById("wr-nav-list");
+        var navToggle = document.getElementById("wr-nav-toggle");
+        var content = document.getElementById("wr-content");
+        var DEFAULT = "tonale-innenwelt";
+        function route() {
+          var hash = (location.hash || "").replace(/^#/, "") || DEFAULT;
+          var found = false;
+          sections.forEach(function (s) {
+            var match = s.getAttribute("data-route") === hash;
+            s.hidden = !match;
+            if (match) found = true;
+          });
+          if (!found) {
+            hash = DEFAULT;
+            sections.forEach(function (s) { s.hidden = s.getAttribute("data-route") !== DEFAULT; });
+          }
+          links.forEach(function (a) {
+            var active = a.getAttribute("href") === "#" + hash;
+            a.classList.toggle("is-active", active);
+            if (active) { a.setAttribute("aria-current", "true"); } else { a.removeAttribute("aria-current"); }
+          });
+          if (navList) navList.classList.remove("is-open");
+          if (navToggle) navToggle.setAttribute("aria-expanded", "false");
+          if (content) content.scrollTop = 0;
+        }
+        window.addEventListener("hashchange", route);
+        route();
+        if (navToggle && navList) {
+          navToggle.addEventListener("click", function () {
+            var open = navList.classList.toggle("is-open");
+            navToggle.setAttribute("aria-expanded", open ? "true" : "false");
           });
         }
       })();

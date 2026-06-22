@@ -1577,3 +1577,45 @@ html.lang-en body [lang="en"] { display: revert; }
   .body-svg__silhouette .body-outline { animation: none; }
   .body-svg__point.is-active .point-pulse { animation: none; }
 }
+
+/* ----------------------------------------------------------------------------
+   21. Wissensraum — gated encyclopedia frame (Interner Bereich)
+   ---------------------------------------------------------------------------- */
+.wr-shell { display: grid; grid-template-columns: 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+@media (min-width: 880px) { .wr-shell { grid-template-columns: minmax(190px, 230px) minmax(0, 1fr); } }
+
+.wr-nav__top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.wr-nav__brand { font-family: var(--font-display); font-size: var(--fs-md); color: var(--ink); }
+.wr-nav__toggle { display: none; }
+.wr-nav__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.1rem; border-left: 1px solid var(--line); }
+.wr-nav__list ul { list-style: none; margin: 0.1rem 0 0; padding: 0; }
+.wr-nav__link { display: block; padding: 0.4rem 0.9rem; font-size: var(--fs-sm); color: var(--ink-soft); border-left: 2px solid transparent; margin-left: -1px; transition: color .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease); }
+.wr-nav__link:hover { color: var(--ink); background: var(--paper-raised); }
+.wr-nav__link.is-active { color: var(--blue); border-left-color: var(--blue); font-weight: 600; }
+.wr-nav__group { margin-top: 0.6rem; }
+.wr-nav__grouphead { display: block; padding: 0.4rem 0.9rem 0.1rem; font-size: var(--fs-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); }
+.wr-nav__group ul .wr-nav__link { padding-left: 1.4rem; }
+@media (min-width: 880px) { .wr-nav { position: sticky; top: calc(var(--header-h, 64px) + 1rem); } }
+
+.wr-content { min-width: 0; }
+.wr-section[hidden] { display: none; }
+.wr-section__head { margin-bottom: clamp(1.25rem, 3vw, 2rem); }
+.wr-section__title { font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem); font-weight: 200; margin-top: 0.35rem; line-height: 1.08; }
+.wr-section__lead { margin-top: 0.85rem; color: var(--ink-soft); max-width: 60ch; }
+
+.wr-prose { max-width: 70ch; }
+.wr-prose h2 { font-size: clamp(1.2rem, 1.05rem + 0.55vw, 1.5rem); font-weight: 400; letter-spacing: -0.008em; margin-top: 2.2rem; margin-bottom: 0.5rem; color: var(--blue-ink); }
+.wr-placeholder { color: var(--ink-faint); font-style: italic; }
+.wr-note { font-size: var(--fs-sm); color: var(--ink-faint); border-left: 2px solid var(--blue-mist); padding-left: 0.9rem; margin: 1.1rem 0; }
+.wr-table-scroll { overflow-x: auto; margin: 1.1rem 0; }
+.wr-table { border-collapse: collapse; width: 100%; font-size: var(--fs-sm); }
+.wr-table th, .wr-table td { text-align: left; padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.wr-table thead th { color: var(--ink-faint); font-weight: 600; font-family: var(--font-sans); font-size: var(--fs-xs); letter-spacing: 0.05em; text-transform: uppercase; }
+.wr-quote { margin: 1.5rem 0; padding-left: 1.1rem; border-left: 3px solid var(--blue-mist); color: var(--ink-soft); }
+.wr-quote cite { display: block; margin-top: 0.4rem; font-size: var(--fs-sm); color: var(--ink-faint); font-style: normal; }
+
+@media (max-width: 879px) {
+  .wr-nav__toggle { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.55rem 0.9rem; border: 1px solid var(--line); font-size: var(--fs-sm); color: var(--ink); }
+  .wr-nav__list { display: none; margin-top: 0.6rem; }
+  .wr-nav__list.is-open { display: flex; }
+}
