@@ -823,7 +823,7 @@
         function pairLabel(semi, lang) {
           var tp = pairForSemi(semi);
           if (tp) return tp.num + ". Tp";
-          if (semi === 6) return lang === "en" ? "Unpaired (Tritone)" : "Ungepaart (Tritonus)";
+          if (semi === 6) return lang === "en" ? "Unpaired" : "Ungepaart";
           return lang === "en" ? "Tonic / Octave" : "Grundton / Oktave";
         }
 
@@ -883,9 +883,6 @@
                 { de: "Position",        en: "Position" },
                 { de: "Intervall",       en: "Interval" },
                 { de: "Sanskrit",        en: "Sanskrit" },
-                { de: "Bedeutung",       en: "Meaning" },
-                { de: "Organ",           en: "Organ" },
-                { de: "Organ 1. Oktave", en: "Organ 1st octave" },
                 { de: "Tonpaar",         en: "Tone pair" }
               ]
             : [
@@ -929,18 +926,6 @@
                 '<th scope="row" class="interna-table__pos">' + pos + '</th>' +
                 intervalCell +
                 '<td class="interna-table__skt">' + (p.sanskrit || "—") + '</td>' +
-                '<td class="interna-table__mean">' +
-                  '<span lang="de">' + (p.meaning_de || "—") + '</span>' +
-                  '<span lang="en">' + (p.meaning_en || "—") + '</span>' +
-                '</td>' +
-                '<td class="interna-table__org">' +
-                  '<span lang="de">' + (p.organ_de || "—") + '</span>' +
-                  '<span lang="en">' + (p.organ_en || "—") + '</span>' +
-                '</td>' +
-                '<td class="interna-table__org-oct">' +
-                  '<span lang="de">' + (p.organOct_de || "—") + '</span>' +
-                  '<span lang="en">' + (p.organOct_en || "—") + '</span>' +
-                '</td>' +
                 pairCell;
             } else {
               var tone  = tones[p.semi % 12];
