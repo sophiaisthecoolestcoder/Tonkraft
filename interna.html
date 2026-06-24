@@ -113,17 +113,35 @@
               <span lang="de">Inhalt</span><span lang="en">Contents</span>
             </button>
             <ul class="wr-nav__list" id="wr-nav-list">
-              <li><a class="wr-nav__link" href="#tonale-innenwelt"><span lang="de">Tonale Innenwelt</span><span lang="en">Tonal Inner World</span></a></li>
-              <li><a class="wr-nav__link" href="#grundtoene"><span lang="de">Die Grundtöne</span><span lang="en">The Fundamental Tones</span></a></li>
-              <li><a class="wr-nav__link" href="#tonpaare"><span lang="de">Tonpaare</span><span lang="en">Tone Pairs</span></a></li>
-              <li><a class="wr-nav__link" href="#tonskalen"><span lang="de">Tonskalen</span><span lang="en">Scales</span></a></li>
-              <li><a class="wr-nav__link" href="#mentale-uebungen"><span lang="de">Mentale Übungen</span><span lang="en">Mental Exercises</span></a></li>
-              <li class="wr-nav__group">
-                <span class="wr-nav__grouphead"><span lang="de">Philosophie</span><span lang="en">Philosophy</span></span>
-                <ul>
-                  <li><a class="wr-nav__link" href="#philosophie-samkhya"><span lang="de">Sāṁkhya — Grundzüge</span><span lang="en">Sāṁkhya — Foundations</span></a></li>
-                  <li><a class="wr-nav__link" href="#philosophie-koshas"><span lang="de">Die Koshas</span><span lang="en">The Koshas</span></a></li>
-                </ul>
+              <li class="wr-rubric">
+                <details class="wr-rubric__d" data-rubric open>
+                  <summary class="wr-rubric__head"><span lang="de">Tonstruktur</span><span lang="en">Tonal Structure</span></summary>
+                  <ul class="wr-rubric__items">
+                    <li><a class="wr-nav__link" href="#tonale-innenwelt"><span lang="de">Tonale Innenwelt</span><span lang="en">Tonal Inner World</span></a></li>
+                    <li><a class="wr-nav__link" href="#grundtoene"><span lang="de">Die zwölf Grundtöne</span><span lang="en">The Twelve Fundamental Tones</span></a></li>
+                    <li><a class="wr-nav__link" href="#tonpaare"><span lang="de">Tonpaare</span><span lang="en">Tone Pairs</span></a></li>
+                    <li><a class="wr-nav__link" href="#tonskalen"><span lang="de">Tonskalen</span><span lang="en">Scales</span></a></li>
+                  </ul>
+                </details>
+              </li>
+              <li class="wr-rubric">
+                <details class="wr-rubric__d" data-rubric>
+                  <summary class="wr-rubric__head"><span lang="de">Übungen</span><span lang="en">Exercises</span></summary>
+                  <ul class="wr-rubric__items">
+                    <li><a class="wr-nav__link" href="#grundtonuebung"><span lang="de">Grundtonübung</span><span lang="en">Fundamental-Tone Exercise</span></a></li>
+                    <li><a class="wr-nav__link" href="#uebungen-toene"><span lang="de">Die zwölf Töne</span><span lang="en">The Twelve Tones</span></a></li>
+                    <li><a class="wr-nav__link" href="#mentale-uebungen"><span lang="de">Mentale Übungen</span><span lang="en">Mental Exercises</span></a></li>
+                  </ul>
+                </details>
+              </li>
+              <li class="wr-rubric">
+                <details class="wr-rubric__d" data-rubric>
+                  <summary class="wr-rubric__head"><span lang="de">Philosophie</span><span lang="en">Philosophy</span></summary>
+                  <ul class="wr-rubric__items">
+                    <li><a class="wr-nav__link" href="#philosophie-samkhya"><span lang="de">Sāṁkhya — Grundzüge</span><span lang="en">Sāṁkhya — Foundations</span></a></li>
+                    <li><a class="wr-nav__link" href="#philosophie-koshas"><span lang="de">Die Kośas</span><span lang="en">The Kośas</span></a></li>
+                  </ul>
+                </details>
               </li>
             </ul>
           </nav>
@@ -151,18 +169,18 @@
             <button class="tone-pill tone-pill--general is-active" type="button" role="radio" aria-checked="true" data-root="">
               <span lang="de">Allgemein</span><span lang="en">General</span>
             </button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="C"   style="--tone-color: var(--tone-c);"><span class="tone-pill__swatch" aria-hidden="true"></span>C</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Cis" style="--tone-color: var(--tone-cis);"><span class="tone-pill__swatch" aria-hidden="true"></span>Cis</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="D"   style="--tone-color: var(--tone-d);"><span class="tone-pill__swatch" aria-hidden="true"></span>D</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Dis" style="--tone-color: var(--tone-dis);"><span class="tone-pill__swatch" aria-hidden="true"></span>Dis</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="E"   style="--tone-color: var(--tone-e);"><span class="tone-pill__swatch" aria-hidden="true"></span>E</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="F"   style="--tone-color: var(--tone-f);"><span class="tone-pill__swatch" aria-hidden="true"></span>F</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Fis" style="--tone-color: var(--tone-fis);"><span class="tone-pill__swatch" aria-hidden="true"></span>Fis</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="G"   style="--tone-color: var(--tone-g);"><span class="tone-pill__swatch" aria-hidden="true"></span>G</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Gis" style="--tone-color: var(--tone-gis);"><span class="tone-pill__swatch" aria-hidden="true"></span>Gis</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="A"   style="--tone-color: var(--tone-a);"><span class="tone-pill__swatch" aria-hidden="true"></span>A</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="B"   style="--tone-color: var(--tone-b);"><span class="tone-pill__swatch" aria-hidden="true"></span>B</button>
-            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="H"   style="--tone-color: var(--tone-h);"><span class="tone-pill__swatch" aria-hidden="true"></span>H</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="C"><span class="tone-pill__swatch" aria-hidden="true"></span>C</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Cis"><span class="tone-pill__swatch" aria-hidden="true"></span>Cis</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="D"><span class="tone-pill__swatch" aria-hidden="true"></span>D</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Dis"><span class="tone-pill__swatch" aria-hidden="true"></span>Dis</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="E"><span class="tone-pill__swatch" aria-hidden="true"></span>E</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="F"><span class="tone-pill__swatch" aria-hidden="true"></span>F</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Fis"><span class="tone-pill__swatch" aria-hidden="true"></span>Fis</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="G"><span class="tone-pill__swatch" aria-hidden="true"></span>G</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="Gis"><span class="tone-pill__swatch" aria-hidden="true"></span>Gis</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="A"><span class="tone-pill__swatch" aria-hidden="true"></span>A</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="B"><span class="tone-pill__swatch" aria-hidden="true"></span>B</button>
+            <button class="tone-pill" type="button" role="radio" aria-checked="false" data-root="H"><span class="tone-pill__swatch" aria-hidden="true"></span>H</button>
           </div>
         </div>
 
@@ -176,14 +194,14 @@
 
               <defs>
                 <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%"   stop-color="#1c528a" stop-opacity="0.06" />
-                  <stop offset="50%"  stop-color="#1c528a" stop-opacity="0.14" />
-                  <stop offset="100%" stop-color="#1c528a" stop-opacity="0.05" />
+                  <stop class="body-grad-stop" offset="0%"   stop-opacity="0.06" />
+                  <stop class="body-grad-stop" offset="50%"  stop-opacity="0.14" />
+                  <stop class="body-grad-stop" offset="100%" stop-opacity="0.05" />
                 </linearGradient>
                 <radialGradient id="bodyShine" cx="34%" cy="22%" r="65%">
-                  <stop offset="0%"  stop-color="#ffffff" stop-opacity="0.35" />
-                  <stop offset="55%" stop-color="#ffffff" stop-opacity="0.05" />
-                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                  <stop class="body-shine-stop" offset="0%"  stop-opacity="0.35" />
+                  <stop class="body-shine-stop" offset="55%" stop-opacity="0.05" />
+                  <stop class="body-shine-stop" offset="100%" stop-opacity="0" />
                 </radialGradient>
               </defs>
 
@@ -292,7 +310,7 @@
                   C 296 156 286 132 286 106
                   C 286 72 307 38 350 38 Z
                 " />
-                <path class="body-outline" fill="none" stroke="#1c528a" stroke-width="1.4" stroke-opacity="0.55" stroke-linejoin="round" d="
+                <path class="body-outline" fill="none" stroke-width="1.4" stroke-opacity="0.55" stroke-linejoin="round" d="
                   M 350 38
                   C 393 38 414 72 414 106
                   C 414 132 404 156 388 162
@@ -416,31 +434,504 @@
 
             <article class="wr-section" data-route="grundtoene" hidden>
               <header class="wr-section__head">
-                <span class="kicker"><span lang="de">Die Grundtöne</span><span lang="en">Fundamental Tones</span></span>
+                <span class="kicker"><span lang="de">Tonstruktur</span><span lang="en">Tonal Structure</span></span>
                 <h1 class="wr-section__title"><span lang="de">Die zwölf Grundtöne</span><span lang="en">The Twelve Fundamental Tones</span></h1>
+                <p class="wr-section__lead"><span lang="de">Jeder der zwölf chromatischen Töne kann der Persönliche Grundton (Sa) eines Menschen sein. Das jeweilige Schaubild zeigt, wie sich die übrigen elf Töne darum anordnen — gehört als Monochord-Drone in 432 Hz.</span><span lang="en">Each of the twelve chromatic tones can be a person's Personal Fundamental Tone (Sa). Each diagram shows how the remaining eleven tones arrange around it — heard as a 432 Hz monochord drone.</span></p>
               </header>
-              <p class="wr-placeholder"><span lang="de">Inhalt folgt — eine Übersicht der zwölf Grundtöne mit eigener Seite je Ton.</span><span lang="en">Content to follow — an overview of the twelve fundamental tones with a page per tone.</span></p>
+              <nav class="tone-quicknav" aria-label="Grundtöne"><a class="tone-chip" href="#grundton-c" style="--tone-color: var(--tone-c);"><span class="tone-chip__dot" aria-hidden="true"></span>C</a><a class="tone-chip" href="#grundton-cis" style="--tone-color: var(--tone-cis);"><span class="tone-chip__dot" aria-hidden="true"></span>Cis</a><a class="tone-chip" href="#grundton-d" style="--tone-color: var(--tone-d);"><span class="tone-chip__dot" aria-hidden="true"></span>D</a><a class="tone-chip" href="#grundton-dis" style="--tone-color: var(--tone-dis);"><span class="tone-chip__dot" aria-hidden="true"></span>Dis</a><a class="tone-chip" href="#grundton-e" style="--tone-color: var(--tone-e);"><span class="tone-chip__dot" aria-hidden="true"></span>E</a><a class="tone-chip" href="#grundton-f" style="--tone-color: var(--tone-f);"><span class="tone-chip__dot" aria-hidden="true"></span>F</a><a class="tone-chip" href="#grundton-fis" style="--tone-color: var(--tone-fis);"><span class="tone-chip__dot" aria-hidden="true"></span>Fis</a><a class="tone-chip" href="#grundton-g" style="--tone-color: var(--tone-g);"><span class="tone-chip__dot" aria-hidden="true"></span>G</a><a class="tone-chip" href="#grundton-gis" style="--tone-color: var(--tone-gis);"><span class="tone-chip__dot" aria-hidden="true"></span>Gis</a><a class="tone-chip" href="#grundton-a" style="--tone-color: var(--tone-a);"><span class="tone-chip__dot" aria-hidden="true"></span>A</a><a class="tone-chip" href="#grundton-b" style="--tone-color: var(--tone-b);"><span class="tone-chip__dot" aria-hidden="true"></span>B</a><a class="tone-chip" href="#grundton-h" style="--tone-color: var(--tone-h);"><span class="tone-chip__dot" aria-hidden="true"></span>H</a></nav>
+              <div class="grundton-list">
+              <section class="grundton" id="grundton-c" style="--tone-color: var(--tone-c);">
+                <header class="grundton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="grundton__name">Grundton C</h2>
+                </header>
+                <div class="grundton__grid">
+                  <figure class="schaubild">
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-c.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton C — Anordnung der zwölf Töne im Körper" />
+                  </figure>
+                  <div class="grundton__aside">
+                    <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>C</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>C</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-c.mp3"></audio>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="grundton" id="grundton-cis" style="--tone-color: var(--tone-cis);">
+                <header class="grundton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="grundton__name">Grundton Cis</h2>
+                </header>
+                <div class="grundton__grid">
+                  <figure class="schaubild">
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-cis.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton Cis — Anordnung der zwölf Töne im Körper" />
+                  </figure>
+                  <div class="grundton__aside">
+                    <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>Cis</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>Cis</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-cis.mp3"></audio>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="grundton" id="grundton-d" style="--tone-color: var(--tone-d);">
+                <header class="grundton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="grundton__name">Grundton D</h2>
+                </header>
+                <div class="grundton__grid">
+                  <figure class="schaubild">
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-d.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton D — Anordnung der zwölf Töne im Körper" />
+                  </figure>
+                  <div class="grundton__aside">
+                    <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>D</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>D</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-d.mp3"></audio>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="grundton" id="grundton-dis" style="--tone-color: var(--tone-dis);">
+                <header class="grundton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="grundton__name">Grundton Dis</h2>
+                </header>
+                <div class="grundton__grid">
+                  <figure class="schaubild">
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-dis.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton Dis — Anordnung der zwölf Töne im Körper" />
+                  </figure>
+                  <div class="grundton__aside">
+                    <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>Dis</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>Dis</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-dis.mp3"></audio>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="grundton" id="grundton-e" style="--tone-color: var(--tone-e);">
+                <header class="grundton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="grundton__name">Grundton E</h2>
+                </header>
+                <div class="grundton__grid">
+                  <figure class="schaubild">
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-e.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton E — Anordnung der zwölf Töne im Körper" />
+                  </figure>
+                  <div class="grundton__aside">
+                    <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>E</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>E</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-e.mp3"></audio>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="grundton" id="grundton-f" style="--tone-color: var(--tone-f);">
+                <header class="grundton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="grundton__name">Grundton F</h2>
+                </header>
+                <div class="grundton__grid">
+                  <figure class="schaubild">
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-f.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton F — Anordnung der zwölf Töne im Körper" />
+                  </figure>
+                  <div class="grundton__aside">
+                    <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>F</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>F</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-f.mp3"></audio>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="grundton" id="grundton-fis" style="--tone-color: var(--tone-fis);">
+                <header class="grundton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="grundton__name">Grundton Fis</h2>
+                </header>
+                <div class="grundton__grid">
+                  <figure class="schaubild">
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-fis.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton Fis — Anordnung der zwölf Töne im Körper" />
+                  </figure>
+                  <div class="grundton__aside">
+                    <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>Fis</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>Fis</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-fis.mp3"></audio>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="grundton" id="grundton-g" style="--tone-color: var(--tone-g);">
+                <header class="grundton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="grundton__name">Grundton G</h2>
+                </header>
+                <div class="grundton__grid">
+                  <figure class="schaubild">
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-g.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton G — Anordnung der zwölf Töne im Körper" />
+                  </figure>
+                  <div class="grundton__aside">
+                    <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>G</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>G</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-g.mp3"></audio>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="grundton" id="grundton-gis" style="--tone-color: var(--tone-gis);">
+                <header class="grundton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="grundton__name">Grundton Gis</h2>
+                </header>
+                <div class="grundton__grid">
+                  <figure class="schaubild">
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-gis.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton Gis — Anordnung der zwölf Töne im Körper" />
+                  </figure>
+                  <div class="grundton__aside">
+                    <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>Gis</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>Gis</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-gis.mp3"></audio>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="grundton" id="grundton-a" style="--tone-color: var(--tone-a);">
+                <header class="grundton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="grundton__name">Grundton A</h2>
+                </header>
+                <div class="grundton__grid">
+                  <figure class="schaubild">
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-a.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton A — Anordnung der zwölf Töne im Körper" />
+                  </figure>
+                  <div class="grundton__aside">
+                    <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>A</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>A</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-a.mp3"></audio>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="grundton" id="grundton-b" style="--tone-color: var(--tone-b);">
+                <header class="grundton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="grundton__name">Grundton B</h2>
+                </header>
+                <div class="grundton__grid">
+                  <figure class="schaubild">
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-b.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton B — Anordnung der zwölf Töne im Körper" />
+                  </figure>
+                  <div class="grundton__aside">
+                    <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>B</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>B</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-b.mp3"></audio>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="grundton" id="grundton-h" style="--tone-color: var(--tone-h);">
+                <header class="grundton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="grundton__name">Grundton H</h2>
+                </header>
+                <div class="grundton__grid">
+                  <figure class="schaubild">
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-h.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton H — Anordnung der zwölf Töne im Körper" />
+                  </figure>
+                  <div class="grundton__aside">
+                    <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>H</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>H</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-h.mp3"></audio>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              </div>
             </article>
 
             <article class="wr-section" data-route="tonpaare" hidden>
               <header class="wr-section__head">
-                <span class="kicker"><span lang="de">Tonpaare</span><span lang="en">Tone Pairs</span></span>
+                <span class="kicker"><span lang="de">Tonstruktur</span><span lang="en">Tonal Structure</span></span>
                 <h1 class="wr-section__title"><span lang="de">Die Tonpaare</span><span lang="en">The Tone Pairs</span></h1>
+                <p class="wr-section__lead"><span lang="de">Die zwölf Positionen ordnen sich zu fünf oktavkomplementären Tonpaaren. Nur Sa (Grundton und Oktave) und Ma₂ (Tritonus) bleiben unpaarig. Jedes Paar trägt ein eigenes psychologisches Thema.</span><span lang="en">The twelve positions form five octave-complementary tone pairs. Only Sa (root and octave) and Ma₂ (the tritone) remain unpaired. Each pair carries its own psychological theme.</span></p>
               </header>
-              <p class="wr-placeholder"><span lang="de">Inhalt folgt — die fünf Tonpaare und Ma₂, aus dem Material „Tonpaare“.</span><span lang="en">Content to follow — the five tone pairs and Ma₂, from the “Tonpaare” material.</span></p>
+              <div class="prose wr-prose wr-prose--wide">
+                <h2>1. Tonpaar — Ri₁ · Ni₂</h2>
+                <p>Das erste Tonpaar besteht aus den beiden Tönen in unmittelbarer Nachbarschaft zum Grundton. Mit ihrer Hilfe bewältigt die Persönlichkeit die eigene Vergangenheit (Sa): Je nach Qualität früherer Erlebnisse reagiert sie mit <strong>Vermeidung (Ri₁)</strong> oder <strong>Verdrängung (Ni₂)</strong> — über die Mechanismen Erstarrung, Flucht oder Angriff. Stets handelt es sich um eine Vermeidungstaktik, um der Wiederholung alter Schadensfälle zu entkommen.</p>
+
+                <h2>2. Tonpaar — Ri₂ · Ni₁</h2>
+                <p>Das zweite Tonpaar lotet aus, wie viel „Ich" sinnvoll oder erlaubt ist. Im Erinnerungsspeicher liegen die Erlebnisse sowohl eines entwürdigten als auch eines übersteigerten Ichs. So schwanken Menschen, die mit dem 2. Tonpaar zu tun haben, zwischen <strong>Selbstverleugnung</strong> und <strong>Selbstbehauptung</strong> — sie plustern sich auf oder kasteien sich.</p>
+
+                <h2>3. Tonpaar — Ga₁ · Dha₂</h2>
+                <p>Inhaltlich geht es um die Positionierung der eigenen Identität in einem Umfeld fremder Maßstäbe und um das Entwickeln selbstdefinierter Maßstäbe. Die Beobachtung der Vorgehensweisen (Ga₁) und Fähigkeiten (Dha₂) der Mitmenschen setzt einen Vergleichsprozess in Gang, aus dem sich ein eigenes, im gesellschaftlichen Rahmen platziertes Selbstbild formt.</p>
+
+                <h2>4. Tonpaar — Ga₂ · Dha₁</h2>
+                <p>Das Thema lautet: Wie gestalte ich das Zusammenleben mit den anderen, wie überbrücke ich offensichtliche Gegensätze? Das vierte Tonpaar ermöglicht, divergierende Kräfte auszubalancieren — etwa den Wunsch nach einem selbstbestimmten Leben im Rahmen einer sozialen Gemeinschaft, oder den Umgang mit Aufgaben und Rückmeldungen, die von außen zugetragen werden.</p>
+
+                <h2>5. Tonpaar — Ma₁ · Pa</h2>
+                <p>Ma₁ ist der Sammelpunkt für alle zwischenmenschlichen Beziehungen, Pa der Sammelpunkt für alle weltlichen Kontakte und Aufgaben. Im weltlichen Sinn lässt sich das fünfte Tonpaar als Wechselspiel von <strong>Familie und Karriere</strong> verstehen — zwei Motivationen, die in Balance gebracht werden wollen.</p>
+
+                <h2>Ma₂ — das unpaarige Intervall</h2>
+                <p>Die Position Ma₂ (Tritonus) ist das einzige unpaarige Intervall. Ihre übergeordneten Funktionen kreisen um das Ein- und Austreten ins irdische Leben: das <strong>Inkarnieren</strong> auf der Erde, das Weiterspielen des irdischen Spiels über die Zeugung neuen Lebens und das <strong>Scheiden</strong> aus dem irdischen Leben.</p>
+
+                <p class="wr-note"><span lang="de">Die vollständigen Handouts zu jedem Tonpaar (mit Reaktionsmustern, Beispielen und Übungen) liegen im Ausbildungsmaterial vor.</span><span lang="en">The full handouts for each tone pair (with reaction patterns, examples and exercises) are part of the training material.</span></p>
+              </div>
             </article>
 
             <article class="wr-section" data-route="tonskalen" hidden>
               <header class="wr-section__head">
-                <span class="kicker"><span lang="de">Tonskalen</span><span lang="en">Scales</span></span>
+                <span class="kicker"><span lang="de">Tonstruktur</span><span lang="en">Tonal Structure</span></span>
                 <h1 class="wr-section__title"><span lang="de">Tonskalen</span><span lang="en">Scales</span></h1>
+                <p class="wr-section__lead"><span lang="de">Jede Skala (Rāga) wählt eine bestimmte Teilmenge der zwölf Töne und entfaltet so eine eigene Wirkung. Den Anfang macht Nr. 8.</span><span lang="en">Each scale (rāga) selects a particular subset of the twelve tones and so unfolds a distinct effect. We begin with No. 8.</span></p>
               </header>
-              <p class="wr-placeholder"><span lang="de">Inhalt folgt — eine Übersicht aller Skalen; jede Skala mit eigener Seite (z.&nbsp;B. Nr.&nbsp;8).</span><span lang="en">Content to follow — an overview of all scales; each scale on its own page (e.g. No. 8).</span></p>
+              <div class="prose wr-prose wr-prose--wide">
+                <h2>Nr. 8 — Hanumattodi</h2>
+                <p><em>Entspricht der phrygischen Kirchentonart.</em></p>
+                <p class="skala-svaras"><strong>Töne:</strong> Sa · Ri₁ · Ga₁ · Ma₁ · Pa · Dha₁ · Ni₁ · Sa′</p>
+                <p><strong>Bild (indische Musik):</strong> Reh bei Mondschein im Garten.</p>
+
+                <h2>Anwendungen</h2>
+                <ul>
+                  <li>Skala „ohne Ego" — Ausdruck von Hingabe und Mitgefühl.</li>
+                  <li>Hilft, Gefühle von Weiblichkeit zu empfinden; fördert den weiblichen Aspekt (nicht Sexualität) und Mütterlichkeit.</li>
+                  <li>Fördert die Fruchtbarkeit der Frau.</li>
+                  <li>Gegen Schmerzen der Menstruation und Beschwerden während der Wechseljahre.</li>
+                  <li>Gegen übersteigerte Sexualität bei Männern.</li>
+                </ul>
+
+                <h2>Charakter der Töne</h2>
+                <div class="wr-table-scroll">
+                  <table class="wr-table">
+                    <thead><tr><th>Ton</th><th>Charakter</th></tr></thead>
+                    <tbody>
+                      <tr><td>Sa</td><td>Ruhe, Basis</td></tr>
+                      <tr><td>Ri₁</td><td>Ängstlichkeit, zaghaft</td></tr>
+                      <tr><td>Ga₁</td><td>mild, betroffen, empfindsam</td></tr>
+                      <tr><td>Ma₁</td><td>Mitgefühl, mütterliche Note, lunare Kraft</td></tr>
+                      <tr><td>Pa</td><td>Glück, Sonnenlicht</td></tr>
+                      <tr><td>Dha₁</td><td>Hilferuf, hoffnungsvolles Weinen — wie ein Kind, das durch Weinen Aufmerksamkeit erhalten möchte</td></tr>
+                      <tr><td>Ni₁</td><td>lieblicher Ton, anziehend, ausdrucksvoll</td></tr>
+                      <tr><td>Sa′</td><td>Frieden</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h2>Art des Singens</h2>
+                <p>Aufwärts und abwärts, je nach Situation Ma oder Pa besonders hervorholen. Gut geeignet für Improvisationen und Svarāvali. Für Fruchtbarkeit: die Skala kurz vor und am 6.–11. Tag der Menses singen.</p>
+
+                <p class="wr-note">⚠︎ <span lang="de">Nicht während der ersten sechs Wochen der Schwangerschaft singen. Die pentatonische Form (Hindola, Nr. 8a) fördert zusätzlich den Bezug zum lunaren Prinzip — ebenfalls nicht in der Schwangerschaft.</span><span lang="en">Do not sing during the first six weeks of pregnancy. The pentatonic form (Hindola, No. 8a) additionally strengthens the connection to the lunar principle — likewise not during pregnancy.</span></p>
+              </div>
+            </article>
+
+            <article class="wr-section" data-route="grundtonuebung" hidden>
+              <header class="wr-section__head">
+                <span class="kicker"><span lang="de">Übungen</span><span lang="en">Exercises</span></span>
+                <h1 class="wr-section__title"><span lang="de">Die Grundtonübung</span><span lang="en">The Fundamental-Tone Exercise</span></h1>
+                <p class="wr-section__lead"><span lang="de">Die zentrale tägliche Übung der SaMa Sonologie®: das Singen des Persönlichen Grundtons. Das Schaubild zeigt den Ablauf; die geführten und instrumentalen Aufnahmen je Ton finden Sie unter „Die zwölf Töne".</span><span lang="en">The central daily practice of SaMa Sonology®: singing one's Personal Fundamental Tone. The diagram shows the sequence; the guided and instrumental recordings per tone are under "The Twelve Tones".</span></p>
+              </header>
+              <figure class="schaubild schaubild--center">
+                <img class="schaubild__img" src="assets/uebungen/grundtonuebung.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild der Grundtonübung" />
+              </figure>
+            </article>
+
+            <article class="wr-section" data-route="uebungen-toene" hidden>
+              <header class="wr-section__head">
+                <span class="kicker"><span lang="de">Übungen</span><span lang="en">Exercises</span></span>
+                <h1 class="wr-section__title"><span lang="de">Die zwölf Töne — Übungsaufnahmen</span><span lang="en">The Twelve Tones — Practice Recordings</span></h1>
+                <p class="wr-section__lead"><span lang="de">Zu jedem Persönlichen Grundton: die geführte Grundtonübung (wo vorhanden), eine instrumentale Begleitung und der reine Monochord-Ton in 432 Hz zum Mitsingen.</span><span lang="en">For every Personal Fundamental Tone: the guided exercise (where available), an instrumental accompaniment, and the pure 432 Hz monochord tone to sing along.</span></p>
+              </header>
+              <nav class="tone-quicknav" aria-label="Töne"><a class="tone-chip" href="#uebung-c" style="--tone-color: var(--tone-c);"><span class="tone-chip__dot" aria-hidden="true"></span>C</a><a class="tone-chip" href="#uebung-cis" style="--tone-color: var(--tone-cis);"><span class="tone-chip__dot" aria-hidden="true"></span>Cis</a><a class="tone-chip" href="#uebung-d" style="--tone-color: var(--tone-d);"><span class="tone-chip__dot" aria-hidden="true"></span>D</a><a class="tone-chip" href="#uebung-dis" style="--tone-color: var(--tone-dis);"><span class="tone-chip__dot" aria-hidden="true"></span>Dis</a><a class="tone-chip" href="#uebung-e" style="--tone-color: var(--tone-e);"><span class="tone-chip__dot" aria-hidden="true"></span>E</a><a class="tone-chip" href="#uebung-f" style="--tone-color: var(--tone-f);"><span class="tone-chip__dot" aria-hidden="true"></span>F</a><a class="tone-chip" href="#uebung-fis" style="--tone-color: var(--tone-fis);"><span class="tone-chip__dot" aria-hidden="true"></span>Fis</a><a class="tone-chip" href="#uebung-g" style="--tone-color: var(--tone-g);"><span class="tone-chip__dot" aria-hidden="true"></span>G</a><a class="tone-chip" href="#uebung-gis" style="--tone-color: var(--tone-gis);"><span class="tone-chip__dot" aria-hidden="true"></span>Gis</a><a class="tone-chip" href="#uebung-a" style="--tone-color: var(--tone-a);"><span class="tone-chip__dot" aria-hidden="true"></span>A</a><a class="tone-chip" href="#uebung-b" style="--tone-color: var(--tone-b);"><span class="tone-chip__dot" aria-hidden="true"></span>B</a><a class="tone-chip" href="#uebung-h" style="--tone-color: var(--tone-h);"><span class="tone-chip__dot" aria-hidden="true"></span>H</a></nav>
+              <div class="uebton-list">
+              <section class="uebton" id="uebung-c" style="--tone-color: var(--tone-c);">
+                <header class="uebton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="uebton__name">Ton C</h2>
+                </header>
+                <div class="wr-audio-group">
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-c.mp3"></audio>
+                    </div>
+                    <p class="wr-audio__hint"><span lang="de">Geführte Aufnahme folgt.</span><span lang="en">Guided recording to follow.</span></p>
+                </div>
+              </section>
+              <section class="uebton" id="uebung-cis" style="--tone-color: var(--tone-cis);">
+                <header class="uebton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="uebton__name">Ton Cis</h2>
+                </header>
+                <div class="wr-audio-group">
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Geführte Grundtonübung</span><span lang="en">Guided exercise</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/gtue-cis-gefuehrt.mp3"></audio>
+                    </div><div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-cis.mp3"></audio>
+                    </div>
+                </div>
+              </section>
+              <section class="uebton" id="uebung-d" style="--tone-color: var(--tone-d);">
+                <header class="uebton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="uebton__name">Ton D</h2>
+                </header>
+                <div class="wr-audio-group">
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-d.mp3"></audio>
+                    </div>
+                    <p class="wr-audio__hint"><span lang="de">Geführte Aufnahme folgt.</span><span lang="en">Guided recording to follow.</span></p>
+                </div>
+              </section>
+              <section class="uebton" id="uebung-dis" style="--tone-color: var(--tone-dis);">
+                <header class="uebton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="uebton__name">Ton Dis</h2>
+                </header>
+                <div class="wr-audio-group">
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-dis.mp3"></audio>
+                    </div>
+                    <p class="wr-audio__hint"><span lang="de">Geführte Aufnahme folgt.</span><span lang="en">Guided recording to follow.</span></p>
+                </div>
+              </section>
+              <section class="uebton" id="uebung-e" style="--tone-color: var(--tone-e);">
+                <header class="uebton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="uebton__name">Ton E</h2>
+                </header>
+                <div class="wr-audio-group">
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-e.mp3"></audio>
+                    </div>
+                    <p class="wr-audio__hint"><span lang="de">Geführte Aufnahme folgt.</span><span lang="en">Guided recording to follow.</span></p>
+                </div>
+              </section>
+              <section class="uebton" id="uebung-f" style="--tone-color: var(--tone-f);">
+                <header class="uebton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="uebton__name">Ton F</h2>
+                </header>
+                <div class="wr-audio-group">
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Geführte Grundtonübung</span><span lang="en">Guided exercise</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/gtue-f-gefuehrt.mp3"></audio>
+                    </div><div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Instrumental</span><span lang="en">Instrumental</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/gtue-f-instrumental.mp3"></audio>
+                    </div><div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-f.mp3"></audio>
+                    </div>
+                </div>
+              </section>
+              <section class="uebton" id="uebung-fis" style="--tone-color: var(--tone-fis);">
+                <header class="uebton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="uebton__name">Ton Fis</h2>
+                </header>
+                <div class="wr-audio-group">
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Geführte Grundtonübung</span><span lang="en">Guided exercise</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/gtue-fis-gefuehrt.mp3"></audio>
+                    </div><div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-fis.mp3"></audio>
+                    </div>
+                </div>
+              </section>
+              <section class="uebton" id="uebung-g" style="--tone-color: var(--tone-g);">
+                <header class="uebton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="uebton__name">Ton G</h2>
+                </header>
+                <div class="wr-audio-group">
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Geführte Grundtonübung</span><span lang="en">Guided exercise</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/gtue-g-gefuehrt.mp3"></audio>
+                    </div><div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-g.mp3"></audio>
+                    </div>
+                </div>
+              </section>
+              <section class="uebton" id="uebung-gis" style="--tone-color: var(--tone-gis);">
+                <header class="uebton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="uebton__name">Ton Gis</h2>
+                </header>
+                <div class="wr-audio-group">
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Geführte Grundtonübung</span><span lang="en">Guided exercise</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/gtue-gis-gefuehrt.mp3"></audio>
+                    </div><div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-gis.mp3"></audio>
+                    </div>
+                </div>
+              </section>
+              <section class="uebton" id="uebung-a" style="--tone-color: var(--tone-a);">
+                <header class="uebton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="uebton__name">Ton A</h2>
+                </header>
+                <div class="wr-audio-group">
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-a.mp3"></audio>
+                    </div>
+                    <p class="wr-audio__hint"><span lang="de">Geführte Aufnahme folgt.</span><span lang="en">Guided recording to follow.</span></p>
+                </div>
+              </section>
+              <section class="uebton" id="uebung-b" style="--tone-color: var(--tone-b);">
+                <header class="uebton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="uebton__name">Ton B</h2>
+                </header>
+                <div class="wr-audio-group">
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-b.mp3"></audio>
+                    </div>
+                    <p class="wr-audio__hint"><span lang="de">Geführte Aufnahme folgt.</span><span lang="en">Guided recording to follow.</span></p>
+                </div>
+              </section>
+              <section class="uebton" id="uebung-h" style="--tone-color: var(--tone-h);">
+                <header class="uebton__head">
+                  <span class="grundton__swatch" aria-hidden="true"></span>
+                  <h2 class="uebton__name">Ton H</h2>
+                </header>
+                <div class="wr-audio-group">
+                    <div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Geführte Grundtonübung</span><span lang="en">Guided exercise</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/gtue-h-gefuehrt.mp3"></audio>
+                    </div><div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Instrumental</span><span lang="en">Instrumental</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/gtue-h-instrumental.mp3"></audio>
+                    </div><div class="wr-audio">
+                      <span class="wr-audio__label"><span lang="de">Monochord · 432 Hz</span><span lang="en">Monochord · 432 Hz</span></span>
+                      <audio class="wr-audio__el" controls preload="none" src="assets/audio/monochord-h.mp3"></audio>
+                    </div>
+                </div>
+              </section>
+              </div>
             </article>
 
             <article class="wr-section" data-route="mentale-uebungen" hidden>
               <header class="wr-section__head">
-                <span class="kicker"><span lang="de">Praxis</span><span lang="en">Practice</span></span>
+                <span class="kicker"><span lang="de">Übungen</span><span lang="en">Exercises</span></span>
                 <h1 class="wr-section__title"><span lang="de">Mentale Übungen</span><span lang="en">Mental Exercises</span></h1>
               </header>
               <p class="wr-placeholder"><span lang="de">Inhalt folgt.</span><span lang="en">Content to follow.</span></p>
@@ -449,7 +940,7 @@
             <article class="wr-section" data-route="philosophie-samkhya" hidden>
               <header class="wr-section__head">
                 <span class="kicker"><span lang="de">Philosophie</span><span lang="en">Philosophy</span></span>
-                <h1 class="wr-section__title">Das kośa-Modell der sāṁkhya Philosophie</h1>
+                <h1 class="wr-section__title">Das <span class="skt">kośa</span>-Modell der <span class="skt">sāṁkhya</span> Philosophie</h1>
               </header>
               <div class="prose wr-prose">
                 <p>Der philosophische Anteil der Ausbildung. Wenn wir anhand von Tönen die umfassende Gesundheit des Menschen positiv fördern wollen, brauchen wir ein klares Bild darüber, was ein Mensch überhaupt ist, woraus er besteht, wie seine Anteile interagieren, wie sie sich bedingen. Dafür braucht es ein klares Menschenbild, das alle seine Aspekte berücksichtigt und integriert.</p>
@@ -489,7 +980,7 @@
             <article class="wr-section" data-route="philosophie-koshas" hidden>
               <header class="wr-section__head">
                 <span class="kicker"><span lang="de">Philosophie</span><span lang="en">Philosophy</span></span>
-                <h1 class="wr-section__title">Die Koshas — die fünf Hüllen</h1>
+                <h1 class="wr-section__title">Die <span class="skt">kośa</span>s — die fünf Hüllen</h1>
               </header>
               <div class="prose wr-prose">
                 <p>Der Mensch besteht aus fünf einander durchdringenden Hüllen (kośa), die das eigentliche Selbst verdecken — von der grobstofflichen Materie bis zur Glückseligkeit. Hinzu kommt das antaḥkarana, das innere Gedankenorgan. Die folgenden Abschnitte beschreiben jede Hülle einzeln.</p>
@@ -628,22 +1119,18 @@
         // ---- Visualization ---------------------------------------------------
         var CHROMATIC = ["C","Cis","D","Dis","E","F","Fis","G","Gis","A","B","H"];
 
-        // Chromatic tone colors (matching the colored ripple seals in
-        // "12 Schaubilder Grundtöne" — a perceptual rainbow through the octave)
-        var TONE_COLORS = {
-          C:   "#3da34a",   // green
-          Cis: "#3eb8c8",   // cyan
-          D:   "#2c6fb8",   // blue
-          Dis: "#283a8c",   // dark blue / indigo
-          E:   "#6a2d8e",   // purple
-          F:   "#b22a72",   // magenta
-          Fis: "#d83555",   // pink-red
-          G:   "#e85b3c",   // coral / red-orange
-          Gis: "#ec8b3a",   // orange
-          A:   "#ecb83a",   // amber
-          B:   "#ebd935",   // yellow
-          H:   "#a4c842"    // lime / yellow-green
-        };
+        // Chromatic tone colors live in ONE place — the --tone-* design tokens in
+        // css/styles.css (the colored ripple seals from "12 Schaubilder
+        // Grundtöne"). Read them from the cascade so the SVG dots and table
+        // swatches can never drift from the CSS palette.
+        var TONE_COLORS = (function () {
+          var cs = getComputedStyle(document.documentElement);
+          var map = {};
+          CHROMATIC.forEach(function (name) {
+            map[name] = cs.getPropertyValue("--tone-" + name.toLowerCase()).trim();
+          });
+          return map;
+        })();
 
         // Body centerline x in viewBox (700×820). Silhouette is symmetric
         // around x=350.
@@ -1242,7 +1729,13 @@
           links.forEach(function (a) {
             var active = a.getAttribute("href") === "#" + hash;
             a.classList.toggle("is-active", active);
-            if (active) { a.setAttribute("aria-current", "true"); } else { a.removeAttribute("aria-current"); }
+            if (active) {
+              a.setAttribute("aria-current", "true");
+              var d = a.closest("details[data-rubric]");
+              if (d) {
+                Array.prototype.forEach.call(document.querySelectorAll("details[data-rubric]"), function (o) { o.open = (o === d); });
+              }
+            } else { a.removeAttribute("aria-current"); }
           });
           if (navList) navList.classList.remove("is-open");
           if (navToggle) navToggle.setAttribute("aria-expanded", "false");
