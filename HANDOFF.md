@@ -84,6 +84,7 @@ No PDF-generation tool is installed on this machine:
 5. **Practitioners.** Sorted into PLZ bands under "Deutschland" (00000–19999 / 20000–39999 / 60000–79999 / 80000–99999), then a separate "Österreich & Schweiz" region with Michaela Coers listed a second time (location line: "Auch in der Schweiz im Sarganserland & Kanton St. Gallen").
 6. **Index → Angebot deep-links.** The four overview list items on the index link to `angebot.html`, `angebot.html#block-b`, `angebot.html#block-c`, `angebot.html#block-e`.
 7. **Über-uns dropdown.** Panel sits flush against the bottom of the toggle (no 6px gap). Don't reintroduce the gap — that's what was breaking clicks.
+8. **DRY / no drift (NON-NEGOTIABLE).** All design values live ONCE as tokens in the `:root`/theme blocks of `css/styles.css`; components use `var(--token)`. Never hard-code a hex/rgb/font/raw colour outside those blocks, never paste a tweaked copy of a widget (use a modifier or pass a token like `--tone-color`), and never put a design-bearing inline `style=` in HTML (use a class or the `.u-mt-*`/`.u-mb-*` utilities). JS reads the palette from CSS via `getComputedStyle` (see `interna.html` `TONE_COLORS`) — it must never re-declare colours. Full rule: `.specify/memory/constitution.md` §I.
 
 ---
 
@@ -109,8 +110,13 @@ No PDF-generation tool is installed on this machine:
 
 ## Quick map of the CSS
 
-`css/styles.css` is ~1300 lines, sectioned with banner comments:
-1. Design tokens (`:root`)
+`css/styles.css` is sectioned with banner comments. Section 1 is the **single
+source of truth** for the whole site:
+1. Design tokens (`:root`) — brand primitives + semantic aliases (`--on-accent`,
+   `--inverse-text`, `--danger`, `--glass-*`, `--swatch-inset`), a `--space-*`
+   scale, and shadows built from `color-mix(var(--blue-ink) …)`.
+   1b. `[data-theme="dark"]` — inert dark scaffold; flip the whole UI from here.
+   Spacing utilities `.u-mt-*` / `.u-mb-*` live in the layout-helpers section.
 2. Reset + base + headings + brand wordmark
 3. Skip link
 4. Masthead / topnav / has-sub dropdown / langswitch / mobile menu
