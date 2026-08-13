@@ -1,7 +1,8 @@
 # Handoff — Tonkraft Website
 
 Working directory: `/Users/sophiaclausing/Tonkraft II`
-GitHub: `git@github.com:sophiaisthecoolestcoder/Tonkraft.git` (branch `main`, deployed)
+GitHub: `git@github.com:sophiaisthecoolestcoder/Tonkraft.git` — work happens on `main`.
+Deploy: Cloudflare Worker `tonkraft` (static assets from the repo root, config in `wrangler.jsonc`), live at `tonkraft.sophiaclausing.workers.dev`. **The Worker's production branch is `cloudflare/workers-autoconfig`, not `main`** — pushing `main` alone publishes nothing. `wrangler.jsonc` now also lives on `main`, so the production branch can be switched to `main` in the Cloudflare dashboard; update this line once that is done. (`tonkraft.net` does not resolve yet.)
 Stack: hand-authored HTML5 + one `css/styles.css` + vanilla `js/main.js`. No build step. Local preview: `python3 -m http.server 8080` from repo root.
 
 ---
