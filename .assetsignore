@@ -1,0 +1,26 @@
+# Files under the assets directory (= repo root, see wrangler.jsonc) that
+# Cloudflare must NOT upload. gitignore syntax; the file itself is not served.
+
+# --- Staged, not yet published -------------------------------------------
+# Interna Wissensraum media. Referenced only by interna.html, which is behind
+# the session gate; while these are excluded that page shows missing media.
+# Delete these three lines to publish them.
+assets/audio/
+assets/grundtoene/
+assets/uebungen/
+
+# --- Repo-internal: never part of the published site ---------------------
+# The Worker serves the repo root verbatim, so anything not listed here is
+# publicly fetchable by URL.
+.assetsignore
+.gitignore
+.claude/
+.specify/
+specs/
+files/
+CLAUDE.md
+HANDOFF.md
+README.md
+serve.py
+wrangler.jsonc
+*.pdf
