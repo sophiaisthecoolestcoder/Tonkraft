@@ -1,6 +1,17 @@
 # Files under the assets directory (= repo root, see wrangler.jsonc) that
 # Cloudflare must NOT upload. gitignore syntax; the file itself is not served.
 
+# --- Build-breaking: must never be uploaded ------------------------------
+# The build clones the repo into the assets directory, so wrangler walks
+# .git too and dies on the pack file (139 MiB vs the 25 MiB per-asset
+# limit). This is what failed every build on main.
+.git/
+.wrangler/
+node_modules/
+# Local-only video masters (gitignored, so absent on the builder) — listed
+# so `npx wrangler deploy --dry-run` works as a pre-push check.
+assets/videos/
+
 # --- Staged, not yet published -------------------------------------------
 # Interna Wissensraum media. Referenced only by interna.html, which is behind
 # the session gate; while these are excluded that page shows missing media.

@@ -4,8 +4,15 @@ Working directory: `/Users/sophiaclausing/Tonkraft II`
 GitHub: `git@github.com:sophiaisthecoolestcoder/Tonkraft.git` — work happens on `main`.
 Deploy: Cloudflare Worker `tonkraft` (Workers Builds; static assets from the repo root, config in `wrangler.jsonc`), live at `tonkraft.sophiaclausing.workers.dev`. Production branch **is** `main` — pushes to `main` do trigger builds.
 
-**Known-broken as of 2026-08-13: the builds run but never publish.** The live site is still commit `0cc3841`, so everything on `main` since then is unpublished (`9defdb0`, `1b1b980`, `12c5a9d`). Verified by fetching the live files: Impressum still shows the workers.dev URL, `assets/grundtoene/schaubild-a.jpg` 404s, and `css/styles.css` is byte-identical to `0cc3841`.
-Two causes known/suspected: (1) `wrangler.jsonc` only reached `main` in `12e2a52` — every earlier `main` build had no deploy config; (2) the repo has no `package.json`, so a default `npm install && npx wrangler deploy` build command fails before deploying. Read the build log in the Cloudflare dashboard before changing anything else, and check Settings → Build for a blank deploy command or a wrong root directory.
+**Root cause of the long deploy outage (fixed 2026-08-13):** the build clones the repo *into* the assets directory, so `wrangler` walked `.git` and aborted with `Asset too large` on the 139 MiB pack file — every build on `main` died there, which is why `9defdb0`, `1b1b980` and `12c5a9d` never went live. Fixed by `.assetsignore`, which must keep excluding `.git/`.
+
+`.assetsignore` (repo root = the assets directory) is the single control over what the Worker serves. Everything not listed there is publicly fetchable by URL — that is how `CLAUDE.md`, `serve.py`, `specs/` and `.specify/` ended up on the open web. It currently also holds back the Interna media (`assets/audio`, `assets/grundtoene`, `assets/uebungen`); delete those three lines to publish them.
+
+**Pre-push check** (catches size/exclusion problems before they reach a build):
+```
+npx wrangler deploy --dry-run --outdir /tmp/wrout
+```
+No auth needed. It must exit `--dry-run: exiting now.` with no `Asset too large`. The "Read N files" line counts *walked* entries including ignored ones and directories, so it is not a measure of what ships — to test an exclusion, drop a >25 MiB file into the directory and confirm no size error.
 (`tonkraft.net` has no DNS yet, so the Impressum URL does not resolve.)
 Stack: hand-authored HTML5 + one `css/styles.css` + vanilla `js/main.js`. No build step. Local preview: `python3 -m http.server 8080` from repo root.
 
