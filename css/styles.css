@@ -77,6 +77,15 @@
   --fs-3xl:   clamp(4rem, 0.5rem + 17vw, 22rem);
   --fs-bigtype: clamp(4rem, 2rem + 9vw, 11rem);   /* editorial numerals, oversize accents */
 
+  /* Navigation lettering — one recipe for every masthead link (top level,
+     dropdown, mobile panel). Change here, changes everywhere. */
+  --fs-nav: 0.72rem;
+  --tracking-nav: 0.12em;
+  --nav-pad-y: 0.5rem;
+  /* Tightens on narrow desktop windows so the full horizontal nav keeps
+     fitting instead of collapsing into the burger menu too early. */
+  --nav-pad-x: clamp(0.4rem, 0.9vw, 0.7rem);
+
   /* Sonological tone colors (matching "12 Schaubilder Grundtöne" seals) */
   --tone-c:   #3da34a;
   --tone-cis: #3eb8c8;
@@ -371,17 +380,28 @@ html.lang-en body [lang="en"] { display: revert; }
 .topnav__list {
   list-style: none; padding: 0; display: flex; align-items: center; gap: 0.15rem;
 }
-.topnav__link {
-  display: inline-block; padding: 0.5rem 0.7rem;
+/* Every masthead link — top-level item, dropdown entry, mobile panel row —
+   shares this one recipe so the three surfaces can never drift apart. */
+.topnav__link,
+.has-sub__panel a {
+  /* inline-block keeps the current-page underline hugging the word on all
+     three surfaces instead of stretching across the row */
+  display: inline-block; padding: var(--nav-pad-y) var(--nav-pad-x);
   color: var(--ink-soft);
-  font-size: 0.72rem; font-weight: 400;
-  text-transform: uppercase; letter-spacing: 0.12em; white-space: nowrap;
+  font-family: var(--font-sans);
+  font-size: var(--fs-nav); font-weight: 400;
+  text-transform: uppercase; letter-spacing: var(--tracking-nav); white-space: nowrap;
   position: relative; transition: color 0.25s var(--ease);
 }
-.topnav__link:hover { color: var(--blue-deep); }
-.topnav__link[aria-current="page"] { color: var(--blue-deep); }
-.topnav__link[aria-current="page"]::after {
-  content: ""; position: absolute; left: 0.9rem; right: 0.9rem; bottom: 0.15rem;
+.topnav__link:hover,
+.has-sub__panel a:hover { color: var(--blue-deep); }
+.topnav__link[aria-current="page"],
+.has-sub__panel a[aria-current="page"] { color: var(--blue-deep); }
+.topnav__link[aria-current="page"]::after,
+.has-sub__panel a[aria-current="page"]::after {
+  content: ""; position: absolute;
+  left: calc(var(--nav-pad-x) + 0.2rem); right: calc(var(--nav-pad-x) + 0.2rem);
+  bottom: 0.15rem;
   height: 1px; background: var(--blue);
 }
 
@@ -395,7 +415,9 @@ html.lang-en body [lang="en"] { display: revert; }
      breathing room comes from padding-top inside the panel instead. */
   background: var(--paper-raised); border: 1px solid var(--line);
   box-shadow: var(--shadow);
-  padding: 0.85rem 0.5rem 0.5rem; list-style: none; margin: 0;
+  /* Vertical padding only: the items keep the top-level link's own
+     --nav-pad-x, so dropdown text sits flush under "Über uns". */
+  padding: 0.5rem 0 0.35rem; list-style: none; margin: 0;
   opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(6px);
   transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
   z-index: 110;
@@ -404,15 +426,6 @@ html.lang-en body [lang="en"] { display: revert; }
 .has-sub:focus-within .has-sub__panel {
   opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
 }
-.has-sub__panel a {
-  display: block; padding: 0.55rem 0.85rem;
-  font-family: var(--font-sans);
-  font-size: var(--fs-xs); font-weight: 400;
-  text-transform: uppercase; letter-spacing: 0.12em;
-  color: var(--ink-soft);
-  transition: color 0.2s var(--ease), background 0.2s var(--ease);
-}
-.has-sub__panel a:hover { background: var(--blue-glass); color: var(--blue-deep); }
 .has-sub__toggle::after { content: " ›"; color: var(--blue-soft); }
 
 /* language switch */
@@ -441,9 +454,15 @@ html.lang-en body [lang="en"] { display: revert; }
 .navtoggle[aria-expanded="true"] .navtoggle__bars::before { transform: rotate(45deg); }
 .navtoggle[aria-expanded="true"] .navtoggle__bars::after { transform: rotate(-45deg); }
 
-@media (max-width: 960px) {
+/* Burger menu only once the full horizontal bar genuinely stops fitting
+   (tablet portrait and below) — any normal desktop window keeps the header. */
+@media (max-width: 940px) {
   .navtoggle { display: inline-flex; }
   .topnav {
+    /* Drop-down panel: same lettering as the header bar, only the tap
+       targets grow — nothing else about the link recipe changes. */
+    --nav-pad-y: 0.8rem;
+    --nav-pad-x: 0.75rem;
     position: fixed; inset: var(--header-h) 0 auto 0; margin: 0;
     background: var(--paper-raised); border-bottom: 1px solid var(--line);
     box-shadow: var(--shadow); max-height: calc(100dvh - var(--header-h));
@@ -451,13 +470,11 @@ html.lang-en body [lang="en"] { display: revert; }
     transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
   }
   .topnav.is-open { transform: translateY(0); opacity: 1; visibility: visible; }
-  .topnav__list { flex-direction: column; align-items: stretch; gap: 0.1rem; padding: 1rem 1.25rem 1.5rem; }
-  .topnav__link { padding: 0.85rem 0.75rem; font-size: var(--fs-base); }
-  .topnav__link[aria-current="page"]::after { display: none; }
-  .topnav__link[aria-current="page"] { background: var(--blue-glass); }
+  .topnav__list { flex-direction: column; align-items: stretch; gap: 0.1rem; padding: 0.75rem 1.25rem 1.5rem; }
   .has-sub__panel {
-    position: static; opacity: 1; visibility: visible; transform: none;
-    box-shadow: none; border: none; border-left: 2px solid var(--line);
+    position: static; opacity: 1; visibility: visible; transform: none; pointer-events: auto;
+    min-width: 0; box-shadow: none; background: none;
+    border: none; border-left: 1px solid var(--line);
     border-radius: 0; margin: 0 0 0 0.75rem; padding: 0;
   }
   .has-sub__toggle::after { display: none; }
@@ -834,9 +851,13 @@ html.lang-en body [lang="en"] { display: revert; }
   transform: rotate(-135deg) translate(-15%, -15%);
 }
 .block__more-summary:hover { color: var(--blue-ink); }
+/* Unfolded long-form copy sits one step lighter than the always-visible
+   Kurzfassung — the same --ink-soft used by the pagehead lead — so the
+   deepened layer reads as secondary. One rule for every "mehr erfahren" /
+   "mehr lesen" panel on the site. */
 .block__long.prose { padding-top: 0; max-width: 72ch; }
 .block__long.prose p,
-.block__long.prose li { font-size: clamp(0.92rem, 0.88rem + 0.18vw, 1.02rem); line-height: 1.65; }
+.block__long.prose li { font-size: clamp(0.92rem, 0.88rem + 0.18vw, 1.02rem); line-height: 1.65; color: var(--ink-soft); }
 .block__more[open] .block__long { animation: panel-in 0.4s var(--ease); }
 
 /* Grundsätze variant: 11 numbered statements. Keep the type system
@@ -863,10 +884,8 @@ html.lang-en body [lang="en"] { display: revert; }
   margin-bottom: 0;          /* let the summary's symmetric padding own the spacing */
   text-wrap: pretty;
 }
-.blocks--principles .block__long.prose p {
-  color: var(--ink-soft);
-  font-size: clamp(0.9rem, 0.85rem + 0.15vw, 0.98rem);
-}
+/* colour + size of the unfolded prose come from .block__long.prose —
+   the Grundsätze variant differs only in heading rhythm */
 
 /* Grundsätze intro + outro use the same prose typography as every
    other body paragraph on the site — same sans family, same colour,
