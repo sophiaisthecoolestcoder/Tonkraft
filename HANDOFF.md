@@ -2,7 +2,11 @@
 
 Working directory: `/Users/sophiaclausing/Tonkraft II`
 GitHub: `git@github.com:sophiaisthecoolestcoder/Tonkraft.git` — work happens on `main`.
-Deploy: Cloudflare Worker `tonkraft` (static assets from the repo root, config in `wrangler.jsonc`), live at `tonkraft.sophiaclausing.workers.dev`. **The Worker's production branch is `cloudflare/workers-autoconfig`, not `main`** — pushing `main` alone publishes nothing. `wrangler.jsonc` now also lives on `main`, so the production branch can be switched to `main` in the Cloudflare dashboard; update this line once that is done. (`tonkraft.net` does not resolve yet.)
+Deploy: Cloudflare Worker `tonkraft` (Workers Builds; static assets from the repo root, config in `wrangler.jsonc`), live at `tonkraft.sophiaclausing.workers.dev`. Production branch **is** `main` — pushes to `main` do trigger builds.
+
+**Known-broken as of 2026-08-13: the builds run but never publish.** The live site is still commit `0cc3841`, so everything on `main` since then is unpublished (`9defdb0`, `1b1b980`, `12c5a9d`). Verified by fetching the live files: Impressum still shows the workers.dev URL, `assets/grundtoene/schaubild-a.jpg` 404s, and `css/styles.css` is byte-identical to `0cc3841`.
+Two causes known/suspected: (1) `wrangler.jsonc` only reached `main` in `12e2a52` — every earlier `main` build had no deploy config; (2) the repo has no `package.json`, so a default `npm install && npx wrangler deploy` build command fails before deploying. Read the build log in the Cloudflare dashboard before changing anything else, and check Settings → Build for a blank deploy command or a wrong root directory.
+(`tonkraft.net` has no DNS yet, so the Impressum URL does not resolve.)
 Stack: hand-authored HTML5 + one `css/styles.css` + vanilla `js/main.js`. No build step. Local preview: `python3 -m http.server 8080` from repo root.
 
 ---
