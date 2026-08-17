@@ -1,258 +1,304 @@
 <!doctype html>
 <html lang="de" class="no-js lang-de">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light" />
-    <meta name="theme-color" content="#f4efe5" />
-    <!-- Home -->
-    <title>Tonkraft® Institut - Sonologie &amp; Ihr persönlicher Grundton</title>
-    <meta name="description" content="Das Tonkraft® Institut ist ein Zusammenschluss selbständiger Sonologinnen und Sonologen. Wir ermitteln Ihren persönlichen Grundton und begleiten Sie auf dem Weg in Ihren Ton." />
-    <link rel="canonical" href="https://tonkraft.net/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Tonkraft - Institut für Sonologie" />
-    <meta property="og:description" content="Der Mensch als klingender Kosmos, gestimmt auf den Persönlichen Grundton. Nadabrahma System von Vemu Mukunda." />
-    <meta property="og:image" content="favicon.svg" />
-    <meta name="twitter:card" content="summary" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <script>
-      (function () {
-        try {
-          var s = localStorage.getItem("tonkraft:lang");
-          /* German is the default. Only an explicit choice, stored from the
-             DE/EN switch, selects English - never the browser locale. */
-          var l = s === "en" ? "en" : "de";
-          var r = document.documentElement;
-          r.classList.remove("lang-de", "lang-en");
-          r.classList.add("lang-" + l);
-          r.lang = l;
-        } catch (e) {}
-      })();
-    </script>
-    <script defer src="js/main.js"></script>
-  </head>
 
-  <body>
-    <a class="skip-link" href="#main"><span lang="de">Zum Inhalt springen</span><span lang="en">Skip to content</span></a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#f4efe5" />
+  <!-- Home -->
+  <title>Tonkraft® Institut - Sonologie &amp; Ihr persönlicher Grundton</title>
+  <meta name="description"
+    content="Das Tonkraft® Institut ist ein Zusammenschluss selbständiger Sonologinnen und Sonologen. Wir ermitteln Ihren persönlichen Grundton und begleiten Sie auf dem Weg in Ihren Ton." />
+  <link rel="canonical" href="https://tonkraft.net/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tonkraft - Institut für Sonologie" />
+  <meta property="og:description"
+    content="Der Mensch als klingender Kosmos, gestimmt auf den Persönlichen Grundton. Nadabrahma System von Vemu Mukunda." />
+  <meta property="og:image" content="favicon.svg" />
+  <meta property="og:url" content="https://tonkraft.net/">
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    (function () {
+      try {
+        var s = localStorage.getItem("tonkraft:lang");
+        /* German is the default. Only an explicit choice, stored from the
+           DE/EN switch, selects English - never the browser locale. */
+        var l = s === "en" ? "en" : "de";
+        var r = document.documentElement;
+        r.classList.remove("lang-de", "lang-en");
+        r.classList.add("lang-" + l);
+        r.lang = l;
+      } catch (e) { }
+    })();
+  </script>
+  <script defer src="js/main.js"></script>
+</head>
 
-    <header class="masthead">
-      <div class="masthead__inner">
-        <a href="index.html" class="brandmark" aria-label="Tonkraft - Startseite">
-          <span class="brandmark__seal" aria-hidden="true">&#x0914;&#x0902;</span>
-          <span class="brandmark__word">tonkraft<sup class="brand-reg">®</sup></span>
-        </a>
-        <button class="navtoggle" type="button" aria-label="Menü" aria-expanded="false" aria-controls="primary-nav">
-          <span class="navtoggle__bars" aria-hidden="true"></span>
-        </button>
-        <nav class="topnav" id="primary-nav" aria-label="Hauptnavigation">
-          <ul class="topnav__list">
-            <li><a class="topnav__link" href="index.html" aria-current="page"><span lang="de">Home</span><span lang="en">Home</span></a></li>
-            <li><a class="topnav__link" href="angebot.html"><span lang="de">Angebot</span><span lang="en">Our Offer</span></a></li>
-            <li><a class="topnav__link" href="hintergrund.html"><span lang="de">Hintergrund</span><span lang="en">Background</span></a></li>
-            <li class="has-sub">
-              <a class="topnav__link has-sub__toggle" href="ueber-uns/arbeitsweise.html"><span lang="de">Über uns</span><span lang="en">About Us</span></a>
-              <ul class="has-sub__panel">
-                <li><a href="ueber-uns/arbeitsweise.html"><span lang="de">Unsere Grundsätze</span><span lang="en">Our Principles</span></a></li>
-                <li><a href="ueber-uns/praktizierende.html"><span lang="de">Praktizierende</span><span lang="en">Practitioners</span></a></li>
-              </ul>
-            </li>
-            <li><a class="topnav__link" href="ausbildung.html"><span lang="de">Ausbildung</span><span lang="en">Training</span></a></li>
-            <li><a class="topnav__link" href="publikationen.html"><span lang="de">Publikationen</span><span lang="en">Publications</span></a></li>
-          </ul>
-        </nav>
-        <div class="langswitch" role="group" aria-label="Sprache / Language">
-          <button class="langswitch__btn" type="button" data-lang="de" aria-pressed="true">DE</button>
-          <span class="langswitch__sep" aria-hidden="true">·</span>
-          <button class="langswitch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-        </div>
+<body>
+  <a class="skip-link" href="#main"><span lang="de">Zum Inhalt springen</span><span lang="en">Skip to content</span></a>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <a href="index.html" class="brandmark" aria-label="Tonkraft - Startseite">
+        <span class="brandmark__seal" aria-hidden="true">&#x0914;&#x0902;</span>
+        <span class="brandmark__word">tonkraft<sup class="brand-reg">®</sup></span>
+      </a>
+      <button class="navtoggle" type="button" aria-label="Menü" aria-expanded="false" aria-controls="primary-nav">
+        <span class="navtoggle__bars" aria-hidden="true"></span>
+      </button>
+      <nav class="topnav" id="primary-nav" aria-label="Hauptnavigation">
+        <ul class="topnav__list">
+          <li><a class="topnav__link" href="index.html" aria-current="page"><span lang="de">Home</span><span
+                lang="en">Home</span></a></li>
+          <li><a class="topnav__link" href="angebot.html"><span lang="de">Angebot</span><span lang="en">Our
+                Offer</span></a></li>
+          <li><a class="topnav__link" href="hintergrund.html"><span lang="de">Hintergrund</span><span
+                lang="en">Background</span></a></li>
+          <li class="has-sub">
+            <a class="topnav__link has-sub__toggle" href="ueber-uns/arbeitsweise.html"><span lang="de">Über
+                uns</span><span lang="en">About Us</span></a>
+            <ul class="has-sub__panel">
+              <li><a href="ueber-uns/arbeitsweise.html"><span lang="de">Unsere Grundsätze</span><span lang="en">Our
+                    Principles</span></a></li>
+              <li><a href="ueber-uns/praktizierende.html"><span lang="de">Praktizierende</span><span
+                    lang="en">Practitioners</span></a></li>
+            </ul>
+          </li>
+          <li><a class="topnav__link" href="ausbildung.html"><span lang="de">Ausbildung</span><span
+                lang="en">Training</span></a></li>
+          <li><a class="topnav__link" href="publikationen.html"><span lang="de">Publikationen</span><span
+                lang="en">Publications</span></a></li>
+        </ul>
+      </nav>
+      <div class="langswitch" role="group" aria-label="Sprache / Language">
+        <button class="langswitch__btn" type="button" data-lang="de" aria-pressed="true">DE</button>
+        <span class="langswitch__sep" aria-hidden="true">·</span>
+        <button class="langswitch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main id="main">
-      <!-- Hero -->
-      <section class="hero" aria-label="Tonkraft">
-        <div class="ripple" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-        <div class="hero__inner">
-          <div class="hero__seal" aria-hidden="true">&#x0914;&#x0902;</div>
-          <h1 class="hero__word">tonkraft<sup class="brand-reg">®</sup></h1>
-          <p class="hero__tagline">
-            <span lang="de">Institut für SaMa Sonologie®</span>
-            <span lang="en">Institute of SAMA Sonology®</span>
-          </p>
-        </div>
-        <span class="hero__cue" aria-hidden="true">
-          <span lang="de">scrollen</span><span lang="en">scroll</span>
-          <span class="hero__cue-line"></span>
-        </span>
-      </section>
-
-      <div class="divider-aum" aria-hidden="true">
-        <span class="divider-aum__seal">&#x0914;&#x0902;</span>
-      </div>
-
-      <!-- Welcome / Begrüßung -->
-      <section class="section welcome wrap wrap--narrow" aria-label="Willkommen">
-        <h2 class="welcome__heading reveal">
-          <span lang="de">Herzlich willkommen!</span><span lang="en">A warm welcome!</span>
-        </h2>
-        <p class="welcome__lead reveal" data-delay="1">
-          <span lang="de">Das Tonkraft® Institut ist ein Zusammenschluss aus selbständigen Sonologinnen und Sonologen, die Ihren persönlichen Grundton ermitteln und Sie auf dem Weg in Ihren Ton begleiten. Wir erklären Ihnen, welche Kräfte in Ihrem Grundton angelegt sind und über welche Singübungen Sie diesen besonderen Ton in seine volle Wirkkraft bringen können. So beschenken Sie sich selbst, indem Sie Ihr natürliches Potential erkennen und entfalten.</span>
-          <span lang="en">The Tonkraft® Institute is an association of independent sonologists who identify your Personal Fundamental Tone and accompany you on the path into your tone. We explain which forces are inherent in your fundamental tone and through which singing exercises you can bring this particular tone into its full effect. In this way you gift yourself - by recognising and unfolding your natural potential.</span>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-label="Tonkraft">
+      <div class="ripple" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="hero__inner">
+        <div class="hero__seal" aria-hidden="true">&#x0914;&#x0902;</div>
+        <h1 class="hero__word">tonkraft<sup class="brand-reg">®</sup></h1>
+        <p class="hero__tagline">
+          <span lang="de">Institut für SaMa Sonologie®</span>
+          <span lang="en">Institute of SAMA Sonology®</span>
         </p>
-      </section>
+      </div>
+      <span class="hero__cue" aria-hidden="true">
+        <span lang="de">scrollen</span><span lang="en">scroll</span>
+        <span class="hero__cue-line"></span>
+      </span>
+    </section>
 
-      <!-- Preview: Das Angebot -->
-      <section class="feature" aria-labelledby="pv-angebot">
-        <div class="wrap feature__inner feature__inner--split">
-          <div class="feature__head reveal">
-            <span class="kicker"><span lang="de">Das Angebot</span><span lang="en">Our Offer</span></span>
-            <h2 class="story__title" id="pv-angebot"><span lang="de">Tonkraft® - Institut für SaMa Sonologie®</span><span lang="en">Tonkraft® - Institute of SAMA Sonology®</span></h2>
-            <a class="btn btn--primary feature__cta" href="angebot.html"><span lang="de">Zum Angebot</span><span lang="en">To the Offer</span><span class="btn__arrow" aria-hidden="true">→</span></a>
-          </div>
-          <ol class="overview reveal" data-delay="1">
-            <li><a href="angebot.html"><span lang="de">Was ist SaMa Sonologie?</span><span lang="en">What is SAMA Sonology?</span></a></li>
-            <li><a href="angebot.html#block-b"><span lang="de">Die Grundtonbestimmung</span><span lang="en">Fundamental Tone Identification</span></a></li>
-            <li><a href="angebot.html#block-c"><span lang="de">Die Arbeit mit dem Grundton</span><span lang="en">Working with the Fundamental Tone</span></a></li>
-            <li><a href="angebot.html#block-e"><span lang="de">Langfristige Perspektiven</span><span lang="en">Long-term Perspectives</span></a></li>
-          </ol>
+    <div class="divider-aum" aria-hidden="true">
+      <span class="divider-aum__seal">&#x0914;&#x0902;</span>
+    </div>
+
+    <!-- Welcome / Begrüßung -->
+    <section class="section welcome wrap wrap--narrow" aria-label="Willkommen">
+      <h2 class="welcome__heading reveal">
+        <span lang="de">Herzlich willkommen!</span><span lang="en">A warm welcome!</span>
+      </h2>
+      <p class="welcome__lead reveal" data-delay="1">
+        <span lang="de">Das Tonkraft® Institut ist ein Zusammenschluss aus selbständigen Sonologinnen und Sonologen, die
+          Ihren persönlichen Grundton ermitteln und Sie auf dem Weg in Ihren Ton begleiten. Wir erklären Ihnen, welche
+          Kräfte in Ihrem Grundton angelegt sind und über welche Singübungen Sie diesen besonderen Ton in seine volle
+          Wirkkraft bringen können. So beschenken Sie sich selbst, indem Sie Ihr natürliches Potential erkennen und
+          entfalten.</span>
+        <span lang="en">The Tonkraft® Institute is an association of independent sonologists who identify your Personal
+          Fundamental Tone and accompany you on the path into your tone. We explain which forces are inherent in your
+          fundamental tone and through which singing exercises you can bring this particular tone into its full effect.
+          In this way you gift yourself - by recognising and unfolding your natural potential.</span>
+      </p>
+    </section>
+
+    <!-- Preview: Das Angebot -->
+    <section class="feature" aria-labelledby="pv-angebot">
+      <div class="wrap feature__inner feature__inner--split">
+        <div class="feature__head reveal">
+          <span class="kicker"><span lang="de">Das Angebot</span><span lang="en">Our Offer</span></span>
+          <h2 class="story__title" id="pv-angebot"><span lang="de">Tonkraft® - Institut für SaMa Sonologie®</span><span
+              lang="en">Tonkraft® - Institute of SAMA Sonology®</span></h2>
+          <a class="btn btn--primary feature__cta" href="angebot.html"><span lang="de">Zum Angebot</span><span
+              lang="en">To the Offer</span><span class="btn__arrow" aria-hidden="true">→</span></a>
         </div>
-      </section>
+        <ol class="overview reveal" data-delay="1">
+          <li><a href="angebot.html"><span lang="de">Was ist SaMa Sonologie?</span><span lang="en">What is SAMA
+                Sonology?</span></a></li>
+          <li><a href="angebot.html#block-b"><span lang="de">Die Grundtonbestimmung</span><span lang="en">Fundamental
+                Tone Identification</span></a></li>
+          <li><a href="angebot.html#block-c"><span lang="de">Die Arbeit mit dem Grundton</span><span lang="en">Working
+                with the Fundamental Tone</span></a></li>
+          <li><a href="angebot.html#block-e"><span lang="de">Langfristige Perspektiven</span><span lang="en">Long-term
+                Perspectives</span></a></li>
+        </ol>
+      </div>
+    </section>
 
-      <!-- Preview: Hintergrund -->
-      <section class="feature feature--alt" aria-labelledby="pv-hintergrund">
-        <div class="wrap feature__inner feature__inner--split feature__inner--media-first">
-          <div class="feature__media reveal">
-            <img src="assets/sonologen/vemu-sama.jpg" alt="Vemu Mukunda" width="1600" height="898" loading="lazy" />
-          </div>
-          <div class="feature__head reveal" data-delay="1">
-            <span class="kicker"><span lang="de">Hintergrund</span><span lang="en">Background</span></span>
-            <h2 class="story__title" id="pv-hintergrund">Vemu Mukunda</h2>
-            <p class="bio__dates">1929 - 2000</p>
-            <p class="section-lead">
-              <span lang="de">Vemu Mukunda, das Nadabrahma System und der Weg zur SaMa Sonologie®</span>
-              <span lang="en">Vemu Mukunda, the Nadabrahma System and the path to SAMA Sonology®</span>
-            </p>
-            <a class="btn btn--primary feature__cta" href="hintergrund.html"><span lang="de">Zum Hintergrund</span><span lang="en">To Background</span><span class="btn__arrow" aria-hidden="true">→</span></a>
-          </div>
+    <!-- Preview: Hintergrund -->
+    <section class="feature feature--alt" aria-labelledby="pv-hintergrund">
+      <div class="wrap feature__inner feature__inner--split feature__inner--media-first">
+        <div class="feature__media reveal">
+          <img src="assets/sonologen/vemu-sama.jpg" alt="Vemu Mukunda" width="1600" height="898" loading="lazy" />
         </div>
-      </section>
-
-      <!-- Preview: Über uns -->
-      <section class="feature" aria-labelledby="pv-ueberuns">
-        <div class="wrap">
-          <div class="feature__center reveal">
-            <span class="kicker"><span lang="de">Über uns</span><span lang="en">About Us</span></span>
-            <h2 class="story__title" id="pv-ueberuns"><span lang="de">Menschen &amp; Methode</span><span lang="en">People &amp; Method</span></h2>
-            <p class="section-lead">
-              <span lang="de">Die Menschen hinter dem Institut und die Grundsätze, nach denen wir arbeiten</span>
-              <span lang="en">The people behind the institute and the principles by which we work</span>
-            </p>
-          </div>
-          <div class="subfeature reveal" data-delay="1">
-            <div class="subfeature__block">
-              <h3><span lang="de">Unsere Grundsätze</span><span lang="en">Our Principles</span></h3>
-              <p class="section-lead">
-                <span lang="de">Grundlagen unseres sonologischen Wirkens</span>
-                <span lang="en">Foundations of our sonological work</span>
-              </p>
-              <a class="btn btn--ghost" href="ueber-uns/arbeitsweise.html"><span lang="de">Zu den Grundsätzen</span><span lang="en">Our Principles</span><span class="btn__arrow" aria-hidden="true">→</span></a>
-            </div>
-            <div class="subfeature__block">
-              <h3><span lang="de">Praktizierende</span><span lang="en">Practitioners</span></h3>
-              <div class="avatar-row" aria-hidden="true">
-                <img src="assets/sonologen/huss.jpg" alt="" loading="lazy" width="58" height="58" />
-                <img src="assets/sonologen/clausing.jpg" alt="" loading="lazy" width="58" height="58" />
-                <img src="assets/sonologen/trauzettel.jpg" alt="" loading="lazy" width="58" height="58" />
-                <img src="assets/sonologen/sen.jpg" alt="" loading="lazy" width="58" height="58" />
-                <img src="assets/sonologen/puehn.jpg" alt="" loading="lazy" width="58" height="58" />
-                <img src="assets/sonologen/coers.jpg" alt="" loading="lazy" width="58" height="58" />
-                <img src="assets/sonologen/lay.jpg" alt="" loading="lazy" width="58" height="58" />
-                <img src="assets/sonologen/schoser.jpg" alt="" loading="lazy" width="58" height="58" />
-                <img src="assets/sonologen/mueschenborn.jpg" alt="" loading="lazy" width="58" height="58" />
-              </div>
-              <p class="section-lead">
-                <span lang="de">Ausgebildete Sonologinnen und Sonologen im SAMA-Netzwerk - finden Sie eine:n Praktizierende:n in Ihrer Nähe</span>
-                <span lang="en">Trained sonologists in the SAMA network - find a practitioner near you</span>
-              </p>
-              <a class="btn btn--ghost" href="ueber-uns/praktizierende.html"><span lang="de">Zu den Praktizierenden</span><span lang="en">Practitioners</span><span class="btn__arrow" aria-hidden="true">→</span></a>
-            </div>
-          </div>
+        <div class="feature__head reveal" data-delay="1">
+          <span class="kicker"><span lang="de">Hintergrund</span><span lang="en">Background</span></span>
+          <h2 class="story__title" id="pv-hintergrund">Vemu Mukunda</h2>
+          <p class="bio__dates">1929 - 2000</p>
+          <p class="section-lead">
+            <span lang="de">Vemu Mukunda, das Nadabrahma System und der Weg zur SaMa Sonologie®</span>
+            <span lang="en">Vemu Mukunda, the Nadabrahma System and the path to SAMA Sonology®</span>
+          </p>
+          <a class="btn btn--primary feature__cta" href="hintergrund.html"><span lang="de">Zum Hintergrund</span><span
+              lang="en">To Background</span><span class="btn__arrow" aria-hidden="true">→</span></a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Preview: Ausbildung -->
-      <section class="feature feature--alt" aria-labelledby="pv-ausbildung">
-        <div class="wrap">
-          <div class="feature__center reveal">
-            <span class="kicker"><span lang="de">Ausbildung</span><span lang="en">Training</span></span>
-            <h2 class="story__title" id="pv-ausbildung"><span lang="de">Selbst Praktizierende:r werden</span><span lang="en">Become a practitioner</span></h2>
-            <p class="section-lead">
-              <span lang="de">Erfahren Sie mehr über unsere Ausbildungsprogramme und werden Sie ausgebildete Sonologin oder ausgebildeter Sonologe</span>
-              <span lang="en">Learn more about our training programs and become a trained SAMA sonologist</span>
-            </p>
-            <a class="btn btn--primary feature__cta" href="ausbildung.html"><span lang="de">Zur Ausbildung</span><span lang="en">To Training</span><span class="btn__arrow" aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Preview: Publikationen -->
-      <section class="feature" aria-labelledby="pv-publikationen">
-        <div class="wrap feature__inner feature__inner--split">
-          <div class="feature__head reveal">
-            <span class="kicker"><span lang="de">Publikationen</span><span lang="en">Publications</span></span>
-            <h2 class="story__title" id="pv-publikationen"><span lang="de">Essays &amp; Artikel</span><span lang="en">Essays &amp; Articles</span></h2>
-            <p class="section-lead">
-              <span lang="de">Essays und Artikel</span>
-              <span lang="en">Essays and articles</span>
-            </p>
-            <a class="btn btn--primary feature__cta" href="publikationen.html"><span lang="de">Zu den Publikationen</span><span lang="en">To Publications</span><span class="btn__arrow" aria-hidden="true">→</span></a>
-          </div>
-          <ol class="overview reveal" data-delay="1">
-            <li><a href="publikationen.html"><span lang="de">Essays &amp; Artikel</span><span lang="en">Essays &amp; Articles</span></a></li>
-          </ol>
-        </div>
-      </section>
-
-    </main>
-
-    <footer class="pagefoot">
-      <div class="pagefoot__inner">
-        <div class="pagefoot__col">
-          <p class="pagefoot__brand"><span class="pagefoot__seal" aria-hidden="true">&#x0914;&#x0902;</span><span>tonkraft<sup class="brand-reg">®</sup></span></p>
-          <p class="pagefoot__tag">
-            <span lang="de">Institut für SaMa Sonologie®</span>
-            <span lang="en">Institute of SAMA Sonology®</span>
+    <!-- Preview: Über uns -->
+    <section class="feature" aria-labelledby="pv-ueberuns">
+      <div class="wrap">
+        <div class="feature__center reveal">
+          <span class="kicker"><span lang="de">Über uns</span><span lang="en">About Us</span></span>
+          <h2 class="story__title" id="pv-ueberuns"><span lang="de">Menschen &amp; Methode</span><span lang="en">People
+              &amp; Method</span></h2>
+          <p class="section-lead">
+            <span lang="de">Die Menschen hinter dem Institut und die Grundsätze, nach denen wir arbeiten</span>
+            <span lang="en">The people behind the institute and the principles by which we work</span>
           </p>
         </div>
-        <div class="pagefoot__col">
-          <h2><span lang="de">Seiten</span><span lang="en">Pages</span></h2>
-          <ul>
-            <li><a href="angebot.html"><span lang="de">Angebot</span><span lang="en">Our Offer</span></a></li>
-            <li><a href="hintergrund.html"><span lang="de">Hintergrund</span><span lang="en">Background</span></a></li>
-            <li><a href="ueber-uns/arbeitsweise.html"><span lang="de">Unsere Grundsätze</span><span lang="en">Our Principles</span></a></li>
-            <li><a href="ueber-uns/praktizierende.html"><span lang="de">Praktizierende</span><span lang="en">Practitioners</span></a></li>
-            <li><a href="ausbildung.html"><span lang="de">Ausbildung</span><span lang="en">Training</span></a></li>
-            <li><a href="publikationen.html"><span lang="de">Publikationen</span><span lang="en">Publications</span></a></li>
-          </ul>
-        </div>
-        <div class="pagefoot__col">
-          <h2><span lang="de">Rechtliches</span><span lang="en">Legal</span></h2>
-          <ul>
-            <li><a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Imprint</span></a></li>
-            <li><a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a></li>
-          </ul>
+        <div class="subfeature reveal" data-delay="1">
+          <div class="subfeature__block">
+            <h3><span lang="de">Unsere Grundsätze</span><span lang="en">Our Principles</span></h3>
+            <p class="section-lead">
+              <span lang="de">Grundlagen unseres sonologischen Wirkens</span>
+              <span lang="en">Foundations of our sonological work</span>
+            </p>
+            <a class="btn btn--ghost" href="ueber-uns/arbeitsweise.html"><span lang="de">Zu den Grundsätzen</span><span
+                lang="en">Our Principles</span><span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+          <div class="subfeature__block">
+            <h3><span lang="de">Praktizierende</span><span lang="en">Practitioners</span></h3>
+            <div class="avatar-row" aria-hidden="true">
+              <img src="assets/sonologen/huss.jpg" alt="" loading="lazy" width="58" height="58" />
+              <img src="assets/sonologen/clausing.jpg" alt="" loading="lazy" width="58" height="58" />
+              <img src="assets/sonologen/trauzettel.jpg" alt="" loading="lazy" width="58" height="58" />
+              <img src="assets/sonologen/sen.jpg" alt="" loading="lazy" width="58" height="58" />
+              <img src="assets/sonologen/puehn.jpg" alt="" loading="lazy" width="58" height="58" />
+              <img src="assets/sonologen/coers.jpg" alt="" loading="lazy" width="58" height="58" />
+              <img src="assets/sonologen/lay.jpg" alt="" loading="lazy" width="58" height="58" />
+              <img src="assets/sonologen/schoser.jpg" alt="" loading="lazy" width="58" height="58" />
+              <img src="assets/sonologen/mueschenborn.jpg" alt="" loading="lazy" width="58" height="58" />
+            </div>
+            <p class="section-lead">
+              <span lang="de">Ausgebildete Sonologinnen und Sonologen im SAMA-Netzwerk - finden Sie eine:n
+                Praktizierende:n in Ihrer Nähe</span>
+              <span lang="en">Trained sonologists in the SAMA network - find a practitioner near you</span>
+            </p>
+            <a class="btn btn--ghost" href="ueber-uns/praktizierende.html"><span lang="de">Zu den
+                Praktizierenden</span><span lang="en">Practitioners</span><span class="btn__arrow"
+                aria-hidden="true">→</span></a>
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- Preview: Ausbildung -->
+    <section class="feature feature--alt" aria-labelledby="pv-ausbildung">
       <div class="wrap">
-        <div class="pagefoot__base">
-          <span>© 2026 Tonkraft® - Institut für Sonologie</span>
-          <a class="pagefoot__interna" href="interna.html"><span lang="de">Interner Bereich</span><span lang="en">Inner Area</span></a>
+        <div class="feature__center reveal">
+          <span class="kicker"><span lang="de">Ausbildung</span><span lang="en">Training</span></span>
+          <h2 class="story__title" id="pv-ausbildung"><span lang="de">Selbst Praktizierende:r werden</span><span
+              lang="en">Become a practitioner</span></h2>
+          <p class="section-lead">
+            <span lang="de">Erfahren Sie mehr über unsere Ausbildungsprogramme und werden Sie ausgebildete Sonologin
+              oder ausgebildeter Sonologe</span>
+            <span lang="en">Learn more about our training programs and become a trained SAMA sonologist</span>
+          </p>
+          <a class="btn btn--primary feature__cta" href="ausbildung.html"><span lang="de">Zur Ausbildung</span><span
+              lang="en">To Training</span><span class="btn__arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <!-- Preview: Publikationen -->
+    <section class="feature" aria-labelledby="pv-publikationen">
+      <div class="wrap feature__inner feature__inner--split">
+        <div class="feature__head reveal">
+          <span class="kicker"><span lang="de">Publikationen</span><span lang="en">Publications</span></span>
+          <h2 class="story__title" id="pv-publikationen"><span lang="de">Essays &amp; Artikel</span><span
+              lang="en">Essays &amp; Articles</span></h2>
+          <p class="section-lead">
+            <span lang="de">Essays und Artikel</span>
+            <span lang="en">Essays and articles</span>
+          </p>
+          <a class="btn btn--primary feature__cta" href="publikationen.html"><span lang="de">Zu den
+              Publikationen</span><span lang="en">To Publications</span><span class="btn__arrow"
+              aria-hidden="true">→</span></a>
+        </div>
+        <ol class="overview reveal" data-delay="1">
+          <li><a href="publikationen.html"><span lang="de">Essays &amp; Artikel</span><span lang="en">Essays &amp;
+                Articles</span></a></li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pagefoot">
+    <div class="pagefoot__inner">
+      <div class="pagefoot__col">
+        <p class="pagefoot__brand"><span class="pagefoot__seal"
+            aria-hidden="true">&#x0914;&#x0902;</span><span>tonkraft<sup class="brand-reg">®</sup></span></p>
+        <p class="pagefoot__tag">
+          <span lang="de">Institut für SaMa Sonologie®</span>
+          <span lang="en">Institute of SAMA Sonology®</span>
+        </p>
+      </div>
+      <div class="pagefoot__col">
+        <h2><span lang="de">Seiten</span><span lang="en">Pages</span></h2>
+        <ul>
+          <li><a href="angebot.html"><span lang="de">Angebot</span><span lang="en">Our Offer</span></a></li>
+          <li><a href="hintergrund.html"><span lang="de">Hintergrund</span><span lang="en">Background</span></a></li>
+          <li><a href="ueber-uns/arbeitsweise.html"><span lang="de">Unsere Grundsätze</span><span lang="en">Our
+                Principles</span></a></li>
+          <li><a href="ueber-uns/praktizierende.html"><span lang="de">Praktizierende</span><span
+                lang="en">Practitioners</span></a></li>
+          <li><a href="ausbildung.html"><span lang="de">Ausbildung</span><span lang="en">Training</span></a></li>
+          <li><a href="publikationen.html"><span lang="de">Publikationen</span><span lang="en">Publications</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="pagefoot__col">
+        <h2><span lang="de">Rechtliches</span><span lang="en">Legal</span></h2>
+        <ul>
+          <li><a href="impressum.html"><span lang="de">Impressum</span><span lang="en">Imprint</span></a></li>
+          <li><a href="datenschutz.html"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="pagefoot__base">
+        <span>© 2026 Tonkraft® - Institut für Sonologie</span>
+        <a class="pagefoot__interna" href="interna.html"><span lang="de">Interner Bereich</span><span lang="en">Inner
+            Area</span></a>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
