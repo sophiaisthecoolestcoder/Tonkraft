@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#f4efe5" />
-    <title>Tonkraft — Institut für Sonologie</title>
-    <meta name="description" content="Tonkraft — Institut für Sonologie. Der Mensch als klingender Kosmos, gestimmt auf den Persönlichen Grundton. Nadabrahma System von Vemu Mukunda." />
+    <title>Tonkraft - Institut für Sonologie</title>
+    <meta name="description" content="Tonkraft - Institut für Sonologie. Der Mensch als klingender Kosmos, gestimmt auf den Persönlichen Grundton. Nadabrahma System von Vemu Mukunda." />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Tonkraft — Institut für Sonologie" />
+    <meta property="og:title" content="Tonkraft - Institut für Sonologie" />
     <meta property="og:description" content="Der Mensch als klingender Kosmos, gestimmt auf den Persönlichen Grundton. Nadabrahma System von Vemu Mukunda." />
     <meta property="og:image" content="favicon.svg" />
     <meta name="twitter:card" content="summary" />
@@ -21,8 +21,9 @@
       (function () {
         try {
           var s = localStorage.getItem("tonkraft:lang");
-          var b = (navigator.language || "de").toLowerCase().indexOf("en") === 0 ? "en" : "de";
-          var l = s === "en" || s === "de" ? s : b;
+          /* German is the default. Only an explicit choice, stored from the
+             DE/EN switch, selects English - never the browser locale. */
+          var l = s === "en" ? "en" : "de";
           var r = document.documentElement;
           r.classList.remove("lang-de", "lang-en");
           r.classList.add("lang-" + l);
@@ -38,7 +39,7 @@
 
     <header class="masthead">
       <div class="masthead__inner">
-        <a href="index.html" class="brandmark" aria-label="Tonkraft — Startseite">
+        <a href="index.html" class="brandmark" aria-label="Tonkraft - Startseite">
           <span class="brandmark__seal" aria-hidden="true">&#x0914;&#x0902;</span>
           <span class="brandmark__word">tonkraft<sup class="brand-reg">®</sup></span>
         </a>
@@ -98,7 +99,7 @@
         </h2>
         <p class="welcome__lead reveal" data-delay="1">
           <span lang="de">Das Tonkraft® Institut ist ein Zusammenschluss aus selbständigen Sonologinnen und Sonologen, die Ihren persönlichen Grundton ermitteln und Sie auf dem Weg in Ihren Ton begleiten. Wir erklären Ihnen, welche Kräfte in Ihrem Grundton angelegt sind und über welche Singübungen Sie diesen besonderen Ton in seine volle Wirkkraft bringen können. So beschenken Sie sich selbst, indem Sie Ihr natürliches Potential erkennen und entfalten.</span>
-          <span lang="en">The Tonkraft® Institute is an association of independent sonologists who identify your Personal Fundamental Tone and accompany you on the path into your tone. We explain which forces are inherent in your fundamental tone and through which singing exercises you can bring this particular tone into its full effect. In this way you gift yourself — by recognising and unfolding your natural potential.</span>
+          <span lang="en">The Tonkraft® Institute is an association of independent sonologists who identify your Personal Fundamental Tone and accompany you on the path into your tone. We explain which forces are inherent in your fundamental tone and through which singing exercises you can bring this particular tone into its full effect. In this way you gift yourself - by recognising and unfolding your natural potential.</span>
         </p>
       </section>
 
@@ -107,7 +108,7 @@
         <div class="wrap feature__inner feature__inner--split">
           <div class="feature__head reveal">
             <span class="kicker"><span lang="de">Das Angebot</span><span lang="en">Our Offer</span></span>
-            <h2 class="story__title" id="pv-angebot"><span lang="de">Tonkraft® &mdash; Institut für SaMa Sonologie®</span><span lang="en">Tonkraft® &mdash; Institute of SAMA Sonology®</span></h2>
+            <h2 class="story__title" id="pv-angebot"><span lang="de">Tonkraft® - Institut für SaMa Sonologie®</span><span lang="en">Tonkraft® - Institute of SAMA Sonology®</span></h2>
             <a class="btn btn--primary feature__cta" href="angebot.html"><span lang="de">Zum Angebot</span><span lang="en">To the Offer</span><span class="btn__arrow" aria-hidden="true">→</span></a>
           </div>
           <ol class="overview reveal" data-delay="1">
@@ -128,7 +129,7 @@
           <div class="feature__head reveal" data-delay="1">
             <span class="kicker"><span lang="de">Hintergrund</span><span lang="en">Background</span></span>
             <h2 class="story__title" id="pv-hintergrund">Vemu Mukunda</h2>
-            <p class="bio__dates">1929 — 2000</p>
+            <p class="bio__dates">1929 - 2000</p>
             <p class="section-lead">
               <span lang="de">Vemu Mukunda, das Nadabrahma System und der Weg zur SaMa Sonologie®</span>
               <span lang="en">Vemu Mukunda, the Nadabrahma System and the path to SAMA Sonology®</span>
@@ -172,8 +173,8 @@
                 <img src="assets/sonologen/mueschenborn.jpg" alt="" loading="lazy" width="58" height="58" />
               </div>
               <p class="section-lead">
-                <span lang="de">Ausgebildete Sonologinnen und Sonologen im SAMA-Netzwerk — finden Sie eine:n Praktizierende:n in Ihrer Nähe</span>
-                <span lang="en">Trained sonologists in the SAMA network — find a practitioner near you</span>
+                <span lang="de">Ausgebildete Sonologinnen und Sonologen im SAMA-Netzwerk - finden Sie eine:n Praktizierende:n in Ihrer Nähe</span>
+                <span lang="en">Trained sonologists in the SAMA network - find a practitioner near you</span>
               </p>
               <a class="btn btn--ghost" href="ueber-uns/praktizierende.html"><span lang="de">Zu den Praktizierenden</span><span lang="en">Practitioners</span><span class="btn__arrow" aria-hidden="true">→</span></a>
             </div>
@@ -246,7 +247,7 @@
       </div>
       <div class="wrap">
         <div class="pagefoot__base">
-          <span>© 2026 Tonkraft® — Institut für Sonologie</span>
+          <span>© 2026 Tonkraft® - Institut für Sonologie</span>
           <a class="pagefoot__interna" href="interna.html"><span lang="de">Interner Bereich</span><span lang="en">Inner Area</span></a>
         </div>
       </div>

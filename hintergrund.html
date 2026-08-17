@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#f4efe5" />
-    <title>Hintergrund — Tonkraft</title>
+    <title>Hintergrund - Tonkraft</title>
     <meta name="description" content="Vemu Mukunda und die Entwicklung des Nadabrahma Systems." />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,8 +16,9 @@
       (function () {
         try {
           var s = localStorage.getItem("tonkraft:lang");
-          var b = (navigator.language || "de").toLowerCase().indexOf("en") === 0 ? "en" : "de";
-          var l = s === "en" || s === "de" ? s : b;
+          /* German is the default. Only an explicit choice, stored from the
+             DE/EN switch, selects English - never the browser locale. */
+          var l = s === "en" ? "en" : "de";
           var r = document.documentElement;
           r.classList.remove("lang-de", "lang-en");
           r.classList.add("lang-" + l);
@@ -33,7 +34,7 @@
 
     <header class="masthead">
       <div class="masthead__inner">
-        <a href="index.html" class="brandmark" aria-label="Tonkraft — Startseite">
+        <a href="index.html" class="brandmark" aria-label="Tonkraft - Startseite">
           <span class="brandmark__seal" aria-hidden="true">&#x0914;&#x0902;</span>
           <span class="brandmark__word">tonkraft<sup class="brand-reg">®</sup></span>
         </a>
@@ -90,16 +91,16 @@
               <span lang="de">Biographie Vemu Mukunda</span>
               <span lang="en">Biography of Vemu Mukunda</span>
             </h2>
-            <p class="bio__dates">1929 — 2000</p>
+            <p class="bio__dates">1929 - 2000</p>
 
             <div class="prose" lang="de">
               <p>Vemu (Venugopal) Mukunda wurde am 11. März 1929 in der südindischen Stadt Bangalore (Bengaluru) geboren. Er genoss eine brahmanische Ausbildung, in deren Rahmen er auch in der traditionellen südindischen Musik Karnatika ausgebildet wurde. Später führte ihn das Studium der Nuklearwissenschaft an die Strathclyde University in Glasgow, wo er anschließend weiter als Atomingenieur arbeitete. Nach einigen Jahren gab er diese Tätigkeit auf, verlegte seinen Wohnsitz nach London und widmete sich ganz der Musik. Auf seiner Vina (südindisches Saiteninstrument, ähnlich der Sitar) konzertierte er in Indien und vielen westlichen Ländern. Er arbeitete mit vielen Größen der damaligen Musikszene zusammen. Er gehörte zu den ersten Musikern, die die indische Musik mit dem Jazz miteinander verbanden, was vor allem im Zusammenspiel mit Maynard Ferguson publik wurde. Außerdem lieferte er mehrfach die Musik für Tanzprojekte von Maurice Béjart.</p>
-              <p>Auf Anweisung seines spirituellen Lehrers Sri Sathya Sai Baba vertiefte er sich seit Beginn der 1970er Jahre in die philosophischen und musikalischen Schriften seines Landes. Ziel war es, die verborgenen Informationen von den tonalen Verbindungen zwischen Mensch und Ton zu entdecken. Dabei erfuhr er die spirituelle Dimension der Töne als Weg der Selbsterkenntnis. Er bündelte und systematisierte sein Wissen unter dem Begriff Nadabrahma System. Parallel dazu entwickelte er effektive Übungen zur Entfaltung der Persönlichkeit auf der Basis des Persönlichen Grundtons. Ab den späten 1980er Jahren gab Vemu Mukunda dieses Wissen unter dem Namen Nadabrahma Music Therapy weiter. So entstand eine große Schülerschaft in den USA und vielen europäischen Ländern. In Deutschland haben sich einige seiner Schüler miteinander verbunden, um das kostbare Wissen um den Persönlichen Grundton zu erhalten und zu vertiefen. Vemu Mukunda war sich bewusst, wie umfangreich und weitreichend die gesamte Thematik rund um das Körper – Ton – Verhältnis ist. Deshalb ermutigte er seine Schüler, tiefer in diese Welt einzutauchen. Er motivierte sie mit der Aussage: „I only did the first step, you have to continue." In diesem Sinne ist im Laufe von 25 Jahren der Weiterentwicklung die SaMa Sonologie mit ihren besonderen Merkmalen entstanden.</p>
+              <p>Auf Anweisung seines spirituellen Lehrers Sri Sathya Sai Baba vertiefte er sich seit Beginn der 1970er Jahre in die philosophischen und musikalischen Schriften seines Landes. Ziel war es, die verborgenen Informationen von den tonalen Verbindungen zwischen Mensch und Ton zu entdecken. Dabei erfuhr er die spirituelle Dimension der Töne als Weg der Selbsterkenntnis. Er bündelte und systematisierte sein Wissen unter dem Begriff Nadabrahma System. Parallel dazu entwickelte er effektive Übungen zur Entfaltung der Persönlichkeit auf der Basis des Persönlichen Grundtons. Ab den späten 1980er Jahren gab Vemu Mukunda dieses Wissen unter dem Namen Nadabrahma Music Therapy weiter. So entstand eine große Schülerschaft in den USA und vielen europäischen Ländern. In Deutschland haben sich einige seiner Schüler miteinander verbunden, um das kostbare Wissen um den Persönlichen Grundton zu erhalten und zu vertiefen. Vemu Mukunda war sich bewusst, wie umfangreich und weitreichend die gesamte Thematik rund um das Körper - Ton - Verhältnis ist. Deshalb ermutigte er seine Schüler, tiefer in diese Welt einzutauchen. Er motivierte sie mit der Aussage: „I only did the first step, you have to continue." In diesem Sinne ist im Laufe von 25 Jahren der Weiterentwicklung die SaMa Sonologie mit ihren besonderen Merkmalen entstanden.</p>
               <p>Am 4. Februar 2000 verstarb Vemu Mukunda in seiner Wahlheimat London.</p>
             </div>
             <div class="prose" lang="en">
-              <p>Vemu (Venugopal) Mukunda was born on March 11, 1929, in Bangalore (Bengaluru), a city in southern India. He received a brahmanical education, which included training in the traditional South Indian music Karnatika. Later, his studies in nuclear science led him to Strathclyde University in Glasgow, where he subsequently worked as a nuclear engineer. After several years he left this profession, moved to London and devoted himself entirely to music. He performed on his Vina (a South Indian stringed instrument similar to the sitar) throughout India and in many Western countries. He worked with many leading figures of the music scene of his time. He was among the first musicians to combine Indian music with jazz — most prominently in his collaboration with Maynard Ferguson. He also repeatedly composed music for dance projects of Maurice Béjart.</p>
-              <p>At the instruction of his spiritual teacher Sri Sathya Sai Baba, from the early 1970s onward he immersed himself in the philosophical and musical writings of his homeland. The aim was to discover the hidden information about the tonal connections between human beings and sound. In this process he experienced the spiritual dimension of tones as a path of self-knowledge. He synthesised and systematised his knowledge under the term Nadabrahma System. In parallel he developed effective exercises for the unfolding of personality on the basis of the Personal Fundamental Tone. From the late 1980s onward Vemu Mukunda transmitted this knowledge under the name Nadabrahma Music Therapy. A large body of students emerged in the USA and in many European countries. In Germany, several of his students joined together to preserve and deepen the precious knowledge of the Personal Fundamental Tone. Vemu Mukunda was aware of how vast and far-reaching the entire subject of the body–tone relationship is. He therefore encouraged his students to dive deeper into this world. He motivated them with the words: "I only did the first step, you have to continue." In this spirit, over 25 years of further development, SAMA Sonology with its particular characteristics came into being.</p>
+              <p>Vemu (Venugopal) Mukunda was born on March 11, 1929, in Bangalore (Bengaluru), a city in southern India. He received a brahmanical education, which included training in the traditional South Indian music Karnatika. Later, his studies in nuclear science led him to Strathclyde University in Glasgow, where he subsequently worked as a nuclear engineer. After several years he left this profession, moved to London and devoted himself entirely to music. He performed on his Vina (a South Indian stringed instrument similar to the sitar) throughout India and in many Western countries. He worked with many leading figures of the music scene of his time. He was among the first musicians to combine Indian music with jazz - most prominently in his collaboration with Maynard Ferguson. He also repeatedly composed music for dance projects of Maurice Béjart.</p>
+              <p>At the instruction of his spiritual teacher Sri Sathya Sai Baba, from the early 1970s onward he immersed himself in the philosophical and musical writings of his homeland. The aim was to discover the hidden information about the tonal connections between human beings and sound. In this process he experienced the spiritual dimension of tones as a path of self-knowledge. He synthesised and systematised his knowledge under the term Nadabrahma System. In parallel he developed effective exercises for the unfolding of personality on the basis of the Personal Fundamental Tone. From the late 1980s onward Vemu Mukunda transmitted this knowledge under the name Nadabrahma Music Therapy. A large body of students emerged in the USA and in many European countries. In Germany, several of his students joined together to preserve and deepen the precious knowledge of the Personal Fundamental Tone. Vemu Mukunda was aware of how vast and far-reaching the entire subject of the body-tone relationship is. He therefore encouraged his students to dive deeper into this world. He motivated them with the words: "I only did the first step, you have to continue." In this spirit, over 25 years of further development, SAMA Sonology with its particular characteristics came into being.</p>
               <p>On 4 February 2000 Vemu Mukunda died in his adopted home of London.</p>
             </div>
           </div>
@@ -107,7 +108,7 @@
         <div class="film-grid">
           <figure class="film">
               <div class="film__frame">
-                <button class="film__cover" type="button" data-youtube="w0re4LClR1A" aria-label="Video abspielen: Tonkraft® — Vemu Mukunda">
+                <button class="film__cover" type="button" data-youtube="w0re4LClR1A" aria-label="Video abspielen: Tonkraft® - Vemu Mukunda">
                   <span class="film__aum" aria-hidden="true">&#x0914;&#x0902;</span>
                   <span class="film__eyebrow">Tonkraft®</span>
                   <span class="film__title-big">Vemu Mukunda</span>
@@ -117,7 +118,7 @@
             </figure>
           <figure class="film">
               <div class="film__frame">
-                <button class="film__cover" type="button" data-youtube="HEE8MNVmQjc" aria-label="Video abspielen: Vemu Mukunda — Interview">
+                <button class="film__cover" type="button" data-youtube="HEE8MNVmQjc" aria-label="Video abspielen: Vemu Mukunda - Interview">
                   <span class="film__aum" aria-hidden="true">&#x0914;&#x0902;</span>
                   <span class="film__eyebrow">Vemu Mukunda</span>
                   <span class="film__title-big">Interview</span>
@@ -170,7 +171,7 @@
               <p>Es ist ein starker Weg, alle Töne in allen Oktaven in allen Körpern zu realisieren. Es ist ein Weg der Ausdehnung des individuellen Bewusstseins. Immer mehr Facetten der Gesamtheit kommen in Schwingung und können dem Selbstbild hinzugefügt werden. Dieser Weg findet sein Ende, wenn das individuelle Ich soweit gereinigt und begriffen ist, dass das Wahre Selbst von allein erklingt und zur einzigen Wirklichkeit geworden ist. Aber das ist Zukunftsmusik……..</p>
             </div>
             <div class="block__long prose" lang="en">
-              <p>Vemu Mukunda's Nadabrahma System describes the precise body–tone relationship. This is essential for the physical effect of individual pitches. Without this knowledge, the effect of sung tones would be weak or only a chance product. Through the precise correspondence a calculable effect arises that, above all, fosters psycho-emotional health.</p>
+              <p>Vemu Mukunda's Nadabrahma System describes the precise body-tone relationship. This is essential for the physical effect of individual pitches. Without this knowledge, the effect of sung tones would be weak or only a chance product. Through the precise correspondence a calculable effect arises that, above all, fosters psycho-emotional health.</p>
               <p>Exactly this tonal structure, the tonal constitution of the human being, is what Vemu Mukunda discovered, and from which he built his Nadabrahma System. The core statements are:</p>
               <ul>
                 <li>The human being vibrates in a spectrum of three octaves.</li>
@@ -188,7 +189,7 @@
           <div class="film-grid">
             <figure class="film">
               <div class="film__frame">
-                <button class="film__cover" type="button" data-youtube="cHRQLkKcLt0" aria-label="Video abspielen: Tonkraft® — Unser tonales System">
+                <button class="film__cover" type="button" data-youtube="cHRQLkKcLt0" aria-label="Video abspielen: Tonkraft® - Unser tonales System">
                   <span class="film__aum" aria-hidden="true">&#x0914;&#x0902;</span>
                   <span class="film__eyebrow">Tonkraft®</span>
                   <span class="film__title-big">Unser tonales System</span>
@@ -253,7 +254,7 @@
                 <li><em>sama</em>: gleich, ähnlich, gleichmäßig, gleichbleibend</li>
                 <li><em>śama</em> oder <em>shama</em>: innere Stille, Ruhe, Frieden, Gleichmut, Beherrschung der Wahrnehmungssinne.</li>
               </ul>
-              <p>Die zentrale Bedeutung liegt aber verdeckt in der Fachsprache der Sonologie. Die Silbe Sa bezeichnet den Persönlichen Grundton. Er ist der Ausgangspunkt für den inneren Erkenntnisweg, der schließlich auf der Position Ma2 endet. Dies ist der Weg aus der Individualität in die Universalität. Dieser Weg der Realisierung des wahren Selbst codiert sich über die Silben Sa – Ma. SaMa ist also ein Kürzel für die Gewissheit, dass der Persönliche Grundton nicht das Ende einer Suche ist, sondern der Anfang einer fundamentalen Reise ins SEIN.</p>
+              <p>Die zentrale Bedeutung liegt aber verdeckt in der Fachsprache der Sonologie. Die Silbe Sa bezeichnet den Persönlichen Grundton. Er ist der Ausgangspunkt für den inneren Erkenntnisweg, der schließlich auf der Position Ma2 endet. Dies ist der Weg aus der Individualität in die Universalität. Dieser Weg der Realisierung des wahren Selbst codiert sich über die Silben Sa - Ma. SaMa ist also ein Kürzel für die Gewissheit, dass der Persönliche Grundton nicht das Ende einer Suche ist, sondern der Anfang einer fundamentalen Reise ins SEIN.</p>
             </div>
             <div class="block__long prose" lang="en">
               <p>Vemu Mukunda understood his Nadabrahma System as one aspect of Gandharva music. By this is meant all that music which radiates a particular healing power. Gandharva music, which according to Indian mythology was once brought down to earth by the holy Narada, has its origin in the <em>sama veda</em>. This ancient collection of texts is also called the "Book of Songs" and is a central part of the old Indian culture and philosophy. Since the sama veda is indirectly a source for Sonology, it was natural to place this name at the front of the title. Beyond that, the word sama has several other meanings in Sanskrit.</p>
@@ -262,7 +263,7 @@
                 <li><em>sama</em>: equal, similar, even, constant</li>
                 <li><em>śama</em> or <em>shama</em>: inner silence, calm, peace, equanimity, mastery of the senses of perception.</li>
               </ul>
-              <p>The central meaning, however, lies hidden in the technical language of Sonology. The syllable Sa designates the Personal Fundamental Tone. It is the starting point of the inner path of insight, which ultimately ends at the position Ma2. This is the path from individuality into universality. This path of realisation of the true Self is encoded by the syllables Sa – Ma. SaMa is therefore an abbreviation for the certainty that the Personal Fundamental Tone is not the end of a search, but the beginning of a fundamental journey into BEING.</p>
+              <p>The central meaning, however, lies hidden in the technical language of Sonology. The syllable Sa designates the Personal Fundamental Tone. It is the starting point of the inner path of insight, which ultimately ends at the position Ma2. This is the path from individuality into universality. This path of realisation of the true Self is encoded by the syllables Sa - Ma. SaMa is therefore an abbreviation for the certainty that the Personal Fundamental Tone is not the end of a search, but the beginning of a fundamental journey into BEING.</p>
             </div>
           </details>
         </article>
@@ -309,7 +310,7 @@
       </div>
       <div class="wrap">
         <div class="pagefoot__base">
-          <span>© 2026 Tonkraft® — Institut für Sonologie</span>
+          <span>© 2026 Tonkraft® - Institut für Sonologie</span>
           <a class="pagefoot__interna" href="interna.html"><span lang="de">Interner Bereich</span><span lang="en">Inner Area</span></a>
         </div>
       </div>

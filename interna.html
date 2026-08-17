@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#f4efe5" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Interner Bereich — Tonkraft</title>
+    <title>Interner Bereich - Tonkraft</title>
     <meta name="description" content="Geschützter Bereich für Praktizierende der SaMa Sonologie®." />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,8 +17,9 @@
       (function () {
         try {
           var s = localStorage.getItem("tonkraft:lang");
-          var b = (navigator.language || "de").toLowerCase().indexOf("en") === 0 ? "en" : "de";
-          var l = s === "en" || s === "de" ? s : b;
+          /* German is the default. Only an explicit choice, stored from the
+             DE/EN switch, selects English - never the browser locale. */
+          var l = s === "en" ? "en" : "de";
           var r = document.documentElement;
           r.classList.remove("lang-de", "lang-en");
           r.classList.add("lang-" + l);
@@ -34,7 +35,7 @@
 
     <header class="masthead">
       <div class="masthead__inner">
-        <a href="index.html" class="brandmark" aria-label="Tonkraft — Startseite">
+        <a href="index.html" class="brandmark" aria-label="Tonkraft - Startseite">
           <span class="brandmark__seal" aria-hidden="true">&#x0914;&#x0902;</span>
           <span class="brandmark__word">tonkraft<sup class="brand-reg">®</sup></span>
         </a>
@@ -138,7 +139,7 @@
                 <details class="wr-rubric__d" data-rubric>
                   <summary class="wr-rubric__head"><span lang="de">Philosophie</span><span lang="en">Philosophy</span></summary>
                   <ul class="wr-rubric__items">
-                    <li><a class="wr-nav__link" href="#philosophie-samkhya"><span lang="de">Sāṁkhya — Grundzüge</span><span lang="en">Sāṁkhya — Foundations</span></a></li>
+                    <li><a class="wr-nav__link" href="#philosophie-samkhya"><span lang="de">Sāṁkhya - Grundzüge</span><span lang="en">Sāṁkhya - Foundations</span></a></li>
                     <li><a class="wr-nav__link" href="#philosophie-koshas"><span lang="de">Die Kośas</span><span lang="en">The Kośas</span></a></li>
                   </ul>
                 </details>
@@ -436,7 +437,7 @@
               <header class="wr-section__head">
                 <span class="kicker"><span lang="de">Tonstruktur</span><span lang="en">Tonal Structure</span></span>
                 <h1 class="wr-section__title"><span lang="de">Die zwölf Grundtöne</span><span lang="en">The Twelve Fundamental Tones</span></h1>
-                <p class="wr-section__lead"><span lang="de">Jeder der zwölf chromatischen Töne kann der Persönliche Grundton (Sa) eines Menschen sein. Das jeweilige Schaubild zeigt, wie sich die übrigen elf Töne darum anordnen — gehört als Monochord-Drone in 432 Hz.</span><span lang="en">Each of the twelve chromatic tones can be a person's Personal Fundamental Tone (Sa). Each diagram shows how the remaining eleven tones arrange around it — heard as a 432 Hz monochord drone.</span></p>
+                <p class="wr-section__lead"><span lang="de">Jeder der zwölf chromatischen Töne kann der Persönliche Grundton (Sa) eines Menschen sein. Das jeweilige Schaubild zeigt, wie sich die übrigen elf Töne darum anordnen - gehört als Monochord-Drone in 432 Hz.</span><span lang="en">Each of the twelve chromatic tones can be a person's Personal Fundamental Tone (Sa). Each diagram shows how the remaining eleven tones arrange around it - heard as a 432 Hz monochord drone.</span></p>
               </header>
               <nav class="tone-quicknav" aria-label="Grundtöne"><a class="tone-chip" href="#grundton-c" style="--tone-color: var(--tone-c);"><span class="tone-chip__dot" aria-hidden="true"></span>C</a><a class="tone-chip" href="#grundton-cis" style="--tone-color: var(--tone-cis);"><span class="tone-chip__dot" aria-hidden="true"></span>Cis</a><a class="tone-chip" href="#grundton-d" style="--tone-color: var(--tone-d);"><span class="tone-chip__dot" aria-hidden="true"></span>D</a><a class="tone-chip" href="#grundton-dis" style="--tone-color: var(--tone-dis);"><span class="tone-chip__dot" aria-hidden="true"></span>Dis</a><a class="tone-chip" href="#grundton-e" style="--tone-color: var(--tone-e);"><span class="tone-chip__dot" aria-hidden="true"></span>E</a><a class="tone-chip" href="#grundton-f" style="--tone-color: var(--tone-f);"><span class="tone-chip__dot" aria-hidden="true"></span>F</a><a class="tone-chip" href="#grundton-fis" style="--tone-color: var(--tone-fis);"><span class="tone-chip__dot" aria-hidden="true"></span>Fis</a><a class="tone-chip" href="#grundton-g" style="--tone-color: var(--tone-g);"><span class="tone-chip__dot" aria-hidden="true"></span>G</a><a class="tone-chip" href="#grundton-gis" style="--tone-color: var(--tone-gis);"><span class="tone-chip__dot" aria-hidden="true"></span>Gis</a><a class="tone-chip" href="#grundton-a" style="--tone-color: var(--tone-a);"><span class="tone-chip__dot" aria-hidden="true"></span>A</a><a class="tone-chip" href="#grundton-b" style="--tone-color: var(--tone-b);"><span class="tone-chip__dot" aria-hidden="true"></span>B</a><a class="tone-chip" href="#grundton-h" style="--tone-color: var(--tone-h);"><span class="tone-chip__dot" aria-hidden="true"></span>H</a></nav>
               <div class="grundton-list">
@@ -447,7 +448,7 @@
                 </header>
                 <div class="grundton__grid">
                   <figure class="schaubild">
-                    <img class="schaubild__img" src="assets/grundtoene/schaubild-c.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton C — Anordnung der zwölf Töne im Körper" />
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-c.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton C - Anordnung der zwölf Töne im Körper" />
                   </figure>
                   <div class="grundton__aside">
                     <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>C</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>C</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
@@ -465,7 +466,7 @@
                 </header>
                 <div class="grundton__grid">
                   <figure class="schaubild">
-                    <img class="schaubild__img" src="assets/grundtoene/schaubild-cis.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton Cis — Anordnung der zwölf Töne im Körper" />
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-cis.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton Cis - Anordnung der zwölf Töne im Körper" />
                   </figure>
                   <div class="grundton__aside">
                     <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>Cis</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>Cis</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
@@ -483,7 +484,7 @@
                 </header>
                 <div class="grundton__grid">
                   <figure class="schaubild">
-                    <img class="schaubild__img" src="assets/grundtoene/schaubild-d.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton D — Anordnung der zwölf Töne im Körper" />
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-d.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton D - Anordnung der zwölf Töne im Körper" />
                   </figure>
                   <div class="grundton__aside">
                     <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>D</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>D</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
@@ -501,7 +502,7 @@
                 </header>
                 <div class="grundton__grid">
                   <figure class="schaubild">
-                    <img class="schaubild__img" src="assets/grundtoene/schaubild-dis.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton Dis — Anordnung der zwölf Töne im Körper" />
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-dis.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton Dis - Anordnung der zwölf Töne im Körper" />
                   </figure>
                   <div class="grundton__aside">
                     <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>Dis</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>Dis</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
@@ -519,7 +520,7 @@
                 </header>
                 <div class="grundton__grid">
                   <figure class="schaubild">
-                    <img class="schaubild__img" src="assets/grundtoene/schaubild-e.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton E — Anordnung der zwölf Töne im Körper" />
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-e.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton E - Anordnung der zwölf Töne im Körper" />
                   </figure>
                   <div class="grundton__aside">
                     <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>E</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>E</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
@@ -537,7 +538,7 @@
                 </header>
                 <div class="grundton__grid">
                   <figure class="schaubild">
-                    <img class="schaubild__img" src="assets/grundtoene/schaubild-f.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton F — Anordnung der zwölf Töne im Körper" />
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-f.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton F - Anordnung der zwölf Töne im Körper" />
                   </figure>
                   <div class="grundton__aside">
                     <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>F</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>F</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
@@ -555,7 +556,7 @@
                 </header>
                 <div class="grundton__grid">
                   <figure class="schaubild">
-                    <img class="schaubild__img" src="assets/grundtoene/schaubild-fis.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton Fis — Anordnung der zwölf Töne im Körper" />
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-fis.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton Fis - Anordnung der zwölf Töne im Körper" />
                   </figure>
                   <div class="grundton__aside">
                     <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>Fis</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>Fis</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
@@ -573,7 +574,7 @@
                 </header>
                 <div class="grundton__grid">
                   <figure class="schaubild">
-                    <img class="schaubild__img" src="assets/grundtoene/schaubild-g.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton G — Anordnung der zwölf Töne im Körper" />
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-g.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton G - Anordnung der zwölf Töne im Körper" />
                   </figure>
                   <div class="grundton__aside">
                     <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>G</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>G</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
@@ -591,7 +592,7 @@
                 </header>
                 <div class="grundton__grid">
                   <figure class="schaubild">
-                    <img class="schaubild__img" src="assets/grundtoene/schaubild-gis.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton Gis — Anordnung der zwölf Töne im Körper" />
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-gis.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton Gis - Anordnung der zwölf Töne im Körper" />
                   </figure>
                   <div class="grundton__aside">
                     <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>Gis</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>Gis</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
@@ -609,7 +610,7 @@
                 </header>
                 <div class="grundton__grid">
                   <figure class="schaubild">
-                    <img class="schaubild__img" src="assets/grundtoene/schaubild-a.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton A — Anordnung der zwölf Töne im Körper" />
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-a.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton A - Anordnung der zwölf Töne im Körper" />
                   </figure>
                   <div class="grundton__aside">
                     <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>A</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>A</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
@@ -627,7 +628,7 @@
                 </header>
                 <div class="grundton__grid">
                   <figure class="schaubild">
-                    <img class="schaubild__img" src="assets/grundtoene/schaubild-b.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton B — Anordnung der zwölf Töne im Körper" />
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-b.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton B - Anordnung der zwölf Töne im Körper" />
                   </figure>
                   <div class="grundton__aside">
                     <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>B</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>B</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
@@ -645,7 +646,7 @@
                 </header>
                 <div class="grundton__grid">
                   <figure class="schaubild">
-                    <img class="schaubild__img" src="assets/grundtoene/schaubild-h.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton H — Anordnung der zwölf Töne im Körper" />
+                    <img class="schaubild__img" src="assets/grundtoene/schaubild-h.jpg" loading="lazy" decoding="async" width="595" height="841" alt="Schaubild Grundton H - Anordnung der zwölf Töne im Körper" />
                   </figure>
                   <div class="grundton__aside">
                     <p class="grundton__caption"><span lang="de">Die Anordnung der zwölf Töne, wenn <strong>H</strong> auf <strong>Sa</strong> (Bauchnabel) ruht. Die farbigen Siegel links zeigen die Tonfolge von oben nach unten.</span><span lang="en">The arrangement of the twelve tones when <strong>H</strong> rests on <strong>Sa</strong> (the navel). The coloured seals on the left show the sequence top to bottom.</span></p>
@@ -666,22 +667,22 @@
                 <p class="wr-section__lead"><span lang="de">Die zwölf Positionen ordnen sich zu fünf oktavkomplementären Tonpaaren. Nur Sa (Grundton und Oktave) und Ma₂ (Tritonus) bleiben unpaarig. Jedes Paar trägt ein eigenes psychologisches Thema.</span><span lang="en">The twelve positions form five octave-complementary tone pairs. Only Sa (root and octave) and Ma₂ (the tritone) remain unpaired. Each pair carries its own psychological theme.</span></p>
               </header>
               <div class="prose wr-prose wr-prose--wide">
-                <h2>1. Tonpaar — Ri₁ · Ni₂</h2>
-                <p>Das erste Tonpaar besteht aus den beiden Tönen in unmittelbarer Nachbarschaft zum Grundton. Mit ihrer Hilfe bewältigt die Persönlichkeit die eigene Vergangenheit (Sa): Je nach Qualität früherer Erlebnisse reagiert sie mit <strong>Vermeidung (Ri₁)</strong> oder <strong>Verdrängung (Ni₂)</strong> — über die Mechanismen Erstarrung, Flucht oder Angriff. Stets handelt es sich um eine Vermeidungstaktik, um der Wiederholung alter Schadensfälle zu entkommen.</p>
+                <h2>1. Tonpaar - Ri₁ · Ni₂</h2>
+                <p>Das erste Tonpaar besteht aus den beiden Tönen in unmittelbarer Nachbarschaft zum Grundton. Mit ihrer Hilfe bewältigt die Persönlichkeit die eigene Vergangenheit (Sa): Je nach Qualität früherer Erlebnisse reagiert sie mit <strong>Vermeidung (Ri₁)</strong> oder <strong>Verdrängung (Ni₂)</strong> - über die Mechanismen Erstarrung, Flucht oder Angriff. Stets handelt es sich um eine Vermeidungstaktik, um der Wiederholung alter Schadensfälle zu entkommen.</p>
 
-                <h2>2. Tonpaar — Ri₂ · Ni₁</h2>
-                <p>Das zweite Tonpaar lotet aus, wie viel „Ich" sinnvoll oder erlaubt ist. Im Erinnerungsspeicher liegen die Erlebnisse sowohl eines entwürdigten als auch eines übersteigerten Ichs. So schwanken Menschen, die mit dem 2. Tonpaar zu tun haben, zwischen <strong>Selbstverleugnung</strong> und <strong>Selbstbehauptung</strong> — sie plustern sich auf oder kasteien sich.</p>
+                <h2>2. Tonpaar - Ri₂ · Ni₁</h2>
+                <p>Das zweite Tonpaar lotet aus, wie viel „Ich" sinnvoll oder erlaubt ist. Im Erinnerungsspeicher liegen die Erlebnisse sowohl eines entwürdigten als auch eines übersteigerten Ichs. So schwanken Menschen, die mit dem 2. Tonpaar zu tun haben, zwischen <strong>Selbstverleugnung</strong> und <strong>Selbstbehauptung</strong> - sie plustern sich auf oder kasteien sich.</p>
 
-                <h2>3. Tonpaar — Ga₁ · Dha₂</h2>
+                <h2>3. Tonpaar - Ga₁ · Dha₂</h2>
                 <p>Inhaltlich geht es um die Positionierung der eigenen Identität in einem Umfeld fremder Maßstäbe und um das Entwickeln selbstdefinierter Maßstäbe. Die Beobachtung der Vorgehensweisen (Ga₁) und Fähigkeiten (Dha₂) der Mitmenschen setzt einen Vergleichsprozess in Gang, aus dem sich ein eigenes, im gesellschaftlichen Rahmen platziertes Selbstbild formt.</p>
 
-                <h2>4. Tonpaar — Ga₂ · Dha₁</h2>
-                <p>Das Thema lautet: Wie gestalte ich das Zusammenleben mit den anderen, wie überbrücke ich offensichtliche Gegensätze? Das vierte Tonpaar ermöglicht, divergierende Kräfte auszubalancieren — etwa den Wunsch nach einem selbstbestimmten Leben im Rahmen einer sozialen Gemeinschaft, oder den Umgang mit Aufgaben und Rückmeldungen, die von außen zugetragen werden.</p>
+                <h2>4. Tonpaar - Ga₂ · Dha₁</h2>
+                <p>Das Thema lautet: Wie gestalte ich das Zusammenleben mit den anderen, wie überbrücke ich offensichtliche Gegensätze? Das vierte Tonpaar ermöglicht, divergierende Kräfte auszubalancieren - etwa den Wunsch nach einem selbstbestimmten Leben im Rahmen einer sozialen Gemeinschaft, oder den Umgang mit Aufgaben und Rückmeldungen, die von außen zugetragen werden.</p>
 
-                <h2>5. Tonpaar — Ma₁ · Pa</h2>
-                <p>Ma₁ ist der Sammelpunkt für alle zwischenmenschlichen Beziehungen, Pa der Sammelpunkt für alle weltlichen Kontakte und Aufgaben. Im weltlichen Sinn lässt sich das fünfte Tonpaar als Wechselspiel von <strong>Familie und Karriere</strong> verstehen — zwei Motivationen, die in Balance gebracht werden wollen.</p>
+                <h2>5. Tonpaar - Ma₁ · Pa</h2>
+                <p>Ma₁ ist der Sammelpunkt für alle zwischenmenschlichen Beziehungen, Pa der Sammelpunkt für alle weltlichen Kontakte und Aufgaben. Im weltlichen Sinn lässt sich das fünfte Tonpaar als Wechselspiel von <strong>Familie und Karriere</strong> verstehen - zwei Motivationen, die in Balance gebracht werden wollen.</p>
 
-                <h2>Ma₂ — das unpaarige Intervall</h2>
+                <h2>Ma₂ - das unpaarige Intervall</h2>
                 <p>Die Position Ma₂ (Tritonus) ist das einzige unpaarige Intervall. Ihre übergeordneten Funktionen kreisen um das Ein- und Austreten ins irdische Leben: das <strong>Inkarnieren</strong> auf der Erde, das Weiterspielen des irdischen Spiels über die Zeugung neuen Lebens und das <strong>Scheiden</strong> aus dem irdischen Leben.</p>
 
                 <p class="wr-note"><span lang="de">Die vollständigen Handouts zu jedem Tonpaar (mit Reaktionsmustern, Beispielen und Übungen) liegen im Ausbildungsmaterial vor.</span><span lang="en">The full handouts for each tone pair (with reaction patterns, examples and exercises) are part of the training material.</span></p>
@@ -695,14 +696,14 @@
                 <p class="wr-section__lead"><span lang="de">Jede Skala (Rāga) wählt eine bestimmte Teilmenge der zwölf Töne und entfaltet so eine eigene Wirkung. Den Anfang macht Nr. 8.</span><span lang="en">Each scale (rāga) selects a particular subset of the twelve tones and so unfolds a distinct effect. We begin with No. 8.</span></p>
               </header>
               <div class="prose wr-prose wr-prose--wide">
-                <h2>Nr. 8 — Hanumattodi</h2>
+                <h2>Nr. 8 - Hanumattodi</h2>
                 <p><em>Entspricht der phrygischen Kirchentonart.</em></p>
                 <p class="skala-svaras"><strong>Töne:</strong> Sa · Ri₁ · Ga₁ · Ma₁ · Pa · Dha₁ · Ni₁ · Sa′</p>
                 <p><strong>Bild (indische Musik):</strong> Reh bei Mondschein im Garten.</p>
 
                 <h2>Anwendungen</h2>
                 <ul>
-                  <li>Skala „ohne Ego" — Ausdruck von Hingabe und Mitgefühl.</li>
+                  <li>Skala „ohne Ego" - Ausdruck von Hingabe und Mitgefühl.</li>
                   <li>Hilft, Gefühle von Weiblichkeit zu empfinden; fördert den weiblichen Aspekt (nicht Sexualität) und Mütterlichkeit.</li>
                   <li>Fördert die Fruchtbarkeit der Frau.</li>
                   <li>Gegen Schmerzen der Menstruation und Beschwerden während der Wechseljahre.</li>
@@ -719,7 +720,7 @@
                       <tr><td>Ga₁</td><td>mild, betroffen, empfindsam</td></tr>
                       <tr><td>Ma₁</td><td>Mitgefühl, mütterliche Note, lunare Kraft</td></tr>
                       <tr><td>Pa</td><td>Glück, Sonnenlicht</td></tr>
-                      <tr><td>Dha₁</td><td>Hilferuf, hoffnungsvolles Weinen — wie ein Kind, das durch Weinen Aufmerksamkeit erhalten möchte</td></tr>
+                      <tr><td>Dha₁</td><td>Hilferuf, hoffnungsvolles Weinen - wie ein Kind, das durch Weinen Aufmerksamkeit erhalten möchte</td></tr>
                       <tr><td>Ni₁</td><td>lieblicher Ton, anziehend, ausdrucksvoll</td></tr>
                       <tr><td>Sa′</td><td>Frieden</td></tr>
                     </tbody>
@@ -727,9 +728,9 @@
                 </div>
 
                 <h2>Art des Singens</h2>
-                <p>Aufwärts und abwärts, je nach Situation Ma oder Pa besonders hervorholen. Gut geeignet für Improvisationen und Svarāvali. Für Fruchtbarkeit: die Skala kurz vor und am 6.–11. Tag der Menses singen.</p>
+                <p>Aufwärts und abwärts, je nach Situation Ma oder Pa besonders hervorholen. Gut geeignet für Improvisationen und Svarāvali. Für Fruchtbarkeit: die Skala kurz vor und am 6.-11. Tag der Menses singen.</p>
 
-                <p class="wr-note">⚠︎ <span lang="de">Nicht während der ersten sechs Wochen der Schwangerschaft singen. Die pentatonische Form (Hindola, Nr. 8a) fördert zusätzlich den Bezug zum lunaren Prinzip — ebenfalls nicht in der Schwangerschaft.</span><span lang="en">Do not sing during the first six weeks of pregnancy. The pentatonic form (Hindola, No. 8a) additionally strengthens the connection to the lunar principle — likewise not during pregnancy.</span></p>
+                <p class="wr-note">⚠︎ <span lang="de">Nicht während der ersten sechs Wochen der Schwangerschaft singen. Die pentatonische Form (Hindola, Nr. 8a) fördert zusätzlich den Bezug zum lunaren Prinzip - ebenfalls nicht in der Schwangerschaft.</span><span lang="en">Do not sing during the first six weeks of pregnancy. The pentatonic form (Hindola, No. 8a) additionally strengthens the connection to the lunar principle - likewise not during pregnancy.</span></p>
               </div>
             </article>
 
@@ -747,7 +748,7 @@
             <article class="wr-section" data-route="uebungen-toene" hidden>
               <header class="wr-section__head">
                 <span class="kicker"><span lang="de">Übungen</span><span lang="en">Exercises</span></span>
-                <h1 class="wr-section__title"><span lang="de">Die zwölf Töne — Übungsaufnahmen</span><span lang="en">The Twelve Tones — Practice Recordings</span></h1>
+                <h1 class="wr-section__title"><span lang="de">Die zwölf Töne - Übungsaufnahmen</span><span lang="en">The Twelve Tones - Practice Recordings</span></h1>
                 <p class="wr-section__lead"><span lang="de">Zu jedem Persönlichen Grundton: die geführte Grundtonübung (wo vorhanden), eine instrumentale Begleitung und der reine Monochord-Ton in 432 Hz zum Mitsingen.</span><span lang="en">For every Personal Fundamental Tone: the guided exercise (where available), an instrumental accompaniment, and the pure 432 Hz monochord tone to sing along.</span></p>
               </header>
               <nav class="tone-quicknav" aria-label="Töne"><a class="tone-chip" href="#uebung-c" style="--tone-color: var(--tone-c);"><span class="tone-chip__dot" aria-hidden="true"></span>C</a><a class="tone-chip" href="#uebung-cis" style="--tone-color: var(--tone-cis);"><span class="tone-chip__dot" aria-hidden="true"></span>Cis</a><a class="tone-chip" href="#uebung-d" style="--tone-color: var(--tone-d);"><span class="tone-chip__dot" aria-hidden="true"></span>D</a><a class="tone-chip" href="#uebung-dis" style="--tone-color: var(--tone-dis);"><span class="tone-chip__dot" aria-hidden="true"></span>Dis</a><a class="tone-chip" href="#uebung-e" style="--tone-color: var(--tone-e);"><span class="tone-chip__dot" aria-hidden="true"></span>E</a><a class="tone-chip" href="#uebung-f" style="--tone-color: var(--tone-f);"><span class="tone-chip__dot" aria-hidden="true"></span>F</a><a class="tone-chip" href="#uebung-fis" style="--tone-color: var(--tone-fis);"><span class="tone-chip__dot" aria-hidden="true"></span>Fis</a><a class="tone-chip" href="#uebung-g" style="--tone-color: var(--tone-g);"><span class="tone-chip__dot" aria-hidden="true"></span>G</a><a class="tone-chip" href="#uebung-gis" style="--tone-color: var(--tone-gis);"><span class="tone-chip__dot" aria-hidden="true"></span>Gis</a><a class="tone-chip" href="#uebung-a" style="--tone-color: var(--tone-a);"><span class="tone-chip__dot" aria-hidden="true"></span>A</a><a class="tone-chip" href="#uebung-b" style="--tone-color: var(--tone-b);"><span class="tone-chip__dot" aria-hidden="true"></span>B</a><a class="tone-chip" href="#uebung-h" style="--tone-color: var(--tone-h);"><span class="tone-chip__dot" aria-hidden="true"></span>H</a></nav>
@@ -972,7 +973,7 @@
                 <p>Das kośa-Modell der sāṁkhya Philosophie passt perfekt zum Nada Brahma System von Vemu Mukunda. Es war auch sein philosophischer Hintergrund, er hat es im Rahmen seiner Allgemeinbildung erlernt. Die sāṁkhya Philosophie bildet auch die Matrix für den Hinduismus und das advaita vedānta. Es ist zeitlos, überkulturell, universell.</p>
                 <p>Das kośa-Modell ist ein System über das scheinbare Selbst. In der letzten Erkenntnis wird klar, dass wir alles das nicht sind. Indem wir nach und nach alle Felder entdecken und erfahren, begreifen wir, dass diese alle nur illusionär sind und unser eigentliches Sein etwas komplett anderes ist. Dieser Moment wird als mokṣa (moha kṣaya) bezeichnet, der Wegfall der Täuschung, wenn alle das Wahre verhüllenden Schleier beseitigt sind.</p>
 
-                <blockquote class="wr-quote"><p>„The proper study of mankind is man!“ — Das angemessene Studienobjekt für die Menschheit ist der Mensch selbst.</p><cite>Alexander Pope</cite></blockquote>
+                <blockquote class="wr-quote"><p>„The proper study of mankind is man!“ - Das angemessene Studienobjekt für die Menschheit ist der Mensch selbst.</p><cite>Alexander Pope</cite></blockquote>
                 <blockquote class="wr-quote"><p>“We come from sound, we are sound and we go back to sound.”</p><cite>Vemu Mukunda</cite></blockquote>
               </div>
             </article>
@@ -980,34 +981,34 @@
             <article class="wr-section" data-route="philosophie-koshas" hidden>
               <header class="wr-section__head">
                 <span class="kicker"><span lang="de">Philosophie</span><span lang="en">Philosophy</span></span>
-                <h1 class="wr-section__title">Die <span class="skt">kośa</span>s — die fünf Hüllen</h1>
+                <h1 class="wr-section__title">Die <span class="skt">kośa</span>s - die fünf Hüllen</h1>
               </header>
               <div class="prose wr-prose">
-                <p>Der Mensch besteht aus fünf einander durchdringenden Hüllen (kośa), die das eigentliche Selbst verdecken — von der grobstofflichen Materie bis zur Glückseligkeit. Hinzu kommt das antaḥkarana, das innere Gedankenorgan. Die folgenden Abschnitte beschreiben jede Hülle einzeln.</p>
+                <p>Der Mensch besteht aus fünf einander durchdringenden Hüllen (kośa), die das eigentliche Selbst verdecken - von der grobstofflichen Materie bis zur Glückseligkeit. Hinzu kommt das antaḥkarana, das innere Gedankenorgan. Die folgenden Abschnitte beschreiben jede Hülle einzeln.</p>
                 <p class="wr-note"><span lang="de">Hinweis: Hier stehen zunächst die Wesensbeschreibungen jeder Hülle. Die detaillierten tattva-Zusammensetzungen (z.&nbsp;B. 555 Knochen … 511 Ohr), Funktionen und Zitate folgen in einem nächsten Schritt.</span><span lang="en">Note: the essential descriptions of each sheath are shown first. The detailed tattva compositions, functions and quotations will follow.</span></p>
 
-                <h2>annamāyākośa — die materielle Hülle</h2>
+                <h2>annamāyākośa - die materielle Hülle</h2>
                 <p>Die materielle Hülle, der grobstoffliche Anteil des Gesamtspektrums Mensch. Sie besteht aus allem, was über die fünf Sinnesorgane direkt wahrnehmbar ist und sofort erfahren werden kann. Diese Hülle bildet die Trägersubstanz für alle feineren Hüllen. In ihr ist alles Feinere direkt enthalten. Nicht außerhalb, sondern innerhalb der annamāyākośa befinden sich alle weiteren kośa.</p>
                 <p>anna (Sanskrit) = Nahrung. Die annamāyākośa erhält ihre Kraft und Beständigkeit über die materielle Nahrung, die wir zu uns nehmen. Auf der annamāyākośa bilden sich alle Erkrankungen oder Dysfunktionen in den anderen kośa ab.</p>
 
-                <h2>prāṇamāyākośa — die Hülle der Lebensenergie</h2>
+                <h2>prāṇamāyākośa - die Hülle der Lebensenergie</h2>
                 <p>Die Hülle der Lebensenergie, der energetische Anteil des Gesamtspektrums Mensch. Sie besteht aus allen Kraftströmen und verhilft der materiellen Grundlage annamāyākośa zu ihrer Funktion. Sie ist nicht direkt über die Sinne wahrnehmbar, aber mit etwas Training lässt sie sich über Tasten, Sehen oder Spüren entdecken. Hauptträger der prāṇamāyākośa ist das Element Wasser.</p>
                 <p>Sie stellt nie Defizite aus sich selbst heraus her, sondern ist immer um Ausgleich bemüht und reagiert einzig auf die Störungen der beiden benachbarten kośa. Damit wird sie zum Indikator: ein Energieloch verweist immer auf eine Dysfunktion in der annamāyākośa oder in der manomāyākośa. Der Hauptaktivator ist der Atem.</p>
 
-                <h2>manomāyākośa — die Hülle der Gedanken</h2>
+                <h2>manomāyākośa - die Hülle der Gedanken</h2>
                 <p>Diese Hülle ist der zentrale Bereich der Individualität. So wie die annamāyākośa die individuelle materielle Grundlage bildet, ausgehend von der Vererbung, liegt in der manomāyākośa die Ursache für die empfundene geistige Individualität. Diese wird nicht vererbt, sondern ist das Produkt der eigenen Vergangenheit. Im Gedanklich-Emotionalen ist jeder Mensch nur er selbst.</p>
                 <p>Ihre drei Grundkräfte sind citta (der Erinnerungsspeicher, im Nabel), ahaṁkāra (der Ich-Macher, im Herzen) und manas (die Gedankenprozesse, im Oberkopf). Werden den alten Erlebnissen die Emotionalitäten entzogen, verlieren sie ihre Bedeutung und verflüchtigen sich aus dem citta.</p>
 
-                <h2>vijñānamāyākośa — die Hülle der Werte</h2>
-                <p>Ihre Grundfunktion ist buddhi: das Geistige in den Vorgängen der Nachforschung und Unterscheidung — höhere Intelligenz, Unterscheidungsvermögen, Gewissen, innere Stimme. buddhi ist dem atman sehr nahe und empfängt 90 % von dessen Leuchtkraft und Energie. Ihre wichtigsten Kräfte sind viveka (Unterscheidungskraft) und vairagya (Loslösung von Leidenschaften).</p>
+                <h2>vijñānamāyākośa - die Hülle der Werte</h2>
+                <p>Ihre Grundfunktion ist buddhi: das Geistige in den Vorgängen der Nachforschung und Unterscheidung - höhere Intelligenz, Unterscheidungsvermögen, Gewissen, innere Stimme. buddhi ist dem atman sehr nahe und empfängt 90 % von dessen Leuchtkraft und Energie. Ihre wichtigsten Kräfte sind viveka (Unterscheidungskraft) und vairagya (Loslösung von Leidenschaften).</p>
                 <p>buddhi ist die Korrektur für die manomāyākośa: die individuellen Erinnerungen und die mit ihnen verbundenen Gedanken werden überprüft und als Schatten entlarvt. Hier liegen die fünf menschlichen Werte (dharma, satya, śanti, prema, ahiṁsā) und die fünf geistigen Prinzipien.</p>
 
-                <h2>ānandamāyākośa — die Hülle der Glückseligkeit</h2>
+                <h2>ānandamāyākośa - die Hülle der Glückseligkeit</h2>
                 <p>Der Bewusstseinszustand bzw. die Betrachtungsebene, wenn das antaḥkarana gereinigt und neutralisiert ist. Das Denken und alle Emotionen bestehen noch als Schatten oder Widerspiegelung, haben aber keinerlei Einfluss mehr auf die Eigenwahrnehmung. In allem wird nur noch das Wahre Selbst (atman) wahrgenommen, alles andere wird wie ein Bild betrachtet, ohne Identifikation, ohne Anteilnahme. Wenn ausnahmslos alles Reines Sein ist, muss nicht mehr unterschieden werden.</p>
 
-                <h2>antaḥkarana — das Gedankenorgan</h2>
+                <h2>antaḥkarana - das Gedankenorgan</h2>
                 <p>Das antaḥkarana ist in der sāṁkhya-Philosophie eine feste Größe von zentraler Bedeutung. Wenn es um das Auflösen des Ich-Empfindens geht, muss das antaḥkarana genau verstanden werden. Wer die mechanischen Abläufe im Funktionsgefüge durchblickt, erwirbt die Fähigkeit, die eigenen Gedanken anzuschauen, sie als Rückschlag der Erinnerung zu begreifen und ihnen dann zu widersprechen. „Ich bin nicht meine Gedanken!“ wird zur festen Überzeugung.</p>
-                <p>Es besteht aus den drei Grundfunktionen der manomāyākośa — citta, manas und ahaṁkāra — sowie aus buddhi, der Grundfunktion der vijñānamāyākośa. Diese vier Faktoren wirken zusammen und lassen unsere Gedanken entstehen.</p>
+                <p>Es besteht aus den drei Grundfunktionen der manomāyākośa - citta, manas und ahaṁkāra - sowie aus buddhi, der Grundfunktion der vijñānamāyākośa. Diese vier Faktoren wirken zusammen und lassen unsere Gedanken entstehen.</p>
                 <blockquote class="wr-quote"><p>„Das antaḥkarana ist Gottes größtes Geschenk. Es allein entscheidet über Bindung oder Befreiung des Menschen.“</p><cite>Sathya Sai Baba</cite></blockquote>
               </div>
             </article>
@@ -1050,7 +1051,7 @@
       </div>
       <div class="wrap">
         <div class="pagefoot__base">
-          <span>© 2026 Tonkraft® — Institut für Sonologie</span>
+          <span>© 2026 Tonkraft® - Institut für Sonologie</span>
           <a class="pagefoot__interna" href="interna.html"><span lang="de">Interner Bereich</span><span lang="en">Inner Area</span></a>
         </div>
       </div>
@@ -1083,7 +1084,7 @@
           setTimeout(function(){ gateInput.focus(); }, 30);
         }
         // Defer the auto-show by a tick so the rest of the IIFE (POSITIONS,
-        // TONE_PAIRS, helper functions) is fully initialized first — otherwise
+        // TONE_PAIRS, helper functions) is fully initialized first - otherwise
         // a returning visit hits undefined vars during renderApp().
         try {
           if (sessionStorage.getItem(GATE_KEY) === "ok") {
@@ -1119,7 +1120,7 @@
         // ---- Visualization ---------------------------------------------------
         var CHROMATIC = ["C","Cis","D","Dis","E","F","Fis","G","Gis","A","B","H"];
 
-        // Chromatic tone colors live in ONE place — the --tone-* design tokens in
+        // Chromatic tone colors live in ONE place - the --tone-* design tokens in
         // css/styles.css (the colored ripple seals from "12 Schaubilder
         // Grundtöne"). Read them from the cascade so the SVG dots and table
         // swatches can never drift from the CSS palette.
@@ -1201,7 +1202,7 @@
             organOct_de: "Punkt in Fußmitte", organOct_en: "Point in the centre of the foot" }
         ];
 
-        // Five Tonpaare from "12 Grundtöne paarig" — octave-complementary
+        // Five Tonpaare from "12 Grundtöne paarig" - octave-complementary
         // pairings of the chromatic interval set. Sa (Grundton + Oktave)
         // and Ma₂ (tritone, self-complementing) are the only unpaired
         // positions.
@@ -1280,7 +1281,7 @@
           // Brackets begin flush with each paired dot (at the body's
           // centreline) and elbow out to the right, so every bracket
           // visually anchors to the two dots it pairs. The horizontal
-          // segments pass through the silhouette wash — fine, since the
+          // segments pass through the silhouette wash - fine, since the
           // silhouette is subtle and the brackets are only drawn when a
           // point is selected or "Tonpaare anzeigen" is toggled on.
           TONE_PAIRS.forEach(function (tp) {
@@ -1361,7 +1362,7 @@
             });
             if (toneColor) g.style.setProperty("--dot-color", toneColor);
 
-            // Hit area — generous invisible disc that catches clicks
+            // Hit area - generous invisible disc that catches clicks
             g.appendChild(svgEl("circle", { "class":"point-hit",   "cx":CX, "cy":cy, "r":16 }));
             // Pulse ring (active only)
             g.appendChild(svgEl("circle", { "class":"point-pulse", "cx":CX, "cy":cy, "r":11 }));
@@ -1492,11 +1493,11 @@
 
           // Caption
           if (general) {
-            capDe.textContent = "Allgemeine Übersicht — alle Positionen";
-            capEn.textContent = "General overview — all positions";
+            capDe.textContent = "Allgemeine Übersicht - alle Positionen";
+            capEn.textContent = "General overview - all positions";
           } else {
-            capDe.textContent = "Grundton " + currentRoot + " — Übersicht";
-            capEn.textContent = "Fundamental Tone " + currentRoot + " — overview";
+            capDe.textContent = "Grundton " + currentRoot + " - Übersicht";
+            capEn.textContent = "Fundamental Tone " + currentRoot + " - overview";
           }
 
           // Header
@@ -1549,7 +1550,7 @@
               tr.innerHTML =
                 '<th scope="row" class="interna-table__pos">' + pos + '</th>' +
                 intervalCell +
-                '<td class="interna-table__skt">' + (p.sanskrit || "—") + '</td>' +
+                '<td class="interna-table__skt">' + (p.sanskrit || "-") + '</td>' +
                 pairCell;
             } else {
               var tone  = tones[p.semi % 12];

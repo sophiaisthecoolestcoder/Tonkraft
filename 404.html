@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#f4efe5" />
-    <title>Seite nicht gefunden — Tonkraft</title>
+    <title>Seite nicht gefunden - Tonkraft</title>
     <meta name="robots" content="noindex" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,8 +16,9 @@
       (function () {
         try {
           var s = localStorage.getItem("tonkraft:lang");
-          var b = (navigator.language || "de").toLowerCase().indexOf("en") === 0 ? "en" : "de";
-          var l = s === "en" || s === "de" ? s : b;
+          /* German is the default. Only an explicit choice, stored from the
+             DE/EN switch, selects English - never the browser locale. */
+          var l = s === "en" ? "en" : "de";
           var r = document.documentElement;
           r.classList.remove("lang-de", "lang-en");
           r.classList.add("lang-" + l);

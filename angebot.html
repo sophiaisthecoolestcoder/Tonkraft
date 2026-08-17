@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#f4efe5" />
-    <title>Angebot — Tonkraft</title>
-    <meta name="description" content="SaMa Sonologie® — wie der Persönliche Grundton entdeckt und aktiviert wird." />
+    <title>Angebot - Tonkraft</title>
+    <meta name="description" content="SaMa Sonologie® - wie der Persönliche Grundton entdeckt und aktiviert wird." />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,8 +16,9 @@
       (function () {
         try {
           var s = localStorage.getItem("tonkraft:lang");
-          var b = (navigator.language || "de").toLowerCase().indexOf("en") === 0 ? "en" : "de";
-          var l = s === "en" || s === "de" ? s : b;
+          /* German is the default. Only an explicit choice, stored from the
+             DE/EN switch, selects English - never the browser locale. */
+          var l = s === "en" ? "en" : "de";
           var r = document.documentElement;
           r.classList.remove("lang-de", "lang-en");
           r.classList.add("lang-" + l);
@@ -33,7 +34,7 @@
 
     <header class="masthead">
       <div class="masthead__inner">
-        <a href="index.html" class="brandmark" aria-label="Tonkraft — Startseite">
+        <a href="index.html" class="brandmark" aria-label="Tonkraft - Startseite">
           <span class="brandmark__seal" aria-hidden="true">&#x0914;&#x0902;</span>
           <span class="brandmark__word">tonkraft<sup class="brand-reg">®</sup></span>
         </a>
@@ -78,7 +79,7 @@
       </section>
 
       <section class="section--tight wrap blocks">
-        <!-- Block A — Der Persönliche Grundton -->
+        <!-- Block A - Der Persönliche Grundton -->
         <article class="block reveal" aria-labelledby="block-a">
           <h2 class="block__title" id="block-a">
             <span lang="de">Was ist der Persönliche Grundton?</span>
@@ -101,15 +102,15 @@
               <p>Ist dieser sichere Ort gefunden, kann die Entdeckungsreise durch die Innenwelt stattfinden. Dort gibt es faszinierende Welten, von denen wir nicht wussten dass sie existieren. Es gibt Orte, deren Dunkelheit uns abschreckt. Und es gibt Plätze, an denen wir uns gerne länger aufhalten möchten. Und doch müssen wir sie alle wieder verlassen, denn sie sind nur scheinbar real. Die letztendliche Wirklichkeit sieht vollkommen anders aus. Davon können diejenigen berichten, die dort bereits angelangt sind. Alle anderen dürfen neugierig sein.</p>
             </div>
             <div class="block__long prose" lang="en">
-              <p>A particular power dwells in every human being — sadly unknown to many. The world, oriented toward the visibility of phenomena, cannot find it, because it is an acoustic force. It becomes apparent when we listen to one another, when we perceive one another by listening. It is subtle, sensitive and yet strong, but it is mostly drowned out by the clamour of the world. So it often goes unnoticed and finds no hearing.</p>
+              <p>A particular power dwells in every human being - sadly unknown to many. The world, oriented toward the visibility of phenomena, cannot find it, because it is an acoustic force. It becomes apparent when we listen to one another, when we perceive one another by listening. It is subtle, sensitive and yet strong, but it is mostly drowned out by the clamour of the world. So it often goes unnoticed and finds no hearing.</p>
               <p>Whoever is interested in themselves is well advised to search for this source of personality. It is in fact a single tone that resolves many riddles of self-enquiry and answers pressing questions in its very own way. Its very origin describes what is human quite differently. This one tone is not inherited, is not part of the genetic code. This is shown by many experiences within family groups: people with the same fundamental frequencies are found there, just as there are direct relatives with entirely different fundamental tones. The distribution follows no system, seems arbitrary. And yet each human being has their own particular tone. He is inseparably bound to it, just as he is to his body. But the tone is not the tone of the body, but of what dwells in the body. It is not the tone of the car, but of the driver.</p>
-              <p>Of course there are many people who identify with their car. But this is nonsense — we are not exclusively our body, even if many health systems would have us think so. What is essential is what makes us central. Our sensations, our perceptions, our thoughts: that is what matters. And precisely these areas of our self are not perceptible visually, but they are perceptible acoustically. Every emotional movement can be heard in the voice. Every injury, every imbalance finds its expression in the vocal frequency. But since inner balance also has its own pitch and dwells at its prominent place in the body, it is worth knowing how this central function can be strengthened: through the Personal Fundamental Tone. By singing this individually constituted tone frequency, every person can come into their centre at any time. There, only the self remains — nothing else. It is like the bird returning to its nest.</p>
+              <p>Of course there are many people who identify with their car. But this is nonsense - we are not exclusively our body, even if many health systems would have us think so. What is essential is what makes us central. Our sensations, our perceptions, our thoughts: that is what matters. And precisely these areas of our self are not perceptible visually, but they are perceptible acoustically. Every emotional movement can be heard in the voice. Every injury, every imbalance finds its expression in the vocal frequency. But since inner balance also has its own pitch and dwells at its prominent place in the body, it is worth knowing how this central function can be strengthened: through the Personal Fundamental Tone. By singing this individually constituted tone frequency, every person can come into their centre at any time. There, only the self remains - nothing else. It is like the bird returning to its nest.</p>
               <p>Once this safe place is found, the journey of discovery through the inner world can take place. There are fascinating worlds we did not know existed. There are places whose darkness frightens us. And there are places where we would gladly remain longer. And yet we must leave them all again, for they are only apparently real. The ultimate reality looks entirely different. Of this, those who have already arrived there can tell. All others may simply be curious.</p>
             </div>
           </details>
         </article>
 
-        <!-- Block B — Die Grundtonbestimmung -->
+        <!-- Block B - Die Grundtonbestimmung -->
         <article class="block reveal" aria-labelledby="block-b">
           <h2 class="block__title" id="block-b">
             <span lang="de">Wie verläuft eine Grundtonbestimmung?</span>
@@ -137,7 +138,7 @@
           <div class="film-grid">
             <figure class="film">
               <div class="film__frame">
-                <button class="film__cover" type="button" data-youtube="tnJmsOj7u80" aria-label="Video abspielen: Tonkraft® — Den Grundton finden">
+                <button class="film__cover" type="button" data-youtube="tnJmsOj7u80" aria-label="Video abspielen: Tonkraft® - Den Grundton finden">
                   <span class="film__aum" aria-hidden="true">&#x0914;&#x0902;</span>
                   <span class="film__eyebrow">Tonkraft®</span>
                   <span class="film__title-big">Den Grundton finden</span>
@@ -147,7 +148,7 @@
             </figure>
             <figure class="film">
               <div class="film__frame">
-                <button class="film__cover" type="button" data-youtube="ttlHNaFpAgs" aria-label="Video abspielen: Tonkraft® — Tonale Persönlichkeitsberatung">
+                <button class="film__cover" type="button" data-youtube="ttlHNaFpAgs" aria-label="Video abspielen: Tonkraft® - Tonale Persönlichkeitsberatung">
                   <span class="film__aum" aria-hidden="true">&#x0914;&#x0902;</span>
                   <span class="film__eyebrow">Tonkraft®</span>
                   <span class="film__title-big">Tonale Persönlichkeitsberatung</span>
@@ -158,7 +159,7 @@
           </div>
         </article>
 
-        <!-- Block C — Vom Grundton zur transformierenden Kraft -->
+        <!-- Block C - Vom Grundton zur transformierenden Kraft -->
         <article class="block reveal" aria-labelledby="block-c">
           <h2 class="block__title" id="block-c">
             <span lang="de">Wie wird der Grundton zur transformierenden Kraft?</span>
@@ -210,7 +211,7 @@
           <div class="film-grid">
             <figure class="film">
               <div class="film__frame">
-                <button class="film__cover" type="button" data-youtube="NOejJha3Mao" aria-label="Video abspielen: Vemu Mukunda — Grundtonübung">
+                <button class="film__cover" type="button" data-youtube="NOejJha3Mao" aria-label="Video abspielen: Vemu Mukunda - Grundtonübung">
                   <span class="film__aum" aria-hidden="true">&#x0914;&#x0902;</span>
                   <span class="film__eyebrow">Vemu Mukunda</span>
                   <span class="film__title-big">Grundtonübung</span>
@@ -220,7 +221,7 @@
             </figure>
             <figure class="film">
               <div class="film__frame">
-                <button class="film__cover" type="button" data-youtube="e55qSDTEBCI" aria-label="Video abspielen: Vemu Mukunda — Rhythmus-Übung">
+                <button class="film__cover" type="button" data-youtube="e55qSDTEBCI" aria-label="Video abspielen: Vemu Mukunda - Rhythmus-Übung">
                   <span class="film__aum" aria-hidden="true">&#x0914;&#x0902;</span>
                   <span class="film__eyebrow">Vemu Mukunda</span>
                   <span class="film__title-big">Rhythmus-Übung</span>
@@ -231,7 +232,7 @@
           </div>
         </article>
 
-        <!-- Block D — Das Ziel der Übungen -->
+        <!-- Block D - Das Ziel der Übungen -->
         <article class="block reveal" aria-labelledby="block-d">
           <h2 class="block__title" id="block-d">
             <span lang="de">Was ist das Ziel der Übungen?</span>
@@ -252,13 +253,13 @@
               <p>Ist dieser Gemütszustand stabil, kann es weiter gehen: die Kompensationen machen sich klammheimlich aus dem Staub. Nicht mehr die eigenen Bedürfnisse stehen im Vordergrund, sondern das allgemeine Interesse. Nicht der Eigennutz ist das oberste Prinzip, sondern soziale Nutzen. Die Ichbezogenheit schrumpft, die übergeordnete Notwendigkeit bestimmt das Handeln. Ein langer, wunderschöner Weg der Reifung der Persönlichkeit.</p>
             </div>
             <div class="block__long prose" lang="en">
-              <p>The first stage is arriving at oneself. Many people possess a great deal of knowledge yet do not know themselves. Singing the fundamental tone above all changes this. It leads one to come into contact with oneself and to shape life from this inner touch. Nothing foreign, unwanted, automatic should determine life — only one's own certainty. Resting in one's own centre, many burdens fall from the shoulders. Self-determination becomes normality, alongside all integration into the social environment. The feeling of being able to use one's natural resources strengthens well-being and gives life lightness. Out of the drama, into a smile.</p>
+              <p>The first stage is arriving at oneself. Many people possess a great deal of knowledge yet do not know themselves. Singing the fundamental tone above all changes this. It leads one to come into contact with oneself and to shape life from this inner touch. Nothing foreign, unwanted, automatic should determine life - only one's own certainty. Resting in one's own centre, many burdens fall from the shoulders. Self-determination becomes normality, alongside all integration into the social environment. The feeling of being able to use one's natural resources strengthens well-being and gives life lightness. Out of the drama, into a smile.</p>
               <p>Once this state is stable, the journey can go further: compensations quietly slip away. One's own needs no longer stand in the foreground, but the common interest. Not self-interest is the highest principle, but social benefit. Self-centredness shrinks; the overarching necessity determines action. A long, beautiful path of maturing the personality.</p>
             </div>
           </details>
         </article>
 
-        <!-- Block E — Langfristige Perspektiven -->
+        <!-- Block E - Langfristige Perspektiven -->
         <article class="block reveal" aria-labelledby="block-e">
           <h2 class="block__title" id="block-e">
             <span lang="de">Welche langfristigen Perspektiven bestehen?</span>
@@ -278,13 +279,13 @@
               <p>Der Persönliche Grundton ist ein Bewusstseinsweg. Das individuelle Bewusstsein mündet ein in das Eine Unteilbare Universelle Bewusstsein. Die Läuterung der Gedanken mitsamt ihren wiederkehrenden Muster und Denkgewohnheiten löst den Ich-Gedanken auf. Keine Glaubenssätze, nur reine Gedanken und irgendwann gar keine Gedanken mehr. Das Wahre Sein leuchtet dann aus sich heraus, ohne Mühe, unverhüllt. Ein langer Weg. Selbst wenn er nicht bis zum absoluten Ende gegangen werden kann, ist doch jeder Schritt in die richtige Richtung ein Geschenk für die nächste Runde.</p>
             </div>
             <div class="block__long prose" lang="en">
-              <p>The Personal Fundamental Tone is a path of consciousness. Individual consciousness flows into the One Indivisible Universal Consciousness. The purification of thoughts together with their recurring patterns and habits of thinking dissolves the I-thought. No beliefs, only pure thoughts — and eventually no thoughts at all. True Being then shines out of itself, effortlessly, unveiled. A long path. Even if it cannot be walked all the way to the absolute end, every step in the right direction is a gift for the next round.</p>
+              <p>The Personal Fundamental Tone is a path of consciousness. Individual consciousness flows into the One Indivisible Universal Consciousness. The purification of thoughts together with their recurring patterns and habits of thinking dissolves the I-thought. No beliefs, only pure thoughts - and eventually no thoughts at all. True Being then shines out of itself, effortlessly, unveiled. A long path. Even if it cannot be walked all the way to the absolute end, every step in the right direction is a gift for the next round.</p>
             </div>
           </details>
           <div class="film-grid">
             <figure class="film">
               <div class="film__frame">
-                <button class="film__cover" type="button" data-youtube="AQx8jAps3Xg" aria-label="Video abspielen: Tonkraft® — Wohin Dich Dein Ton tragen kann">
+                <button class="film__cover" type="button" data-youtube="AQx8jAps3Xg" aria-label="Video abspielen: Tonkraft® - Wohin Dich Dein Ton tragen kann">
                   <span class="film__aum" aria-hidden="true">&#x0914;&#x0902;</span>
                   <span class="film__eyebrow">Tonkraft®</span>
                   <span class="film__title-big">Wohin Dich Dein Ton tragen kann</span>
@@ -343,7 +344,7 @@
       </div>
       <div class="wrap">
         <div class="pagefoot__base">
-          <span>© 2026 Tonkraft® — Institut für Sonologie</span>
+          <span>© 2026 Tonkraft® - Institut für Sonologie</span>
           <a class="pagefoot__interna" href="interna.html"><span lang="de">Interner Bereich</span><span lang="en">Inner Area</span></a>
         </div>
       </div>

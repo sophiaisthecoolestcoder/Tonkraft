@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#f4efe5" />
-    <title>Publikationen — Tonkraft</title>
+    <title>Publikationen - Tonkraft</title>
     <meta name="description" content="Essays und Artikel zum Vertiefen Ihres Verständnisses der SaMa Sonologie®." />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,8 +16,9 @@
       (function () {
         try {
           var s = localStorage.getItem("tonkraft:lang");
-          var b = (navigator.language || "de").toLowerCase().indexOf("en") === 0 ? "en" : "de";
-          var l = s === "en" || s === "de" ? s : b;
+          /* German is the default. Only an explicit choice, stored from the
+             DE/EN switch, selects English - never the browser locale. */
+          var l = s === "en" ? "en" : "de";
           var r = document.documentElement;
           r.classList.remove("lang-de", "lang-en");
           r.classList.add("lang-" + l);
@@ -33,7 +34,7 @@
 
     <header class="masthead">
       <div class="masthead__inner">
-        <a href="index.html" class="brandmark" aria-label="Tonkraft — Startseite">
+        <a href="index.html" class="brandmark" aria-label="Tonkraft - Startseite">
           <span class="brandmark__seal" aria-hidden="true">&#x0914;&#x0902;</span>
           <span class="brandmark__word">tonkraft<sup class="brand-reg">®</sup></span>
         </a>
@@ -93,8 +94,8 @@
               <span class="essay__body">
                 <span class="essay__title">Die Tonkraft®</span>
                 <span class="essay__desc">
-                  <span lang="de">Wie kann ein einzelner gesungener Ton im Menschen wirken? Das Essay zeichnet nach, wie der Persönliche Grundton den Körper als Resonanzraum aus drei Oktaven ordnet – bis hinein in Lebensenergie, Gedanken und Emotionen – und wie die physikalische Kraft des Tons Ungeordnetes in seine natürliche Ordnung zurückführen kann.</span>
-                  <span lang="en">How can a single sung tone work within a human being? This essay traces how the Personal Fundamental Tone orders the body as a resonance space of three octaves — reaching into life energy, thoughts and emotions — and how the physical power of the tone can return what is disordered to its natural order.</span>
+                  <span lang="de">Wie kann ein einzelner gesungener Ton im Menschen wirken? Das Essay zeichnet nach, wie der Persönliche Grundton den Körper als Resonanzraum aus drei Oktaven ordnet - bis hinein in Lebensenergie, Gedanken und Emotionen - und wie die physikalische Kraft des Tons Ungeordnetes in seine natürliche Ordnung zurückführen kann.</span>
+                  <span lang="en">How can a single sung tone work within a human being? This essay traces how the Personal Fundamental Tone orders the body as a resonance space of three octaves - reaching into life energy, thoughts and emotions - and how the physical power of the tone can return what is disordered to its natural order.</span>
                 </span>
               </span>
               <span class="essay__meta"><span>PDF</span><span class="essay__arrow" aria-hidden="true">↗</span></span>
@@ -134,7 +135,7 @@
       </div>
       <div class="wrap">
         <div class="pagefoot__base">
-          <span>© 2026 Tonkraft® — Institut für Sonologie</span>
+          <span>© 2026 Tonkraft® - Institut für Sonologie</span>
           <a class="pagefoot__interna" href="interna.html"><span lang="de">Interner Bereich</span><span lang="en">Inner Area</span></a>
         </div>
       </div>
