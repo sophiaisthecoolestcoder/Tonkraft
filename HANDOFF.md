@@ -2,7 +2,7 @@
 
 Working directory: `/Users/sophiaclausing/Tonkraft II`
 GitHub: `git@github.com:sophiaisthecoolestcoder/Tonkraft.git` — work happens on `main`.
-Deploy: Cloudflare Worker `tonkraft` (Workers Builds; static assets from the repo root, config in `wrangler.jsonc`), live at `tonkraft.sophiaclausing.workers.dev`. Production branch **is** `main` — pushes to `main` do trigger builds.
+Deploy: Cloudflare Worker `tonkraft` (Workers Builds; static assets from the repo root, config in `wrangler.jsonc`), live at **https://tonkraft.net** (`www` 301s to the apex). Production branch **is** `main` — pushes to `main` do trigger builds, and a push publishes within about a minute. The `workers.dev` subdomain is retired via `"workers_dev": false`, so the site answers on the custom domain only.
 
 **Root cause of the long deploy outage (fixed 2026-08-13):** the build clones the repo *into* the assets directory, so `wrangler` walked `.git` and aborted with `Asset too large` on the 139 MiB pack file — every build on `main` died there, which is why `9defdb0`, `1b1b980` and `12c5a9d` never went live. Fixed by `.assetsignore`, which must keep excluding `.git/`.
 
@@ -13,8 +13,7 @@ Deploy: Cloudflare Worker `tonkraft` (Workers Builds; static assets from the rep
 npx wrangler deploy --dry-run --outdir /tmp/wrout
 ```
 No auth needed. It must exit `--dry-run: exiting now.` with no `Asset too large`. The "Read N files" line counts *walked* entries including ignored ones and directories, so it is not a measure of what ships — to test an exclusion, drop a >25 MiB file into the directory and confirm no size error.
-(`tonkraft.net` has no DNS yet, so the Impressum URL does not resolve.)
-Stack: hand-authored HTML5 + one `css/styles.css` + vanilla `js/main.js`. No build step. Local preview: `python3 -m http.server 8080` from repo root.
+Stack: hand-authored HTML5 + one `css/styles.css` + vanilla `js/main.js`. No build step. Local preview: `python3 serve.py` from repo root — it mirrors Workers Assets (serves `/angebot` from `angebot.html`, 301s `/angebot.html` -> `/angebot`). A plain `python3 -m http.server` 404s on every internal link.
 
 ---
 

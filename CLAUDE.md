@@ -20,5 +20,5 @@ Spec: `specs/001-tonkraft-website-redesign/spec.md` · Research: `research.md` �
 - Reuse `~/Tonkraft/assets/sonologen/*.jpg` (practitioner photos + `vemu-1..5.jpg`).
 - Design work may use the `frontend-design` and `ui-ux-pro-max` skills to avoid generic AI aesthetics.
 
-Run locally: `python3 -m http.server 8000` from repo root.
+Run locally: `python3 serve.py` from repo root. Internal links are extensionless (`/angebot`), so `python3 -m http.server` no longer works — `serve.py` mirrors the Worker's routing.
 <!-- SPECKIT END -->

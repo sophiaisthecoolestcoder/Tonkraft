@@ -8,7 +8,7 @@ Bilingual German (primary) / English with a persistent language toggle.
 From the repository root, start any static server:
 
 ```bash
-python3 -m http.server 8000     # then open http://localhost:8000/
+python3 serve.py                # then open http://localhost:8000/
 # or
 python3 serve.py
 ```
