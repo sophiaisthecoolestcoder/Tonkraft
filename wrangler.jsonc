@@ -2,6 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "tonkraft",
   "compatibility_date": "2026-06-22",
+  // The site is served from the custom domain tonkraft.net only. Disabling
+  // the workers.dev subdomain retires tonkraft.sophiaclausing.workers.dev so
+  // it cannot serve — and cannot be indexed as a duplicate of the real site.
+  "workers_dev": false,
   "observability": {
     "enabled": true
   },
